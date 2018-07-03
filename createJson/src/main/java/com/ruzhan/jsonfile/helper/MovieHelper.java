@@ -26,7 +26,7 @@ public final class MovieHelper {
     public static void movieDetailListToJsonFile(List<MovieDetail> list,
                                                  String rootPath, Gson gson) {
         for (MovieDetail movieDetail : list) {
-            String name = movieDetail.movieId.concat(".json");
+            String name = movieDetail.movieId.concat("");
             String filePath = rootPath.concat("\\").concat(name);
             HttpResult<MovieDetail> httpResult = new HttpResult<>(200, "", movieDetail);
             String fileJson = gson.toJson(httpResult);
@@ -42,7 +42,7 @@ public final class MovieHelper {
             Map.Entry<String, List<Movie>> entry = iterator.next();
             String keyPage = entry.getKey();
             List<Movie> valueMovieList = entry.getValue();
-            String filePath = rootPath.concat("\\").concat(keyPage).concat(".json");
+            String filePath = rootPath.concat("\\").concat(keyPage).concat("");
             HttpResult<List<Movie>> httpResult = new HttpResult<>(200, "", valueMovieList);
             String fileJson = gson.toJson(httpResult);
             boolean isKeyPageSuccess = JsonFileIOUtils.writeFileFromString(filePath, fileJson);
