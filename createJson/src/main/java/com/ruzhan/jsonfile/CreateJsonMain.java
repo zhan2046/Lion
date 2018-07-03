@@ -10,8 +10,11 @@ import java.util.Map;
 
 public class CreateJsonMain {
 
+    public static final String FILE_TYPE = ".json";
     private static final String MOVIE_LIST = "E:\\project\\Lion\\json\\api\\movie";
     private static final String MOVIE_DETAIL = "E:\\project\\Lion\\json\\api\\movie\\detail";
+
+    public static final int CODE_SUCCESS = 200;
 
     private static Gson gson = new Gson();
 

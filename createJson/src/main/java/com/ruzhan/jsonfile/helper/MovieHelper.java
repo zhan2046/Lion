@@ -1,6 +1,7 @@
 package com.ruzhan.jsonfile.helper;
 
 import com.google.gson.Gson;
+import com.ruzhan.jsonfile.CreateJsonMain;
 import com.ruzhan.jsonfile.data.TheLionSleepsNoMore;
 import com.ruzhan.jsonfile.model.HttpResult;
 import com.ruzhan.jsonfile.model.Movie;
@@ -26,9 +27,10 @@ public final class MovieHelper {
     public static void movieDetailListToJsonFile(List<MovieDetail> list,
                                                  String rootPath, Gson gson) {
         for (MovieDetail movieDetail : list) {
-            String name = movieDetail.movieId.concat("");
+            String name = movieDetail.movieId.concat(CreateJsonMain.FILE_TYPE);
             String filePath = rootPath.concat("\\").concat(name);
-            HttpResult<MovieDetail> httpResult = new HttpResult<>(200, "", movieDetail);
+            HttpResult<MovieDetail> httpResult = new HttpResult<>(CreateJsonMain.CODE_SUCCESS,
+                    "", movieDetail);
             String fileJson = gson.toJson(httpResult);
             boolean isKeyPageSuccess = JsonFileIOUtils.writeFileFromString(filePath, fileJson);
             System.out.println("isKeyPageSuccess:" + isKeyPageSuccess + ", movieDetailListToJsonFile write !!!");
@@ -42,8 +44,9 @@ public final class MovieHelper {
             Map.Entry<String, List<Movie>> entry = iterator.next();
             String keyPage = entry.getKey();
             List<Movie> valueMovieList = entry.getValue();
-            String filePath = rootPath.concat("\\").concat(keyPage).concat("");
-            HttpResult<List<Movie>> httpResult = new HttpResult<>(200, "", valueMovieList);
+            String filePath = rootPath.concat("\\").concat(keyPage).concat(CreateJsonMain.FILE_TYPE);
+            HttpResult<List<Movie>> httpResult = new HttpResult<>(CreateJsonMain.CODE_SUCCESS,
+                    "", valueMovieList);
             String fileJson = gson.toJson(httpResult);
             boolean isKeyPageSuccess = JsonFileIOUtils.writeFileFromString(filePath, fileJson);
             System.out.println("isKeyPageSuccess:" + isKeyPageSuccess + ", keyPage:" + keyPage);
