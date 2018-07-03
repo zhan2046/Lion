@@ -13,7 +13,7 @@ import java.util.List;
  */
 public class TheLionSleepsNoMore {
 
-    private static final int ID = TheLionSleepsNoMore.class.hashCode() + 300;
+    private static final int ID = 303;
     private static final String PLAY_COUNT = "4";
 
     private static final String TITLE = "大卫·艾克《雄狮醒来》";
@@ -78,7 +78,7 @@ public class TheLionSleepsNoMore {
         movie.desc = DESC;
         movie.image = IMAGE;
 
-        movieDetail.id = String.valueOf(ID + 1);
+        movieDetail.id = String.valueOf(ID + 3);
         movieDetail.movieId = String.valueOf(ID);
         movieDetail.title = TITLE;
         movieDetail.tag = TAG;
