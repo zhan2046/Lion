@@ -19,7 +19,7 @@ public class TheLionSleepsNoMore {
     private static final String TITLE = "大卫·艾克《雄狮醒来》";
     private static final String TAG = "演讲·公开课";
 
-    // https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/christ-lion2.jpg
+    // https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/christ-lion.jpg
     private static final String IMAGE = "http://neilhague.com/wp-content/uploads/2016/03/Christ-Lion2-631x450.jpg";
 
     private static final String DESC = "大卫·沃恩·艾克（英语：David Vaughan Icke，1952年4月29日-），英国作家、公共演说家、前足球员与体育职业解说员。他提出一种关于全球政治的阴谋论，并将它详细地写了出来。";
@@ -35,12 +35,16 @@ public class TheLionSleepsNoMore {
                 "大卫·沃恩·艾克（英语：David Vaughan Icke ，1952年4月29日-），" +
                         "英国作家、公共演说家、前足球员与体育职业解说员。他提出一种关于全球政治的阴谋论，" +
                         "并将它详细地写了出来。", ""));
+        introduceList.add(new Introduce(Introduce.IMAGE, "",
+                "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/david-icke.jpg"));
         introduceList.add(new Introduce(Introduce.TEXT,
                 "艾克曾是一名BBC电视台体育主持人和绿党的发言人。1990年，一位通灵者告诉他，" +
                         "他是带着某种使命被派到地球上的“治愈者”，而且灵异世界将向他传达讯息。1991年3月，" +
                         "他召开了一个新闻发布会宣布他是“神之子”，后来他称媒体误解了这个短语的意思。" +
                         "他说BBC的《Wogan》节目改变了他的生活，" +
                         "把他从一个受人尊敬的家喻户晓的人物变成了公共笑柄。", ""));
+        introduceList.add(new Introduce(Introduce.IMAGE, "",
+                "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/young-david-icke.jpg"));
         introduceList.add(new Introduce(Introduce.TEXT,
                 "然而他继续发展他的想法，并且在七年内已经出版四本书——《机器的反抗》" +
                         "（The Robots' Rebellion，1994）、《真相使你自由》" +
