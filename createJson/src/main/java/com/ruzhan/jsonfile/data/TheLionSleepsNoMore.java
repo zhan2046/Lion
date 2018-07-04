@@ -61,16 +61,16 @@ public class TheLionSleepsNoMore {
                         "是一种让普通民众质疑他们身边所见事物的叙事方式。", ""));
 
         videoList.add(new Video(String.valueOf(ID + 11),
-                "实相的本质", IMAGE, PLAY_COUNT, "1",
+                "1，实相的本质", IMAGE, PLAY_COUNT, "1",
                 "http://player.bilibili.com/player.html?aid=5039798&cid=8186325&page=1"));
         videoList.add(new Video(String.valueOf(ID + 12),
-                "月球控制", IMAGE, PLAY_COUNT, "2",
+                "2，月球控制", IMAGE, PLAY_COUNT, "2",
                 "http://player.bilibili.com/player.html?aid=5039798&cid=8186325&page=2"));
         videoList.add(new Video(String.valueOf(ID + 13),
-                "世界议程", IMAGE, PLAY_COUNT, "3",
+                "3，世界议程", IMAGE, PLAY_COUNT, "3",
                 "http://player.bilibili.com/player.html?aid=5039798&cid=8186325&page=3"));
         videoList.add(new Video(String.valueOf(ID + 14),
-                "真相的共鸣", IMAGE, PLAY_COUNT, "4",
+                "4，真相的共鸣", IMAGE, PLAY_COUNT, "4",
                 "http://player.bilibili.com/player.html?aid=5039798&cid=8186325&page=4"));
 
 

@@ -39,22 +39,22 @@ public class AncientAliens {
 
 
         videoList.add(new Video(String.valueOf(ID + 11),
-                "战车，众神和太空·Chariots, Gods and Beyond", IMAGE, PLAY_COUNT, "1",
+                "1，战车，众神和太空·Chariots, Gods and Beyond", IMAGE, PLAY_COUNT, "1",
                 "http://player.bilibili.com/player.html?aid=2379517&cid=3721214&page=1"));
         videoList.add(new Video(String.valueOf(ID + 12),
-                "证据·The Evidence", IMAGE, PLAY_COUNT, "2",
+                "2，证据·The Evidence", IMAGE, PLAY_COUNT, "2",
                 "http://player.bilibili.com/player.html?aid=2379517&cid=3721214&page=2"));
         videoList.add(new Video(String.valueOf(ID + 13),
-                "天外来客·The Visitors", IMAGE, PLAY_COUNT, "3",
+                "3，天外来客·The Visitors", IMAGE, PLAY_COUNT, "3",
                 "http://player.bilibili.com/player.html?aid=2379517&cid=3721214&page=3"));
         videoList.add(new Video(String.valueOf(ID + 14),
-                "使命·The Mission", IMAGE, PLAY_COUNT, "4",
+                "4，使命·The Mission", IMAGE, PLAY_COUNT, "4",
                 "http://player.bilibili.com/player.html?aid=2379517&cid=3721214&page=4"));
         videoList.add(new Video(String.valueOf(ID + 14),
-                "亲密接触·Closer Encounters", IMAGE, PLAY_COUNT, "4",
+                "5，亲密接触·Closer Encounters", IMAGE, PLAY_COUNT, "4",
                 "http://player.bilibili.com/player.html?aid=2379517&cid=3721214&page=5"));
         videoList.add(new Video(String.valueOf(ID + 14),
-                "回归·The Return", IMAGE, PLAY_COUNT, "4",
+                "6，回归·The Return", IMAGE, PLAY_COUNT, "4",
                 "http://player.bilibili.com/player.html?aid=2379517&cid=3721214&page=6"));
 
 
