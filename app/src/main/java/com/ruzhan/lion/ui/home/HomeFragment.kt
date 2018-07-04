@@ -1,4 +1,4 @@
-package com.ruzhan.lion.home
+package com.ruzhan.lion.ui.home
 
 import android.os.Bundle
 import android.support.v4.app.Fragment

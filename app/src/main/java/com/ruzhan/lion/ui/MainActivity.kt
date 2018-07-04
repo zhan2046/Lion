@@ -1,8 +1,9 @@
-package com.ruzhan.lion
+package com.ruzhan.lion.ui
 
 import android.support.v7.app.AppCompatActivity
 import android.os.Bundle
-import com.ruzhan.lion.home.HomeFragment
+import com.ruzhan.lion.R
+import com.ruzhan.lion.ui.home.HomeFragment
 
 class MainActivity : AppCompatActivity() {
 

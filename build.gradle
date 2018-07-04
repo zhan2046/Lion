@@ -20,7 +20,6 @@ buildscript {
             'applicationId': 'com.ruzhan.lion'
     ]
 
-
     repositories {
         google()
         jcenter()
