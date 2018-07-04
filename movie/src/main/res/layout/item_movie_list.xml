@@ -52,7 +52,7 @@
         android:layout_marginEnd="@dimen/space_normal_16"
         android:layout_marginTop="@dimen/space_small_8"
         android:lineSpacingExtra="@dimen/space_small_8"
-        android:maxLines="6"
+        android:maxLines="9"
         android:ellipsize="end"
         android:textColor="@android:color/black"
         android:textSize="@dimen/text_small_14"
