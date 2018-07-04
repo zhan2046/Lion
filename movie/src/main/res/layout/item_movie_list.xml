@@ -10,17 +10,63 @@
         android:scaleType="centerCrop"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        app:layout_constraintDimensionRatio="h,16:9"
+        app:layout_constraintDimensionRatio="h,16:11"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
-        android:id="@+id/title_tv"
-        android:gravity="center_horizontal"
+        android:id="@+id/tag_tv"
+        android:background="@drawable/shape_line_bg"
+        android:layout_marginTop="@dimen/space_normal_16"
+        android:layout_marginStart="@dimen/space_normal_16"
+        android:paddingStart="@dimen/space_small_12"
+        android:paddingEnd="@dimen/space_small_12"
+        android:paddingTop="@dimen/space_small_2"
+        android:paddingBottom="@dimen/space_small_2"
+        android:gravity="center"
+        android:textSize="@dimen/text_small_14"
+        android:textColor="#ff808080"
+        app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/image_iv"
-        android:layout_margin="16dp"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/title_tv"
+        android:maxLines="1"
+        android:ellipsize="end"
+        android:textSize="@dimen/text_large_24"
+        android:textColor="@android:color/black"
+        android:layout_marginStart="@dimen/space_normal_16"
+        android:layout_marginEnd="@dimen/space_normal_16"
+        android:layout_marginTop="@dimen/space_small_8"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tag_tv"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content" />
+
+    <TextView
+        android:id="@+id/desc_tv"
+        android:layout_marginStart="@dimen/space_normal_16"
+        android:layout_marginEnd="@dimen/space_normal_16"
+        android:layout_marginTop="@dimen/space_small_8"
+        android:lineSpacingExtra="@dimen/space_small_8"
+        android:maxLines="6"
+        android:ellipsize="end"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/text_small_14"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title_tv"
         android:layout_width="match_parent"
         android:layout_height="wrap_content" />
 
+    <View
+        android:layout_marginTop="@dimen/space_normal_16"
+        android:layout_marginBottom="@dimen/space_normal_16"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/desc_tv"
+        android:background="#33AAAAAA"
+        android:layout_width="match_parent"
+        android:layout_height="@dimen/space_small_8" />
 </android.support.constraint.ConstraintLayout>

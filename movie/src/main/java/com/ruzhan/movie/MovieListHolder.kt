@@ -22,6 +22,8 @@ class MovieListHolder(itemView: View, listener: OnItemClickListener<Movie>) : Re
     fun bind(bean: Movie) {
         movie = bean
         itemView.title_tv.text = movie.title
+        itemView.tag_tv.text = movie.tag
+        itemView.desc_tv.text = movie.desc
         ImageLoader.get().load(itemView.image_iv, movie.image!!)
     }
 }
