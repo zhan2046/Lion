@@ -35,19 +35,26 @@ class HomeFragment : Fragment() {
         bottom_navigation.setOnNavigationItemSelectedListener {
             if (it.itemId == R.id.movie &&
                     bottom_navigation.selectedItemId != R.id.movie) {
-                if (movieListFragment == null) {
-                    movieListFragment = MovieListFragment.newInstance()
-                    childFragmentManager
-                            .beginTransaction()
-                            .add(R.id.container, movieListFragment, "movieListFragment")
-                            .commit()
-                }
+                initMovieListFragment()
 
             } else if (it.itemId == R.id.favourites &&
                     bottom_navigation.selectedItemId != R.id.favourites) {
                 ToastUtils.showShort("favourites")
             }
             true
+        }
+
+        // normal show MovieListFragment
+        initMovieListFragment()
+    }
+
+    fun initMovieListFragment() {
+        if (movieListFragment == null) {
+            movieListFragment = MovieListFragment.newInstance()
+            childFragmentManager
+                    .beginTransaction()
+                    .add(R.id.container, movieListFragment, "movieListFragment")
+                    .commit()
         }
     }
 }
