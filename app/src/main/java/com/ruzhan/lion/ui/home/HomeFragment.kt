@@ -5,8 +5,10 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import com.blankj.utilcode.util.ToastUtils
 import com.ruzhan.lion.R
-
+import com.ruzhan.movie.MovieListFragment
+import kotlinx.android.synthetic.main.frag_home.*
 
 
 /**
@@ -20,6 +22,8 @@ class HomeFragment : Fragment() {
         fun newInstance() = HomeFragment()
     }
 
+    private var movieListFragment: MovieListFragment? = null
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.frag_home, container, false)
@@ -27,7 +31,23 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        
-        
+
+        bottom_navigation.setOnNavigationItemSelectedListener {
+            if (it.itemId == R.id.movie &&
+                    bottom_navigation.selectedItemId != R.id.movie) {
+                if (movieListFragment == null) {
+                    movieListFragment = MovieListFragment.newInstance()
+                    childFragmentManager
+                            .beginTransaction()
+                            .add(R.id.container, movieListFragment, "movieListFragment")
+                            .commit()
+                }
+
+            } else if (it.itemId == R.id.favourites &&
+                    bottom_navigation.selectedItemId != R.id.favourites) {
+                ToastUtils.showShort("favourites")
+            }
+            true
+        }
     }
 }

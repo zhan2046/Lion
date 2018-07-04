@@ -1,1 +1,1 @@
-include ':app', ':common', ':createJson'
+include ':app', ':common', ':createJson', ':movie'
