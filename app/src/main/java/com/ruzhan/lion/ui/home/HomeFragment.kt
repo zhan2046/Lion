@@ -7,6 +7,8 @@ import android.view.View
 import android.view.ViewGroup
 import com.ruzhan.lion.R
 
+
+
 /**
  * Created by ruzhan123 on 2018/7/3.
  */
@@ -25,6 +27,7 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
+        
+        
     }
 }

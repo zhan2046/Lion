@@ -3,11 +3,11 @@
 
     <item
         android:id="@+id/movie"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/ic_video"
         android:title="@string/movie" />
 
     <item
         android:id="@+id/favourites"
-        android:icon="@mipmap/ic_launcher"
+        android:icon="@drawable/ic_like"
         android:title="@string/favourites" />
 </menu>
