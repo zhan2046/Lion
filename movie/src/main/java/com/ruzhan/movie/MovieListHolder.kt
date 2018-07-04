@@ -2,6 +2,7 @@ package com.ruzhan.movie
 
 import android.support.v7.widget.RecyclerView
 import android.view.View
+import com.ruzhan.lion.glide.ImageLoader
 import com.ruzhan.lion.listener.OnItemClickListener
 import com.ruzhan.lion.model.Movie
 import kotlinx.android.synthetic.main.item_movie_list.view.*
@@ -21,5 +22,6 @@ class MovieListHolder(itemView: View, listener: OnItemClickListener<Movie>) : Re
     fun bind(bean: Movie) {
         movie = bean
         itemView.title_tv.text = movie.title
+        ImageLoader.get().load(itemView.image_iv, movie.image!!)
     }
 }
