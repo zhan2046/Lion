@@ -8,10 +8,10 @@ import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.blankj.utilcode.util.ToastUtils
 import com.ruzhan.lion.App
 import com.ruzhan.lion.listener.OnItemClickListener
 import com.ruzhan.lion.model.Movie
+import com.ruzhan.movie.detail.MovieDetailActivity
 import kotlinx.android.synthetic.main.frag_movie_list.*
 
 /**
@@ -38,7 +38,7 @@ class MovieListFragment : Fragment() {
 
         movieListAdapter = MovieListAdapter(object : OnItemClickListener<Movie> {
             override fun onItemClick(position: Int, bean: Movie, itemView: View) {
-                ToastUtils.showShort(bean.title)
+                MovieDetailActivity.launch(activity!!, bean.id!!)
             }
         })
         recycler_view.adapter = movieListAdapter

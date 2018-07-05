@@ -4,7 +4,7 @@ buildscript {
 
     ext.versions = [
             'compileSdk'      : 27,
-            'minSdk'          : 19,
+            'minSdk'          : 21,
             'targetSdk'       : 27,
             'constraintLayout': '1.1.2',
             'supportLibrary'  : '27.1.1',
@@ -14,7 +14,7 @@ buildscript {
             'rxandroid'       : '2.0.1',
             'retrofit'        : '2.4.0',
             'utilcode'        : '1.17.2',
-            'kotlin'          : '1.2.50',
+            'kotlin'          : '1.2.51',
     ]
 
     ext.names = [

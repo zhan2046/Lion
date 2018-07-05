@@ -21,7 +21,7 @@ public class OnTheRoad {
 
     private static final String IMAGE = "http://n.sinaimg.cn/sinacn/20170817/1b58-fykcypp8287391.jpg";
 
-    private static final String DESC = "《侣行》（英语：ON THE ROAD）是中国视频网站联合张昕宇（绰号“270”）、梁红打造的一档网络自制户外真人秀节目，共制作3季。节目通过将张昕宇、梁红等人的旅行经历拍摄成视频制作而成。《侣行》第一季于2013年6月13日在正式开播，三个月即突破1亿次播放量。第二季于2013年年底开播，总播放量超过8000万。第三季于2015年6月25日在开播。2014年3月24日至31日，《侣行》剧场版登陆央视一套。2017年4月29日，2016年推出的《我们的侣行》。";
+    private static final String DESC = "《侣行》（英语：ON THE ROAD）是中国视频网站联合张昕宇（绰号“270”）、梁红打造的一档网络自制户外真人秀节目，共制作3季。节目通过将张昕宇、梁红等人的旅行经历拍摄成视频制作而成。《侣行》第一季于2013年6月13日在正式开播，三个月即突破1亿次播放量。第二季于2013年年底开播，总播放量超过8000万。第三季于2015年6月25日在开播。2014年3月24日至31日，《侣行》剧场版登陆央视一套。";
 
     public static final Movie movie = new Movie();
     public static final MovieDetail movieDetail = new MovieDetail();

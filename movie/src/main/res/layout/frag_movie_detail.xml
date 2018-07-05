@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<com.ruzhan.lion.ui.widget.ElasticDragDismissFrameLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/elastic_drag_dismiss"
+    android:transitionGroup="false"
+    app:dragDismissDistance="@dimen/drag_dismiss_distance"
+    app:dragDismissScale="0.95"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <!-- Use a separate view for the background, rather than on the root view because it is a
+     shared element. Otherwise it interferes with the window enter transition i.e. as it is
+     resized for the shared element transition, many views are considered 'off-screen' so
+     visibility transitions are not run. -->
+    <View
+        android:id="@+id/background"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/background_light"
+        android:transitionName="@string/transition_shot_background" />
+
+
+
+</com.ruzhan.lion.ui.widget.ElasticDragDismissFrameLayout>
