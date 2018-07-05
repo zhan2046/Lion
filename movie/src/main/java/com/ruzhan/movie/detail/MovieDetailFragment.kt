@@ -9,7 +9,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.ViewTreeObserver
-import com.blankj.utilcode.util.ToastUtils
 import com.ruzhan.lion.App
 import com.ruzhan.lion.glide.ImageLoader
 import com.ruzhan.lion.listener.OnItemClickListener
@@ -17,6 +16,7 @@ import com.ruzhan.lion.model.Movie
 import com.ruzhan.lion.model.Video
 import com.ruzhan.lion.ui.widget.ElasticDragDismissFrameLayout
 import com.ruzhan.movie.R
+import com.ruzhan.movie.video.WebVideoActivity
 import kotlinx.android.synthetic.main.frag_movie_detail.*
 
 /**
@@ -57,7 +57,7 @@ class MovieDetailFragment : Fragment() {
         movieDetailAdapter = MovieDetailAdapter(object : OnItemClickListener<Video> {
 
             override fun onItemClick(position: Int, bean: Video, itemView: View) {
-                ToastUtils.showShort(bean.playWebUrl)
+                WebVideoActivity.launch(activity!!, bean.playWebUrl)
             }
         })
         recycler_view.adapter = movieDetailAdapter
