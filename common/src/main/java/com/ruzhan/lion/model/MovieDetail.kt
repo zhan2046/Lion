@@ -9,21 +9,21 @@ import java.io.Serializable
 data class MovieDetail(
 
         @SerializedName("id")
-        var id: String? = null,
+        var id: String,
         @SerializedName("movieId")
-        var movieId: String? = null,
+        var movieId: String,
         @SerializedName("title")
-        var title: String? = null,
+        var title: String,
         @SerializedName("tag")
-        var tag: String? = null,
+        var tag: String,
         @SerializedName("desc")
-        var desc: String? = null,
+        var desc: String,
         @SerializedName("image")
-        var image: String? = null,
+        var image: String,
 
         @SerializedName("introduces")
-        var introduces: List<Introduce>? = null,
+        var introduces: List<Introduce>,
         @SerializedName("videos")
-        var videos: List<Video>? = null
+        var videos: List<Video>
 ) : Serializable
 

@@ -10,6 +10,10 @@
     <dimen name="space_large_32">32dp</dimen>
     <dimen name="space_large_48">48dp</dimen>
     <dimen name="space_large_56">56dp</dimen>
+    <dimen name="space_large_64">64dp</dimen>
+    <dimen name="space_large_72">72dp</dimen>
+    <dimen name="space_large_80">80dp</dimen>
+    <dimen name="space_large_88">88dp</dimen>
 
     <dimen name="text_small_12">12sp</dimen>
     <dimen name="text_small_14">14sp</dimen>

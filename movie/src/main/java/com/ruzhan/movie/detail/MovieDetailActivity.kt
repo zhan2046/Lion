@@ -46,4 +46,9 @@ class MovieDetailActivity : AppCompatActivity() {
         finishAfterTransition()
     }
 
+    override fun onNavigateUp(): Boolean {
+        finishAfterTransition()
+        return true
+    }
+
 }

@@ -5,10 +5,10 @@ package com.ruzhan.lion.model
  */
 data class Video (
 
-    var id: String? = null,
-    var title: String? = null,
-    var image: String? = null,
-    var playCount: String? = null,
-    var playNumber: String? = null,
-    var playWebUrl: String? = null
+    var id: String,
+    var title: String,
+    var image: String,
+    var playCount: String,
+    var playNumber: String,
+    var playWebUrl: String
 )

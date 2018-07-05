@@ -8,17 +8,17 @@ import com.google.gson.annotations.SerializedName
  * Created by ruzhan123 on 2018/7/4.
  */
 data class Movie(
-        @SerializedName("id")
-        var id: String? = null,
-        @SerializedName("title")
-        var title: String? = null,
-        @SerializedName("tag")
-        var tag: String? = null,
-        @SerializedName("desc")
-        var desc: String? = null,
-        @SerializedName("image")
-        var image: String? = null
 
+        @SerializedName("id")
+        var id: String,
+        @SerializedName("title")
+        var title: String,
+        @SerializedName("tag")
+        var tag: String,
+        @SerializedName("desc")
+        var desc: String,
+        @SerializedName("image")
+        var image: String
 
 ) : Parcelable {
     constructor(source: Parcel) : this(

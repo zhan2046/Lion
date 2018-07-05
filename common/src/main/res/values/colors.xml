@@ -8,4 +8,5 @@
     <color name="mid_grey">#40808080</color>
     <color name="light_grey">#fff5f5f5</color>
     <color name="scrim">#99323232</color>
+    <color name="dark_icon">#99000000</color> <!-- 60% black-->
 </resources>

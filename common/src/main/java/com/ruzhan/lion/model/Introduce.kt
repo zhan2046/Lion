@@ -8,15 +8,15 @@ import com.google.gson.annotations.SerializedName
 data class Introduce (
 
     @SerializedName("type")
-    var type: Int? = null,
+    var type: Int,
     @SerializedName("text")
-    var text: String? = null,
+    var text: String,
     @SerializedName("image")
-    var image: String? = null
+    var image: String
 ) {
     companion object {
 
-        val TEXT = 1000
-        val IMAGE = 1001
+        const val TEXT = 1000
+        const val IMAGE = 1001
     }
 }
