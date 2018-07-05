@@ -26,7 +26,7 @@ public class ShotSharedEnter extends ChangeBounds {
         int width = ((View) transitionValues.values.get(PROPNAME_PARENT)).getWidth();
         Rect bounds = (Rect) transitionValues.values.get(PROPNAME_BOUNDS);
         bounds.right = width;
-        bounds.bottom = width * 3 / 4;
+        bounds.bottom = width * 10 / 16;
         transitionValues.values.put(PROPNAME_BOUNDS, bounds);
     }
 

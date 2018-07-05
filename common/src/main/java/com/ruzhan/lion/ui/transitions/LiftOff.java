@@ -21,7 +21,7 @@ import com.ruzhan.common.R;
  */
 public class LiftOff extends Transition {
 
-    private static final String PROPNAME_ELEVATION = "plaid:liftoff:elevation";
+    private static final String PROPNAME_ELEVATION = "lion:liftoff:elevation";
 
     private static final String[] transitionProperties = {
             PROPNAME_ELEVATION

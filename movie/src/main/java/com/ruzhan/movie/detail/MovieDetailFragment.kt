@@ -56,7 +56,7 @@ class MovieDetailFragment : Fragment() {
 
         movieDetailViewModel.movieDetailLiveData.observe(this@MovieDetailFragment,
                 Observer { movieDetail ->
-                   
+
         })
 
         movieDetailViewModel.getMovieDetail(movie.id!!)
