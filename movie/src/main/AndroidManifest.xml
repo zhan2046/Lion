@@ -2,8 +2,11 @@
     package="com.ruzhan.movie">
 
     <application>
+
         <activity
             android:name=".detail.MovieDetailActivity"
+            android:theme="@style/Lion.MovieDetail"
             android:screenOrientation="portrait" />
+
     </application>
 </manifest>

@@ -16,7 +16,7 @@ class MovieListHolder(itemView: View, listener: OnItemClickListener<Movie>) : Re
     private var itemClickListener: OnItemClickListener<Movie> = listener
 
     init {
-        itemView.root_cl.setOnClickListener { itemClickListener.onItemClick(adapterPosition, movie, itemView) }
+        itemView.root_cl.setOnClickListener { itemClickListener.onItemClick(adapterPosition, movie, itemView.image_iv) }
     }
 
     fun bind(bean: Movie) {

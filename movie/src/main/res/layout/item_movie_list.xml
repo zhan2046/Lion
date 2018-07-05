@@ -10,6 +10,7 @@
         android:scaleType="centerCrop"
         android:layout_width="0dp"
         android:layout_height="0dp"
+        android:transitionName="@string/transition_shot"
         app:layout_constraintDimensionRatio="h,16:10"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"

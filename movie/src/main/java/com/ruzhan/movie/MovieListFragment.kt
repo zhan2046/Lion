@@ -3,7 +3,10 @@ package com.ruzhan.movie
 
 import android.arch.lifecycle.Observer
 import android.os.Bundle
+import android.support.v4.app.ActivityOptionsCompat
 import android.support.v4.app.Fragment
+import android.support.v4.app.SharedElementCallback
+import android.support.v4.util.Pair
 import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
@@ -36,9 +39,34 @@ class MovieListFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        val shotTransitionName = resources.getString(R.string.transition_shot)
+        val shotBackgroundTransitionName = resources.getString(R.string.transition_shot_background)
+
+        setExitSharedElementCallback(object : SharedElementCallback() {
+
+            override fun onMapSharedElements(names: MutableList<String>,
+                                             sharedElements: MutableMap<String, View>) {
+                if (sharedElements.size != names.size) {
+                    // couldn't map all shared elements
+                    val sharedShot = sharedElements[shotTransitionName]
+                    if (sharedShot != null) {
+                        // has shot so add shot background, mapped to same view
+                        sharedElements[shotBackgroundTransitionName] = sharedShot
+                    }
+                }
+            }
+        })
+
         movieListAdapter = MovieListAdapter(object : OnItemClickListener<Movie> {
             override fun onItemClick(position: Int, bean: Movie, itemView: View) {
-                MovieDetailActivity.launch(activity!!, bean.id!!)
+                val act = activity!!
+                val transitionShot = act.getString(R.string.transition_shot)
+                val transitionShotBackground = act.getString(R.string.transition_shot_background)
+
+                val options = ActivityOptionsCompat.makeSceneTransitionAnimation(act,
+                        Pair.create(itemView, transitionShot), Pair.create(itemView, transitionShotBackground))
+
+                MovieDetailActivity.launch(activity!!, bean, options)
             }
         })
         recycler_view.adapter = movieListAdapter
