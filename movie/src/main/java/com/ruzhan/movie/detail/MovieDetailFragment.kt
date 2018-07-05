@@ -1,11 +1,13 @@
 package com.ruzhan.movie.detail
 
+import android.arch.lifecycle.Observer
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.ViewTreeObserver
+import com.ruzhan.lion.App
 import com.ruzhan.lion.glide.ImageLoader
 import com.ruzhan.lion.model.Movie
 import com.ruzhan.movie.R
@@ -31,6 +33,7 @@ class MovieDetailFragment : Fragment() {
     }
 
     private lateinit var movie: Movie
+    private val movieDetailViewModel: MovieDetailViewModel = MovieDetailViewModel(App.get())
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -51,5 +54,11 @@ class MovieDetailFragment : Fragment() {
             }
         })
 
+        movieDetailViewModel.movieDetailLiveData.observe(this@MovieDetailFragment,
+                Observer { movieDetail ->
+                   
+        })
+
+        movieDetailViewModel.getMovieDetail(movie.id!!)
     }
 }

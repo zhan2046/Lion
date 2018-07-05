@@ -2,6 +2,7 @@ package com.ruzhan.movie.network;
 
 import com.ruzhan.lion.model.HttpResult;
 import com.ruzhan.lion.model.Movie;
+import com.ruzhan.lion.model.MovieDetail;
 
 import java.util.List;
 
@@ -18,4 +19,7 @@ public interface MovieApi {
 
     @GET("movie/{pageFileName}")
     Single<HttpResult<List<Movie>>> getMovieList(@Path("pageFileName") String pageFileName);
+
+    @GET("movie/detail/{detailFile}")
+    Single<HttpResult<MovieDetail>> getMovieDetail(@Path("detailFile") String detailFile);
 }

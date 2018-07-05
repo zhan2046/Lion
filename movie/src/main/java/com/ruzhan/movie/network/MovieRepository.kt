@@ -2,6 +2,7 @@ package com.ruzhan.movie.network
 
 import com.ruzhan.lion.model.HttpResult
 import com.ruzhan.lion.model.Movie
+import com.ruzhan.lion.model.MovieDetail
 
 import io.reactivex.Single
 import io.reactivex.schedulers.Schedulers
@@ -12,10 +13,6 @@ import io.reactivex.schedulers.Schedulers
 class MovieRepository {
 
     private val api: MovieApi = MovieClient.get()
-
-    fun getMovieList(pageFileName: String): Single<HttpResult<List<Movie>>> {
-        return api.getMovieList(pageFileName).subscribeOn(Schedulers.io())
-    }
 
     companion object {
 
@@ -31,5 +28,13 @@ class MovieRepository {
             }
             return this.INSTANCE!!
         }
+    }
+
+    fun getMovieList(pageFileName: String): Single<HttpResult<List<Movie>>> {
+        return api.getMovieList(pageFileName).subscribeOn(Schedulers.io())
+    }
+
+    fun getMovieDetail(detailFile: String): Single<HttpResult<MovieDetail>> {
+        return api.getMovieDetail(detailFile).subscribeOn(Schedulers.io())
     }
 }
