@@ -5,7 +5,7 @@ import android.support.v4.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.blankj.utilcode.util.ToastUtils
+import com.ruzhan.favourites.FavouritesFragment
 import com.ruzhan.lion.R
 import com.ruzhan.movie.MovieListFragment
 import kotlinx.android.synthetic.main.frag_home.*
@@ -22,7 +22,10 @@ class HomeFragment : Fragment() {
         fun newInstance() = HomeFragment()
     }
 
+    private val fragmentMap = HashMap<String, Fragment>()
+
     private var movieListFragment: MovieListFragment? = null
+    private var favouritesFragment: FavouritesFragment? = null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -33,28 +36,62 @@ class HomeFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         bottom_navigation.setOnNavigationItemSelectedListener {
-            if (it.itemId == R.id.movie &&
-                    bottom_navigation.selectedItemId != R.id.movie) {
-                initMovieListFragment()
-
-            } else if (it.itemId == R.id.favourites &&
-                    bottom_navigation.selectedItemId != R.id.favourites) {
-                ToastUtils.showShort("favourites")
+            if (bottom_navigation.selectedItemId != it.itemId) {
+                replaceFragment(it.itemId)
             }
             true
         }
 
         // normal show MovieListFragment
-        initMovieListFragment()
+        replaceFragment(R.id.movie)
     }
 
-    fun initMovieListFragment() {
-        if (movieListFragment == null) {
-            movieListFragment = MovieListFragment.newInstance()
-            childFragmentManager
-                    .beginTransaction()
-                    .add(R.id.container, movieListFragment, "movieListFragment")
-                    .commit()
+    private fun replaceFragment(tabId: Int) {
+        val fm = childFragmentManager
+        val transaction = fm.beginTransaction()
+
+        for (frag in fragmentMap.values) {
+            transaction.hide(frag)
+        }
+
+        var fragTag: String? = null
+        var frag: Fragment? = null
+
+        when(tabId) {
+            R.id.movie -> {
+                fragTag = "movieListFragment"
+                frag = fragmentMap[fragTag]
+
+                if (frag == null) {
+                    frag = MovieListFragment.newInstance()
+                    movieListFragment = frag
+                    transaction.add(R.id.container, frag, fragTag)
+
+                } else {
+                    transaction.show(frag)
+                }
+
+            }
+            R.id.favourites -> {
+                fragTag = "favouritesFragment"
+                frag = fragmentMap[fragTag]
+
+                if (frag == null) {
+                    frag = FavouritesFragment.newInstance()
+                    favouritesFragment = frag
+                    transaction.add(R.id.container, frag, fragTag)
+
+                } else {
+                    transaction.show(frag)
+                }
+            }
+        }
+        if (fragTag != null && frag != null) {
+            fragmentMap[fragTag] = frag
+        }
+
+        if (!fm.isDestroyed) {
+            transaction.commitAllowingStateLoss()
         }
     }
 }
