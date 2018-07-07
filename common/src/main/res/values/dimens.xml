@@ -24,7 +24,7 @@
     <dimen name="text_large_20">20sp</dimen>
     <dimen name="text_large_24">24sp</dimen>
 
-    <dimen name="drag_dismiss_distance">112dp</dimen>
+    <dimen name="drag_dismiss_distance">180dp</dimen>
     <dimen name="shot_collapsed_app_bar_height">168dp</dimen> <!-- 3 * ?android:actionBarSize -->
 
     <dimen name="z_app_bar">4dp</dimen>
