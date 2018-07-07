@@ -13,7 +13,7 @@
         android:lineSpacingExtra="@dimen/space_small_8"
         android:paddingEnd="@dimen/space_normal_16"
         android:paddingStart="@dimen/space_normal_16"
-        android:textColor="@android:color/black"
+        android:textColor="@color/text_primary_dark"
         android:textSize="@dimen/text_small_14" />
 
     <Space
