@@ -52,7 +52,7 @@ class MovieDetailFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         movie = arguments!!.getParcelable(MOVIE)
-        ImageLoader.get().load(shot, movie.image)
+        ImageLoader.get().loadNoCrossFade(shot, movie.image)
 
         movieDetailAdapter = MovieDetailAdapter(object : OnItemClickListener<Video> {
 

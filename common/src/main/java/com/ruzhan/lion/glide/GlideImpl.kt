@@ -23,4 +23,16 @@ class GlideImpl : IImageLoader {
                 .transition(DrawableTransitionOptions.withCrossFade())
                 .into(imageView)
     }
+
+    override fun loadNoCrossFade(imageView: ImageView, url: String) {
+        GlideApp.with(imageView.context)
+                .load(url)
+                .into(imageView)
+    }
+
+    override fun loadNoCrossFade(imageView: ImageView, resId: Int) {
+        GlideApp.with(imageView.context)
+                .load(resId)
+                .into(imageView)
+    }
 }

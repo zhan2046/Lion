@@ -65,7 +65,7 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:clipToPadding="false"
-        android:scrollbars="vertical"
+        android:scrollbars="none"
         android:overScrollMode="never"
         android:orientation="vertical"
         android:paddingBottom="@dimen/space_normal_16"

@@ -10,4 +10,8 @@ interface IImageLoader {
     fun load(imageView: ImageView, url: String)
 
     fun load(imageView: ImageView, resId: Int)
+
+    fun loadNoCrossFade(imageView: ImageView, url: String)
+
+    fun loadNoCrossFade(imageView: ImageView, resId: Int)
 }
