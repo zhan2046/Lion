@@ -23,6 +23,7 @@ import kotlinx.android.synthetic.main.frag_movie_list.*
 class MovieListFragment : Fragment() {
 
     companion object {
+        const val MOVIE_LIST_REQUEST_CODE: Int = 1000
 
         @JvmStatic
         fun newInstance() = MovieListFragment()
@@ -66,7 +67,7 @@ class MovieListFragment : Fragment() {
                 val options = ActivityOptionsCompat.makeSceneTransitionAnimation(act,
                         Pair.create(itemView, transitionShot), Pair.create(itemView, transitionShotBackground))
 
-                MovieDetailActivity.launch(activity!!, bean, options)
+                MovieDetailActivity.launch(activity!!, bean, options, MOVIE_LIST_REQUEST_CODE)
             }
         })
         recycler_view.adapter = movieListAdapter

@@ -13,6 +13,7 @@ import android.view.animation.Interpolator;
 public class AnimUtils {
 
     private static Interpolator fastOutSlowIn;
+    private static Interpolator linearOutSlowIn;
 
     private AnimUtils() {}
 
@@ -22,6 +23,14 @@ public class AnimUtils {
                     android.R.interpolator.fast_out_slow_in);
         }
         return fastOutSlowIn;
+    }
+
+    public static Interpolator getLinearOutSlowInInterpolator(Context context) {
+        if (linearOutSlowIn == null) {
+            linearOutSlowIn = AnimationUtils.loadInterpolator(context,
+                    android.R.interpolator.linear_out_slow_in);
+        }
+        return linearOutSlowIn;
     }
 
     /**

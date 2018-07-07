@@ -87,11 +87,17 @@ class MovieDetailFragment : Fragment() {
             }
         }
 
-        back.setOnClickListener { activity?.let { act -> finishAfterTransition(act) } }
+        back.setOnClickListener { activity?.let { act ->
+            closeFragmentUpdateUi()
+            finishAfterTransition(act)
+        } }
         chromeFader = object : ElasticDragDismissFrameLayout.SystemChromeFader(activity) {
 
             override fun onDragDismissed() {
-                activity?.let { finishAfterTransition(it) }
+                activity?.let {
+                    closeFragmentUpdateUi()
+                    finishAfterTransition(it)
+                }
             }
         }
 
@@ -121,5 +127,9 @@ class MovieDetailFragment : Fragment() {
     override fun onPause() {
         super.onPause()
         elastic_drag_dismiss.removeListener(chromeFader)
+    }
+
+    fun closeFragmentUpdateUi() {
+        recycler_view?.let { recycler_view.visibility = View.INVISIBLE }
     }
 }
