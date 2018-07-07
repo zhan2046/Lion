@@ -21,7 +21,7 @@ public class AncientAliens {
 
     private static final String IMAGE = "https://scdn.nflximg.net/images/1775/12151775.jpg";
 
-    private static final String DESC = "远古外星人（英语：Ancient Aliens）是一个美国电视系列，由普罗米修斯娱乐制作，于2010年4月20日在历史频道首播，至2018年已播放第13季。该节目展现了包含过去人类与外星人接触的历史文献、考古证据和传说。";
+    private static final String DESC = "远古外星人是一个美国电视系列，由普罗米修斯娱乐制作，于2010年4月20日在历史频道首播，至2018年已播放第13季。";
 
     public static final Movie movie = new Movie();
     public static final MovieDetail movieDetail = new MovieDetail();
@@ -32,27 +32,39 @@ public class AncientAliens {
     static {
         introduceList.add(new Introduce(Introduce.TEXT,
                 DESC, ""));
+
+        introduceList.add(new Introduce(Introduce.TEXT,
+                "主要讲述假设在古代有外星人探访，验证古代宇航员理论。", ""));
+
+        introduceList.add(new Introduce(Introduce.TEXT,
+                "远古洞穴壁画中奇异的生物，秘鲁的飞机跑道遗迹，和印第安文字中所描述的“神的飞行器”这些反常的考古文物只是一小部分被von Daniken引用作为远古外星宇航员早已被我们的祖先所熟知的例证。", ""));
+
         introduceList.add(new Introduce(Introduce.IMAGE, "",
                 "http://media.history.ca/uploadedimages/smart_forms/featured_items/ancientaliens_600x335_allshowstile.jpg"));
-        introduceList.add(new Introduce(Introduce.TEXT,
-                "这套节目在香港由TVB在J5播映，取名《古今天外》，2016年播放第一季、第二季，由张炳强旁白。2017年播放第三季、第四季，由招世亮旁白。2018年播放第五季，改由无线财经·资讯台播放。中国中央电视台魅力纪录栏目在2014年以《来自远古星星的你》片名播放，内容有大幅删减。", ""));
 
+        introduceList.add(new Introduce(Introduce.TEXT,
+                "根据历史文献，考古，传说，探访过去人类与外星人接触的证据。", ""));
 
         videoList.add(new Video(String.valueOf(ID + 11),
                 "1，战车，众神和太空·Chariots, Gods and Beyond", IMAGE, PLAY_COUNT, "1",
                 "http://player.bilibili.com/player.html?aid=2379517&cid=3721214&page=1"));
+
         videoList.add(new Video(String.valueOf(ID + 12),
                 "2，证据·The Evidence", IMAGE, PLAY_COUNT, "2",
                 "http://player.bilibili.com/player.html?aid=2379517&cid=3721214&page=2"));
+
         videoList.add(new Video(String.valueOf(ID + 13),
                 "3，天外来客·The Visitors", IMAGE, PLAY_COUNT, "3",
                 "http://player.bilibili.com/player.html?aid=2379517&cid=3721214&page=3"));
+
         videoList.add(new Video(String.valueOf(ID + 14),
                 "4，使命·The Mission", IMAGE, PLAY_COUNT, "4",
                 "http://player.bilibili.com/player.html?aid=2379517&cid=3721214&page=4"));
+
         videoList.add(new Video(String.valueOf(ID + 14),
                 "5，亲密接触·Closer Encounters", IMAGE, PLAY_COUNT, "4",
                 "http://player.bilibili.com/player.html?aid=2379517&cid=3721214&page=5"));
+
         videoList.add(new Video(String.valueOf(ID + 14),
                 "6，回归·The Return", IMAGE, PLAY_COUNT, "4",
                 "http://player.bilibili.com/player.html?aid=2379517&cid=3721214&page=6"));
