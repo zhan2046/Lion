@@ -19,7 +19,7 @@ public class OnTheRoad {
     private static final String TITLE = "旅游《张梁记》";
     private static final String TAG = "人物·探险·旅游";
 
-    private static final String IMAGE = "http://n.sinaimg.cn/sinacn/20170817/1b58-fykcypp8287391.jpg";
+    private static final String IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/ontheroad.jpg";
 
     private static final String DESC = "张昕宇、梁红打造的网络自制户外真人秀节目。";
 
@@ -34,7 +34,7 @@ public class OnTheRoad {
                 DESC, ""));
 
         introduceList.add(new Introduce(Introduce.IMAGE, "",
-                "http://img3.utuku.china.com/650x0/ent/20170531/b6733a95-071f-4db9-9451-f5d366691070.jpg"));
+                "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/ontheroad01.jpg"));
 
         introduceList.add(new Introduce(Introduce.TEXT,
                 "2016年5月24日，与汽车之家合作《张梁记》", ""));

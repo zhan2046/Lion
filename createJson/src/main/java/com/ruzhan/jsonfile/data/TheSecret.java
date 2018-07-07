@@ -19,7 +19,7 @@ public class TheSecret {
     private static final String TITLE = "秘密《吸引力法则》";
     private static final String TAG = "人文·历史·纪录片";
 
-    private static final String IMAGE = "https://pic.pimg.tw/zo1349/1452241283-1842264132.jpg";
+    private static final String IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/the-secret-logo.jpg";
 
     private static final String DESC = "吸引力法则是新思维运动的一种概念，认为人际关系可通过正面或负面想法，从而得到正面或负面的结果。";
 
@@ -37,7 +37,7 @@ public class TheSecret {
                 DESC, ""));
 
         introduceList.add(new Introduce(Introduce.IMAGE, "",
-                "http://pic.pimg.tw/twtwwanton/1411970324-2443960297.jpg"));
+                "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/the-secret-img01.jpg"));
 
         introduceList.add(new Introduce(Introduce.TEXT,
                 "有一种我们看不见的能量，一直引导着整个宇宙规律性的运转，正是因为它的作用地球才能够在46亿年的时间里保持着运转的状态。", ""));

@@ -20,7 +20,7 @@ public class TheLionSleepsNoMore {
     private static final String TAG = "演讲·公开课";
 
     // https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/christ-lion.jpg
-    private static final String IMAGE = "http://neilhague.com/wp-content/uploads/2016/03/Christ-Lion2-631x450.jpg";
+    private static final String IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/christ-lion.jpg";
 
     private static final String DESC = "David Vaughan Icke，英国作家、公共演说家、前足球员与体育职业解说员。";
 

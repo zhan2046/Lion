@@ -19,7 +19,7 @@ public class Human {
     private static final String TITLE = "纪录片《HUMAN》";
     private static final String TAG = "社会·纪录片";
 
-    private static final String IMAGE = "http://humanmag.ru/wp-content/uploads/2015/12/visuel-human.png";
+    private static final String IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/human-logo.png";
 
     private static final String DESC = "走访全球60个国家，让2,020位不同肤色、种族、性别的人，在镜头前诉说自己的故事。";
 
@@ -37,10 +37,10 @@ public class Human {
                 DESC, ""));
 
         introduceList.add(new Introduce(Introduce.IMAGE, "",
-                "http://www.resourcesforlife.com/wp/wp-content/uploads/2015/12/20151210th1234-documentary-film-human-960x540.jpg"));
+                "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/human-img01.png"));
 
         introduceList.add(new Introduce(Introduce.IMAGE, "",
-                "https://cdn.cronachemaceratesi.it/wp-content/uploads/2016/03/Human-Yann-Arthus-Bertrand-1-400x240.jpg"));
+                "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/human-img02.png"));
 
         introduceList.add(new Introduce(Introduce.TEXT,
                 "由乌克兰的自由战士、马里的农民，到美国的死囚，各人的故事集结成一部纪录片《HUMAN》。", ""));

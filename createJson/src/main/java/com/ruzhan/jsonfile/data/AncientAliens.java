@@ -19,7 +19,7 @@ public class AncientAliens {
     private static final String TITLE = "远古外星人系列 第一季";
     private static final String TAG = "科教·自然·神秘纪录片";
 
-    private static final String IMAGE = "https://scdn.nflximg.net/images/1775/12151775.jpg";
+    private static final String IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/ancientalien.jpg";
 
     private static final String DESC = "远古外星人是一个美国电视系列，由普罗米修斯娱乐制作，于2010年4月20日在历史频道首播，至2018年已播放第13季。";
 
@@ -40,7 +40,7 @@ public class AncientAliens {
                 "远古洞穴壁画中奇异的生物，秘鲁的飞机跑道遗迹，和印第安文字中所描述的“神的飞行器”这些反常的考古文物只是一小部分被von Daniken引用作为远古外星宇航员早已被我们的祖先所熟知的例证。", ""));
 
         introduceList.add(new Introduce(Introduce.IMAGE, "",
-                "http://media.history.ca/uploadedimages/smart_forms/featured_items/ancientaliens_600x335_allshowstile.jpg"));
+                "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/ancientalien01.jpg"));
 
         introduceList.add(new Introduce(Introduce.TEXT,
                 "根据历史文献，考古，传说，探访过去人类与外星人接触的证据。", ""));
