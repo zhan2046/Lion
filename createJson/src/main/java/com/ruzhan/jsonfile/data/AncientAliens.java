@@ -61,11 +61,11 @@ public class AncientAliens {
                 "4，使命·The Mission", IMAGE, PLAY_COUNT, "4",
                 "http://player.bilibili.com/player.html?aid=2379517&cid=3721214&page=4"));
 
-        videoList.add(new Video(String.valueOf(ID + 14),
+        videoList.add(new Video(String.valueOf(ID + 15),
                 "5，亲密接触·Closer Encounters", IMAGE, PLAY_COUNT, "4",
                 "http://player.bilibili.com/player.html?aid=2379517&cid=3721214&page=5"));
 
-        videoList.add(new Video(String.valueOf(ID + 14),
+        videoList.add(new Video(String.valueOf(ID + 16),
                 "6，回归·The Return", IMAGE, PLAY_COUNT, "4",
                 "http://player.bilibili.com/player.html?aid=2379517&cid=3721214&page=6"));
 

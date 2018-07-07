@@ -21,7 +21,7 @@ public class OnTheRoad {
 
     private static final String IMAGE = "http://n.sinaimg.cn/sinacn/20170817/1b58-fykcypp8287391.jpg";
 
-    private static final String DESC = "张昕宇（绰号“270”）、梁红打造的一档网络自制户外真人秀节目。";
+    private static final String DESC = "张昕宇、梁红打造的网络自制户外真人秀节目。";
 
     public static final Movie movie = new Movie();
     public static final MovieDetail movieDetail = new MovieDetail();
@@ -37,7 +37,7 @@ public class OnTheRoad {
                 "http://img3.utuku.china.com/650x0/ent/20170531/b6733a95-071f-4db9-9451-f5d366691070.jpg"));
 
         introduceList.add(new Introduce(Introduce.TEXT,
-                "在2016年5月24日，与汽车之家合作《张梁记》", ""));
+                "2016年5月24日，与汽车之家合作《张梁记》", ""));
 
         videoList.add(new Video(String.valueOf(ID + 11),
                 "第一集：再出发 时隔八年重回5·12地震遗址", IMAGE, PLAY_COUNT, "1",
@@ -55,31 +55,31 @@ public class OnTheRoad {
                 "第四集：深入无人区，夜宿羌塘", IMAGE, PLAY_COUNT, "4",
                 "http://player.bilibili.com/player.html?aid=5010866&cid=33442775&page=4"));
 
-        videoList.add(new Video(String.valueOf(ID + 14),
+        videoList.add(new Video(String.valueOf(ID + 15),
                 "第五集：可可西里的守护者", IMAGE, PLAY_COUNT, "4",
                 "http://player.bilibili.com/player.html?aid=5010866&cid=33442775&page=5"));
 
-        videoList.add(new Video(String.valueOf(ID + 14),
+        videoList.add(new Video(String.valueOf(ID + 16),
                 "第六集：可可西里祭英魂！", IMAGE, PLAY_COUNT, "4",
                 "http://player.bilibili.com/player.html?aid=5010866&cid=33442775&page=6"));
 
-        videoList.add(new Video(String.valueOf(ID + 14),
+        videoList.add(new Video(String.valueOf(ID + 17),
                 "第七集：无人区惊现非法闯入者", IMAGE, PLAY_COUNT, "4",
                 "http://player.bilibili.com/player.html?aid=5010866&cid=33442775&page=7"));
 
-        videoList.add(new Video(String.valueOf(ID + 14),
+        videoList.add(new Video(String.valueOf(ID + 18),
                 "第八集：梦圆罗布泊", IMAGE, PLAY_COUNT, "4",
                 "http://player.bilibili.com/player.html?aid=5010866&cid=33442775&page=8"));
 
-        videoList.add(new Video(String.valueOf(ID + 14),
+        videoList.add(new Video(String.valueOf(ID + 19),
                 "9、番外篇—出发前的准备", IMAGE, PLAY_COUNT, "4",
                 "http://player.bilibili.com/player.html?aid=5010866&cid=33442775&page=9"));
 
-        videoList.add(new Video(String.valueOf(ID + 14),
+        videoList.add(new Video(String.valueOf(ID + 20),
                 "10、番外篇二无人区越野技巧", IMAGE, PLAY_COUNT, "4",
                 "http://player.bilibili.com/player.html?aid=5010866&cid=33442775&page=10"));
 
-        videoList.add(new Video(String.valueOf(ID + 14),
+        videoList.add(new Video(String.valueOf(ID + 21),
                 "11、“路，一直在”——《张梁记》粉丝见面会", IMAGE, PLAY_COUNT, "4",
                 "http://player.bilibili.com/player.html?aid=5010866&cid=33442775&page=11"));
 
