@@ -5,6 +5,7 @@ import android.view.View
 import com.ruzhan.lion.glide.ImageLoader
 import com.ruzhan.lion.listener.OnItemClickListener
 import com.ruzhan.lion.model.Video
+import com.ruzhan.lion.util.ViewUtils
 import kotlinx.android.synthetic.main.item_movie_detail_video.view.*
 
 /**
@@ -20,7 +21,8 @@ class MovieDetailVideoHolder(itemView: View, listener: OnItemClickListener<Video
 
     fun bind(bean: Video) {
         video = bean
-        ImageLoader.get().load(itemView.image_iv, bean.image)
+        ImageLoader.get().load(itemView.image_iv, bean.image,
+                ViewUtils.getPlaceholder(itemView.context, adapterPosition))
         itemView.title_tv.text = bean.title
     }
 }

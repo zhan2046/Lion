@@ -5,6 +5,7 @@ import android.view.View
 import com.ruzhan.lion.glide.ImageLoader
 import com.ruzhan.lion.listener.OnItemClickListener
 import com.ruzhan.lion.model.Movie
+import com.ruzhan.lion.util.ViewUtils
 import kotlinx.android.synthetic.main.item_movie_list.view.*
 
 /**
@@ -24,6 +25,7 @@ class MovieListHolder(itemView: View, listener: OnItemClickListener<Movie>) : Re
         itemView.title_tv.text = movie.title
         itemView.tag_tv.text = movie.tag
         itemView.desc_tv.text = movie.desc
-        ImageLoader.get().load(itemView.image_iv, movie.image)
+        ImageLoader.get().load(itemView.image_iv, movie.image,
+                ViewUtils.getPlaceholder(itemView.context, adapterPosition))
     }
 }

@@ -15,6 +15,7 @@ import com.ruzhan.lion.listener.OnItemClickListener
 import com.ruzhan.lion.model.Movie
 import com.ruzhan.lion.model.Video
 import com.ruzhan.lion.ui.widget.ElasticDragDismissFrameLayout
+import com.ruzhan.lion.util.ViewUtils
 import com.ruzhan.movie.R
 import com.ruzhan.movie.video.WebVideoActivity
 import kotlinx.android.synthetic.main.frag_movie_detail.*
@@ -52,7 +53,8 @@ class MovieDetailFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
 
         movie = arguments!!.getParcelable(MOVIE)
-        ImageLoader.get().loadNoCrossFade(shot, movie.image)
+        ImageLoader.get().loadNoCrossFade(shot, movie.image,
+                ViewUtils.getPlaceholder(activity, 0))
 
         movieDetailAdapter = MovieDetailAdapter(object : OnItemClickListener<Video> {
 

@@ -21,9 +21,9 @@
     <color name="ripple_light">#99ffffff</color>
     <color name="ripple_dark">@color/mid_grey</color>
 
-    <array name="loading_placeholders_dark">
-        <item>#ff191919</item>
-        <item>#ff212121</item>
-        <item>#ff232323</item>
+    <array name="loading_placeholders_grey">
+        <item>#FFE0E0E0</item>
+        <item>#FFBDBDBD</item>
+        <item>#FF9E9E9E</item>
     </array>
 </resources>

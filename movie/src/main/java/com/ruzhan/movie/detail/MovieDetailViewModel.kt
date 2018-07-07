@@ -5,7 +5,7 @@ import android.arch.lifecycle.AndroidViewModel
 import android.arch.lifecycle.MutableLiveData
 import com.ruzhan.lion.model.MovieDetail
 import com.ruzhan.lion.rx.Subscriber
-import com.ruzhan.lion.util.LionUtil
+import com.ruzhan.lion.util.LionUtils
 import com.ruzhan.movie.network.MovieRepository
 import io.reactivex.android.schedulers.AndroidSchedulers
 
@@ -17,7 +17,7 @@ class MovieDetailViewModel(app: Application) : AndroidViewModel(app) {
     var movieDetailLiveData: MutableLiveData<MovieDetail> = MutableLiveData()
 
     fun getMovieDetail(movieId: String) {
-        val detailFile = movieId.plus(LionUtil.JSON_FILE)
+        val detailFile = movieId.plus(LionUtils.JSON_FILE)
         MovieRepository.get().getMovieDetail(detailFile)
                 .observeOn(AndroidSchedulers.mainThread())
                 .doOnError {}

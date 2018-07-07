@@ -18,22 +18,29 @@ import android.util.DisplayMetrics;
 import android.util.Property;
 import android.view.View;
 
+import com.ruzhan.common.R;
+
 /**
  * Created by ruzhan123 on 2018/7/5.
  */
 public class ViewUtils {
+
+    public static Drawable getPlaceholder(Context context, int position) {
+        int[] placeholderColors = context.getResources().getIntArray(R.array.loading_placeholders_grey);
+        return new ColorDrawable(placeholderColors[position % placeholderColors.length]);
+    }
 
     /**
      * Determine if the navigation bar will be on the bottom of the screen, based on logic in
      * PhoneWindowManager.
      */
     public static boolean isNavBarOnBottom(@NonNull Context context) {
-        final Resources res= context.getResources();
+        final Resources res = context.getResources();
         final Configuration cfg = context.getResources().getConfiguration();
-        final DisplayMetrics dm =res.getDisplayMetrics();
+        final DisplayMetrics dm = res.getDisplayMetrics();
         boolean canMove = (dm.widthPixels != dm.heightPixels &&
                 cfg.smallestScreenWidthDp < 600);
-        return(!canMove || dm.widthPixels < dm.heightPixels);
+        return (!canMove || dm.widthPixels < dm.heightPixels);
     }
 
     public static void setLightStatusBar(@NonNull View view) {
