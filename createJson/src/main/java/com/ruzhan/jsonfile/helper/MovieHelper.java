@@ -6,6 +6,7 @@ import com.ruzhan.jsonfile.data.AncientAliens;
 import com.ruzhan.jsonfile.data.Human;
 import com.ruzhan.jsonfile.data.OnTheRoad;
 import com.ruzhan.jsonfile.data.TheLionSleepsNoMore;
+import com.ruzhan.jsonfile.data.TheSecret;
 import com.ruzhan.jsonfile.model.HttpResult;
 import com.ruzhan.jsonfile.model.Movie;
 import com.ruzhan.jsonfile.model.MovieDetail;
@@ -83,6 +84,7 @@ public final class MovieHelper {
         List<Movie> list = new ArrayList<>();
         list.add(TheLionSleepsNoMore.movie);
         list.add(Human.movie);
+        list.add(TheSecret.movie);
         list.add(AncientAliens.movie);
         list.add(OnTheRoad.movie);
         return list;
@@ -92,6 +94,7 @@ public final class MovieHelper {
         List<MovieDetail> list = new ArrayList<>();
         list.add(TheLionSleepsNoMore.movieDetail);
         list.add(Human.movieDetail);
+        list.add(TheSecret.movieDetail);
         list.add(AncientAliens.movieDetail);
         list.add(OnTheRoad.movieDetail);
         return list;

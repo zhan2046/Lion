@@ -16,12 +16,12 @@ public class Human {
     private static final int ID = 603;
     private static final String PLAY_COUNT = "1";
 
-    private static final String TITLE = "《HUMAN》";
+    private static final String TITLE = "纪录片《HUMAN》";
     private static final String TAG = "社会·纪录片";
 
     private static final String IMAGE = "http://humanmag.ru/wp-content/uploads/2015/12/visuel-human.png";
 
-    private static final String DESC = "每个人背后都有一个足以撼动心灵的故事。法国知名的摄影师Yann Arthus-Bertrand就用了3年的时间，走访全球60个国家，让2,020位不同肤色、种族、性别的人，在镜头前诉说自己的故事。";
+    private static final String DESC = "走访全球60个国家，让2,020位不同肤色、种族、性别的人，在镜头前诉说自己的故事。";
 
     public static final Movie movie = new Movie();
     public static final MovieDetail movieDetail = new MovieDetail();
@@ -30,6 +30,9 @@ public class Human {
     private static final List<Video> videoList = new ArrayList<>();
 
     static {
+        introduceList.add(new Introduce(Introduce.TEXT,
+                "每个人背后都有一个足以撼动心灵的故事。法国知名的摄影师Yann Arthus-Bertrand就用了3年的时间。", ""));
+
         introduceList.add(new Introduce(Introduce.TEXT,
                 DESC, ""));
 

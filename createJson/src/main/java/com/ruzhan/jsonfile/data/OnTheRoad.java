@@ -16,7 +16,7 @@ public class OnTheRoad {
     private static final int ID = 503;
     private static final String PLAY_COUNT = "11";
 
-    private static final String TITLE = "《张梁记》";
+    private static final String TITLE = "旅游《张梁记》";
     private static final String TAG = "人物·探险·旅游";
 
     private static final String IMAGE = "http://n.sinaimg.cn/sinacn/20170817/1b58-fykcypp8287391.jpg";
