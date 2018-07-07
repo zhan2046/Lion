@@ -1,5 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
+
+    <dimen name="tool_bar_elevation">3dp</dimen>
+
     <dimen name="space_small_1">1dp</dimen>
     <dimen name="space_small_2">2dp</dimen>
     <dimen name="space_small_4">4dp</dimen>

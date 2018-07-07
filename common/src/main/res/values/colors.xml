@@ -1,12 +1,13 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
+    <color name="colorPrimary">#FFF5F5F5</color>
+    <color name="colorPrimaryDark">#66757575</color>
+    <color name="colorAccent">#FF1E88E5</color>
 
-    <color name="background_light">#fafafa</color> <!-- grey 50 -->
+    <color name="background_light">#FFFAFAFA</color> <!-- grey 50 -->
+    <color name="normal_grey">#FF757575</color>
     <color name="mid_grey">#40808080</color>
-    <color name="light_grey">#fff5f5f5</color>
+    <color name="light_grey">#FFF5F5F5</color>
     <color name="scrim">#99323232</color>
     <color name="dark_icon">#99000000</color> <!-- 60% black-->
 </resources>
