@@ -19,7 +19,7 @@ public class CredoMutwa {
     private static final String TITLE = "1999年 地球史上最震撼的访谈";
     private static final String TAG = "神秘纪录片";
 
-    private static final String IMAGE = "https://i2.kknews.cc/SIG=bih89g/2rq400033987687n2097.jpg";
+    private static final String IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/credo-mutwa.jpg";
 
     private static final String DESC = "来自非洲的 科瑞多·穆特瓦(Credo Mutwa)，分享古老非洲保存下来的知识。";
 
@@ -37,7 +37,7 @@ public class CredoMutwa {
                 "也许全世界需要知道这些！”. ...是时候了。", ""));
 
         introduceList.add(new Introduce(Introduce.IMAGE, "",
-                "https://i1.read01.com/SIG=3jf0sna/304772384d634a676866.jpg"));
+                "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/credo-mutwa01.jpg"));
 
         introduceList.add(new Introduce(Introduce.TEXT,
                 "他是祖鲁族(古代官方)故事的指定叙述人,同时也是历史知识的保管者，他掌握着惊世秘密，他曾面临各方威胁，为此付出巨大代价，而幕后只是人只想让他永远闭嘴。", ""));
