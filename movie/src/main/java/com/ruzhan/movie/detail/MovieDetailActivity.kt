@@ -16,13 +16,12 @@ class MovieDetailActivity : AppCompatActivity() {
     companion object {
 
         private const val MOVIE: String = "MOVIE"
-        const val MOVIE_DETAIL_RESULT_CODE = 3000
 
         @JvmStatic
-        fun launch(activity: Activity, movie: Movie, option: ActivityOptionsCompat, requestCode: Int) {
+        fun launch(activity: Activity, movie: Movie, option: ActivityOptionsCompat) {
             val intent = Intent(activity, MovieDetailActivity::class.java)
             intent.putExtra(MOVIE, movie)
-            activity.startActivityForResult(intent, requestCode, option.toBundle())
+            activity.startActivity(intent, option.toBundle())
         }
     }
 
@@ -46,10 +45,5 @@ class MovieDetailActivity : AppCompatActivity() {
     override fun onBackPressed() {
         movieDetailFragment?.closeFragmentUpdateUi()
         finishAfterTransition()
-    }
-
-    override fun finishAfterTransition() {
-        setResult(MOVIE_DETAIL_RESULT_CODE)
-        super.finishAfterTransition()
     }
 }

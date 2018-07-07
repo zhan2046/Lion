@@ -67,7 +67,7 @@ class MovieListFragment : Fragment() {
                 val options = ActivityOptionsCompat.makeSceneTransitionAnimation(act,
                         Pair.create(itemView, transitionShot), Pair.create(itemView, transitionShotBackground))
 
-                MovieDetailActivity.launch(activity!!, bean, options, MOVIE_LIST_REQUEST_CODE)
+                MovieDetailActivity.launch(activity!!, bean, options)
             }
         })
         recycler_view.adapter = movieListAdapter
