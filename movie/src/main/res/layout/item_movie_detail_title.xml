@@ -1,8 +1,8 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:orientation="vertical">
 
     <TextView
         android:id="@+id/tag_tv"
@@ -18,9 +18,7 @@
         android:paddingStart="@dimen/space_small_12"
         android:paddingTop="@dimen/space_small_2"
         android:textColor="#ff808080"
-        android:textSize="@dimen/text_small_14"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:textSize="@dimen/text_small_14" />
 
     <TextView
         android:id="@+id/title_tv"
@@ -33,13 +31,9 @@
         android:letterSpacing="0.07"
         android:maxLines="1"
         android:textColor="@android:color/black"
-        android:textSize="@dimen/text_large_24"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tag_tv" />
+        android:textSize="@dimen/text_large_24" />
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="@dimen/space_normal_16"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title_tv" />
-</android.support.constraint.ConstraintLayout>
+        android:layout_height="@dimen/space_large_32" />
+</LinearLayout>

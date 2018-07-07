@@ -33,11 +33,11 @@ public class OnTheRoad {
         introduceList.add(new Introduce(Introduce.TEXT,
                 DESC, ""));
 
-        introduceList.add(new Introduce(Introduce.TEXT,
-                "2016年5月24日，与汽车之家合作的《张梁记》", ""));
-
         introduceList.add(new Introduce(Introduce.IMAGE, "",
                 "http://img3.utuku.china.com/650x0/ent/20170531/b6733a95-071f-4db9-9451-f5d366691070.jpg"));
+
+        introduceList.add(new Introduce(Introduce.TEXT,
+                "在2016年5月24日，与汽车之家合作《张梁记》", ""));
 
         videoList.add(new Video(String.valueOf(ID + 11),
                 "第一集：再出发 时隔八年重回5·12地震遗址", IMAGE, PLAY_COUNT, "1",

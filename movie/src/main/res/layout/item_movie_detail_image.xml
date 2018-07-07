@@ -1,27 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
+<LinearLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:soulwolf="http://schemas.android.com/apk/res-auto"
+    android:orientation="vertical"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <android.support.v7.widget.AppCompatImageView
+    <net.soulwolf.widget.ratiolayout.widget.RatioImageView
         android:id="@+id/image_iv"
+        soulwolf:datumRatio="datumWidth"
+        soulwolf:heightRatio="9"
+        soulwolf:widthRatio="16"
         android:scaleType="centerCrop"
-        android:layout_width="0dp"
+        android:layout_width="match_parent"
         android:layout_height="0dp"
         android:layout_marginTop="@dimen/space_small_8"
         android:layout_marginBottom="@dimen/space_small_8"
         android:layout_marginStart="@dimen/space_normal_16"
-        android:layout_marginEnd="@dimen/space_normal_16"
-        app:layout_constraintDimensionRatio="h,16:9"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+        android:layout_marginEnd="@dimen/space_normal_16" />
 
     <Space
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/image_iv"
         android:layout_width="match_parent"
         android:layout_height="@dimen/space_normal_16" />
-</android.support.constraint.ConstraintLayout>
+</LinearLayout>
