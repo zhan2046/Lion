@@ -27,7 +27,7 @@
         android:layout_marginStart="@dimen/space_normal_16"
         android:ellipsize="end"
         android:letterSpacing="0.08"
-        android:maxLines="1"
+        android:maxLines="3"
         android:textColor="@color/text_primary_dark"
         android:layout_toEndOf="@+id/image_iv"
         android:layout_alignTop="@+id/image_iv"

@@ -76,6 +76,9 @@ public class TheLionSleepsNoMore {
         introduceList.add(new Introduce(Introduce.TEXT,
                 "近年来，艾克更是频繁的到世界各地演讲。2011年，艾克开启了他的全球巡回演讲之旅。足迹遍及欧洲、美国、澳洲、新西兰、日本、以及南非。", ""));
 
+        introduceList.add(new Introduce(Introduce.IMAGE, "",
+                "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/david-icke.jpg"));
+
         introduceList.add(new Introduce(Introduce.TEXT,
                 "目前国内出现了几部大卫艾克的带有中文字幕的演讲，包括《地球史上最震撼的访谈》、《超越世界》、《雄狮醒来》等。", ""));
 

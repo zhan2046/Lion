@@ -20,9 +20,11 @@ class MovieDetailAdapter(listener: OnItemClickListener<Video>) : RecyclerView.Ad
         const val TYPE_TITLE: Int = 1001
         const val TYPE_TEXT: Int = 1002
         const val TYPE_IMAGE: Int = 1003
-        const val TYPE_VIDEO: Int = 1004
+        const val TYPE_VIDEO_TITLE: Int = 1005
+        const val TYPE_VIDEO: Int = 1006
 
         const val HEADER: String = "HEADER"
+        const val VIDEO_TITLE: String = "VIDEO_TITLE"
     }
 
     private var dataList: ArrayList<Any> = ArrayList()
@@ -36,6 +38,7 @@ class MovieDetailAdapter(listener: OnItemClickListener<Video>) : RecyclerView.Ad
         dataList.add(HEADER)
         dataList.add(movieDetail.title)
         dataList.addAll(movieDetail.introduces)
+        dataList.add(VIDEO_TITLE)
         dataList.addAll(movieDetail.videos)
         notifyDataSetChanged()
     }
@@ -44,10 +47,10 @@ class MovieDetailAdapter(listener: OnItemClickListener<Video>) : RecyclerView.Ad
         val obj = dataList[position]
         var viewType = 0
         if (obj is String) {
-            viewType = if (HEADER == obj) {
-                TYPE_HEADER
-            } else {
-                TYPE_TITLE
+            viewType = when {
+                HEADER == obj -> TYPE_HEADER
+                VIDEO_TITLE == obj -> TYPE_VIDEO_TITLE
+                else -> TYPE_TITLE
             }
 
         } else if (obj is Introduce) {
@@ -79,6 +82,8 @@ class MovieDetailAdapter(listener: OnItemClickListener<Video>) : RecyclerView.Ad
                     .inflate(R.layout.item_movie_detail_image, parent, false))
             TYPE_VIDEO -> viewHolder = MovieDetailVideoHolder(LayoutInflater.from(parent.context)
                     .inflate(R.layout.item_movie_detail_video, parent, false), itemClickListener)
+            TYPE_VIDEO_TITLE -> viewHolder = MovieDetailVideoTitleHolder(LayoutInflater.from(parent.context)
+                    .inflate(R.layout.item_movie_detail_video_title, parent, false))
         }
         return viewHolder
     }
