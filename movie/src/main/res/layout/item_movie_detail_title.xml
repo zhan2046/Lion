@@ -1,44 +1,45 @@
 <?xml version="1.0" encoding="utf-8"?>
-<android.support.constraint.ConstraintLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.constraint.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
     <TextView
         android:id="@+id/tag_tv"
-        android:background="@drawable/shape_line_bg"
-        android:layout_marginTop="@dimen/space_normal_16"
-        android:layout_marginStart="@dimen/space_normal_16"
-        android:paddingStart="@dimen/space_small_12"
-        android:paddingEnd="@dimen/space_small_12"
-        android:paddingTop="@dimen/space_small_2"
-        android:paddingBottom="@dimen/space_small_2"
-        android:gravity="center"
-        android:textSize="@dimen/text_small_14"
-        android:textColor="#ff808080"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_marginStart="@dimen/space_normal_16"
+        android:layout_marginTop="@dimen/space_normal_16"
+        android:background="@drawable/shape_line_bg"
+        android:gravity="center"
+        android:letterSpacing="0.07"
+        android:paddingBottom="@dimen/space_small_2"
+        android:paddingEnd="@dimen/space_small_12"
+        android:paddingStart="@dimen/space_small_12"
+        android:paddingTop="@dimen/space_small_2"
+        android:textColor="#ff808080"
+        android:textSize="@dimen/text_small_14"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
 
     <TextView
         android:id="@+id/title_tv"
-        android:maxLines="1"
-        android:ellipsize="end"
-        android:textSize="@dimen/text_large_24"
-        android:textColor="@android:color/black"
-        android:layout_marginStart="@dimen/space_normal_16"
-        android:layout_marginEnd="@dimen/space_normal_16"
-        android:layout_marginTop="@dimen/space_small_8"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tag_tv"
         android:layout_width="wrap_content"
-        android:layout_height="wrap_content" />
+        android:layout_height="wrap_content"
+        android:layout_marginEnd="@dimen/space_normal_16"
+        android:layout_marginStart="@dimen/space_normal_16"
+        android:layout_marginTop="@dimen/space_small_8"
+        android:ellipsize="end"
+        android:letterSpacing="0.07"
+        android:maxLines="1"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/text_large_24"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tag_tv" />
 
     <Space
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/title_tv"
         android:layout_width="match_parent"
-        android:layout_height="@dimen/space_normal_16" />
+        android:layout_height="@dimen/space_normal_16"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/title_tv" />
 </android.support.constraint.ConstraintLayout>
