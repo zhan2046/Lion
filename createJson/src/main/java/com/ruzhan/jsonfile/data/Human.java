@@ -37,10 +37,10 @@ public class Human {
                 DESC, ""));
 
         introduceList.add(new Introduce(Introduce.IMAGE, "",
-                "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/human-img01.png"));
+                "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/human-img01.jpg"));
 
         introduceList.add(new Introduce(Introduce.IMAGE, "",
-                "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/human-img02.png"));
+                "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/human-img02.jpg"));
 
         introduceList.add(new Introduce(Introduce.TEXT,
                 "由乌克兰的自由战士、马里的农民，到美国的死囚，各人的故事集结成一部纪录片《HUMAN》。", ""));
