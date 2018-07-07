@@ -50,16 +50,16 @@ public class TheLionSleepsNoMore {
                 "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/david-icke-img01.jpg"));
 
         introduceList.add(new Introduce(Introduce.IMAGE, "",
-                "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/david-icke-imag02.jpg"));
+                "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/david-icke-img02.jpg"));
 
         introduceList.add(new Introduce(Introduce.TEXT,
                 "在作品中，他把“新世纪理论”和现代社会极权化现象结合，提出一种世界性的观点。他的理论核心是一个由“爬虫类人”（包括乔治·W·布什、伊丽莎白二世、克里斯·克里斯托佛森及）组成的称为“巴比伦兄弟会”的秘密团体控制着人类，而且很多显赫的名流都是爬虫类人。", ""));
 
         introduceList.add(new Introduce(Introduce.IMAGE, "",
-                "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/david-icke-img03.jpg"));
+                "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/david-icke-img3.jpg"));
 
         introduceList.add(new Introduce(Introduce.IMAGE, "",
-                "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/david-icke-imag04.jpg"));
+                "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/david-icke-img04.jpg"));
 
         introduceList.add(new Introduce(Introduce.TEXT,
                 "他还宣称月球是一个人工建筑——“大概是个中空的行星”，在那里爬虫博克斯卡·威利类人给人类创造了一个“人工的自我意识和世界”，人类却误以为是真实。", ""));
@@ -68,7 +68,7 @@ public class TheLionSleepsNoMore {
                 "麦克·巴昆（Michael Barkun）把艾克的观点描述为“新世纪阴谋主义”，认为他是最有影响力的阴谋论流派。理查德·卡恩和泰森·刘易斯认为，爬虫类人的假设可能仅仅是斯威夫特式的讽刺，是一种让普通民众质疑他们身边所见事物的叙事方式。", ""));
 
         introduceList.add(new Introduce(Introduce.IMAGE, "",
-                "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/david-icke-imag05.jpg"));
+                "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/david-icke-img05.jpg"));
 
         introduceList.add(new Introduce(Introduce.TEXT,
                 "“灵魂是用他的思想来染色。思考那些符合你的原则的事情，承担起生活赋予你的责任。你的品格取决于你的选择。日复一日，你选择什么、你思考什么、你做过什么你就会成为什么样的人。你的正直即是你的命运--那正是指引你的光芒。--大卫·艾克”", ""));
