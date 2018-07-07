@@ -13,6 +13,7 @@ class GlideImpl : IImageLoader {
     override fun load(imageView: ImageView, url: String) {
         GlideApp.with(imageView.context)
                 .load(url)
+                .centerCrop()
                 .transition(DrawableTransitionOptions.withCrossFade())
                 .into(imageView)
     }
@@ -20,6 +21,7 @@ class GlideImpl : IImageLoader {
     override fun load(imageView: ImageView, resId: Int) {
         GlideApp.with(imageView.context)
                 .load(resId)
+                .centerCrop()
                 .transition(DrawableTransitionOptions.withCrossFade())
                 .into(imageView)
     }
@@ -27,12 +29,14 @@ class GlideImpl : IImageLoader {
     override fun loadNoCrossFade(imageView: ImageView, url: String) {
         GlideApp.with(imageView.context)
                 .load(url)
+                .centerCrop()
                 .into(imageView)
     }
 
     override fun loadNoCrossFade(imageView: ImageView, resId: Int) {
         GlideApp.with(imageView.context)
                 .load(resId)
+                .centerCrop()
                 .into(imageView)
     }
 }

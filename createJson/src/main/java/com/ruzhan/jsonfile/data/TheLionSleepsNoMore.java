@@ -56,7 +56,7 @@ public class TheLionSleepsNoMore {
                 "在作品中，他把“新世纪理论”和现代社会极权化现象结合，提出一种世界性的观点。他的理论核心是一个由“爬虫类人”（包括乔治·W·布什、伊丽莎白二世、克里斯·克里斯托佛森及）组成的称为“巴比伦兄弟会”的秘密团体控制着人类，而且很多显赫的名流都是爬虫类人。", ""));
 
         introduceList.add(new Introduce(Introduce.IMAGE, "",
-                "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/david-icke-img3.jpg"));
+                "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/david-icke-img03.jpg"));
 
         introduceList.add(new Introduce(Introduce.IMAGE, "",
                 "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/david-icke-img04.jpg"));

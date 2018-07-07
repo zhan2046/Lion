@@ -1,25 +1,29 @@
 <?xml version="1.0" encoding="utf-8"?>
-<LinearLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<android.support.v7.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:card_view="http://schemas.android.com/apk/res-auto"
     xmlns:soulwolf="http://schemas.android.com/apk/res-auto"
-    android:orientation="vertical"
+    android:id="@+id/root_cv"
+    android:clickable="true"
     android:layout_width="match_parent"
-    android:layout_height="wrap_content">
+    android:layout_height="wrap_content"
+    android:layout_margin="8dp"
+    android:background="@color/light_grey"
+    android:foreground="?attr/selectableItemBackground"
+    android:stateListAnimator="@drawable/lift_on_touch"
+    app:cardPreventCornerOverlap="false"
+    app:cardUseCompatPadding="true"
+    card_view:cardBackgroundColor="@color/light_grey"
+    card_view:cardCornerRadius="@dimen/space_small_2"
+    card_view:cardElevation="@dimen/space_small_8"
+    android:focusable="true">
 
     <net.soulwolf.widget.ratiolayout.widget.RatioImageView
         android:id="@+id/image_iv"
-        soulwolf:datumRatio="datumWidth"
-        soulwolf:heightRatio="9"
-        soulwolf:widthRatio="16"
-        android:scaleType="centerCrop"
         android:layout_width="match_parent"
         android:layout_height="0dp"
-        android:layout_marginTop="@dimen/space_small_8"
-        android:layout_marginBottom="@dimen/space_small_8"
-        android:layout_marginStart="@dimen/space_normal_16"
-        android:layout_marginEnd="@dimen/space_normal_16" />
-
-    <Space
-        android:layout_width="match_parent"
-        android:layout_height="@dimen/space_normal_16" />
-</LinearLayout>
+        android:scaleType="centerCrop"
+        soulwolf:datumRatio="datumWidth"
+        soulwolf:heightRatio="9"
+        soulwolf:widthRatio="16" />
+</android.support.v7.widget.CardView>
