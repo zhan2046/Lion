@@ -22,7 +22,7 @@ public class TheLionSleepsNoMore {
     // https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/christ-lion.jpg
     private static final String IMAGE = "http://neilhague.com/wp-content/uploads/2016/03/Christ-Lion2-631x450.jpg";
 
-    private static final String DESC = "大卫·沃恩·艾克（英语：David Vaughan Icke，1952年4月29日-），英国作家、公共演说家、前足球员与体育职业解说员。他提出一种关于全球政治的阴谋论，并将它详细地写了出来。";
+    private static final String DESC = "大卫·沃恩·艾克（英语：David Vaughan Icke，1952年4月29日-），英国作家、公共演说家、前足球员与体育职业解说员。";
 
     public static final Movie movie = new Movie();
     public static final MovieDetail movieDetail = new MovieDetail();

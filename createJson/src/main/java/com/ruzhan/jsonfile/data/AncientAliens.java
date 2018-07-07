@@ -21,7 +21,7 @@ public class AncientAliens {
 
     private static final String IMAGE = "https://scdn.nflximg.net/images/1775/12151775.jpg";
 
-    private static final String DESC = "远古外星人（英语：Ancient Aliens）是一个美国电视系列，由普罗米修斯娱乐制作，于2010年4月20日在历史频道首播，至2018年已播放第13季。该节目基于古代太空人假说，展现了包含过去人类与外星人接触的历史文献、考古证据和传说。此节目被批评为宣扬伪科学和野史。";
+    private static final String DESC = "远古外星人（英语：Ancient Aliens）是一个美国电视系列，由普罗米修斯娱乐制作，于2010年4月20日在历史频道首播，至2018年已播放第13季。该节目展现了包含过去人类与外星人接触的历史文献、考古证据和传说。";
 
     public static final Movie movie = new Movie();
     public static final MovieDetail movieDetail = new MovieDetail();

@@ -21,7 +21,7 @@ public class OnTheRoad {
 
     private static final String IMAGE = "http://n.sinaimg.cn/sinacn/20170817/1b58-fykcypp8287391.jpg";
 
-    private static final String DESC = "《侣行》（英语：ON THE ROAD）是中国视频网站联合张昕宇（绰号“270”）、梁红打造的一档网络自制户外真人秀节目，共制作3季。节目通过将张昕宇、梁红等人的旅行经历拍摄成视频制作而成。《侣行》第一季于2013年6月13日在正式开播，三个月即突破1亿次播放量。第二季于2013年年底开播，总播放量超过8000万。第三季于2015年6月25日在开播。2014年3月24日至31日，《侣行》剧场版登陆央视一套。";
+    private static final String DESC = "张昕宇（绰号“270”）、梁红打造的一档网络自制户外真人秀节目，共制作3季。节目通过将张昕宇、梁红等人的旅行经历拍摄成视频制作而成。";
 
     public static final Movie movie = new Movie();
     public static final MovieDetail movieDetail = new MovieDetail();
@@ -35,7 +35,7 @@ public class OnTheRoad {
         introduceList.add(new Introduce(Introduce.IMAGE, "",
                 "http://img3.utuku.china.com/650x0/ent/20170531/b6733a95-071f-4db9-9451-f5d366691070.jpg"));
         introduceList.add(new Introduce(Introduce.TEXT,
-                "2016年5月24日，与汽车之家合作的《张梁记》在汽车之家“优创+”平台独家开播。2016年11月4日，张昕宇、梁红在“腾讯视频V视界大会”上宣布将与环宇传媒合作推出真人秀《我们的侣行》第一季，张昕宇、梁红将自驾飞机，跨越5大洲、3大洋、23国、航程8万公里，实现中国人首次五大洲环球飞行、中国飞机首次飞越南极点。2017年8月18日，全球首档卫星直播户外探索真人秀《侣行·卫星直播探世界》携手熊猫直播开播。", ""));
+                "2016年5月24日，与汽车之家合作的《张梁记》在汽车之家“优创+”平台独家开播。", ""));
 
         videoList.add(new Video(String.valueOf(ID + 11),
                 "第一集：再出发 时隔八年重回5·12地震遗址", IMAGE, PLAY_COUNT, "1",
