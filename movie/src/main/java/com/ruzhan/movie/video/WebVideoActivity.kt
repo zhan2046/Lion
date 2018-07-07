@@ -49,4 +49,19 @@ class WebVideoActivity : AppCompatActivity() {
         val url = intent.getStringExtra(VIDEO_URL)
         web_view.loadUrl(url)
     }
+
+    override fun onResume() {
+        web_view.onResume()
+        super.onResume()
+    }
+
+    override fun onPause() {
+        web_view.onPause()
+        super.onPause()
+    }
+
+    override fun onDestroy() {
+        web_view.destroy()
+        super.onDestroy()
+    }
 }
