@@ -5,12 +5,16 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
+import android.view.View
 import android.view.Window
 import android.view.WindowManager
 import android.webkit.WebChromeClient
+import android.webkit.WebView
 import android.webkit.WebViewClient
 import com.ruzhan.movie.R
 import kotlinx.android.synthetic.main.activity_web_video.*
+
+
 
 /**
  * Created by ruzhan123 on 2018/7/5.
@@ -20,6 +24,7 @@ class WebVideoActivity : AppCompatActivity() {
     companion object {
 
         private const val VIDEO_URL: String = "URL"
+        private const val MAX_PROGRESS = 80
 
         @JvmStatic
         fun launch(activity: Activity, url: String) {
@@ -43,7 +48,16 @@ class WebVideoActivity : AppCompatActivity() {
         webSettings.javaScriptEnabled = true
         webSettings.domStorageEnabled = true
 
-        web_view.webChromeClient = WebChromeClient()
+        web_view.webChromeClient = object : WebChromeClient() {
+            override fun onProgressChanged(view: WebView, newProgress: Int) {
+                if (load_progress.visibility != View.VISIBLE && newProgress < MAX_PROGRESS) {
+                    load_progress.visibility = View.VISIBLE
+
+                } else if (newProgress > MAX_PROGRESS) {
+                    load_progress.visibility = View.INVISIBLE
+                }
+            }
+        }
         web_view.webViewClient = WebViewClient()
 
         val url = intent.getStringExtra(VIDEO_URL)
