@@ -9,6 +9,7 @@ data class Video (
     var title: String,
     var image: String,
     var playCount: String,
-    var playNumber: String,
+    var playNumber: Int,
+    var playNumberDesc: String,
     var playWebUrl: String
 )

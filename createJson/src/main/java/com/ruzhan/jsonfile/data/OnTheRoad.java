@@ -40,47 +40,47 @@ public class OnTheRoad {
                 "2016年5月24日，与汽车之家合作《张梁记》", ""));
 
         videoList.add(new Video(String.valueOf(ID + 11),
-                "第一集：再出发 时隔八年重回5·12地震遗址", IMAGE, PLAY_COUNT, "1",
+                "1，再出发 时隔八年重回5·12地震遗址", IMAGE, PLAY_COUNT, 1, "第一集",
                 "http://player.bilibili.com/player.html?aid=5010866&cid=33442775&page=1"));
 
         videoList.add(new Video(String.valueOf(ID + 12),
-                "第二集：西部慢调之初涉高原", IMAGE, PLAY_COUNT, "2",
+                "2，西部慢调之初涉高原", IMAGE, PLAY_COUNT, 2, "第二集",
                 "http://player.bilibili.com/player.html?aid=5010866&cid=33442775&page=2"));
 
         videoList.add(new Video(String.valueOf(ID + 13),
-                "第三集：海拔5231米胜利会师", IMAGE, PLAY_COUNT, "3",
+                "3，海拔5231米胜利会师", IMAGE, PLAY_COUNT, 3, "第三集",
                 "http://player.bilibili.com/player.html?aid=5010866&cid=33442775&page=3"));
 
         videoList.add(new Video(String.valueOf(ID + 14),
-                "第四集：深入无人区，夜宿羌塘", IMAGE, PLAY_COUNT, "4",
+                "4，深入无人区，夜宿羌塘", IMAGE, PLAY_COUNT, 4, "第四集",
                 "http://player.bilibili.com/player.html?aid=5010866&cid=33442775&page=4"));
 
         videoList.add(new Video(String.valueOf(ID + 15),
-                "第五集：可可西里的守护者", IMAGE, PLAY_COUNT, "4",
+                "5，可可西里的守护者", IMAGE, PLAY_COUNT, 5, "第五集",
                 "http://player.bilibili.com/player.html?aid=5010866&cid=33442775&page=5"));
 
         videoList.add(new Video(String.valueOf(ID + 16),
-                "第六集：可可西里祭英魂！", IMAGE, PLAY_COUNT, "4",
+                "6，可可西里祭英魂！", IMAGE, PLAY_COUNT, 6, "第六集",
                 "http://player.bilibili.com/player.html?aid=5010866&cid=33442775&page=6"));
 
         videoList.add(new Video(String.valueOf(ID + 17),
-                "第七集：无人区惊现非法闯入者", IMAGE, PLAY_COUNT, "4",
+                "7，无人区惊现非法闯入者", IMAGE, PLAY_COUNT, 7, "第七集",
                 "http://player.bilibili.com/player.html?aid=5010866&cid=33442775&page=7"));
 
         videoList.add(new Video(String.valueOf(ID + 18),
-                "第八集：梦圆罗布泊", IMAGE, PLAY_COUNT, "4",
+                "8，梦圆罗布泊", IMAGE, PLAY_COUNT, 8, "第八集",
                 "http://player.bilibili.com/player.html?aid=5010866&cid=33442775&page=8"));
 
         videoList.add(new Video(String.valueOf(ID + 19),
-                "9、番外篇—出发前的准备", IMAGE, PLAY_COUNT, "4",
+                "9、番外篇—出发前的准备", IMAGE, PLAY_COUNT, 9, "第九集",
                 "http://player.bilibili.com/player.html?aid=5010866&cid=33442775&page=9"));
 
         videoList.add(new Video(String.valueOf(ID + 20),
-                "10、番外篇二无人区越野技巧", IMAGE, PLAY_COUNT, "4",
+                "10、番外篇二无人区越野技巧", IMAGE, PLAY_COUNT, 10, "第十集",
                 "http://player.bilibili.com/player.html?aid=5010866&cid=33442775&page=10"));
 
         videoList.add(new Video(String.valueOf(ID + 21),
-                "11、“路，一直在”——《张梁记》粉丝见面会", IMAGE, PLAY_COUNT, "4",
+                "11、“路，一直在”——《张梁记》粉丝见面会", IMAGE, PLAY_COUNT, 11, "第十一集",
                 "http://player.bilibili.com/player.html?aid=5010866&cid=33442775&page=11"));
 
         movie.id = String.valueOf(ID);

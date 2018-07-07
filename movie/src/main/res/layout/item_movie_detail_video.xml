@@ -8,36 +8,59 @@
     android:focusable="true"
     android:foreground="?attr/selectableItemBackground">
 
-    <android.support.v7.widget.AppCompatImageView
-        android:id="@+id/image_iv"
+    <FrameLayout
+        android:id="@+id/image_fl"
         android:layout_width="@dimen/space_large_96"
         android:layout_height="@dimen/space_large_60"
+        android:layout_centerVertical="true"
         android:layout_marginBottom="@dimen/space_small_8"
         android:layout_marginEnd="@dimen/space_normal_16"
         android:layout_marginStart="@dimen/space_normal_16"
-        android:layout_marginTop="@dimen/space_small_8"
-        android:layout_centerVertical="true"
-        android:scaleType="centerCrop" />
+        android:layout_marginTop="@dimen/space_small_8">
+
+        <android.support.v7.widget.AppCompatImageView
+            android:id="@+id/image_iv"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:scaleType="centerCrop" />
+
+        <TextView
+            android:id="@+id/play_count_tv"
+            android:paddingTop="@dimen/space_small_2"
+            android:paddingBottom="@dimen/space_small_2"
+            android:paddingStart="@dimen/space_small_4"
+            android:paddingEnd="@dimen/space_small_4"
+            android:background="@drawable/shape_blue_radius_bg"
+            android:layout_marginStart="@dimen/space_small_8"
+            android:layout_marginBottom="@dimen/space_small_8"
+            android:layout_gravity="bottom"
+            android:textSize="@dimen/text_small_12"
+            android:textColor="@color/light_grey"
+            android:maxLines="1"
+            android:ellipsize="end"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content" />
+    </FrameLayout>
 
     <TextView
         android:id="@+id/title_tv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/image_fl"
         android:layout_marginEnd="@dimen/space_normal_16"
         android:layout_marginStart="@dimen/space_normal_16"
+        android:layout_toEndOf="@+id/image_fl"
         android:ellipsize="end"
         android:letterSpacing="0.08"
         android:maxLines="3"
         android:textColor="@color/text_primary_dark"
-        android:layout_toEndOf="@+id/image_iv"
-        android:layout_alignTop="@+id/image_iv"
         android:textSize="@dimen/text_small_14" />
 
     <View
-        android:layout_alignParentBottom="true"
-        android:layout_marginStart="@dimen/space_normal_16"
-        android:layout_marginEnd="@dimen/space_normal_16"
-        android:background="@color/mid_grey"
         android:layout_width="match_parent"
-        android:layout_height="0.5dp"/>
+        android:layout_height="0.5dp"
+        android:layout_alignParentBottom="true"
+        android:layout_marginEnd="@dimen/space_normal_16"
+        android:layout_marginStart="@dimen/space_normal_16"
+        android:background="@color/mid_grey" />
 </RelativeLayout>

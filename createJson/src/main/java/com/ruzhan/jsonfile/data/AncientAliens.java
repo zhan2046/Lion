@@ -46,27 +46,27 @@ public class AncientAliens {
                 "根据历史文献，考古，传说，探访过去人类与外星人接触的证据。", ""));
 
         videoList.add(new Video(String.valueOf(ID + 11),
-                "1，战车，众神和太空·Chariots, Gods and Beyond", IMAGE, PLAY_COUNT, "1",
+                "1，战车，众神和太空·Chariots, Gods and Beyond", IMAGE, PLAY_COUNT, 1, "第一集",
                 "http://player.bilibili.com/player.html?aid=2379517&cid=3721214&page=1"));
 
         videoList.add(new Video(String.valueOf(ID + 12),
-                "2，证据·The Evidence", IMAGE, PLAY_COUNT, "2",
+                "2，证据·The Evidence", IMAGE, PLAY_COUNT, 2, "第二集",
                 "http://player.bilibili.com/player.html?aid=2379517&cid=3721214&page=2"));
 
         videoList.add(new Video(String.valueOf(ID + 13),
-                "3，天外来客·The Visitors", IMAGE, PLAY_COUNT, "3",
+                "3，天外来客·The Visitors", IMAGE, PLAY_COUNT, 3, "第三集",
                 "http://player.bilibili.com/player.html?aid=2379517&cid=3721214&page=3"));
 
         videoList.add(new Video(String.valueOf(ID + 14),
-                "4，使命·The Mission", IMAGE, PLAY_COUNT, "4",
+                "4，使命·The Mission", IMAGE, PLAY_COUNT, 4, "第四集",
                 "http://player.bilibili.com/player.html?aid=2379517&cid=3721214&page=4"));
 
         videoList.add(new Video(String.valueOf(ID + 15),
-                "5，亲密接触·Closer Encounters", IMAGE, PLAY_COUNT, "4",
+                "5，亲密接触·Closer Encounters", IMAGE, PLAY_COUNT, 5, "第五集",
                 "http://player.bilibili.com/player.html?aid=2379517&cid=3721214&page=5"));
 
         videoList.add(new Video(String.valueOf(ID + 16),
-                "6，回归·The Return", IMAGE, PLAY_COUNT, "4",
+                "6，回归·The Return", IMAGE, PLAY_COUNT, 6, "第六集",
                 "http://player.bilibili.com/player.html?aid=2379517&cid=3721214&page=6"));
 
 

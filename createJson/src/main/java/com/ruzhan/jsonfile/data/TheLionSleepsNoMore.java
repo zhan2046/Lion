@@ -83,19 +83,19 @@ public class TheLionSleepsNoMore {
                 "目前国内出现了几部大卫艾克的带有中文字幕的演讲，包括《地球史上最震撼的访谈》、《超越世界》、《雄狮醒来》等。", ""));
 
         videoList.add(new Video(String.valueOf(ID + 11),
-                "1，实相的本质", IMAGE, PLAY_COUNT, "1",
+                "1，实相的本质", IMAGE, PLAY_COUNT, 1, "第一集",
                 "http://player.bilibili.com/player.html?aid=5039798&cid=8186325&page=1"));
 
         videoList.add(new Video(String.valueOf(ID + 12),
-                "2，月球控制", IMAGE, PLAY_COUNT, "2",
+                "2，月球控制", IMAGE, PLAY_COUNT, 2, "第二集",
                 "http://player.bilibili.com/player.html?aid=5039798&cid=8186325&page=2"));
 
         videoList.add(new Video(String.valueOf(ID + 13),
-                "3，世界议程", IMAGE, PLAY_COUNT, "3",
+                "3，世界议程", IMAGE, PLAY_COUNT, 3, "第三集",
                 "http://player.bilibili.com/player.html?aid=5039798&cid=8186325&page=3"));
 
         videoList.add(new Video(String.valueOf(ID + 14),
-                "4，真相的共鸣", IMAGE, PLAY_COUNT, "4",
+                "4，真相的共鸣", IMAGE, PLAY_COUNT, 4, "第四集",
                 "http://player.bilibili.com/player.html?aid=5039798&cid=8186325&page=4"));
 
         movie.id = String.valueOf(ID);
