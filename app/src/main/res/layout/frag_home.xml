@@ -1,6 +1,5 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout
-    xmlns:android="http://schemas.android.com/apk/res/android"
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
@@ -10,36 +9,38 @@
         android:id="@+id/bottom_navigation"
         android:layout_width="match_parent"
         android:layout_height="?android:actionBarSize"
+        android:layout_alignParentBottom="true"
         android:background="@color/light_grey"
         app:itemIconTint="@color/selector_bottom_item_tint"
         app:itemTextColor="@color/selector_bottom_item_tint"
-        android:layout_alignParentBottom="true"
-        app:menu="@menu/home_navigation"/>
+        app:menu="@menu/home_navigation" />
 
     <android.support.design.widget.CoordinatorLayout
-        android:layout_above="@+id/bottom_navigation"
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:layout_above="@+id/bottom_navigation">
 
         <android.support.design.widget.AppBarLayout
             android:id="@+id/appbar"
-            android:minHeight="?android:actionBarSize"
             android:layout_width="match_parent"
-            android:layout_height="wrap_content">
+            android:layout_height="wrap_content"
+            android:minHeight="?android:actionBarSize">
 
             <android.support.v7.widget.Toolbar
                 android:id="@+id/tool_bar"
                 android:layout_width="match_parent"
-                app:layout_scrollFlags="scroll|enterAlways"
                 android:layout_height="?android:actionBarSize"
                 android:background="@color/light_grey"
-                android:elevation="@dimen/tool_bar_elevation" />
+                android:outlineProvider="none"
+                android:title="@string/app_name"
+                app:layout_scrollFlags="scroll|enterAlways"
+                app:titleTextColor="@color/dark_icon" />
         </android.support.design.widget.AppBarLayout>
 
         <FrameLayout
             android:id="@+id/container"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior"
             android:layout_width="match_parent"
-            android:layout_height="match_parent" />
+            android:layout_height="match_parent"
+            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
     </android.support.design.widget.CoordinatorLayout>
 </RelativeLayout>

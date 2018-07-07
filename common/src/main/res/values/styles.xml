@@ -12,5 +12,4 @@
         <item name="android:windowAllowReturnTransitionOverlap">true</item>
         <item name="android:windowSharedElementsUseOverlay">false</item>
     </style>
-
 </resources>
