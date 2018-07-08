@@ -12,6 +12,7 @@ import com.ruzhan.jsonfile.data.TheLieWeLive;
 import com.ruzhan.jsonfile.data.TheLionSleepsNoMore;
 import com.ruzhan.jsonfile.data.TheOrionConspiracy;
 import com.ruzhan.jsonfile.data.TheSecret;
+import com.ruzhan.jsonfile.data.WeGotNext;
 import com.ruzhan.jsonfile.model.HttpResult;
 import com.ruzhan.jsonfile.model.Movie;
 import com.ruzhan.jsonfile.model.MovieDetail;
@@ -96,6 +97,7 @@ public final class MovieHelper {
         list.add(KeJi.movie);
         list.add(TheLieWeLive.movie);
         list.add(PunPun.movie);
+        list.add(WeGotNext.movie);
         list.add(OnTheRoad.movie);
         return list;
     }
@@ -111,6 +113,7 @@ public final class MovieHelper {
         list.add(KeJi.movieDetail);
         list.add(TheLieWeLive.movieDetail);
         list.add(PunPun.movieDetail);
+        list.add(WeGotNext.movieDetail);
         list.add(OnTheRoad.movieDetail);
         return list;
     }

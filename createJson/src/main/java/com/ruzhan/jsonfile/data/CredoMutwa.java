@@ -17,7 +17,7 @@ public class CredoMutwa {
     private static final String PLAY_COUNT = "7";
 
     private static final String TITLE = "1999年 地球史上最震撼的访谈";
-    private static final String TAG = "神秘纪录片";
+    private static final String TAG = "社会·神秘纪录片";
 
     private static final String IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/credo-mutwa01.jpg";
 

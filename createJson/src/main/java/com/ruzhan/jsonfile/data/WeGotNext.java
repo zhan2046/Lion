@@ -11,17 +11,17 @@ import java.util.List;
 /**
  * Created by ruzhan123 on 2018/7/3.
  */
-public class TheLieWeLive {
+public class WeGotNext {
 
-    private static final int ID = 1103;
+    private static final int ID = 1303;
     private static final String PLAY_COUNT = "1";
 
-    private static final String TITLE = "我们身处的谎言世界";
-    private static final String TAG = "社会·励志片";
+    private static final String TITLE = "We Got Next 户外篮球纪录片";
+    private static final String TAG = "体育·篮球·纪录片";
 
-    private static final String IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/lie-we-live.jpg";
+    private static final String IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/we-got-next.jpg";
 
-    private static final String DESC = "YouTube的2015年思想颠覆励志片，预设共28种语言，点击率达到八百多万次数。";
+    private static final String DESC = "《体育画报》五人组奔赴美国20天，只为探索一个美国街头篮球的真相。";
 
     public static final Movie movie = new Movie();
     public static final MovieDetail movieDetail = new MovieDetail();
@@ -34,15 +34,14 @@ public class TheLieWeLive {
                 DESC, ""));
 
         introduceList.add(new Introduce(Introduce.IMAGE, "",
-                "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/lie-we-live01.jpg"));
+                "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/we-got-next01.jpg"));
 
         introduceList.add(new Introduce(Introduce.TEXT,
-                "该片重点地完整引述了一系列社会问题丶环境保护丶大自然、全球化和阴谋论，以及未来展望对人类的觉醒作为剧终。", ""));
+                "接下来的36分钟，让我们一起踏上美国最传奇的球场，与传奇对话。愿36分钟后，当你重新投出手中的篮球，感觉从此不同。", ""));
 
         videoList.add(new Video(String.valueOf(ID + 11),
-                "我们身处的谎言世界", IMAGE, PLAY_COUNT, 1, "电影",
-                "http://player.bilibili.com/player.html?aid=4472396&cid=7247511&page=1"));
-
+                "We Got Next 户外篮球纪录片", IMAGE, PLAY_COUNT, 1, "电影",
+                "http://player.bilibili.com/player.html?aid=26016313&cid=44583561&page=1"));
 
         movie.id = String.valueOf(ID);
         movie.title = TITLE;
