@@ -19,9 +19,9 @@ public class KeJi {
     private static final String TITLE = "柯基族人大哥给这个世界的警告";
     private static final String TAG = "科教·自然·纪录片";
 
-    private static final String IMAGE = "https://i2.kknews.cc/SIG=rf93pt/10220007op69s51n7os3.jpg";
+    private static final String IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/keji.jpg";
 
-    private static final String DESC = "哥伦比亚柯基族人的纪录片，非常珍贵，它讲述惟一一个还保留着前哥伦布时代灵性传统的印第安人部落。";
+    private static final String DESC = "哥伦比亚柯基族人的纪录片，非常珍贵，它讲述惟一还保留着前哥伦布时代灵性传统的印第安人部落。";
 
     public static final Movie movie = new Movie();
     public static final MovieDetail movieDetail = new MovieDetail();
@@ -34,7 +34,7 @@ public class KeJi {
                 DESC, ""));
 
         introduceList.add(new Introduce(Introduce.IMAGE, "",
-                "https://i1.kknews.cc/SIG=1tvmlbt/101r00053r21197799oq.jpg"));
+                "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/keji01.jpg"));
 
         introduceList.add(new Introduce(Introduce.TEXT,
                 "懂得万物恒定之法的高基族人，不仅依然保留着古老传统，并且知道如何在这个工业世界上生存下去。", ""));
