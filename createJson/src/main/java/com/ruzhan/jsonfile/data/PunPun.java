@@ -17,7 +17,7 @@ public class PunPun {
     private static final String PLAY_COUNT = "1";
 
     private static final String TITLE = "生活如此简单，为什么让我们变得很复杂";
-    private static final String TAG = "TED";
+    private static final String TAG = "TED·演讲·公开课";
 
     private static final String IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/punpun.jpg";
 

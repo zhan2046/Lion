@@ -29,7 +29,7 @@
         android:layout_marginTop="@dimen/space_small_8"
         android:ellipsize="end"
         android:letterSpacing="0.08"
-        android:maxLines="1"
+        android:maxLines="2"
         android:textColor="@color/text_primary_dark"
         android:textSize="@dimen/text_large_24" />
 
