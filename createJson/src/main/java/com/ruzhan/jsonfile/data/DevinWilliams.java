@@ -53,44 +53,52 @@ public class DevinWilliams {
 
 
         videoList.add(new Video(String.valueOf(ID + 11),
-                "1，篮球训练纪录片10000小时", IMAGE, PLAY_COUNT, 1, "第一集",
-                "http://player.bilibili.com/player.html?aid=26018197&cid=44588349&page=1"));
+                "篮球训练纪录片《10000小时》第一部", IMAGE, PLAY_COUNT, 1, "第一集",
+                "http://player.bilibili.com/player.html?aid=2659444&cid=4153257&page=1"));
 
         videoList.add(new Video(String.valueOf(ID + 12),
-                "2，篮球训练纪录片10000小时", IMAGE, PLAY_COUNT, 2, "第二集",
-                "http://player.bilibili.com/player.html?aid=26020618&cid=44595701&page=1"));
+                "篮球训练纪录片《10000小时》第二部", IMAGE, PLAY_COUNT, 2, "第二集",
+                "http://player.bilibili.com/player.html?aid=2659816&cid=4153770&page=1"));
 
         videoList.add(new Video(String.valueOf(ID + 13),
-                "3，篮球训练纪录片10000小时", IMAGE, PLAY_COUNT, 3, "第三集",
-                "http://player.bilibili.com/player.html?aid=26022794&cid=44600090&page=1"));
+                "篮球训练纪录片《10000小时》第三部", IMAGE, PLAY_COUNT, 3, "第三集",
+                "http://player.bilibili.com/player.html?aid=2662826&cid=4158697&page=1"));
 
         videoList.add(new Video(String.valueOf(ID + 14),
-                "4，篮球训练纪录片10000小时", IMAGE, PLAY_COUNT, 4, "第四集",
-                "http://player.bilibili.com/player.html?aid=26022852&cid=44600143&page=1"));
+                "篮球训练纪录片《10000小时》第四部", IMAGE, PLAY_COUNT, 4, "第四集",
+                "http://player.bilibili.com/player.html?aid=2673458&cid=4175752&page=1"));
 
         videoList.add(new Video(String.valueOf(ID + 15),
-                "5，篮球训练纪录片10000小时", IMAGE, PLAY_COUNT, 5, "第五集",
+                "篮球训练纪录片《10000小时》5.1", IMAGE, PLAY_COUNT, 5, "5.1集",
                 "http://player.bilibili.com/player.html?aid=26023084&cid=44600604&page=1"));
 
         videoList.add(new Video(String.valueOf(ID + 16),
-                "6，篮球训练纪录片10000小时", IMAGE, PLAY_COUNT, 6, "第六集",
+                "篮球训练纪录片《10000小时》5.2", IMAGE, PLAY_COUNT, 6, "5.2集",
                 "http://player.bilibili.com/player.html?aid=26023215&cid=44601502&page=1"));
 
-        videoList.add(new Video(String.valueOf(ID + 16),
-                "7，篮球训练纪录片10000小时", IMAGE, PLAY_COUNT, 6, "第七集",
+        videoList.add(new Video(String.valueOf(ID + 17),
+                "篮球训练纪录片《10000小时》6.1", IMAGE, PLAY_COUNT, 6, "6.1集",
                 "http://player.bilibili.com/player.html?aid=26023344&cid=44602039&page=1"));
 
-        videoList.add(new Video(String.valueOf(ID + 16),
-                "8，篮球训练纪录片10000小时", IMAGE, PLAY_COUNT, 6, "第八集",
+        videoList.add(new Video(String.valueOf(ID + 18),
+                "篮球训练纪录片《10000小时》6.2", IMAGE, PLAY_COUNT, 6, "6.2集",
                 "http://player.bilibili.com/player.html?aid=26023561&cid=44602501&page=1"));
 
-        videoList.add(new Video(String.valueOf(ID + 16),
-                "9，篮球训练纪录片10000小时", IMAGE, PLAY_COUNT, 6, "第九集",
+        videoList.add(new Video(String.valueOf(ID + 19),
+                "篮球训练纪录片《10000小时》第七部", IMAGE, PLAY_COUNT, 6, "第七集",
                 "http://player.bilibili.com/player.html?aid=26023991&cid=44603241&page=1"));
 
-        videoList.add(new Video(String.valueOf(ID + 16),
-                "10，篮球训练纪录片10000小时", IMAGE, PLAY_COUNT, 6, "第十集",
-                "http://player.bilibili.com/player.html?aid=26024547&cid=44604081&page=1"));
+        videoList.add(new Video(String.valueOf(ID + 20),
+                "中英字幕10000小时8.1集 归零Back to Zero", IMAGE, PLAY_COUNT, 6, "8.1集",
+                "http://player.bilibili.com/player.html?aid=5370407&cid=8730740&page=1"));
+
+        videoList.add(new Video(String.valueOf(ID + 21),
+                "《10000小时》纪录片 Episode 8.5", IMAGE, PLAY_COUNT, 6, "8.5集",
+                "http://player.bilibili.com/player.html?aid=5386553&cid=8756014&page=1"));
+
+        videoList.add(new Video(String.valueOf(ID + 22),
+                "DulaniRobinson Pt1", IMAGE, PLAY_COUNT, 6, "8.6集",
+                "http://player.bilibili.com/player.html?aid=5386553&cid=8756015&page=2"));
 
 
         movie.id = String.valueOf(ID);
