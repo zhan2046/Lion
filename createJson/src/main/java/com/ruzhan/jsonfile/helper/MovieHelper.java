@@ -7,6 +7,7 @@ import com.ruzhan.jsonfile.data.CredoMutwa;
 import com.ruzhan.jsonfile.data.DevinWilliams;
 import com.ruzhan.jsonfile.data.Human;
 import com.ruzhan.jsonfile.data.KeJi;
+import com.ruzhan.jsonfile.data.NikolaTesla;
 import com.ruzhan.jsonfile.data.OnTheRoad;
 import com.ruzhan.jsonfile.data.PunPun;
 import com.ruzhan.jsonfile.data.TheLieWeLive;
@@ -91,6 +92,7 @@ public final class MovieHelper {
     public static List<Movie> getMovieList() {
         List<Movie> list = new ArrayList<>();
         list.add(TheLionSleepsNoMore.movie);
+        list.add(NikolaTesla.movie);
         list.add(Human.movie);
         list.add(TheSecret.movie);
         list.add(AncientAliens.movie);
@@ -109,6 +111,7 @@ public final class MovieHelper {
     public static List<MovieDetail> getMovieDetailList() {
         List<MovieDetail> list = new ArrayList<>();
         list.add(TheLionSleepsNoMore.movieDetail);
+        list.add(NikolaTesla.movieDetail);
         list.add(Human.movieDetail);
         list.add(TheSecret.movieDetail);
         list.add(AncientAliens.movieDetail);
