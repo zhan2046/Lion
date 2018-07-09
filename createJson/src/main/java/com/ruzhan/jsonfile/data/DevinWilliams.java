@@ -43,7 +43,10 @@ public class DevinWilliams {
                 "谁能想象，一个膝盖有伤，之前完全不会剪辑的街头球手能成为红火于youtube和业余篮球圈的篮球训练师? DW做到了。", ""));
 
         introduceList.add(new Introduce(Introduce.TEXT,
-                "在一个偶然的契机下，他被两个华裔小子缠着教授运球，在反省自己对生活的态度后，他不辞辛劳的帮助兄弟俩matty和kyle训练，从未停歇。只要有时间，一周大部分时间，dw都带着兄弟俩练习各种篮球技术和身体训练，不练吐绝不停歇！", ""));
+                "在一个偶然的契机下，他被两个华裔小子缠着教授运球，在反省自己对生活的态度后，他不辞辛劳的帮助兄弟俩matty和kyle训练，从未停歇。", ""));
+
+        introduceList.add(new Introduce(Introduce.TEXT,
+                "只要有时间，一周大部分时间，dw都带着兄弟俩练习各种篮球技术和身体训练，不练吐绝不停歇！", ""));
 
         introduceList.add(new Introduce(Introduce.TEXT,
                 "在见到兄弟俩前，DW正过着不好的生活，他在大学里弄伤了自己的膝盖，对生活颓废，终日以大麻来蒙蔽自己，直到教授这两个华裔孩子，用他自己的话来说就是“我努力的保护着火种”。", ""));

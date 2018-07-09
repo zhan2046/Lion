@@ -43,7 +43,10 @@ public class TheSecret {
                 "有一种我们看不见的能量，一直引导着整个宇宙规律性的运转，正是因为它的作用地球才能够在46亿年的时间里保持着运转的状态。", ""));
 
         introduceList.add(new Introduce(Introduce.TEXT,
-                "也正是因为它的作用，太阳系乃至整个宇宙中，数以亿计的星球，都能相安无事的停留在各自的轨道上安分地运行，这样一种能量引导着宇宙中的每一样事物，也引导着我们的生活，这种能量就是——吸引力。", ""));
+                "也正是因为它的作用，太阳系乃至整个宇宙中，数以亿计的星球，都能相安无事的停留在各自的轨道上安分地运行", ""));
+
+        introduceList.add(new Introduce(Introduce.TEXT,
+                "这样一种能量引导着宇宙中的每一样事物，也引导着我们的生活，这种能量就是——吸引力。", ""));
 
         videoList.add(new Video(String.valueOf(ID + 11),
                 "1、秘密", IMAGE, PLAY_COUNT, 1, "第一集",

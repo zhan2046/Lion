@@ -37,13 +37,22 @@ public class ThroughTheWormhole {
                 "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/through-the-wormhole01.jpg"));
 
         introduceList.add(new Introduce(Introduce.TEXT,
-                "《摩根费里曼之穿越虫洞》是一部由摩根弗里曼主持的科教纪录片。由百老汇演员摩根费里曼特别主持，从摩根费里曼介绍的话语中和作品中他经常出演科学家也能感受到他对天体物理的喜爱，并在节目中阐述世界是由数字组成的，从而成为了节目的“灵魂”。", ""));
+                "《摩根费里曼之穿越虫洞》是一部由摩根弗里曼主持的科教纪录片。", ""));
 
         introduceList.add(new Introduce(Introduce.TEXT,
-                "节目内容丰富，包括了天文、人文、科学等领域，节目组集结的多位科学家发表自己的意见并互相的反驳争论，这也是天体物理爱好者的另一项看点，给未来宇宙的探索增长了见识，并给令一些科幻迷们另一些想象的空间。", ""));
+                "由百老汇演员摩根费里曼特别主持，从摩根费里曼介绍的话语中和作品中他经常出演科学家也能感受到他对天体物理的喜爱，并在节目中阐述世界是由数字组成的，从而成为了节目的“灵魂”。", ""));
 
         introduceList.add(new Introduce(Introduce.TEXT,
-                "每集节目将深入探讨一个重要的谜团，并介绍来自著名机构和研究中心的科学研究，和令人惊奇的专家理论，像是美国太空总署、牛津大学、欧洲核子研究组织（简称CERN）、外星生命探测研究所、普林斯顿大学、麻省理工学院和费米国家实验室等等。", ""));
+                "节目内容丰富，包括了天文、人文、科学等领域，节目组集结的多位科学家发表自己的意见并互相的反驳争论", ""));
+
+        introduceList.add(new Introduce(Introduce.TEXT,
+                "这也是天体物理爱好者的另一项看点，给未来宇宙的探索增长了见识，并给令一些科幻迷们另一些想象的空间。", ""));
+
+        introduceList.add(new Introduce(Introduce.TEXT,
+                "每集节目将深入探讨一个重要的谜团，并介绍来自著名机构和研究中心的科学研究，和令人惊奇的专家理论", ""));
+
+        introduceList.add(new Introduce(Introduce.TEXT,
+                "像是美国太空总署、牛津大学、欧洲核子研究组织（简称CERN）、外星生命探测研究所、普林斯顿大学、麻省理工学院和费米国家实验室等等。", ""));
 
 
         videoList.add(new Video(String.valueOf(ID + 11),

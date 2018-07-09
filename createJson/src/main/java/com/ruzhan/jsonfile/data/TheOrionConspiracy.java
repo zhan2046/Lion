@@ -36,14 +36,14 @@ public class TheOrionConspiracy {
         introduceList.add(new Introduce(Introduce.IMAGE, "",
                 "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/the-orion-conspiracy01.jpg"));
 
-        introduceList.add(new Introduce(Introduce.IMAGE, "",
-                "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/the-orion-conspiracy02.jpg"));
-
         introduceList.add(new Introduce(Introduce.TEXT,
                 "你知道么，这世界上存在一种造价不超过一台计算机，仅使用水和空气就可以供应一家用电的机器，你未曾听说过，因为这将颠覆那些财团、国家。", ""));
 
         introduceList.add(new Introduce(Introduce.TEXT,
                 "你知道么，我们的文化，价值观，金融系统在奴役你，你要努力工作一生以买一套房子。媒体让我们购买不需要的产品，因为那会让你幸福。", ""));
+
+        introduceList.add(new Introduce(Introduce.IMAGE, "",
+                "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/the-orion-conspiracy02.jpg"));
 
         introduceList.add(new Introduce(Introduce.TEXT,
                 "你知道么，这个世界，国家，民族间应该相亲相爱的，而我们整个人类的社会系统都在憎恨，嫉妒。", ""));

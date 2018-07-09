@@ -43,7 +43,7 @@ public class CredoMutwa {
                 "他是祖鲁族(古代官方)故事的指定叙述人,同时也是历史知识的保管者，他掌握着惊世秘密，他曾面临各方威胁，为此付出巨大代价，而幕后只是人只想让他永远闭嘴。", ""));
 
         introduceList.add(new Introduce(Introduce.TEXT,
-                "1999年美国著名记者大卫·艾克在南非约翰内斯堡秘密访谈了科瑞多。", ""));
+                "1999年著名记者大卫·艾克在南非约翰内斯堡秘密访谈了科瑞多。", ""));
 
         videoList.add(new Video(String.valueOf(ID + 11),
                 "1、地球史上最震撼的访谈(一)", IMAGE, PLAY_COUNT, 1, "第一集",
