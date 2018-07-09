@@ -16,12 +16,12 @@ public class NakedCastaway {
     private static final int ID = 1803;
     private static final String PLAY_COUNT = "4";
 
-    private static final String TITLE = "只身在荒岛《Naked Castaway》";
+    private static final String TITLE = "只身在荒岛";
     private static final String TAG = "野外·野求·纪录片";
 
     private static final String IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/naked-castaway.jpg";
 
-    private static final String DESC = "前英国陆军上尉埃德·斯塔福德即将展开电视史上最夸张的终极求生挑战。";
+    private static final String DESC = "Naked Castaway 前英国陆军上尉埃德·斯塔福德即将展开电视史上最夸张的终极求生挑战。";
 
     public static final Movie movie = new Movie();
     public static final MovieDetail movieDetail = new MovieDetail();
