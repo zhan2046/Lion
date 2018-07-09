@@ -70,7 +70,7 @@ public class CredoMutwa {
                 "http://player.bilibili.com/player.html?aid=19969253&cid=32571391&page=6"));
 
         videoList.add(new Video(String.valueOf(ID + 17),
-                "7、地球史上最震撼的访谈(七)", IMAGE, PLAY_COUNT, 6, "第七集",
+                "7、地球史上最震撼的访谈(七)", IMAGE, PLAY_COUNT, 7, "第七集",
                 "http://player.bilibili.com/player.html?aid=19969253&cid=32571391&page=7"));
 
         movie.id = String.valueOf(ID);
