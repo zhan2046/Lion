@@ -30,17 +30,17 @@ public class Human {
     private static final List<Video> videoList = new ArrayList<>();
 
     static {
-        introduceList.add(new Introduce(Introduce.TEXT,
-                "每个人背后都有一个足以撼动心灵的故事。法国知名的摄影师Yann Arthus-Bertrand就用了3年的时间。", ""));
-
-        introduceList.add(new Introduce(Introduce.TEXT,
-                DESC, ""));
-
         introduceList.add(new Introduce(Introduce.IMAGE, "",
                 "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/human-img01.jpg"));
 
+        introduceList.add(new Introduce(Introduce.TEXT,
+                "每个人背后都有一个足以撼动心灵的故事。法国知名的摄影师Yann Arthus-Bertrand就用了3年的时间。", ""));
+
         introduceList.add(new Introduce(Introduce.IMAGE, "",
                 "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/human-img02.jpg"));
+
+        introduceList.add(new Introduce(Introduce.TEXT,
+                DESC, ""));
 
         introduceList.add(new Introduce(Introduce.TEXT,
                 "由乌克兰的自由战士、马里的农民，到美国的死囚，各人的故事集结成一部纪录片《HUMAN》。", ""));

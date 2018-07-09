@@ -7,6 +7,7 @@ import com.ruzhan.jsonfile.data.CredoMutwa;
 import com.ruzhan.jsonfile.data.DevinWilliams;
 import com.ruzhan.jsonfile.data.Human;
 import com.ruzhan.jsonfile.data.KeJi;
+import com.ruzhan.jsonfile.data.NakedCastaway;
 import com.ruzhan.jsonfile.data.NikolaTesla;
 import com.ruzhan.jsonfile.data.OnTheRoad;
 import com.ruzhan.jsonfile.data.PunPun;
@@ -102,6 +103,7 @@ public final class MovieHelper {
         list.add(KeJi.movie);
         list.add(TheLieWeLive.movie);
         list.add(PunPun.movie);
+        list.add(NakedCastaway.movie);
         list.add(WeGotNext.movie);
         list.add(DevinWilliams.movie);
         list.add(TheStoryOfGod.movie);
@@ -122,6 +124,7 @@ public final class MovieHelper {
         list.add(KeJi.movieDetail);
         list.add(TheLieWeLive.movieDetail);
         list.add(PunPun.movieDetail);
+        list.add(NakedCastaway.movieDetail);
         list.add(WeGotNext.movieDetail);
         list.add(DevinWilliams.movieDetail);
         list.add(TheStoryOfGod.movieDetail);
