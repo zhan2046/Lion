@@ -3,6 +3,7 @@ package com.ruzhan.jsonfile.helper;
 import com.google.gson.Gson;
 import com.ruzhan.jsonfile.CreateJsonMain;
 import com.ruzhan.jsonfile.data.AncientAliens;
+import com.ruzhan.jsonfile.data.CosmicDisclosure;
 import com.ruzhan.jsonfile.data.CredoMutwa;
 import com.ruzhan.jsonfile.data.DevinWilliams;
 import com.ruzhan.jsonfile.data.Human;
@@ -97,6 +98,7 @@ public final class MovieHelper {
         List<Movie> list = new ArrayList<>();
         list.add(TheLionSleepsNoMore.movie);
         list.add(NikolaTesla.movie);
+        list.add(CosmicDisclosure.movie);
         list.add(Human.movie);
         list.add(TheSecret.movie);
         list.add(AncientAliens.movie);
@@ -120,6 +122,7 @@ public final class MovieHelper {
         List<MovieDetail> list = new ArrayList<>();
         list.add(TheLionSleepsNoMore.movieDetail);
         list.add(NikolaTesla.movieDetail);
+        list.add(CosmicDisclosure.movieDetail);
         list.add(Human.movieDetail);
         list.add(TheSecret.movieDetail);
         list.add(AncientAliens.movieDetail);
