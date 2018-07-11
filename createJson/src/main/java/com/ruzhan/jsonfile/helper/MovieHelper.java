@@ -26,6 +26,7 @@ import com.ruzhan.jsonfile.data.TheOrionConspiracy;
 import com.ruzhan.jsonfile.data.TheSecret;
 import com.ruzhan.jsonfile.data.TheStoryOfGod;
 import com.ruzhan.jsonfile.data.ThroughTheWormhole;
+import com.ruzhan.jsonfile.data.ValeriyBabich;
 import com.ruzhan.jsonfile.data.WeGotNext;
 import com.ruzhan.jsonfile.data.WildChina;
 import com.ruzhan.jsonfile.model.HttpResult;
@@ -114,6 +115,7 @@ public final class MovieHelper {
         list.add(WildChina.movie);
         list.add(ScamCity.movie);
         list.add(ScamCity2.movie);
+        list.add(ValeriyBabich.movie);
         list.add(CredoMutwa.movie);
         list.add(TheOrionConspiracy.movie);
         list.add(KeJi.movie);
@@ -145,6 +147,7 @@ public final class MovieHelper {
         list.add(WildChina.movieDetail);
         list.add(ScamCity.movieDetail);
         list.add(ScamCity2.movieDetail);
+        list.add(ValeriyBabich.movieDetail);
         list.add(CredoMutwa.movieDetail);
         list.add(TheOrionConspiracy.movieDetail);
         list.add(KeJi.movieDetail);
