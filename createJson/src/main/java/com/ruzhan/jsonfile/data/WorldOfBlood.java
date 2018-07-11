@@ -41,7 +41,7 @@ public class WorldOfBlood {
 
         videoList.add(new Video(String.valueOf(ID + 11),
                 "血的奇妙世界", IMAGE, PLAY_COUNT, 1, "电影",
-                "http://player.bilibili.com/player.html?aid=12120764&cid=19989870&page=1"));
+                "http://player.bilibili.com/player.html?aid=14197644&cid=23173764&page=1"));
 
 
         movie.id = String.valueOf(ID);
