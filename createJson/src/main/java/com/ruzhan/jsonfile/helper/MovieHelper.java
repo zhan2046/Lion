@@ -25,6 +25,7 @@ import com.ruzhan.jsonfile.data.TheLionSleepsNoMore;
 import com.ruzhan.jsonfile.data.TheOrionConspiracy;
 import com.ruzhan.jsonfile.data.TheSecret;
 import com.ruzhan.jsonfile.data.TheStoryOfGod;
+import com.ruzhan.jsonfile.data.Thrive;
 import com.ruzhan.jsonfile.data.ThroughTheWormhole;
 import com.ruzhan.jsonfile.data.ValeriyBabich;
 import com.ruzhan.jsonfile.data.WeGotNext;
@@ -110,6 +111,7 @@ public final class MovieHelper {
         list.add(CosmicDisclosure.movie);
         list.add(Human.movie);
         list.add(TheSecret.movie);
+        list.add(Thrive.movie);
         list.add(AncientAliens.movie);
         list.add(MadeUsSpend.movie);
         list.add(RichAndUs.movie);
@@ -143,6 +145,7 @@ public final class MovieHelper {
         list.add(CosmicDisclosure.movieDetail);
         list.add(Human.movieDetail);
         list.add(TheSecret.movieDetail);
+        list.add(Thrive.movieDetail);
         list.add(AncientAliens.movieDetail);
         list.add(MadeUsSpend.movieDetail);
         list.add(RichAndUs.movieDetail);
