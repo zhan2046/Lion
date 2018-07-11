@@ -19,6 +19,7 @@ import com.ruzhan.jsonfile.data.PunPun;
 import com.ruzhan.jsonfile.data.RichAndUs;
 import com.ruzhan.jsonfile.data.RunningWild;
 import com.ruzhan.jsonfile.data.ScamCity;
+import com.ruzhan.jsonfile.data.ScamCity2;
 import com.ruzhan.jsonfile.data.TheLieWeLive;
 import com.ruzhan.jsonfile.data.TheLionSleepsNoMore;
 import com.ruzhan.jsonfile.data.TheOrionConspiracy;
@@ -112,6 +113,7 @@ public final class MovieHelper {
         list.add(RichAndUs.movie);
         list.add(WildChina.movie);
         list.add(ScamCity.movie);
+        list.add(ScamCity2.movie);
         list.add(CredoMutwa.movie);
         list.add(TheOrionConspiracy.movie);
         list.add(KeJi.movie);
@@ -142,6 +144,7 @@ public final class MovieHelper {
         list.add(RichAndUs.movieDetail);
         list.add(WildChina.movieDetail);
         list.add(ScamCity.movieDetail);
+        list.add(ScamCity2.movieDetail);
         list.add(CredoMutwa.movieDetail);
         list.add(TheOrionConspiracy.movieDetail);
         list.add(KeJi.movieDetail);
