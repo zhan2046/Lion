@@ -11,17 +11,17 @@ import java.util.List;
 /**
  * Created by ruzhan123 on 2018/7/3.
  */
-public class MadeUsSpend {
+public class RichAndUs {
 
-    private static final int ID = 2203;
+    private static final int ID = 2303;
     private static final String PLAY_COUNT = "3";
 
-    private static final String TITLE = "BBC 谁在引导我们消费";
+    private static final String TITLE = "巨富与我们";
     private static final String TAG = "BBC·历史·纪录片";
 
-    private static final String IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/made-us-spend.png";
+    private static final String IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/eich-and-us.jpg";
 
-    private static final String DESC = "我们为什么要买东西？谁让这个世界变得无节制消费？他们如何做到这一点？调查记者雅克·佩雷蒂审视了无节制消费潮流背后的机制，得出了答案。";
+    private static final String DESC = "一个有关超级土豪的纪录片。";
 
     public static final Movie movie = new Movie();
     public static final MovieDetail movieDetail = new MovieDetail();
@@ -34,30 +34,31 @@ public class MadeUsSpend {
                 DESC, ""));
 
         introduceList.add(new Introduce(Introduce.IMAGE, "",
-                "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/made-us-spend01.jpg"));
+                "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/eich-and-us01.jpg"));
 
         introduceList.add(new Introduce(Introduce.TEXT,
-                "原来，使这个世界变得无节制消费的元凶，并不是人们普遍认为的广告员和市场推广员，而是这诸多因素背后那些首先改变产品然后改变我们的人们。", ""));
+                "记者Jacques Peretti走访各种土豪人士、经济学家、平民百姓，研究超级土豪是如何改变了英国。", ""));
 
         introduceList.add(new Introduce(Introduce.TEXT,
-                "纪录片表明，长久以来，制造商都梦想着在消费者大脑中植入“升级”观念，从而让无限消费成为现实。他们首先瞄准未被开发的儿童市场，学习应用向儿童销售的方法，从而增加向成年人的销售。", ""));
+                "这部纪录片揭露出所谓的“下渗式经济”是如果令贫富变得更加悬殊的。", ""));
 
         introduceList.add(new Introduce(Introduce.TEXT,
-                "但是，那头最肥的能够带来现金的奶牛却来自恐惧——通过挖掘消费者的恐惧，制造商发现了一个对健康和安全产品有巨大需求的世界。", ""));
+                "英国政府为了政绩把本国打造成富人避税天堂，但30多年来所谓的富人涓滴效应并未惠及底层人民，反而随着金融衍生品和次贷危机使贫富差距加剧而形成沙漏社会。", ""));
 
+        introduceList.add(new Introduce(Introduce.TEXT,
+                "中产的消亡将进一步削弱资本主义制度。英国如此，世界亦然。", ""));
 
         videoList.add(new Video(String.valueOf(ID + 11),
                 "1、第一集", IMAGE, PLAY_COUNT, 1, "第一集",
-                "http://player.bilibili.com/player.html?aid=22833165&cid=37901869&page=1"));
+                "http://player.bilibili.com/player.html?aid=1931988&cid=2989838&page=1"));
 
         videoList.add(new Video(String.valueOf(ID + 12),
                 "2、第二集", IMAGE, PLAY_COUNT, 2, "第二集",
-                "http://player.bilibili.com/player.html?aid=22833165&cid=37905650&page=2"));
+                "http://player.bilibili.com/player.html?aid=1931988&cid=3029801&page=2"));
 
         videoList.add(new Video(String.valueOf(ID + 13),
                 "3、第三集", IMAGE, PLAY_COUNT, 3, "第三集",
-                "http://player.bilibili.com/player.html?aid=22833165&cid=37907697&page=3"));
-
+                "http://player.bilibili.com/player.html?aid=1931988&cid=2989839&page=3"));
 
         movie.id = String.valueOf(ID);
         movie.title = TITLE;
