@@ -16,7 +16,7 @@ public class CosmicDisclosure2 {
     private static final int ID = 3303;
     private static final String PLAY_COUNT = "37";
 
-    private static final String TITLE = "揭露宇宙 24-60集";
+    private static final String TITLE = "揭露宇宙 24-100集";
     private static final String TAG = "揭露·宇宙";
 
     private static final String IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/cosmi-disclosure02.jpg";
@@ -194,9 +194,161 @@ public class CosmicDisclosure2 {
                 "61集 秘密太空计划SSP证词", IMAGE, PLAY_COUNT, 38, "第六十一集",
                 "http://player.bilibili.com/player.html?aid=26571284&cid=45640710&page=1"));
 
-        videoList.add(new Video(String.valueOf(ID + 48),
-                "62集汤普金斯生平介绍", IMAGE, PLAY_COUNT, 38, "第六十二集",
+        videoList.add(new Video(String.valueOf(ID + 49),
+                "62集汤普金斯生平介绍", IMAGE, PLAY_COUNT, 39, "第六十二集",
                 "http://player.bilibili.com/player.html?aid=26571284&cid=45640713&page=2"));
+
+        videoList.add(new Video(String.valueOf(ID + 50),
+                "63集 SSP智库", IMAGE, PLAY_COUNT, 40, "第六十三集",
+                "http://player.bilibili.com/player.html?aid=26571284&page=3"));
+
+        videoList.add(new Video(String.valueOf(ID + 51),
+                "64集《感应者与外星人》", IMAGE, PLAY_COUNT, 41, "第六十四集",
+                "http://player.bilibili.com/player.html?aid=26571284&page=4"));
+
+        videoList.add(new Video(String.valueOf(ID + 52),
+                "65集《克里福德·斯通简介》", IMAGE, PLAY_COUNT, 42, "第六十五集",
+                "http://player.bilibili.com/player.html?aid=26571284&page=5"));
+
+        videoList.add(new Video(String.valueOf(ID + 53),
+                "66集 斯通接触", IMAGE, PLAY_COUNT, 43, "第六十六集",
+                "http://player.bilibili.com/player.html?aid=26571284&page=6"));
+
+        videoList.add(new Video(String.valueOf(ID + 54),
+                "67集 秘密面纱", IMAGE, PLAY_COUNT, 44, "第六十七集",
+                "http://player.bilibili.com/player.html?aid=26571284&page=7"));
+
+        videoList.add(new Video(String.valueOf(ID + 55),
+                "68集 验证SSP", IMAGE, PLAY_COUNT, 45, "第六十八集",
+                "http://player.bilibili.com/player.html?aid=26571284&page=8"));
+
+        videoList.add(new Video(String.valueOf(ID + 56),
+                "69集 联盟反击", IMAGE, PLAY_COUNT, 46, "第六十九集",
+                "http://player.bilibili.com/player.html?aid=26571284&page=9"));
+
+        videoList.add(new Video(String.valueOf(ID + 57),
+                "70集 冈萨雷斯的回归", IMAGE, PLAY_COUNT, 47, "第七十集",
+                "http://player.bilibili.com/player.html?aid=26571284&page=10"));
+
+        videoList.add(new Video(String.valueOf(ID + 58),
+                "71集 相遇古哨兵", IMAGE, PLAY_COUNT, 48, "第七十一集",
+                "http://player.bilibili.com/player.html?aid=26571284&page=11"));
+
+        videoList.add(new Video(String.valueOf(ID + 58),
+                "72集 验证20年逆龄项目", IMAGE, PLAY_COUNT, 49, "第七十二集",
+                "http://player.bilibili.com/player.html?aid=26571284&page=12"));
+
+        videoList.add(new Video(String.valueOf(ID + 60),
+                "73集 球体的到来", IMAGE, PLAY_COUNT, 50, "第七十三集",
+                "http://player.bilibili.com/player.html?aid=26571284&page=13"));
+
+        videoList.add(new Video(String.valueOf(ID + 61),
+                "74集 外星科技的利用", IMAGE, PLAY_COUNT, 51, "第七十四集",
+                "http://player.bilibili.com/player.html?aid=26571284&page=14"));
+
+        videoList.add(new Video(String.valueOf(ID + 62),
+                "75集 外星人指南", IMAGE, PLAY_COUNT, 52, "第七十五集",
+                "http://player.bilibili.com/player.html?aid=26571284&page=15"));
+
+        videoList.add(new Video(String.valueOf(ID + 63),
+                "76集 太阳典狱长计划-创始人", IMAGE, PLAY_COUNT, 53, "第七十六集",
+                "http://player.bilibili.com/player.html?aid=26571284&page=16"));
+
+        videoList.add(new Video(String.valueOf(ID + 64),
+                "77集 一的法则-与秘密太空计划", IMAGE, PLAY_COUNT, 54, "第七十七集",
+                "http://player.bilibili.com/player.html?aid=26571284&page=17"));
+
+        videoList.add(new Video(String.valueOf(ID + 65),
+                "78集 指导人类扬升", IMAGE, PLAY_COUNT, 55, "第七十八集",
+                "http://player.bilibili.com/player.html?aid=26571284&page=18"));
+
+        videoList.add(new Video(String.valueOf(ID + 66),
+                "79集 地心放逐者", IMAGE, PLAY_COUNT, 56, "第七十九集",
+                "http://player.bilibili.com/player.html?aid=26571284&page=19"));
+
+        videoList.add(new Video(String.valueOf(ID + 67),
+                "80集 不安的遭遇", IMAGE, PLAY_COUNT, 57, "第八十集",
+                "http://player.bilibili.com/player.html?aid=26571284&page=20"));
+
+        videoList.add(new Video(String.valueOf(ID + 68),
+                "81集 技术拯救", IMAGE, PLAY_COUNT, 58, "第八十一集",
+                "http://player.bilibili.com/player.html?aid=26571284&page=21"));
+
+        videoList.add(new Video(String.valueOf(ID + 69),
+                "82集 揭露后的生活", IMAGE, PLAY_COUNT, 59, "第八十二集",
+                "http://player.bilibili.com/player.html?aid=26571284&page=22"));
+
+        videoList.add(new Video(String.valueOf(ID + 70),
+                "83集 采访内幕人士", IMAGE, PLAY_COUNT, 60, "第八十三集",
+                "http://player.bilibili.com/player.html?aid=26571284&page=23"));
+
+        videoList.add(new Video(String.valueOf(ID + 71),
+                "84集 揭示更大计划", IMAGE, PLAY_COUNT, 61, "第八十四集",
+                "http://player.bilibili.com/player.html?aid=26571284&page=24"));
+
+        videoList.add(new Video(String.valueOf(ID + 72),
+                "85集 观众提问五", IMAGE, PLAY_COUNT, 62, "第八十五集",
+                "http://player.bilibili.com/player.html?aid=26571284&page=25"));
+
+        videoList.add(new Video(String.valueOf(ID + 73),
+                "86集 掀开军工帷幕", IMAGE, PLAY_COUNT, 63, "第八十六集",
+                "http://player.bilibili.com/player.html?aid=26571284&page=26"));
+
+        videoList.add(new Video(String.valueOf(ID + 74),
+                "87集 揭示隐藏技术", IMAGE, PLAY_COUNT, 64, "第八十七集",
+                "http://player.bilibili.com/player.html?aid=26571284&page=27"));
+
+        videoList.add(new Video(String.valueOf(ID + 75),
+                "88集 一的法则与负面势力", IMAGE, PLAY_COUNT, 65, "第八十八集",
+                "http://player.bilibili.com/player.html?aid=26571284&page=28"));
+
+        videoList.add(new Video(String.valueOf(ID + 76),
+                "89集 一的法则与通灵因果", IMAGE, PLAY_COUNT, 66, "第八十九集",
+                "http://player.bilibili.com/player.html?aid=26571284&page=29"));
+
+        videoList.add(new Video(String.valueOf(ID + 77),
+                "90集 巨大的太阳闪焰", IMAGE, PLAY_COUNT, 67, "第九十集",
+                "http://player.bilibili.com/player.html?aid=26571284&page=30"));
+
+        videoList.add(new Video(String.valueOf(ID + 78),
+                "91集 太阳闪焰的转变力", IMAGE, PLAY_COUNT, 68, "第九十一集",
+                "http://player.bilibili.com/player.html?aid=26571284&page=31"));
+
+        videoList.add(new Video(String.valueOf(ID + 79),
+                "92集 深度揭露 威廉.汤普金斯", IMAGE, PLAY_COUNT, 69, "第九十二集",
+                "http://player.bilibili.com/player.html?aid=26571284&page=32"));
+
+        videoList.add(new Video(String.valueOf(ID + 80),
+                "93集 南极：揭露进程", IMAGE, PLAY_COUNT, 70, "第九十三集",
+                "http://player.bilibili.com/player.html?aid=26571284&page=33"));
+
+        videoList.add(new Video(String.valueOf(ID + 81),
+                "94集 验证证据", IMAGE, PLAY_COUNT, 71, "第九十四集",
+                "http://player.bilibili.com/player.html?aid=26571284&page=34"));
+
+        videoList.add(new Video(String.valueOf(ID + 82),
+                "95集 揭露秘密地下战争", IMAGE, PLAY_COUNT, 72, "第九十五集",
+                "http://player.bilibili.com/player.html?aid=26571284&page=35"));
+
+        videoList.add(new Video(String.valueOf(ID + 83),
+                "96集 追溯秘密太空根源", IMAGE, PLAY_COUNT, 73, "第九十六集",
+                "http://player.bilibili.com/player.html?aid=26571284&page=36"));
+
+        videoList.add(new Video(String.valueOf(ID + 84),
+                "97集 观众提问六", IMAGE, PLAY_COUNT, 74, "第九十七集",
+                "http://player.bilibili.com/player.html?aid=26571284&page=37"));
+
+        videoList.add(new Video(String.valueOf(ID + 85),
+                "98集 推动揭露极限", IMAGE, PLAY_COUNT, 75, "第九十八集",
+                "http://player.bilibili.com/player.html?aid=26571284&page=38"));
+
+        videoList.add(new Video(String.valueOf(ID + 86),
+                "99集 阿波罗之秘", IMAGE, PLAY_COUNT, 76, "第九十九集",
+                "http://player.bilibili.com/player.html?aid=26571284&page=39"));
+
+        videoList.add(new Video(String.valueOf(ID + 87),
+                "100集 观众提问七", IMAGE, PLAY_COUNT, 77, "第一百集",
+                "http://player.bilibili.com/player.html?aid=26571284&page=40"));
 
         movie.id = String.valueOf(ID);
         movie.title = TITLE;
