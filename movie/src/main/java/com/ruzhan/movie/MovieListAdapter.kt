@@ -15,8 +15,13 @@ class MovieListAdapter(listener: OnItemClickListener<Movie>) : RecyclerView.Adap
     private var dataList = ArrayList<Movie>()
     private var itemClickListener: OnItemClickListener<Movie> = listener
 
-    fun setData(movieList: List<Movie>) {
+    fun setRefreshData(movieList: List<Movie>) {
         dataList.clear()
+        dataList.addAll(movieList)
+        notifyDataSetChanged()
+    }
+
+    fun setLoadMoreData(movieList: List<Movie>) {
         dataList.addAll(movieList)
         notifyDataSetChanged()
     }

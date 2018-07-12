@@ -12,8 +12,10 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.ruzhan.lion.App
+import com.ruzhan.lion.OnRefreshHelper
 import com.ruzhan.lion.listener.OnItemClickListener
 import com.ruzhan.lion.model.Movie
+import com.ruzhan.lion.model.RequestStatus
 import com.ruzhan.movie.detail.MovieDetailActivity
 import kotlinx.android.synthetic.main.frag_movie_list.*
 
@@ -74,12 +76,32 @@ class MovieListFragment : Fragment() {
         recycler_view.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL,
                 false)
 
-        movieListViewModel.movieListLiveData.observe(this@MovieListFragment, Observer { movieList ->
-            if (movieList != null) {
-                movieListAdapter.setData(movieList)
+
+        OnRefreshHelper.setOnRefreshStatusListener(swipe_refresh, recycler_view, object :
+                OnRefreshHelper.OnRefreshStatusListener {
+
+            override fun onRefresh() {
+                movieListViewModel.getMovieList(RequestStatus.REFRESH)
+            }
+
+            override fun onLoadMore() {
+                movieListViewModel.getMovieList(RequestStatus.LOAD_MORE)
             }
         })
 
-        movieListViewModel.getMovieList(1)
+        movieListViewModel.requestStatusLiveData.observe(this@MovieListFragment, Observer { requestStatus ->
+            if (requestStatus != null) {
+                swipe_refresh.isRefreshing = false
+
+                if (requestStatus.refreshStatus == RequestStatus.REFRESH) {
+                    movieListAdapter.setRefreshData(requestStatus.data)
+
+                } else if (requestStatus.refreshStatus == RequestStatus.LOAD_MORE) {
+                    movieListAdapter.setLoadMoreData(requestStatus.data)
+                }
+            }
+        })
+
+        movieListViewModel.getMovieList(RequestStatus.REFRESH)
     }
 }
