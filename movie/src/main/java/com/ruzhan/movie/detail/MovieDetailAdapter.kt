@@ -7,6 +7,7 @@ import com.ruzhan.lion.listener.OnItemClickListener
 import com.ruzhan.lion.model.Introduce
 import com.ruzhan.lion.model.MovieDetail
 import com.ruzhan.lion.model.Video
+import com.ruzhan.lion.ui.LoadMoreHolder
 import com.ruzhan.movie.R
 import java.util.*
 
@@ -22,9 +23,11 @@ class MovieDetailAdapter(listener: OnItemClickListener<Video>) : RecyclerView.Ad
         const val TYPE_IMAGE: Int = 1003
         const val TYPE_VIDEO_TITLE: Int = 1005
         const val TYPE_VIDEO: Int = 1006
+        const val TYPE_LOAD_MORE: Int = 1007
 
         const val HEADER: String = "HEADER"
         const val VIDEO_TITLE: String = "VIDEO_TITLE"
+        const val LOAD_MORE: String = "LOAD_MORE"
     }
 
     private var dataList: ArrayList<Any> = ArrayList()
@@ -50,6 +53,7 @@ class MovieDetailAdapter(listener: OnItemClickListener<Video>) : RecyclerView.Ad
             viewType = when {
                 HEADER == obj -> TYPE_HEADER
                 VIDEO_TITLE == obj -> TYPE_VIDEO_TITLE
+                LOAD_MORE == obj -> TYPE_LOAD_MORE
                 else -> TYPE_TITLE
             }
 
@@ -84,6 +88,8 @@ class MovieDetailAdapter(listener: OnItemClickListener<Video>) : RecyclerView.Ad
                     .inflate(R.layout.item_movie_detail_video, parent, false), itemClickListener)
             TYPE_VIDEO_TITLE -> viewHolder = MovieDetailVideoTitleHolder(LayoutInflater.from(parent.context)
                     .inflate(R.layout.item_movie_detail_video_title, parent, false))
+            TYPE_LOAD_MORE -> viewHolder = LoadMoreHolder(LayoutInflater.from(parent.context)
+                    .inflate(R.layout.item_load_more, parent, false))
         }
         return viewHolder
     }
@@ -97,6 +103,7 @@ class MovieDetailAdapter(listener: OnItemClickListener<Video>) : RecyclerView.Ad
             TYPE_TEXT -> (holder as MovieDetailTextHolder).bind(dataList[position] as Introduce)
             TYPE_IMAGE -> (holder as MovieDetailImageHolder).bind(dataList[position] as Introduce)
             TYPE_VIDEO -> (holder as MovieDetailVideoHolder).bind(dataList[position] as Video)
+            TYPE_LOAD_MORE -> (holder as LoadMoreHolder).bind(false)
         }
     }
 

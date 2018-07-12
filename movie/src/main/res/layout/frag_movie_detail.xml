@@ -68,7 +68,6 @@
         android:scrollbars="none"
         android:overScrollMode="never"
         android:orientation="vertical"
-        android:paddingBottom="@dimen/space_normal_16"
         android:scrollbarStyle="insideOverlay"
         app:layoutManager="android.support.v7.widget.LinearLayoutManager" />
 </com.ruzhan.lion.ui.widget.ElasticDragDismissFrameLayout>

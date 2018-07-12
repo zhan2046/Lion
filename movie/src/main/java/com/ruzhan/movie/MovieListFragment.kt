@@ -12,8 +12,9 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import com.ruzhan.lion.App
-import com.ruzhan.lion.OnRefreshHelper
+import com.ruzhan.lion.helper.OnRefreshHelper
 import com.ruzhan.lion.listener.OnItemClickListener
+import com.ruzhan.lion.model.LoadStatus
 import com.ruzhan.lion.model.Movie
 import com.ruzhan.lion.model.RequestStatus
 import com.ruzhan.movie.detail.MovieDetailActivity
@@ -89,15 +90,17 @@ class MovieListFragment : Fragment() {
             }
         })
 
+        movieListViewModel.loadStatusLiveData.observe(this@MovieListFragment, Observer { loadStatus ->
+            loadStatus?.let {
+                swipe_refresh.isRefreshing = LoadStatus.LOADING == loadStatus
+            }
+        })
+
         movieListViewModel.requestStatusLiveData.observe(this@MovieListFragment, Observer { requestStatus ->
-            if (requestStatus != null) {
-                swipe_refresh.isRefreshing = false
-
-                if (requestStatus.refreshStatus == RequestStatus.REFRESH) {
-                    movieListAdapter.setRefreshData(requestStatus.data)
-
-                } else if (requestStatus.refreshStatus == RequestStatus.LOAD_MORE) {
-                    movieListAdapter.setLoadMoreData(requestStatus.data)
+            requestStatus?.let {
+                when (requestStatus.refreshStatus) {
+                    RequestStatus.REFRESH -> movieListAdapter.setRefreshData(requestStatus.data)
+                    RequestStatus.LOAD_MORE -> movieListAdapter.setLoadMoreData(requestStatus.data)
                 }
             }
         })

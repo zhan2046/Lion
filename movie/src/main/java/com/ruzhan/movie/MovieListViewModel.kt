@@ -3,6 +3,7 @@ package com.ruzhan.movie
 import android.app.Application
 import android.arch.lifecycle.AndroidViewModel
 import android.arch.lifecycle.MutableLiveData
+import com.ruzhan.lion.model.LoadStatus
 import com.ruzhan.lion.model.Movie
 import com.ruzhan.lion.model.RequestStatus
 import com.ruzhan.lion.rx.Subscriber
@@ -15,14 +16,15 @@ import io.reactivex.android.schedulers.AndroidSchedulers
  */
 class MovieListViewModel(app: Application) : AndroidViewModel(app) {
 
-    private var isNetworkRequest: Boolean = false
     private val requestStatus: RequestStatus<List<Movie>> = RequestStatus()
-    var requestStatusLiveData: MutableLiveData<RequestStatus<List<Movie>>> = MutableLiveData()
+
+    val loadStatusLiveData: MutableLiveData<LoadStatus> = MutableLiveData()
+    val requestStatusLiveData: MutableLiveData<RequestStatus<List<Movie>>> = MutableLiveData()
 
     fun getMovieList(refreshStatus: Int) {
-        if (isNetworkRequest)  return
+        if (requestStatus.isNetworkRequest) return
 
-        isNetworkRequest = true
+        requestStatus.isNetworkRequest = true
 
         requestStatus.refreshStatus = refreshStatus
         requestStatus.setPage(refreshStatus)
@@ -32,11 +34,15 @@ class MovieListViewModel(app: Application) : AndroidViewModel(app) {
         MovieRepository.get().getMovieList(pageFileName)
                 .observeOn(AndroidSchedulers.mainThread())
                 .doOnError {}
-                .doOnSubscribe { requestStatus.loadStatus = RequestStatus.LOADING }
+                .doOnSubscribe {
+                    if (RequestStatus.REFRESH == requestStatus.refreshStatus) {
+                        loadStatusLiveData.value = LoadStatus.LOADING
+                    }
+                }
                 .map { result -> result.data }
                 .doFinally {
-                    requestStatus.loadStatus = RequestStatus.LOADED
-                    isNetworkRequest = false
+                    loadStatusLiveData.value = LoadStatus.LOADED
+                    requestStatus.isNetworkRequest = false
                 }
                 .doOnSuccess { movieList ->
                     requestStatus.data = movieList

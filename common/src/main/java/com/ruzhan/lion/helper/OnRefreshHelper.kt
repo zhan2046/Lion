@@ -1,4 +1,4 @@
-package com.ruzhan.lion
+package com.ruzhan.lion.helper
 
 import android.support.v4.content.ContextCompat
 import android.support.v4.widget.SwipeRefreshLayout
@@ -17,7 +17,7 @@ object OnRefreshHelper {
                                    listener: OnRefreshStatusListener) {
         swipeRefresh.setOnRefreshListener { listener.onRefresh() }
         swipeRefresh.setColorSchemeColors(ContextCompat.getColor(recyclerView.context,
-                R.color.colorPrimary))
+                R.color.colorAccent))
 
         recyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
             override fun onScrollStateChanged(recyclerView: RecyclerView?, newState: Int) {
