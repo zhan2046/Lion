@@ -19,7 +19,7 @@ public class CosmicDisclosure2 {
     private static final String TITLE = "揭露宇宙 24-60集";
     private static final String TAG = "揭露·宇宙";
 
-    private static final String IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/cosmi-disclosure.jpg";
+    private static final String IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/cosmi-disclosure02.jpg";
 
     private static final String DESC = "一部关于秘密太空计划（SSP）、宇宙历史、外星人讯息等有关内容的揭露节目。";
 
@@ -189,6 +189,14 @@ public class CosmicDisclosure2 {
         videoList.add(new Video(String.valueOf(ID + 47),
                 "60集（周年特辑）", IMAGE, PLAY_COUNT, 37, "第六十集",
                 "http://player.bilibili.com/player.html?aid=22979818&cid=38199699&page=37"));
+
+        videoList.add(new Video(String.valueOf(ID + 48),
+                "61集 秘密太空计划SSP证词", IMAGE, PLAY_COUNT, 38, "第六十一集",
+                "http://player.bilibili.com/player.html?aid=26571284&cid=45640710&page=1"));
+
+        videoList.add(new Video(String.valueOf(ID + 48),
+                "62集汤普金斯生平介绍", IMAGE, PLAY_COUNT, 38, "第六十二集",
+                "http://player.bilibili.com/player.html?aid=26571284&cid=45640713&page=2"));
 
         movie.id = String.valueOf(ID);
         movie.title = TITLE;
