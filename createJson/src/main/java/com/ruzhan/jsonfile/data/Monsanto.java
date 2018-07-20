@@ -14,7 +14,7 @@ import java.util.List;
 public class Monsanto {
 
     private static final int ID = 3203;
-    private static final String PLAY_COUNT = "1";
+    private static final String PLAY_COUNT = "2";
 
     private static final String TITLE = "转基因赌局：用生命下注";
     private static final String TAG = "揭露·纪录片";
@@ -45,6 +45,10 @@ public class Monsanto {
         videoList.add(new Video(String.valueOf(ID + 11),
                 "转基因赌局：用生命下注", IMAGE, PLAY_COUNT, 1, "电影",
                 "http://player.bilibili.com/player.html?aid=22137667&cid=36606699&page=1"));
+
+        videoList.add(new Video(String.valueOf(ID + 12),
+                "智平方辩论-转基因食品是否利大于弊", IMAGE, PLAY_COUNT, 2, "电影",
+                "http://player.bilibili.com/player.html?aid=10403428&cid=17181618&page=1"));
 
         movie.id = String.valueOf(ID);
         movie.title = TITLE;
