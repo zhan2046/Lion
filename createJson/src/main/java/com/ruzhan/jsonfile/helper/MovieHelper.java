@@ -23,6 +23,7 @@ import com.ruzhan.jsonfile.data.RichAndUs;
 import com.ruzhan.jsonfile.data.RunningWild;
 import com.ruzhan.jsonfile.data.ScamCity;
 import com.ruzhan.jsonfile.data.ScamCity2;
+import com.ruzhan.jsonfile.data.TED01;
 import com.ruzhan.jsonfile.data.TheLieWeLive;
 import com.ruzhan.jsonfile.data.TheLionSleepsNoMore;
 import com.ruzhan.jsonfile.data.TheOrionConspiracy;
@@ -111,6 +112,7 @@ public final class MovieHelper {
         List<Movie> list = new ArrayList<>();
         list.add(TheLionSleepsNoMore.movie);
         list.add(NikolaTesla.movie);
+        list.add(TED01.movie);
         list.add(CosmicDisclosure.movie);
         list.add(CosmicDisclosure2.movie);
         list.add(Human.movie);
@@ -148,6 +150,7 @@ public final class MovieHelper {
         List<MovieDetail> list = new ArrayList<>();
         list.add(TheLionSleepsNoMore.movieDetail);
         list.add(NikolaTesla.movieDetail);
+        list.add(TED01.movieDetail);
         list.add(CosmicDisclosure.movieDetail);
         list.add(CosmicDisclosure2.movieDetail);
         list.add(Human.movieDetail);
