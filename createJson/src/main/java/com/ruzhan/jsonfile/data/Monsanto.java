@@ -44,7 +44,7 @@ public class Monsanto {
 
         videoList.add(new Video(String.valueOf(ID + 11),
                 "转基因赌局：用生命下注", IMAGE, PLAY_COUNT, 1, "电影",
-                "http://player.bilibili.com/player.html?aid=10941918&cid=18113835&page=1"));
+                "http://player.bilibili.com/player.html?aid=22137667&cid=36606699&page=1"));
 
         movie.id = String.valueOf(ID);
         movie.title = TITLE;
