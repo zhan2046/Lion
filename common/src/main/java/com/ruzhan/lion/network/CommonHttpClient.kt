@@ -13,7 +13,7 @@ class CommonHttpClient private constructor() {
 
         private var httpClient: CommonHttpClient? = null
 
-        fun get(): CommonHttpClient? {
+        fun get(): CommonHttpClient {
             if (httpClient == null) {
                 synchronized(CommonHttpClient::class.java) {
                     if (httpClient == null) {
@@ -21,10 +21,10 @@ class CommonHttpClient private constructor() {
                     }
                 }
             }
-            return httpClient
+            return this.httpClient!!
         }
 
         @JvmStatic
-        fun getCommonHttpClient(): OkHttpClient = get()!!.okHttpClient
+        fun getCommonHttpClient(): OkHttpClient = get().okHttpClient
     }
 }

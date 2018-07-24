@@ -10,7 +10,7 @@ import io.reactivex.schedulers.Schedulers
 /**
  * Created by ruzhan123 on 2018/7/4.
  */
-class MovieRepository {
+class MovieRepository private constructor() {
 
     private val api: MovieApi = MovieClient.get()
 
