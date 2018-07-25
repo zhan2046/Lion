@@ -14,5 +14,9 @@
             android:hardwareAccelerated="true"
             android:screenOrientation="landscape" />
 
+        <activity
+            android:name=".detail.ImageDetailActivity"
+            android:screenOrientation="portrait" />
+
     </application>
 </manifest>

@@ -3,6 +3,7 @@ package com.ruzhan.lion.glide
 import android.graphics.drawable.Drawable
 import android.widget.ImageView
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
+import com.bumptech.glide.request.RequestListener
 
 
 /**
@@ -71,6 +72,26 @@ class GlideImpl : IImageLoader {
                 .load(resId)
                 .placeholder(placeholder)
                 .centerCrop()
+                .into(imageView)
+    }
+
+    override fun loadNoCrossFadeCenterCrop(imageView: ImageView, url: String) {
+        GlideApp.with(imageView.context)
+                .load(url)
+                .into(imageView)
+    }
+
+    override fun loadNoCrossFadeCenterCrop(imageView: ImageView, url: String,
+                                           listener: RequestListener<Drawable>) {
+        GlideApp.with(imageView.context)
+                .load(url)
+                .listener(listener)
+                .into(imageView)
+    }
+
+    override fun loadNoCrossFadeCenterCrop(imageView: ImageView, resId: Int) {
+        GlideApp.with(imageView.context)
+                .load(resId)
                 .into(imageView)
     }
 }

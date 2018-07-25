@@ -8,13 +8,15 @@ import com.ruzhan.lion.model.Introduce
 import com.ruzhan.lion.model.MovieDetail
 import com.ruzhan.lion.model.Video
 import com.ruzhan.lion.ui.LoadMoreHolder
+import com.ruzhan.movie.ImageListModel
 import com.ruzhan.movie.R
 import java.util.*
 
 /**
  * Created by ruzhan123 on 2018/7/5.
  */
-class MovieDetailAdapter(listener: OnItemClickListener<Video>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class MovieDetailAdapter(listener: OnItemClickListener<Video>,
+                         imageListener: OnItemClickListener<ImageListModel>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     companion object {
         const val TYPE_HEADER: Int = 1000
@@ -33,6 +35,7 @@ class MovieDetailAdapter(listener: OnItemClickListener<Video>) : RecyclerView.Ad
     private var dataList: ArrayList<Any> = ArrayList()
     private lateinit var movieDetail: MovieDetail
     private var itemClickListener: OnItemClickListener<Video> = listener
+    private var imageListener: OnItemClickListener<ImageListModel> = imageListener
     private lateinit var movieDetailHeaderHolder: MovieDetailHeaderHolder
 
     fun setData(movieDetail: MovieDetail) {
@@ -83,7 +86,7 @@ class MovieDetailAdapter(listener: OnItemClickListener<Video>) : RecyclerView.Ad
             TYPE_TEXT -> viewHolder = MovieDetailTextHolder(LayoutInflater.from(parent.context)
                     .inflate(R.layout.item_movie_detail_text, parent, false))
             TYPE_IMAGE -> viewHolder = MovieDetailImageHolder(LayoutInflater.from(parent.context)
-                    .inflate(R.layout.item_movie_detail_image, parent, false))
+                    .inflate(R.layout.item_movie_detail_image, parent, false), movieDetail, imageListener)
             TYPE_VIDEO -> viewHolder = MovieDetailVideoHolder(LayoutInflater.from(parent.context)
                     .inflate(R.layout.item_movie_detail_video, parent, false), itemClickListener)
             TYPE_VIDEO_TITLE -> viewHolder = MovieDetailVideoTitleHolder(LayoutInflater.from(parent.context)

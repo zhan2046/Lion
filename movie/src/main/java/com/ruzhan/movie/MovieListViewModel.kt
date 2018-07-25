@@ -19,7 +19,6 @@ import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
 
 
-
 /**
  * Created by ruzhan123 on 2018/7/4.
  */
@@ -57,7 +56,7 @@ class MovieListViewModel(app: Application) : AndroidViewModel(app) {
                     }
                     disposable?.dispose()
                 }
-                .subscribe({  }, {  })
+                .subscribe({ }, { })
     }
 
     fun getMovieList(refreshStatus: Int) {

@@ -15,7 +15,6 @@ import com.ruzhan.movie.R
 import kotlinx.android.synthetic.main.activity_web_video.*
 
 
-
 /**
  * Created by ruzhan123 on 2018/7/5.
  */

@@ -2,6 +2,7 @@ package com.ruzhan.lion.glide
 
 import android.graphics.drawable.Drawable
 import android.widget.ImageView
+import com.bumptech.glide.request.RequestListener
 
 /**
  * Created by ruzhan123 on 2018/7/4.
@@ -23,4 +24,10 @@ interface IImageLoader {
     fun loadNoCrossFade(imageView: ImageView, url: String, placeholder: Drawable)
 
     fun loadNoCrossFade(imageView: ImageView, resId: Int, placeholder: Drawable)
+
+    fun loadNoCrossFadeCenterCrop(imageView: ImageView, url: String)
+
+    fun loadNoCrossFadeCenterCrop(imageView: ImageView, url: String, listener: RequestListener<Drawable>)
+
+    fun loadNoCrossFadeCenterCrop(imageView: ImageView, resId: Int)
 }

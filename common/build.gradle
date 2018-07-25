@@ -65,4 +65,6 @@ dependencies {
     api "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${versions.kotlin}"
 
     api 'net.soulwolf.widget:ratiolayout:2.1.0'
+
+    api 'com.github.chrisbanes:PhotoView:2.0.0'
 }

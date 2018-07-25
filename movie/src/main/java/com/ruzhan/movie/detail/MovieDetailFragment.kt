@@ -16,6 +16,7 @@ import com.ruzhan.lion.model.Movie
 import com.ruzhan.lion.model.Video
 import com.ruzhan.lion.ui.widget.ElasticDragDismissFrameLayout
 import com.ruzhan.lion.util.ViewUtils
+import com.ruzhan.movie.ImageListModel
 import com.ruzhan.movie.R
 import com.ruzhan.movie.video.WebVideoActivity
 import kotlinx.android.synthetic.main.frag_movie_detail.*
@@ -62,7 +63,12 @@ class MovieDetailFragment : Fragment() {
             override fun onItemClick(position: Int, bean: Video, itemView: View) {
                 WebVideoActivity.launch(activity!!, bean.playWebUrl)
             }
-        })
+        },
+                object : OnItemClickListener<ImageListModel> {
+                    override fun onItemClick(position: Int, bean: ImageListModel, itemView: View) {
+                        ImageDetailActivity.launch(activity!!, bean)
+                    }
+                })
         recycler_view.adapter = movieDetailAdapter
 
         recycler_view.addOnScrollListener(object : RecyclerView.OnScrollListener() {
@@ -90,10 +96,12 @@ class MovieDetailFragment : Fragment() {
             }
         }
 
-        back.setOnClickListener { activity?.let { act ->
-            closeFragmentUpdateUi()
-            finishAfterTransition(act)
-        } }
+        back.setOnClickListener {
+            activity?.let { act ->
+                closeFragmentUpdateUi()
+                finishAfterTransition(act)
+            }
+        }
         chromeFader = object : ElasticDragDismissFrameLayout.SystemChromeFader(activity) {
 
             override fun onDragDismissed() {

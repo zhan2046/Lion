@@ -46,7 +46,7 @@ class MovieDetailViewModel(app: Application) : AndroidViewModel(app) {
                     }
                     disposable?.dispose()
                 }
-                .subscribe({  }, {  })
+                .subscribe({ }, { })
     }
 
     fun getMovieDetail(movieId: String) {
