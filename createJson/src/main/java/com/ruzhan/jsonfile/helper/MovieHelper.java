@@ -54,6 +54,8 @@ import java.util.Set;
  */
 public final class MovieHelper {
 
+    private static final int PAGE_COUNT = 60;
+
     private MovieHelper() {
 
     }
@@ -90,7 +92,6 @@ public final class MovieHelper {
     public static Map<String, List<Movie>> getMovieMap(List<Movie> list) {
         Map<String, List<Movie>> map = new HashMap<>();
         int page = 1;
-        int pageCount = 20;
         int count = 0;
         for (int i = 0; i < list.size(); i++) {
             List<Movie> valueList = map.get(String.valueOf(page));
@@ -102,7 +103,7 @@ public final class MovieHelper {
             map.put(String.valueOf(page), valueList);
             count++;
 
-            if (count >= pageCount) {
+            if (count >= PAGE_COUNT) {
                 count = 0;
                 page++;
             }
@@ -112,6 +113,7 @@ public final class MovieHelper {
 
     public static List<Movie> getMovieList() {
         List<Movie> list = new ArrayList<>();
+        list.add(Thrive.movie);
         list.add(TheLionSleepsNoMore.movie);
         list.add(NikolaTesla.movie);
         list.add(TED2018.movie);
@@ -121,7 +123,6 @@ public final class MovieHelper {
         list.add(CosmicDisclosure2.movie);
         list.add(Human.movie);
         list.add(TheSecret.movie);
-        list.add(Thrive.movie);
         list.add(AliensMoon.movie);
         list.add(AncientAliens.movie);
         list.add(MadeUsSpend.movie);
@@ -152,6 +153,7 @@ public final class MovieHelper {
 
     public static List<MovieDetail> getMovieDetailList() {
         List<MovieDetail> list = new ArrayList<>();
+        list.add(Thrive.movieDetail);
         list.add(TheLionSleepsNoMore.movieDetail);
         list.add(NikolaTesla.movieDetail);
         list.add(TED2018.movieDetail);
@@ -161,7 +163,6 @@ public final class MovieHelper {
         list.add(CosmicDisclosure2.movieDetail);
         list.add(Human.movieDetail);
         list.add(TheSecret.movieDetail);
-        list.add(Thrive.movieDetail);
         list.add(AliensMoon.movieDetail);
         list.add(AncientAliens.movieDetail);
         list.add(MadeUsSpend.movieDetail);
