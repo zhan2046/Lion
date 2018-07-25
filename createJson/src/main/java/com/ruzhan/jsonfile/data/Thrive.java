@@ -21,7 +21,7 @@ public class Thrive {
 
     private static final String IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/thrive.jpg";
 
-    private static final String DESC = "这是一部通过追踪经济发展而揭开世界运作方式，并涵盖影响我们生命的各种力量面纱的，非常规型纪录电影。";
+    private static final String DESC = "通过追踪经济发展而揭开世界运作方式，并涵盖影响我们生命的各种力量面纱的，非常规型纪录电影。";
 
     public static final Movie movie = new Movie();
     public static final MovieDetail movieDetail = new MovieDetail();

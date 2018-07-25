@@ -14,7 +14,7 @@ public class RequestStatus<T> {
     public static final int LOAD_MORE = 1001;
 
     public static final int START_PAGE = 1;
-    public static final int PAGE_SIZE = 20;
+    public static final int PAGE_SIZE = 60;
 
     @IntDef({REFRESH, LOAD_MORE})
     @Retention(RetentionPolicy.SOURCE)
