@@ -113,9 +113,9 @@ public final class MovieHelper {
 
     public static List<Movie> getMovieList() {
         List<Movie> list = new ArrayList<>();
-        list.add(Thrive.movie);
         list.add(TheLionSleepsNoMore.movie);
         list.add(NikolaTesla.movie);
+        list.add(Thrive.movie);
         list.add(TED2018.movie);
         list.add(TED2017.movie);
         list.add(TED2016.movie);
@@ -153,9 +153,9 @@ public final class MovieHelper {
 
     public static List<MovieDetail> getMovieDetailList() {
         List<MovieDetail> list = new ArrayList<>();
-        list.add(Thrive.movieDetail);
         list.add(TheLionSleepsNoMore.movieDetail);
         list.add(NikolaTesla.movieDetail);
+        list.add(Thrive.movieDetail);
         list.add(TED2018.movieDetail);
         list.add(TED2017.movieDetail);
         list.add(TED2016.movieDetail);
