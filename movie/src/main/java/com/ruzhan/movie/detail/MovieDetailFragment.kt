@@ -28,6 +28,7 @@ class MovieDetailFragment : Fragment() {
     companion object {
 
         private const val MOVIE: String = "MOVIE"
+        private const val TRANSITION_TIME: Long = 450
 
         @JvmStatic
         fun newInstance(movie: Movie): MovieDetailFragment {
@@ -117,6 +118,10 @@ class MovieDetailFragment : Fragment() {
                 Observer { movieDetail ->
                     movieDetail?.let { movieDetailAdapter.setData(it) }
                 })
+
+        shot.postDelayed({
+            movieDetailViewModel.loadMovieDetailEntity(movie.id)
+        }, TRANSITION_TIME)
 
         movieDetailViewModel.getMovieDetail(movie.id)
     }

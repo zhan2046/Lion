@@ -8,12 +8,14 @@ import android.arch.persistence.room.RoomDatabase
 import android.arch.persistence.room.TypeConverters
 import android.content.Context
 import android.support.annotation.VisibleForTesting
-
 import com.ruzhan.lion.db.converter.RoomDataConverter
+import com.ruzhan.lion.db.dao.MovieDetailEntityDao
 import com.ruzhan.lion.db.dao.MovieEntityDao
+import com.ruzhan.lion.db.entity.MovieDetailEntity
 import com.ruzhan.lion.db.entity.MovieEntity
 
-@Database(entities = [(MovieEntity::class)], version = 1, exportSchema = false)
+@Database(entities = [(MovieEntity::class), (MovieDetailEntity::class)],
+        version = 1, exportSchema = false)
 @TypeConverters(RoomDataConverter::class)
 abstract class AppDatabase : RoomDatabase() {
 
@@ -23,6 +25,8 @@ abstract class AppDatabase : RoomDatabase() {
         get() = isDatabaseCreated
 
     abstract fun movieEntityDao(): MovieEntityDao
+
+    abstract fun movieDetailEntityDao(): MovieDetailEntityDao
 
     private fun updateDatabaseCreated(context: Context) {
         if (context.getDatabasePath(DATABASE_NAME).exists()) {

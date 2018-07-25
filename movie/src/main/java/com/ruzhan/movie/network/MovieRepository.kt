@@ -2,6 +2,7 @@ package com.ruzhan.movie.network
 
 import com.ruzhan.lion.App
 import com.ruzhan.lion.db.AppDatabase
+import com.ruzhan.lion.db.entity.MovieDetailEntity
 import com.ruzhan.lion.db.entity.MovieEntity
 import com.ruzhan.lion.model.HttpResult
 import com.ruzhan.lion.model.Movie
@@ -49,5 +50,13 @@ class MovieRepository private constructor() {
 
     fun insertMovieEntityList(movieEntityList: List<MovieEntity>) {
         return appDatabase.movieEntityDao().insertMovieEntityList(movieEntityList)
+    }
+
+    fun loadMovieDetailEntity(movieId: String): Flowable<MovieDetailEntity> {
+        return appDatabase.movieDetailEntityDao().loadMovieDetailEntity(movieId)
+    }
+
+    fun insertMovieDetailEntity(movieDetailEntity: MovieDetailEntity) {
+        return appDatabase.movieDetailEntityDao().insertMovieDetailEntity(movieDetailEntity)
     }
 }
