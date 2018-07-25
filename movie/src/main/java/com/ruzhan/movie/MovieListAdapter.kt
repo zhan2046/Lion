@@ -26,20 +26,24 @@ class MovieListAdapter(listener: OnItemClickListener<Movie>) : RecyclerView.Adap
     private var isLoadMore: Boolean = false
 
     fun setRefreshData(movieList: List<Movie>) {
-        dataList.clear()
-        dataList.addAll(movieList)
-        dataList.add(LOAD_MORE)
-        isLoadMore = movieList.size >= RequestStatus.PAGE_SIZE
-        notifyDataSetChanged()
+        if (movieList.isNotEmpty()) {
+            dataList.clear()
+            dataList.addAll(movieList)
+            dataList.add(LOAD_MORE)
+            isLoadMore = movieList.size >= RequestStatus.PAGE_SIZE
+            notifyDataSetChanged()
+        }
     }
 
     fun setLoadMoreData(movieList: List<Movie>) {
-        dataList.remove(LOAD_MORE)
+        if (movieList.isNotEmpty()) {
+            dataList.remove(LOAD_MORE)
 
-        dataList.addAll(movieList)
-        dataList.add(LOAD_MORE)
-        isLoadMore = movieList.size >= RequestStatus.PAGE_SIZE
-        notifyDataSetChanged()
+            dataList.addAll(movieList)
+            dataList.add(LOAD_MORE)
+            isLoadMore = movieList.size >= RequestStatus.PAGE_SIZE
+            notifyDataSetChanged()
+        }
     }
 
     override fun getItemViewType(position: Int): Int {

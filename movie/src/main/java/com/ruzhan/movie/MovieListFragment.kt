@@ -105,6 +105,7 @@ class MovieListFragment : Fragment() {
             }
         })
 
+        movieListViewModel.loadMovieEntityList()
         movieListViewModel.getMovieList(RequestStatus.REFRESH)
     }
 }
