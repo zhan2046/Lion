@@ -19,7 +19,7 @@ public class Monsanto {
     private static final String TITLE = "转基因赌局：用生命下注";
     private static final String TAG = "揭露·纪录片";
 
-    private static final String IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/monsanto.jpg";
+    private static final String IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/monsanto01.jpg";
 
     private static final String DESC = "这部新纪录片对美国孟山都公司的名誉发起了另一轮剧烈冲击。";
 
@@ -34,7 +34,7 @@ public class Monsanto {
                 DESC, ""));
 
         introduceList.add(new Introduce(Introduce.IMAGE, "",
-                "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/monsanto01.jpg"));
+                "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/monsanto.jpg"));
 
         introduceList.add(new Introduce(Introduce.TEXT,
                 "美国孟山都公司是全球最大的化工公司之一，也是全球90%转基因作物的种子技术的提供者。", ""));
