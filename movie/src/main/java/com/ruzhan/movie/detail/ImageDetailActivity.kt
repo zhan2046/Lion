@@ -44,6 +44,7 @@ class ImageDetailActivity : AppCompatActivity() {
 
         current_tv.text = (imageListModel.position + 1).toString()
         total_tv.text = imageListModel.imageList.size.toString()
+        title_tv.text = imageListModel.title
 
         val imageDetailAdapter = ImageDetailAdapter(supportFragmentManager, imageListModel.imageList)
         view_page.adapter = imageDetailAdapter

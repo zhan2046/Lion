@@ -9,6 +9,22 @@
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
+    <TextView
+        android:id="@+id/title_tv"
+        android:text="@string/image_list_desc"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginBottom="@dimen/space_normal_16"
+        android:layout_marginEnd="@dimen/space_normal_16"
+        android:layout_marginStart="@dimen/space_normal_16"
+        android:layout_marginTop="@dimen/space_large_48"
+        android:ellipsize="end"
+        android:letterSpacing="0.08"
+        android:textStyle="bold"
+        android:maxLines="1"
+        android:textColor="@color/light_grey"
+        android:textSize="@dimen/text_large_26" />
+
     <LinearLayout
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

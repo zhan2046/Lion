@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">movie</string>
     <string name="video_desc">视频</string>
+    <string name="image_list_desc">图片</string>
 </resources>
