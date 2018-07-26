@@ -11,6 +11,8 @@ import com.bumptech.glide.load.engine.GlideException
 import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.target.Target
 import com.ruzhan.lion.glide.ImageLoader
+import com.ruzhan.lion.util.LionUtils
+import com.ruzhan.lion.util.ViewUtils
 import com.ruzhan.movie.R
 import kotlinx.android.synthetic.main.frag_image_detail.*
 
@@ -44,24 +46,34 @@ class ItemImageDetailFragment : Fragment() {
         arguments?.let {
             val imageUrl: String = it.getString(IMAGE_URL)
 
-            ImageLoader.get().loadCenterCrop(photo_view, imageUrl, object : RequestListener<Drawable> {
+            var isGif = imageUrl.contains(LionUtils.GIF_FILE)
 
-                override fun onResourceReady(resource: Drawable?, model: Any?,
-                                             target: Target<Drawable>?, dataSource: DataSource?,
-                                             isFirstResource: Boolean): Boolean {
-                    photo_view.setImageDrawable(resource)
-                    load_progress.visibility = View.INVISIBLE
-                    return true
-                }
+            photo_view.visibility = if (isGif) View.GONE else View.VISIBLE
+            image_iv.visibility = if (isGif) View.VISIBLE else View.GONE
 
-                override fun onLoadFailed(e: GlideException?, model: Any?, target: Target<Drawable>?,
-                                          isFirstResource: Boolean): Boolean {
-                    load_progress.visibility = View.INVISIBLE
-                    return true
-                }
+            if (isGif) {
+                ImageLoader.get().load(image_iv, imageUrl, ViewUtils.getPlaceholder(activity!!, 0))
+                load_progress.visibility = View.INVISIBLE
 
-            })
+            } else {
+                ImageLoader.get().loadCenterCrop(photo_view, imageUrl, object : RequestListener<Drawable> {
 
+                    override fun onResourceReady(resource: Drawable?, model: Any?,
+                                                 target: Target<Drawable>?, dataSource: DataSource?,
+                                                 isFirstResource: Boolean): Boolean {
+                        photo_view.setImageDrawable(resource)
+                        load_progress.visibility = View.INVISIBLE
+                        return true
+                    }
+
+                    override fun onLoadFailed(e: GlideException?, model: Any?, target: Target<Drawable>?,
+                                              isFirstResource: Boolean): Boolean {
+                        load_progress.visibility = View.INVISIBLE
+                        return true
+                    }
+
+                })
+            }
         }
     }
 }

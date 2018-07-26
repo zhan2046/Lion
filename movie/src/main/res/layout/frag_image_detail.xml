@@ -1,6 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <FrameLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:soulwolf="http://schemas.android.com/apk/res-auto"
     android:background="@android:color/black"
     android:layout_width="match_parent"
     android:layout_height="match_parent">
@@ -9,6 +10,16 @@
         android:id="@+id/photo_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
+
+    <net.soulwolf.widget.ratiolayout.widget.RatioImageView
+        android:id="@+id/image_iv"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        android:layout_gravity="center"
+        soulwolf:datumRatio="datumWidth"
+        soulwolf:heightRatio="9"
+        soulwolf:widthRatio="16" />
 
     <ProgressBar
         android:id="@+id/load_progress"
