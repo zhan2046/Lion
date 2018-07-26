@@ -44,7 +44,7 @@ class ItemImageDetailFragment : Fragment() {
         arguments?.let {
             val imageUrl: String = it.getString(IMAGE_URL)
 
-            ImageLoader.get().loadNoCrossFadeCenterCrop(photo_view, imageUrl, object : RequestListener<Drawable> {
+            ImageLoader.get().loadCenterCrop(photo_view, imageUrl, object : RequestListener<Drawable> {
 
                 override fun onResourceReady(resource: Drawable?, model: Any?,
                                              target: Target<Drawable>?, dataSource: DataSource?,

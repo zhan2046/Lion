@@ -25,9 +25,9 @@ interface IImageLoader {
 
     fun loadNoCrossFade(imageView: ImageView, resId: Int, placeholder: Drawable)
 
-    fun loadNoCrossFadeCenterCrop(imageView: ImageView, url: String)
+    fun loadCenterCrop(imageView: ImageView, url: String)
 
-    fun loadNoCrossFadeCenterCrop(imageView: ImageView, url: String, listener: RequestListener<Drawable>)
+    fun loadCenterCrop(imageView: ImageView, url: String, listener: RequestListener<Drawable>)
 
-    fun loadNoCrossFadeCenterCrop(imageView: ImageView, resId: Int)
+    fun loadCenterCrop(imageView: ImageView, resId: Int)
 }
