@@ -14,14 +14,14 @@ import java.util.List;
 public class DaftPunk {
 
     private static final int ID = 3903;
-    private static final String PLAY_COUNT = "1";
+    private static final String PLAY_COUNT = "2";
 
     private static final String TITLE = "Daft Punk Unchained";
     private static final String TAG = "社会·纪录片";
 
     private static final String IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/daft-punk.jpg";
 
-    private static final String DESC = "Daft Punk，一个创立于法国巴黎的电子音乐团体，他们用开放的音乐态度，打破浩室、迪斯科和放克音乐的传统分野，开发变化多端的旋律、声响与歌唱，创造出幽默而不失深度，极富想象力的作品。";
+    private static final String DESC = "Daft Punk，他们用开放的音乐态度，打破浩室、迪斯科和放克音乐的传统分野，开发变化多端的旋律、声响与歌唱，创造出幽默而不失深度，极富想象力的作品。";
 
     public static final Movie movie = new Movie();
     public static final MovieDetail movieDetail = new MovieDetail();
@@ -63,6 +63,10 @@ public class DaftPunk {
         videoList.add(new Video(String.valueOf(ID + 11),
                 "【纪录片】被解放的蠢朋克 【2015】【法国】", IMAGE, PLAY_COUNT, 1, "电影",
                 "http://player.bilibili.com/player.html?aid=5623215&cid=9133202&page=1"));
+
+        videoList.add(new Video(String.valueOf(ID + 12),
+                "【Daft Punk】Alive2007，法国的电音天堂", IMAGE, PLAY_COUNT, 2, "电影",
+                "http://player.bilibili.com/player.html?aid=2795311&cid=4366499&page=1"));
 
         movie.id = String.valueOf(ID);
         movie.title = TITLE;
