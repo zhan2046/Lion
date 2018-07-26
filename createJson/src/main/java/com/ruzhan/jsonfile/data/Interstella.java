@@ -16,12 +16,12 @@ public class Interstella {
     private static final int ID = 3803;
     private static final String PLAY_COUNT = "2";
 
-    private static final String TITLE = "Interstella 5555";
+    private static final String TITLE = "Interstella 5555: The 5tory of the 5ecret 5tar 5ystem";
     private static final String TAG = "动作·冒险·动画片";
 
     private static final String IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/interstella.jpg";
 
-    private static final String DESC = "影片讲述了来自另一个星系的四个音乐家被一个邪恶经理人绑架后的冒险经历，而最后他们终于成为了地球上最伟大的一支乐队。";
+    private static final String DESC = "本片是2003年松本零士与Daft Punk联合制作的动画音乐剧，可以说是东西文化结合的产物，恐怕很难再有同类作品了。";
 
     public static final Movie movie = new Movie();
     public static final MovieDetail movieDetail = new MovieDetail();
