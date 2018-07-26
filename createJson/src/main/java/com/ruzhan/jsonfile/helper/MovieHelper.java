@@ -10,6 +10,7 @@ import com.ruzhan.jsonfile.data.CredoMutwa;
 import com.ruzhan.jsonfile.data.DevinWilliams;
 import com.ruzhan.jsonfile.data.EscapeFromHell;
 import com.ruzhan.jsonfile.data.Human;
+import com.ruzhan.jsonfile.data.Interstella;
 import com.ruzhan.jsonfile.data.KeJi;
 import com.ruzhan.jsonfile.data.MadeUsSpend;
 import com.ruzhan.jsonfile.data.ManVsWild;
@@ -121,6 +122,7 @@ public final class MovieHelper {
         list.add(TED2016.movie);
         list.add(CosmicDisclosure.movie);
         list.add(CosmicDisclosure2.movie);
+        list.add(Interstella.movie);
         list.add(Human.movie);
         list.add(TheSecret.movie);
         list.add(AliensMoon.movie);
@@ -161,6 +163,7 @@ public final class MovieHelper {
         list.add(TED2016.movieDetail);
         list.add(CosmicDisclosure.movieDetail);
         list.add(CosmicDisclosure2.movieDetail);
+        list.add(Interstella.movieDetail);
         list.add(Human.movieDetail);
         list.add(TheSecret.movieDetail);
         list.add(AliensMoon.movieDetail);
