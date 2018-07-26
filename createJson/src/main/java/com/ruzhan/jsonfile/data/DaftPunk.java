@@ -21,7 +21,7 @@ public class DaftPunk {
 
     private static final String IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/daft-punk.jpg";
 
-    private static final String DESC = "Daft Punk，法国DJ组合兼电音制作乐队，由 Thomas Bangalter 和Guy-Manuel de Homem-Christo 组成。";
+    private static final String DESC = "Daft Punk，一个创立于法国巴黎的电子音乐团体，他们用开放的音乐态度，打破浩室、迪斯科和放克音乐的传统分野，开发变化多端的旋律、声响与歌唱，创造出幽默而不失深度，极富想象力的作品。";
 
     public static final Movie movie = new Movie();
     public static final MovieDetail movieDetail = new MovieDetail();
@@ -55,7 +55,10 @@ public class DaftPunk {
                 "傻朋克著名于他们的表演皆经过精心的策划，并将视觉的效果及元素融入进音乐中、作品亦皆有如故事般的铺陈。", ""));
 
         introduceList.add(new Introduce(Introduce.TEXT,
-                "自2001年以来，傻瓜朋克大多以机器人的扮相出现在公众视野，而他们的头盔以及手套就是其机器人扮相中很重要的标志。两人为了保持乐团的神秘感，基本都不会接受采访或是在电视节目里出现。", ""));
+                "自2001年以来，傻瓜朋克大多以机器人的扮相出现在公众视野，而他们的头盔以及手套就是其机器人扮相中很重要的标志。", ""));
+
+        introduceList.add(new Introduce(Introduce.TEXT,
+                "两人为了保持乐团的神秘感，基本都不会接受采访或是在电视节目里出现。", ""));
 
         videoList.add(new Video(String.valueOf(ID + 11),
                 "【纪录片】被解放的蠢朋克 【2015】【法国】", IMAGE, PLAY_COUNT, 1, "电影",
