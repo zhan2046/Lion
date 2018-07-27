@@ -14,7 +14,7 @@ import java.util.List;
 public class DaftPunk {
 
     private static final int ID = 3903;
-    private static final String PLAY_COUNT = "2";
+    private static final String PLAY_COUNT = "3";
 
     private static final String TITLE = "Daft Punk Unchained";
     private static final String TAG = "社会·纪录片";
@@ -65,7 +65,11 @@ public class DaftPunk {
                 "http://player.bilibili.com/player.html?aid=5623215&cid=9133202&page=1"));
 
         videoList.add(new Video(String.valueOf(ID + 12),
-                "【Daft Punk】Alive2007，法国的电音天堂", IMAGE, PLAY_COUNT, 2, "电影",
+                "Random Access Memories", IMAGE, PLAY_COUNT, 2, "音乐",
+                "http://player.bilibili.com/player.html?aid=2285300&cid=3562854&page=1"));
+
+        videoList.add(new Video(String.valueOf(ID + 13),
+                "【Daft Punk】Alive2007，法国的电音天堂", IMAGE, PLAY_COUNT, 3, "电影",
                 "http://player.bilibili.com/player.html?aid=2795311&cid=4366499&page=1"));
 
         movie.id = String.valueOf(ID);
