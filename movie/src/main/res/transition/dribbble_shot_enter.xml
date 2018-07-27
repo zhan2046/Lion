@@ -56,7 +56,7 @@
         android:duration="100"
         android:interpolator="@android:interpolator/linear">
         <targets>
-            <target  />
+            <target android:targetId="@id/back_wrapper" />
         </targets>
     </fade>
 
