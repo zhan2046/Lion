@@ -153,7 +153,7 @@ public final class MovieHelper {
         list.add(TheStoryOfGod.movie);
         list.add(ThroughTheWormhole.movie);
         list.add(OnTheRoad.movie);
-        list.add(FrozenPlanet.movie);
+        //list.add(FrozenPlanet.movie);
         return list;
     }
 
@@ -196,7 +196,7 @@ public final class MovieHelper {
         list.add(TheStoryOfGod.movieDetail);
         list.add(ThroughTheWormhole.movieDetail);
         list.add(OnTheRoad.movieDetail);
-        list.add(FrozenPlanet.movieDetail);
+        //list.add(FrozenPlanet.movieDetail);
         return list;
     }
 }
