@@ -7,8 +7,8 @@ android {
         config {
             keyAlias rootProject.keyAlias
             keyPassword rootProject.keyPassword
-            storeFile file('keystore/lion.jks')
             storePassword rootProject.storePassword
+            storeFile file('keystore/lion.jks')
         }
     }
 
@@ -24,6 +24,11 @@ android {
     }
 
     buildTypes {
+
+        debug {
+
+        }
+
         release {
             minifyEnabled true
             shrinkResources true

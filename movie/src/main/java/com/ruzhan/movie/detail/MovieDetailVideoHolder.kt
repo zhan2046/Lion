@@ -1,5 +1,6 @@
 package com.ruzhan.movie.detail
 
+import android.support.v4.content.ContextCompat
 import android.support.v7.widget.RecyclerView
 import android.text.TextUtils
 import android.view.View
@@ -27,7 +28,7 @@ class MovieDetailVideoHolder(itemView: View, listener: OnItemClickListener<Video
         itemView.play_count_tv.background = if (TextUtils.isEmpty(bean.playNumberDesc)) {
             null
         } else {
-            itemView.resources.getDrawable(R.drawable.shape_blue_radius_bg)
+            ContextCompat.getDrawable(itemView.context, R.drawable.shape_blue_radius_bg)
         }
         itemView.play_count_tv.text = bean.playNumberDesc
         ImageLoader.get().load(itemView.image_iv, bean.image,
