@@ -4,7 +4,7 @@ Lion
 
 
 
-####   Kotlin + LiveData + ViewModel + RXJava2 + Retrofit + OKHttp + + Room + Material Design + Glide build，welcome star or fork。
+####   :tada::tada::tada: Kotlin + LiveData + ViewModel + RXJava2 + Retrofit + OKHttp + + Room + Material Design + Glide build，welcome star or fork。
 
 
 Screenshots
@@ -20,20 +20,59 @@ Screenshots
 <a href="logo/lion06.png"><img src="logo/lion06.png" width="30%"/></a>
 
 
-Download
+Download :tada:
 ------
-[fir download](https://fir.im/lion333)
+[fir - (Lion app download)](https://fir.im/lion333)
 
 
+Gradle :fire:
+------
 
-Version
+
+[![](https://jitpack.io/v/ruzhan123/Lion.svg)](https://jitpack.io/#ruzhan123/Lion)
+
+:heart: If you want use movie list module, Add it in your root build.gradle at the end of repositories:
+
+
+```java
+
+	allprojects {
+		repositories {
+			...
+			maven { url 'https://jitpack.io' }
+		}
+	}
+```
+
+:heart: Add the dependency:
+
+
+```java
+
+	dependencies {
+	        implementation 'com.github.ruzhan123.Lion:movie:0.1.6'
+	}
+```
+
+:heart: Proguard
+------
+
+```java
+
+-keep class com.ruzhan.lion.model.** { *; }
+-keep class com.ruzhan.lion.db.entity.** { *; }
+
+```
+
+
+Version :sunny:
 ------
 #### 2018-7-28    v0.1.6
-*  movie module
+*  movie module repositories, integrated room local db
 
 
 
-Developed by
+Developed by :sunny:
 -------
 
  ruzhan - <a href='javascript:'>dev19921116@gmail.com</a>
