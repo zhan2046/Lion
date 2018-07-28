@@ -31,10 +31,14 @@ class App : Application() {
 
     companion object {
 
-        private var INSTANCE: App? = null
+        private lateinit var INSTANCE: Application
 
-        fun get(): App {
-            return this.INSTANCE!!
+        fun get(): Application {
+            return this.INSTANCE
+        }
+
+        fun setApp(application: Application) {
+            INSTANCE = application
         }
     }
 }
