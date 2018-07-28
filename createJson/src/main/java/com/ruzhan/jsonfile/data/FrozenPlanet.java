@@ -54,35 +54,35 @@ public class FrozenPlanet {
 
         videoList.add(new Video(String.valueOf(ID + 11),
                 "1、BBC.Frozen.Planet.EP01.2011.BluRay.Repack.1080p", IMAGE, PLAY_COUNT, 1, "第一集",
-                "http://player.bilibili.com/player.html?aid=26338600&cid=45243114&page=1"));
+                "http://player.bilibili.com/player.html?aid=26338600&page=1"));
 
         videoList.add(new Video(String.valueOf(ID + 12),
                 "2、BBC.Frozen.Planet.EP02.2011.BluRay.Repack.1080p", IMAGE, PLAY_COUNT, 2, "第二集",
-                "http://player.bilibili.com/player.html?aid=26338600&cid=45243114&page=2"));
+                "http://player.bilibili.com/player.html?aid=26338600&page=2"));
 
         videoList.add(new Video(String.valueOf(ID + 13),
                 "3、BBC.Frozen.Planet.EP03.2011.BluRay.Repack.1080p", IMAGE, PLAY_COUNT, 3, "第三集",
-                "http://player.bilibili.com/player.html?aid=26338600&cid=45243114&page=3"));
+                "http://player.bilibili.com/player.html?aid=26338600&page=3"));
 
         videoList.add(new Video(String.valueOf(ID + 14),
                 "4、BBC.Frozen.Planet.EP04.2011.BluRay.Repack.1080p", IMAGE, PLAY_COUNT, 4, "第四集",
-                "http://player.bilibili.com/player.html?aid=26338600&cid=45243114&page=4"));
+                "http://player.bilibili.com/player.html?aid=26338600&page=4"));
 
         videoList.add(new Video(String.valueOf(ID + 15),
                 "5、BBC.Frozen.Planet.EP05.2011.BluRay.Repack.1080p", IMAGE, PLAY_COUNT, 5, "第五集",
-                "http://player.bilibili.com/player.html?aid=26338600&cid=45243114&page=5"));
+                "http://player.bilibili.com/player.html?aid=26338600&page=5"));
 
         videoList.add(new Video(String.valueOf(ID + 16),
                 "6、BBC.Frozen.Planet.EP06.2011.BluRay.Repack.1080p", IMAGE, PLAY_COUNT, 6, "第六集",
-                "http://player.bilibili.com/player.html?aid=26338600&cid=45243114&page=6"));
+                "http://player.bilibili.com/player.html?aid=26338600&page=6"));
 
         videoList.add(new Video(String.valueOf(ID + 17),
                 "7、BBC.Frozen.Planet.EP07.2011.BluRay.Repack.1080p", IMAGE, PLAY_COUNT, 7, "第七集",
-                "http://player.bilibili.com/player.html?aid=26338600&cid=45243114&page=7"));
+                "http://player.bilibili.com/player.html?aid=26338600&page=7"));
 
         videoList.add(new Video(String.valueOf(ID + 18),
                 "8、BBC.Frozen.Planet.EP08.2011.BluRay.Repack.1080p", IMAGE, PLAY_COUNT, 8, "第八集",
-                "http://player.bilibili.com/player.html?aid=26338600&cid=45243114&page=8"));
+                "http://player.bilibili.com/player.html?aid=26338600&page=8"));
 
         movie.id = String.valueOf(ID);
         movie.title = TITLE;
