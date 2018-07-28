@@ -3,8 +3,8 @@
 
     <stroke
         android:color="#FFAAAAAA"
-        android:width="@dimen/space_small_1" />
+        android:width="@dimen/lion_movie_space_small_1" />
 
     <corners
-        android:radius="@dimen/space_small_4" />
+        android:radius="@dimen/lion_movie_space_small_4" />
 </shape>
