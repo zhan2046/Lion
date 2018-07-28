@@ -12,7 +12,7 @@ import android.view.Window
 import android.view.WindowManager
 import com.ruzhan.movie.ImageListModel
 import com.ruzhan.movie.R
-import kotlinx.android.synthetic.main.activity_image_detail.*
+import kotlinx.android.synthetic.main.lion_activity_image_detail.*
 
 /**
  * Created by ruzhan123 on 2018/7/25.
@@ -38,7 +38,7 @@ class ImageDetailActivity : AppCompatActivity() {
         window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN)
 
-        setContentView(R.layout.activity_image_detail)
+        setContentView(R.layout.lion_activity_image_detail)
 
         val imageListModel: ImageListModel = intent.getSerializableExtra(IMAGE_LIST_MODEL) as ImageListModel
 
