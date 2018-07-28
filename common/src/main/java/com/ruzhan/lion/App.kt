@@ -33,10 +33,12 @@ class App : Application() {
 
         private lateinit var INSTANCE: Application
 
+        @JvmStatic
         fun get(): Application {
             return this.INSTANCE
         }
 
+        @JvmStatic
         fun setApp(application: Application) {
             INSTANCE = application
         }
