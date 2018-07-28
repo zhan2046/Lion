@@ -42,16 +42,16 @@ class ImageDetailActivity : AppCompatActivity() {
 
         val imageListModel: ImageListModel = intent.getSerializableExtra(IMAGE_LIST_MODEL) as ImageListModel
 
-        current_tv.text = (imageListModel.position + 1).toString()
-        total_tv.text = imageListModel.imageList.size.toString()
-        title_tv.text = imageListModel.title
+        lion_image_current_tv.text = (imageListModel.position + 1).toString()
+        lion_image_total_tv.text = imageListModel.imageList.size.toString()
+        lion_image_title_tv.text = imageListModel.title
 
         val imageDetailAdapter = ImageDetailAdapter(supportFragmentManager, imageListModel.imageList)
-        view_page.adapter = imageDetailAdapter
+        lion_image_view_page.adapter = imageDetailAdapter
 
-        view_page.currentItem = imageListModel.position
+        lion_image_view_page.currentItem = imageListModel.position
 
-        view_page.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
+        lion_image_view_page.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
 
             override fun onPageScrollStateChanged(state: Int) {
 
@@ -62,7 +62,7 @@ class ImageDetailActivity : AppCompatActivity() {
             }
 
             override fun onPageSelected(position: Int) {
-                current_tv.text = (position + 1).toString()
+                lion_image_current_tv.text = (position + 1).toString()
             }
         })
     }

@@ -7,12 +7,12 @@
     android:layout_height="match_parent">
 
     <com.github.chrisbanes.photoview.PhotoView
-        android:id="@+id/photo_view"
+        android:id="@+id/lion_image_photo_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent" />
 
     <net.soulwolf.widget.ratiolayout.widget.RatioImageView
-        android:id="@+id/image_iv"
+        android:id="@+id/lion_image_image_iv"
         android:layout_width="match_parent"
         android:layout_height="0dp"
         android:scaleType="centerCrop"
@@ -22,7 +22,7 @@
         soulwolf:widthRatio="16" />
 
     <ProgressBar
-        android:id="@+id/load_progress"
+        android:id="@+id/lion_image_load_progress"
         android:visibility="visible"
         android:layout_gravity="center"
         android:layout_width="wrap_content"

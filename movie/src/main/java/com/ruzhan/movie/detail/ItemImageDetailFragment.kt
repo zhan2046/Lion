@@ -46,29 +46,29 @@ class ItemImageDetailFragment : Fragment() {
         arguments?.let {
             val imageUrl: String = it.getString(IMAGE_URL)
 
-            var isGif = imageUrl.contains(LionUtils.GIF_FILE)
+            val isGif = imageUrl.contains(LionUtils.GIF_FILE)
 
-            photo_view.visibility = if (isGif) View.GONE else View.VISIBLE
-            image_iv.visibility = if (isGif) View.VISIBLE else View.GONE
+            lion_image_photo_view.visibility = if (isGif) View.GONE else View.VISIBLE
+            lion_image_image_iv.visibility = if (isGif) View.VISIBLE else View.GONE
 
             if (isGif) {
-                ImageLoader.get().load(image_iv, imageUrl, ViewUtils.getPlaceholder(activity!!, 0))
-                load_progress.visibility = View.INVISIBLE
+                ImageLoader.get().load(lion_image_image_iv, imageUrl, ViewUtils.getPlaceholder(activity!!, 0))
+                lion_image_load_progress.visibility = View.INVISIBLE
 
             } else {
-                ImageLoader.get().loadCenterCrop(photo_view, imageUrl, object : RequestListener<Drawable> {
+                ImageLoader.get().loadCenterCrop(lion_image_photo_view, imageUrl, object : RequestListener<Drawable> {
 
                     override fun onResourceReady(resource: Drawable?, model: Any?,
                                                  target: Target<Drawable>?, dataSource: DataSource?,
                                                  isFirstResource: Boolean): Boolean {
-                        photo_view.setImageDrawable(resource)
-                        load_progress.visibility = View.INVISIBLE
+                        lion_image_photo_view.setImageDrawable(resource)
+                        lion_image_load_progress.visibility = View.INVISIBLE
                         return true
                     }
 
                     override fun onLoadFailed(e: GlideException?, model: Any?, target: Target<Drawable>?,
                                               isFirstResource: Boolean): Boolean {
-                        load_progress.visibility = View.INVISIBLE
+                        lion_image_load_progress.visibility = View.INVISIBLE
                         return true
                     }
 
