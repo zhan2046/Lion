@@ -3,6 +3,15 @@ apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
 
 android {
+    signingConfigs {
+        config {
+            keyAlias rootProject.keyAlias
+            keyPassword rootProject.keyPassword
+            storeFile file('keystore/lion.jks')
+            storePassword rootProject.storePassword
+        }
+    }
+
     compileSdkVersion versions.compileSdk
 
     defaultConfig {
@@ -16,8 +25,11 @@ android {
 
     buildTypes {
         release {
-            minifyEnabled false
+            minifyEnabled true
+            shrinkResources true
+            zipAlignEnabled true
             proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+            signingConfig signingConfigs.config
         }
     }
 

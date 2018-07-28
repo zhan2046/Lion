@@ -22,6 +22,12 @@ buildscript {
             'applicationId': 'com.ruzhan.lion'
     ]
 
+    ext {
+        keyAlias = 'lion'
+        keyPassword = 'lion333333'
+        storePassword = 'lion333333'
+    }
+
     repositories {
         google()
         jcenter()
