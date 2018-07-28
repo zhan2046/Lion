@@ -1,2 +1,11 @@
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-          package="com.ruzhan.common"/>
+    package="com.ruzhan.common">
+
+    <uses-permission android:name="android.permission.INTERNET" />
+
+    <application>
+        <meta-data
+            android:name="io.fabric.ApiKey"
+            android:value="12ab04d353eb4145843e593e7bd1b513116d2177" />
+    </application>
+</manifest>
