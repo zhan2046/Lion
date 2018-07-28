@@ -61,14 +61,18 @@ class ItemImageDetailFragment : Fragment() {
                     override fun onResourceReady(resource: Drawable?, model: Any?,
                                                  target: Target<Drawable>?, dataSource: DataSource?,
                                                  isFirstResource: Boolean): Boolean {
-                        lion_image_photo_view.setImageDrawable(resource)
-                        lion_image_load_progress.visibility = View.INVISIBLE
+                        if (lion_image_photo_view != null) {
+                            lion_image_photo_view.setImageDrawable(resource)
+                            lion_image_load_progress.visibility = View.INVISIBLE
+                        }
                         return true
                     }
 
                     override fun onLoadFailed(e: GlideException?, model: Any?, target: Target<Drawable>?,
                                               isFirstResource: Boolean): Boolean {
-                        lion_image_load_progress.visibility = View.INVISIBLE
+                        if (lion_image_load_progress != null) {
+                            lion_image_load_progress.visibility = View.INVISIBLE
+                        }
                         return true
                     }
 
