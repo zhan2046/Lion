@@ -54,7 +54,7 @@ Gradle :fire:
 	}
 ```
 
-:heart: Proguard
+Proguard :two_hearts:
 ------
 
 ```java
@@ -65,14 +65,14 @@ Gradle :fire:
 ```
 
 
-Version :sunny:
+Version :grimacing:
 ------
 #### 2018-7-28    v0.1.6
-*  movie module repositories, integrated room local db
+*  movie module finish, use room integrated local db
 
 
 
-Developed by :sunny:
+Developed by :speech_balloon:
 -------
 
  ruzhan - <a href='javascript:'>dev19921116@gmail.com</a>
