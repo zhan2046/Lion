@@ -29,6 +29,7 @@ import com.ruzhan.jsonfile.data.ScamCity2;
 import com.ruzhan.jsonfile.data.TED2016;
 import com.ruzhan.jsonfile.data.TED2017;
 import com.ruzhan.jsonfile.data.TED2018;
+import com.ruzhan.jsonfile.data.TheHunt;
 import com.ruzhan.jsonfile.data.TheLieWeLive;
 import com.ruzhan.jsonfile.data.TheLionSleepsNoMore;
 import com.ruzhan.jsonfile.data.TheOrionConspiracy;
@@ -154,6 +155,7 @@ public final class MovieHelper {
         list.add(ThroughTheWormhole.movie);
         list.add(OnTheRoad.movie);
         list.add(FrozenPlanet.movie);
+        list.add(TheHunt.movie);
         return list;
     }
 
@@ -197,6 +199,7 @@ public final class MovieHelper {
         list.add(ThroughTheWormhole.movieDetail);
         list.add(OnTheRoad.movieDetail);
         list.add(FrozenPlanet.movieDetail);
+        list.add(TheHunt.movieDetail);
         return list;
     }
 }
