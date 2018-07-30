@@ -32,6 +32,7 @@ import com.ruzhan.jsonfile.data.TED2018;
 import com.ruzhan.jsonfile.data.TheHunt;
 import com.ruzhan.jsonfile.data.TheLieWeLive;
 import com.ruzhan.jsonfile.data.TheLionSleepsNoMore;
+import com.ruzhan.jsonfile.data.TheMonkeyKing;
 import com.ruzhan.jsonfile.data.TheOrionConspiracy;
 import com.ruzhan.jsonfile.data.TheSecret;
 import com.ruzhan.jsonfile.data.TheStoryOfGod;
@@ -156,6 +157,7 @@ public final class MovieHelper {
         list.add(OnTheRoad.movie);
         list.add(FrozenPlanet.movie);
         list.add(TheHunt.movie);
+        list.add(TheMonkeyKing.movie);
         return list;
     }
 
@@ -200,6 +202,7 @@ public final class MovieHelper {
         list.add(OnTheRoad.movieDetail);
         list.add(FrozenPlanet.movieDetail);
         list.add(TheHunt.movieDetail);
+        list.add(TheMonkeyKing.movieDetail);
         return list;
     }
 }
