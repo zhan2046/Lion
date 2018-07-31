@@ -22,6 +22,11 @@ Screenshots
 
 Download :tada:
 ------
+![](https://github.com/ruzhan123/Lion/raw/master/logo/image-lion.png)
+
+
+[coolapk - (Lion app download)](https://www.coolapk.com/apk/198282)
+
 [fir - (Lion app download)](https://fir.im/lion333)
 
 
