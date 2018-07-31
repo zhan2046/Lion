@@ -55,7 +55,7 @@ Gradle :fire:
 ```java
 
 	dependencies {
-	        implementation 'com.github.ruzhan123.Lion:movie:0.1.6'
+	        implementation 'com.github.ruzhan123.Lion:movie:0.1.7'
 	}
 ```
 
