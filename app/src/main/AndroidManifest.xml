@@ -17,8 +17,7 @@
         android:theme="@style/Lion">
         <activity
             android:name=".ui.MainActivity"
-            android:theme="@style/Lion.Home"
-            android:screenOrientation="portrait">
+            android:theme="@style/Lion.Home">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 

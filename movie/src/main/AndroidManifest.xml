@@ -5,18 +5,15 @@
 
         <activity
             android:name=".detail.MovieDetailActivity"
-            android:screenOrientation="portrait"
             android:theme="@style/Lion.MovieDetail" />
 
         <activity
             android:name=".video.WebVideoActivity"
             android:configChanges="orientation|keyboardHidden|screenSize"
-            android:hardwareAccelerated="true"
-            android:screenOrientation="landscape" />
+            android:hardwareAccelerated="true" />
 
         <activity
-            android:name=".detail.ImageDetailActivity"
-            android:screenOrientation="portrait" />
+            android:name=".detail.ImageDetailActivity" />
 
     </application>
 </manifest>
