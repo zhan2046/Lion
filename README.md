@@ -62,12 +62,7 @@ Gradle :fire:
 Proguard :two_hearts:
 ------
 
-```java
-
--keep class com.ruzhan.lion.model.** { *; }
--keep class com.ruzhan.lion.db.entity.** { *; }
-
-```
+if use lion movie module and need proguard, please to [proguard-rules.pro](https://github.com/ruzhan123/Lion/blob/master/app/proguard-rules.pro)
 
 
 Version :grimacing:
