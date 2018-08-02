@@ -2,6 +2,7 @@ package com.ruzhan.jsonfile.helper;
 
 import com.google.gson.Gson;
 import com.ruzhan.jsonfile.CreateJsonMain;
+import com.ruzhan.jsonfile.data.Africa;
 import com.ruzhan.jsonfile.data.AliensMoon;
 import com.ruzhan.jsonfile.data.AncientAliens;
 import com.ruzhan.jsonfile.data.CosmicDisclosure;
@@ -167,6 +168,7 @@ public final class MovieHelper {
         list.add(TheCove.movie);
         list.add(FrozenPlanet.movie);
         list.add(TheHunt.movie);
+        list.add(Africa.movie);
         list.add(TheMonkeyKing.movie);
         return list;
     }
@@ -217,6 +219,7 @@ public final class MovieHelper {
         list.add(TheCove.movieDetail);
         list.add(FrozenPlanet.movieDetail);
         list.add(TheHunt.movieDetail);
+        list.add(Africa.movieDetail);
         list.add(TheMonkeyKing.movieDetail);
         return list;
     }
