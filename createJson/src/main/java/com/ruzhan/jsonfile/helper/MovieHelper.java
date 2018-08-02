@@ -31,6 +31,7 @@ import com.ruzhan.jsonfile.data.ScamCity2;
 import com.ruzhan.jsonfile.data.TED2016;
 import com.ruzhan.jsonfile.data.TED2017;
 import com.ruzhan.jsonfile.data.TED2018;
+import com.ruzhan.jsonfile.data.TheCove;
 import com.ruzhan.jsonfile.data.TheHunt;
 import com.ruzhan.jsonfile.data.TheLieWeLive;
 import com.ruzhan.jsonfile.data.TheLionSleepsNoMore;
@@ -161,6 +162,7 @@ public final class MovieHelper {
         list.add(TheStoryOfGod.movie);
         list.add(ThroughTheWormhole.movie);
         list.add(OnTheRoad.movie);
+        list.add(TheCove.movie);
         list.add(FrozenPlanet.movie);
         list.add(TheHunt.movie);
         list.add(TheMonkeyKing.movie);
@@ -209,6 +211,7 @@ public final class MovieHelper {
         list.add(TheStoryOfGod.movieDetail);
         list.add(ThroughTheWormhole.movieDetail);
         list.add(OnTheRoad.movieDetail);
+        list.add(TheCove.movieDetail);
         list.add(FrozenPlanet.movieDetail);
         list.add(TheHunt.movieDetail);
         list.add(TheMonkeyKing.movieDetail);
