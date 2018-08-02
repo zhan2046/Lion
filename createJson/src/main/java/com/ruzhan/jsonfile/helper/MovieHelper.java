@@ -14,6 +14,7 @@ import com.ruzhan.jsonfile.data.FrozenPlanet;
 import com.ruzhan.jsonfile.data.Human;
 import com.ruzhan.jsonfile.data.Interstella;
 import com.ruzhan.jsonfile.data.KeJi;
+import com.ruzhan.jsonfile.data.LifeIsFruity;
 import com.ruzhan.jsonfile.data.MadeUsSpend;
 import com.ruzhan.jsonfile.data.ManVsWild;
 import com.ruzhan.jsonfile.data.ManVsWild2;
@@ -146,6 +147,7 @@ public final class MovieHelper {
         list.add(KeJi.movie);
         list.add(TheLieWeLive.movie);
         list.add(PunPun.movie);
+        list.add(LifeIsFruity.movie);
         list.add(ManVsWild.movie);
         list.add(ManVsWild2.movie);
         list.add(EscapeFromHell.movie);
@@ -192,6 +194,7 @@ public final class MovieHelper {
         list.add(KeJi.movieDetail);
         list.add(TheLieWeLive.movieDetail);
         list.add(PunPun.movieDetail);
+        list.add(LifeIsFruity.movieDetail);
         list.add(ManVsWild.movieDetail);
         list.add(ManVsWild2.movieDetail);
         list.add(EscapeFromHell.movieDetail);
