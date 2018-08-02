@@ -12,6 +12,7 @@ import com.ruzhan.jsonfile.data.DaftPunk;
 import com.ruzhan.jsonfile.data.DevinWilliams;
 import com.ruzhan.jsonfile.data.EscapeFromHell;
 import com.ruzhan.jsonfile.data.FrozenPlanet;
+import com.ruzhan.jsonfile.data.HiddenLife;
 import com.ruzhan.jsonfile.data.Human;
 import com.ruzhan.jsonfile.data.Interstella;
 import com.ruzhan.jsonfile.data.JamesCameron;
@@ -145,6 +146,7 @@ public final class MovieHelper {
         list.add(ScamCity.movie);
         list.add(ScamCity2.movie);
         list.add(WorldOfBlood.movie);
+        list.add(HiddenLife.movie);
         list.add(Monsanto.movie);
         list.add(ValeriyBabich.movie);
         list.add(Weapon.movie);
@@ -197,6 +199,7 @@ public final class MovieHelper {
         list.add(ScamCity.movieDetail);
         list.add(ScamCity2.movieDetail);
         list.add(WorldOfBlood.movieDetail);
+        list.add(HiddenLife.movieDetail);
         list.add(Monsanto.movieDetail);
         list.add(ValeriyBabich.movieDetail);
         list.add(Weapon.movieDetail);
