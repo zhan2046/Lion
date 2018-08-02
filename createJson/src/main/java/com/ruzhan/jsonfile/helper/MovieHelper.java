@@ -42,6 +42,7 @@ import com.ruzhan.jsonfile.data.Thrive;
 import com.ruzhan.jsonfile.data.ThroughTheWormhole;
 import com.ruzhan.jsonfile.data.ValeriyBabich;
 import com.ruzhan.jsonfile.data.WeGotNext;
+import com.ruzhan.jsonfile.data.Weapon;
 import com.ruzhan.jsonfile.data.WildChina;
 import com.ruzhan.jsonfile.data.WorldOfBlood;
 import com.ruzhan.jsonfile.model.HttpResult;
@@ -142,6 +143,7 @@ public final class MovieHelper {
         list.add(WorldOfBlood.movie);
         list.add(Monsanto.movie);
         list.add(ValeriyBabich.movie);
+        list.add(Weapon.movie);
         list.add(CredoMutwa.movie);
         list.add(TheOrionConspiracy.movie);
         list.add(KeJi.movie);
@@ -189,6 +191,7 @@ public final class MovieHelper {
         list.add(WorldOfBlood.movieDetail);
         list.add(Monsanto.movieDetail);
         list.add(ValeriyBabich.movieDetail);
+        list.add(Weapon.movieDetail);
         list.add(CredoMutwa.movieDetail);
         list.add(TheOrionConspiracy.movieDetail);
         list.add(KeJi.movieDetail);
