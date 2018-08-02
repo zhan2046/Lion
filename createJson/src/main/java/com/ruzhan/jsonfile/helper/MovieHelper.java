@@ -26,6 +26,7 @@ import com.ruzhan.jsonfile.data.NakedCastaway;
 import com.ruzhan.jsonfile.data.NikolaTesla;
 import com.ruzhan.jsonfile.data.OnTheRoad;
 import com.ruzhan.jsonfile.data.PunPun;
+import com.ruzhan.jsonfile.data.RealWar;
 import com.ruzhan.jsonfile.data.RichAndUs;
 import com.ruzhan.jsonfile.data.RunningWild;
 import com.ruzhan.jsonfile.data.ScamCity;
@@ -147,6 +148,7 @@ public final class MovieHelper {
         list.add(Monsanto.movie);
         list.add(ValeriyBabich.movie);
         list.add(Weapon.movie);
+        list.add(RealWar.movie);
         list.add(CredoMutwa.movie);
         list.add(TheOrionConspiracy.movie);
         list.add(KeJi.movie);
@@ -198,6 +200,7 @@ public final class MovieHelper {
         list.add(Monsanto.movieDetail);
         list.add(ValeriyBabich.movieDetail);
         list.add(Weapon.movieDetail);
+        list.add(RealWar.movieDetail);
         list.add(CredoMutwa.movieDetail);
         list.add(TheOrionConspiracy.movieDetail);
         list.add(KeJi.movieDetail);
