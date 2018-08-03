@@ -34,7 +34,6 @@ import com.ruzhan.jsonfile.data.RichAndUs;
 import com.ruzhan.jsonfile.data.RunningWild;
 import com.ruzhan.jsonfile.data.ScamCity;
 import com.ruzhan.jsonfile.data.ScamCity2;
-import com.ruzhan.jsonfile.data.SouthPark;
 import com.ruzhan.jsonfile.data.StoryOfCapital;
 import com.ruzhan.jsonfile.data.TED2016;
 import com.ruzhan.jsonfile.data.TED2017;
@@ -143,7 +142,7 @@ public final class MovieHelper {
         list.add(DaftPunk.movie);
         list.add(Human.movie);
         list.add(TheSecret.movie);
-        list.add(SouthPark.movie);
+        //list.add(SouthPark.movie);
         list.add(AliensMoon.movie);
         list.add(AncientAliens.movie);
         list.add(MadeUsSpend.movie);
@@ -201,7 +200,7 @@ public final class MovieHelper {
         list.add(DaftPunk.movieDetail);
         list.add(Human.movieDetail);
         list.add(TheSecret.movieDetail);
-        list.add(SouthPark.movieDetail);
+        //list.add(SouthPark.movieDetail);
         list.add(AliensMoon.movieDetail);
         list.add(AncientAliens.movieDetail);
         list.add(MadeUsSpend.movieDetail);
