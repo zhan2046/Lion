@@ -34,6 +34,7 @@ import com.ruzhan.jsonfile.data.RichAndUs;
 import com.ruzhan.jsonfile.data.RunningWild;
 import com.ruzhan.jsonfile.data.ScamCity;
 import com.ruzhan.jsonfile.data.ScamCity2;
+import com.ruzhan.jsonfile.data.StoryOfCapital;
 import com.ruzhan.jsonfile.data.TED2016;
 import com.ruzhan.jsonfile.data.TED2017;
 import com.ruzhan.jsonfile.data.TED2018;
@@ -151,6 +152,7 @@ public final class MovieHelper {
         list.add(WorldOfBlood.movie);
         list.add(HiddenLife.movie);
         list.add(Monsanto.movie);
+        list.add(StoryOfCapital.movie);
         list.add(ValeriyBabich.movie);
         list.add(Weapon.movie);
         list.add(RealWar.movie);
@@ -207,6 +209,7 @@ public final class MovieHelper {
         list.add(WorldOfBlood.movieDetail);
         list.add(HiddenLife.movieDetail);
         list.add(Monsanto.movieDetail);
+        list.add(StoryOfCapital.movieDetail);
         list.add(ValeriyBabich.movieDetail);
         list.add(Weapon.movieDetail);
         list.add(RealWar.movieDetail);
