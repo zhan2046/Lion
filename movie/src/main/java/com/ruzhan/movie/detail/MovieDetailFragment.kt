@@ -1,6 +1,7 @@
 package com.ruzhan.movie.detail
 
 import android.arch.lifecycle.Observer
+import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.support.v4.app.ActivityCompat.finishAfterTransition
 import android.support.v4.app.Fragment
@@ -9,7 +10,6 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.ViewTreeObserver
-import com.ruzhan.lion.App
 import com.ruzhan.lion.glide.ImageLoader
 import com.ruzhan.lion.listener.OnItemClickListener
 import com.ruzhan.lion.model.Movie
@@ -42,7 +42,7 @@ class MovieDetailFragment : Fragment() {
     }
 
     private lateinit var movie: Movie
-    private val movieDetailViewModel: MovieDetailViewModel = MovieDetailViewModel(App.get())
+    private lateinit var movieDetailViewModel: MovieDetailViewModel
     private lateinit var movieDetailAdapter: MovieDetailAdapter
     private lateinit var chromeFader: ElasticDragDismissFrameLayout.SystemChromeFader
 
@@ -54,6 +54,7 @@ class MovieDetailFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
 
+        movieDetailViewModel = ViewModelProviders.of(this).get(MovieDetailViewModel::class.java)
         movie = arguments!!.getParcelable(MOVIE)
         ImageLoader.get().loadNoCrossFade(shot, movie.image,
                 ViewUtils.getPlaceholder(activity, 0))

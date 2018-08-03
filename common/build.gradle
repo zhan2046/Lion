@@ -42,6 +42,12 @@ dependencies {
 
     api "com.android.support:multidex:${versions.multidex}"
 
+    // lifecycle
+    api "android.arch.lifecycle:runtime:$versions.lifecycle"
+    api "android.arch.lifecycle:extensions:$versions.lifecycle"
+    api "android.arch.lifecycle:common-java8:$versions.lifecycle"
+    kapt "android.arch.lifecycle:compiler:$versions.lifecycle"
+
     // Room
     api "android.arch.persistence.room:runtime:${versions.room}"
     kapt "android.arch.persistence.room:compiler:${versions.room}"

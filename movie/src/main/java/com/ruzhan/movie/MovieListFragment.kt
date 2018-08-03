@@ -2,6 +2,7 @@ package com.ruzhan.movie
 
 
 import android.arch.lifecycle.Observer
+import android.arch.lifecycle.ViewModelProviders
 import android.os.Bundle
 import android.support.v4.app.ActivityOptionsCompat
 import android.support.v4.app.Fragment
@@ -11,7 +12,6 @@ import android.support.v7.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.ruzhan.lion.App
 import com.ruzhan.lion.helper.OnRefreshHelper
 import com.ruzhan.lion.listener.OnItemClickListener
 import com.ruzhan.lion.model.LoadStatus
@@ -33,7 +33,7 @@ class MovieListFragment : Fragment() {
     }
 
     private lateinit var movieListAdapter: MovieListAdapter
-    private var movieListViewModel: MovieListViewModel = MovieListViewModel(App.get())
+    private lateinit var movieListViewModel: MovieListViewModel
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -45,6 +45,8 @@ class MovieListFragment : Fragment() {
 
         val shotTransitionName = resources.getString(R.string.transition_shot)
         val shotBackgroundTransitionName = resources.getString(R.string.transition_shot_background)
+
+        movieListViewModel = ViewModelProviders.of(this).get(MovieListViewModel::class.java)
 
         setExitSharedElementCallback(object : SharedElementCallback() {
 
