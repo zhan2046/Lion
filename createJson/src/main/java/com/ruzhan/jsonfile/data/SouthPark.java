@@ -51,31 +51,31 @@ public class SouthPark {
 
         videoList.add(new Video(String.valueOf(ID + 11),
                 "1、南方公园", IMAGE, PLAY_COUNT, 1, "第一集",
-                "http://player.bilibili.com/player.html?aid=2921935&cid=4575463&page=1"));
+                "http://player.bilibili.com/player.html?aid=2921935&page=1"));
 
         videoList.add(new Video(String.valueOf(ID + 12),
                 "2、南方公园", IMAGE, PLAY_COUNT, 2, "第二集",
-                "http://player.bilibili.com/player.html?aid=3065702&cid=4814378&page=1"));
+                "http://player.bilibili.com/player.html?aid=3065702&page=1"));
 
         videoList.add(new Video(String.valueOf(ID + 13),
                 "3、南方公园", IMAGE, PLAY_COUNT, 3, "第三集",
-                "http://player.bilibili.com/player.html?aid=3102059&cid=4876359&page=1"));
+                "http://player.bilibili.com/player.html?aid=3102059&page=1"));
 
         videoList.add(new Video(String.valueOf(ID + 14),
                 "4、南方公园", IMAGE, PLAY_COUNT, 4, "第四集",
-                "http://player.bilibili.com/player.html?aid=3212898&cid=5067022&page=1"));
+                "http://player.bilibili.com/player.html?aid=3212898&page=1"));
 
         videoList.add(new Video(String.valueOf(ID + 15),
                 "5、南方公园", IMAGE, PLAY_COUNT, 5, "第五集",
-                "http://player.bilibili.com/player.html?aid=3248992&cid=5179034&page=1"));
+                "http://player.bilibili.com/player.html?aid=3248992&page=1"));
 
         videoList.add(new Video(String.valueOf(ID + 16),
                 "6、南方公园", IMAGE, PLAY_COUNT, 6, "第六集",
-                "http://player.bilibili.com/player.html?aid=3325734&cid=5292175&page=1"));
+                "http://player.bilibili.com/player.html?aid=3325734&page=1"));
 
         videoList.add(new Video(String.valueOf(ID + 17),
                 "7、南方公园", IMAGE, PLAY_COUNT, 7, "第七集",
-                "http://player.bilibili.com/player.html?aid=3364729&cid=5338902&page=1"));
+                "http://player.bilibili.com/player.html?aid=3364729&page=1"));
 
         movie.id = String.valueOf(ID);
         movie.title = TITLE;
