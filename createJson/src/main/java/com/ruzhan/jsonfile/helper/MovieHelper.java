@@ -8,6 +8,7 @@ import com.ruzhan.jsonfile.data.AncientAliens;
 import com.ruzhan.jsonfile.data.CosmicDisclosure;
 import com.ruzhan.jsonfile.data.CosmicDisclosure2;
 import com.ruzhan.jsonfile.data.CredoMutwa;
+import com.ruzhan.jsonfile.data.CunkOnBritain;
 import com.ruzhan.jsonfile.data.DaftPunk;
 import com.ruzhan.jsonfile.data.DevinWilliams;
 import com.ruzhan.jsonfile.data.EscapeFromHell;
@@ -152,6 +153,7 @@ public final class MovieHelper {
         list.add(ValeriyBabich.movie);
         list.add(Weapon.movie);
         list.add(RealWar.movie);
+        list.add(CunkOnBritain.movie);
         list.add(CredoMutwa.movie);
         list.add(TheOrionConspiracy.movie);
         list.add(KeJi.movie);
@@ -206,6 +208,7 @@ public final class MovieHelper {
         list.add(ValeriyBabich.movieDetail);
         list.add(Weapon.movieDetail);
         list.add(RealWar.movieDetail);
+        list.add(CunkOnBritain.movieDetail);
         list.add(CredoMutwa.movieDetail);
         list.add(TheOrionConspiracy.movieDetail);
         list.add(KeJi.movieDetail);
