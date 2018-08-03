@@ -43,6 +43,7 @@ import com.ruzhan.jsonfile.data.TheMonkeyKing;
 import com.ruzhan.jsonfile.data.TheOrionConspiracy;
 import com.ruzhan.jsonfile.data.TheSecret;
 import com.ruzhan.jsonfile.data.TheStoryOfGod;
+import com.ruzhan.jsonfile.data.ThreeCountries;
 import com.ruzhan.jsonfile.data.Thrive;
 import com.ruzhan.jsonfile.data.ThroughTheWormhole;
 import com.ruzhan.jsonfile.data.ValeriyBabich;
@@ -169,6 +170,7 @@ public final class MovieHelper {
         list.add(TheStoryOfGod.movie);
         list.add(ThroughTheWormhole.movie);
         list.add(OnTheRoad.movie);
+        list.add(ThreeCountries.movie);
         list.add(TheCove.movie);
         list.add(FrozenPlanet.movie);
         list.add(TheHunt.movie);
@@ -222,6 +224,7 @@ public final class MovieHelper {
         list.add(TheStoryOfGod.movieDetail);
         list.add(ThroughTheWormhole.movieDetail);
         list.add(OnTheRoad.movieDetail);
+        list.add(ThreeCountries.movieDetail);
         list.add(TheCove.movieDetail);
         list.add(FrozenPlanet.movieDetail);
         list.add(TheHunt.movieDetail);

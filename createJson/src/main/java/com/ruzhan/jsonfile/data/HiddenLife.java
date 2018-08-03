@@ -43,7 +43,7 @@ public class HiddenLife {
                 "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/hidden-life02.jpg"));
 
         introduceList.add(new Introduce(Introduce.TEXT,
-                "这部影片从细胞的内部世界揭示了人体细胞系统的精细机制：从狂热的、扮演着针对进出细胞的每个物体的安全防御系统的细胞膜、", ""));
+                "这部影片从细胞的内部世界揭示了人体细胞系统的精细机制：从狂热的、扮演着针对进出细胞的每个物体的安全防御系统的细胞膜。", ""));
 
         introduceList.add(new Introduce(Introduce.TEXT,
                 "贯穿细胞的输送物质颗粒的细胞架、以及保持整个细胞世界运转的线粒体，到保存着DNA的细胞核和成千上万种各自拥有不同的蛋白质的合成。", ""));
