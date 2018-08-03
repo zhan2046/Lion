@@ -5,7 +5,7 @@ buildscript {
     ext.versions = [
             'compileSdk'      : 27,
             'minSdk'          : 21,
-            'targetSdk'       : 27,
+            'targetSdk'       : 26,
             'constraintLayout': '1.1.2',
             'supportLibrary'  : '27.1.1',
             'multidex'  : '1.0.3',
