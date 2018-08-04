@@ -77,8 +77,11 @@ class MovieDetailFragment : Fragment() {
             override fun onScrolled(recyclerView: RecyclerView?, dx: Int, dy: Int) {
                 super.onScrolled(recyclerView, dx, dy)
 
-                val scrollY = movieDetailAdapter.getMovieDetailHeaderHolder().itemView.top
-                shot.offset = scrollY
+                val topViewHolder = movieDetailAdapter.getMovieDetailHeaderHolder()
+                topViewHolder?.let {
+                    val scrollY = topViewHolder.itemView.top
+                    shot.offset = scrollY
+                }
             }
 
             override fun onScrollStateChanged(recyclerView: RecyclerView?, newState: Int) {

@@ -36,7 +36,7 @@ class MovieDetailAdapter(listener: OnItemClickListener<Video>,
     private lateinit var movieDetail: MovieDetail
     private var itemClickListener: OnItemClickListener<Video> = listener
     private var imageListener: OnItemClickListener<ImageListModel> = imageListener
-    private lateinit var movieDetailHeaderHolder: MovieDetailHeaderHolder
+    private var movieDetailHeaderHolder: MovieDetailHeaderHolder? = null
 
     fun setData(movieDetail: MovieDetail) {
         this.movieDetail = movieDetail
@@ -110,7 +110,7 @@ class MovieDetailAdapter(listener: OnItemClickListener<Video>,
         }
     }
 
-    fun getMovieDetailHeaderHolder(): MovieDetailHeaderHolder {
+    fun getMovieDetailHeaderHolder(): MovieDetailHeaderHolder? {
         return movieDetailHeaderHolder
     }
 }
