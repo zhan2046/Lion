@@ -34,7 +34,7 @@ public class ThroughTheWormhole {
                 DESC, ""));
 
         introduceList.add(new Introduce(Introduce.IMAGE, "",
-                "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/through-the-wormhole01.jpg"));
+                "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/through-the-wormhole02.jpg"));
 
         introduceList.add(new Introduce(Introduce.TEXT,
                 "《摩根费里曼之穿越虫洞》是一部由摩根弗里曼主持的科教纪录片。", ""));
@@ -44,6 +44,9 @@ public class ThroughTheWormhole {
 
         introduceList.add(new Introduce(Introduce.TEXT,
                 "节目内容丰富，包括了天文、人文、科学等领域，节目组集结的多位科学家发表自己的意见并互相的反驳争论", ""));
+
+        introduceList.add(new Introduce(Introduce.IMAGE, "",
+                "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/through-the-wormhole01.jpg"));
 
         introduceList.add(new Introduce(Introduce.TEXT,
                 "这也是天体物理爱好者的另一项看点，给未来宇宙的探索增长了见识，并给令一些科幻迷们另一些想象的空间。", ""));
@@ -56,36 +59,28 @@ public class ThroughTheWormhole {
 
 
         videoList.add(new Video(String.valueOf(ID + 11),
-                "1、S01E01：存在造物主吗？", IMAGE, PLAY_COUNT, 1, "第一集",
-                "http://player.bilibili.com/player.html?aid=26085119&cid=44723548&page=1"));
+                "1、S06E01：我们都是偏执狂？", IMAGE, PLAY_COUNT, 1, "第一集",
+                "http://player.bilibili.com/player.html?aid=26788497&page=1"));
 
         videoList.add(new Video(String.valueOf(ID + 12),
-                "2、S01E02：黑洞之迷", IMAGE, PLAY_COUNT, 2, "第二集",
-                "http://player.bilibili.com/player.html?aid=26085119&cid=44725193&page=2"));
+                "2、S06E02：时间可以倒流吗？", IMAGE, PLAY_COUNT, 2, "第二集",
+                "http://player.bilibili.com/player.html?aid=26788497&page=2"));
 
         videoList.add(new Video(String.valueOf(ID + 13),
-                "3、S01E03：时间旅行可能吗？", IMAGE, PLAY_COUNT, 3, "第三集",
-                "http://player.bilibili.com/player.html?aid=26085119&cid=44725194&page=3"));
+                "3、S06E03：我们的存在是有原因的？", IMAGE, PLAY_COUNT, 3, "第三集",
+                "http://player.bilibili.com/player.html?aid=26788497&page=3"));
 
         videoList.add(new Video(String.valueOf(ID + 14),
-                "4、S01E04：太初之前，宇宙若何？", IMAGE, PLAY_COUNT, 4, "第四集",
-                "http://player.bilibili.com/player.html?aid=26085119&cid=44725389&page=4"));
+                "4、S06E04：我们生活在矩阵里吗？", IMAGE, PLAY_COUNT, 4, "第四集",
+                "http://player.bilibili.com/player.html?aid=26788497&page=4"));
 
         videoList.add(new Video(String.valueOf(ID + 15),
-                "5、S01E05：我们从何而来？", IMAGE, PLAY_COUNT, 5, "第五集",
-                "http://player.bilibili.com/player.html?aid=26085119&cid=44725698&page=5"));
+                "5、S06E05：外星人在我们体内吗？", IMAGE, PLAY_COUNT, 5, "第五集",
+                "http://player.bilibili.com/player.html?aid=26788497&page=5"));
 
         videoList.add(new Video(String.valueOf(ID + 16),
-                "6、S01E06：我们独居宇宙？", IMAGE, PLAY_COUNT, 6, "第六集",
-                "http://player.bilibili.com/player.html?aid=26085119&cid=44725947&page=6"));
-
-        videoList.add(new Video(String.valueOf(ID + 17),
-                "7、S01E07：我们究竟由何组成？", IMAGE, PLAY_COUNT, 7, "第七集",
-                "http://player.bilibili.com/player.html?aid=26085119&cid=44726179&page=7"));
-
-        videoList.add(new Video(String.valueOf(ID + 18),
-                "8、S01E08：超越黑暗", IMAGE, PLAY_COUNT, 8, "第八集",
-                "http://player.bilibili.com/player.html?aid=26085119&cid=44726427&page=8"));
+                "6、S06E06：我们为什么说谎？", IMAGE, PLAY_COUNT, 6, "第六集",
+                "http://player.bilibili.com/player.html?aid=26788497&page=6"));
 
         movie.id = String.valueOf(ID);
         movie.title = TITLE;
