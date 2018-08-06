@@ -32,7 +32,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:textColor="@color/text_secondary_dark"
-            android:textSize="@dimen/text_small_14" />
+            android:textSize="@dimen/text_normal_16" />
     </LinearLayout>
 
 

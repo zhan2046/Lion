@@ -13,12 +13,12 @@
         android:background="@drawable/shape_line_bg"
         android:gravity="center"
         android:letterSpacing="0.08"
-        android:paddingBottom="@dimen/space_small_2"
+        android:paddingBottom="@dimen/space_small_4"
         android:paddingEnd="@dimen/space_small_12"
         android:paddingStart="@dimen/space_small_12"
-        android:paddingTop="@dimen/space_small_2"
+        android:paddingTop="@dimen/space_small_4"
         android:textColor="#ff808080"
-        android:textSize="@dimen/text_small_14" />
+        android:textSize="@dimen/text_normal_16" />
 
     <TextView
         android:id="@+id/title_tv"
@@ -31,9 +31,9 @@
         android:letterSpacing="0.08"
         android:maxLines="2"
         android:textColor="@color/text_primary_dark"
-        android:textSize="@dimen/text_large_24" />
+        android:textSize="@dimen/text_large_26" />
 
     <Space
         android:layout_width="match_parent"
-        android:layout_height="@dimen/space_large_32" />
+        android:layout_height="@dimen/space_small_8" />
 </LinearLayout>

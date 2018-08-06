@@ -46,14 +46,13 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_alignTop="@+id/image_fl"
-        android:layout_marginEnd="@dimen/space_normal_16"
-        android:layout_marginStart="@dimen/space_normal_16"
+        android:layout_marginEnd="@dimen/space_small_8"
         android:layout_toEndOf="@+id/image_fl"
         android:ellipsize="end"
         android:letterSpacing="0.08"
         android:maxLines="3"
         android:textColor="@color/text_primary_dark"
-        android:textSize="@dimen/text_small_14" />
+        android:textSize="@dimen/text_normal_16" />
 
     <View
         android:layout_width="match_parent"

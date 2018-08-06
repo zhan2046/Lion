@@ -23,5 +23,5 @@
         android:letterSpacing="0.08"
         android:maxLines="1"
         android:textColor="@color/text_primary_dark"
-        android:textSize="@dimen/text_large_24" />
+        android:textSize="@dimen/text_large_26" />
 </FrameLayout>

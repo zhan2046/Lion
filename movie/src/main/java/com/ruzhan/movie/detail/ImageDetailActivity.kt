@@ -2,6 +2,7 @@ package com.ruzhan.movie.detail
 
 import android.app.Activity
 import android.content.Intent
+import android.graphics.Typeface
 import android.os.Bundle
 import android.support.v4.app.Fragment
 import android.support.v4.app.FragmentManager
@@ -10,6 +11,7 @@ import android.support.v4.view.ViewPager
 import android.support.v7.app.AppCompatActivity
 import android.view.Window
 import android.view.WindowManager
+import com.ruzhan.lion.util.FontUtils
 import com.ruzhan.movie.ImageListModel
 import com.ruzhan.movie.R
 import kotlinx.android.synthetic.main.lion_activity_image_detail.*
@@ -45,6 +47,8 @@ class ImageDetailActivity : AppCompatActivity() {
         lion_image_current_tv.text = (imageListModel.position + 1).toString()
         lion_image_total_tv.text = imageListModel.imageList.size.toString()
         lion_image_title_tv.text = imageListModel.title
+
+        lion_image_title_tv.typeface = Typeface.createFromAsset(assets, FontUtils.TEXT_BOLD)
 
         val imageDetailAdapter = ImageDetailAdapter(supportFragmentManager, imageListModel.imageList)
         lion_image_view_page.adapter = imageDetailAdapter
