@@ -55,7 +55,7 @@ Gradle :fire:
 ```java
 
 	dependencies {
-	        implementation 'com.github.ruzhan123.Lion:movie:0.1.8'
+	        implementation 'com.github.ruzhan123.Lion:movie:0.1.9'
 	}
 ```
 
@@ -67,6 +67,8 @@ if use lion movie module and need proguard, please to [proguard-rules.pro](https
 
 Version :grimacing:
 ------
+#### 2018-8-6    v0.1.9
+*  update lion text font
 #### 2018-8-3    v0.1.8
 *  fix android target sdk 27 Only fullscreen opaque activities can request orientation
 #### 2018-7-28    v0.1.6
