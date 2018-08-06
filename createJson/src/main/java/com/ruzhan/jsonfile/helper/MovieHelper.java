@@ -41,6 +41,7 @@ import com.ruzhan.jsonfile.data.TED2017;
 import com.ruzhan.jsonfile.data.TED2018;
 import com.ruzhan.jsonfile.data.TheBleedingEdge;
 import com.ruzhan.jsonfile.data.TheCove;
+import com.ruzhan.jsonfile.data.TheFarthest;
 import com.ruzhan.jsonfile.data.TheHunt;
 import com.ruzhan.jsonfile.data.TheLieWeLive;
 import com.ruzhan.jsonfile.data.TheLionSleepsNoMore;
@@ -167,6 +168,7 @@ public final class MovieHelper {
         list.add(TheLieWeLive.movie);
         list.add(PunPun.movie);
         list.add(AYearinSpace.movie);
+        list.add(TheFarthest.movie);
         list.add(LifeIsFruity.movie);
         list.add(OldGuang.movie);
         list.add(ManVsWild.movie);
@@ -227,6 +229,7 @@ public final class MovieHelper {
         list.add(TheLieWeLive.movieDetail);
         list.add(PunPun.movieDetail);
         list.add(AYearinSpace.movieDetail);
+        list.add(TheFarthest.movieDetail);
         list.add(LifeIsFruity.movieDetail);
         list.add(OldGuang.movieDetail);
         list.add(ManVsWild.movieDetail);

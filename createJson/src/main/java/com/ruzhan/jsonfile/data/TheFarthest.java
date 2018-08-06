@@ -11,17 +11,17 @@ import java.util.List;
 /**
  * Created by ruzhan123 on 2018/7/3.
  */
-public class AYearinSpace {
+public class TheFarthest {
 
-    private static final int ID = 5703;
+    private static final int ID = 5803;
     private static final String PLAY_COUNT = "1";
 
-    private static final String TITLE = "NASA宇航员太空生活340天全纪录";
+    private static final String TITLE = "最远的地方 The Farthest";
     private static final String TAG = "社会·科技·纪录片";
 
-    private static final String IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/a-year-in-space.jpg";
+    private static final String IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/the-farthest.jpg";
 
-    private static final String DESC = "在国际太空站逗留近1年的美国太空人凯利和俄罗斯太空人科尔尼延科。";
+    private static final String DESC = "口碑不错的宇宙纪录片 The Farthest 2017，重现了“旅行者”计划探宇宙的故事，带你去到宇宙尽头。";
 
     public static final Movie movie = new Movie();
     public static final MovieDetail movieDetail = new MovieDetail();
@@ -34,23 +34,23 @@ public class AYearinSpace {
                 DESC, ""));
 
         introduceList.add(new Introduce(Introduce.IMAGE, "",
-                "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/a-year-in-space01.jpg"));
+                "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/the-farthest01.jpg"));
 
         introduceList.add(new Introduce(Introduce.TEXT,
-                "3月2号联同另一俄太空人沃尔科夫，乘坐「联盟TMA-18M」号太空船安全返抵地球，凯利更以340天，创下美国太空人单次逗留太空时间最长纪录，为未来火星载人任务铺路。", ""));
+                "1977年，美国发射了旅行者1号和2号，进入太阳系边界，收集木星、土星、天王星、海王星的信息。", ""));
 
         introduceList.add(new Introduce(Introduce.IMAGE, "",
-                "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/a-year-in-space02.jpg"));
+                "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/the-farthest02.jpg"));
 
         introduceList.add(new Introduce(Introduce.TEXT,
-                "PBS于美国当地时间3月2号播出纪录片《A Year in Space》,全程记录Scott Kelly在太空的生活，", ""));
+                "除了采访参与计划的科学家，也去访问了那些代表人类把来自地球的问候刻录在唱片上的人们。", ""));
 
         introduceList.add(new Introduce(Introduce.TEXT,
-                "大叔或逗比或欢乐，也拍下无数地球的绝美照片。纪录片结尾更是播出三位宇航员回到地球出舱的珍贵画面。", ""));
+                "片中大量来自宇宙深处的照片，令人不得不感叹科学的伟大和迷人之处。", ""));
 
         videoList.add(new Video(String.valueOf(ID + 11),
-                "NASA宇航员太空生活340天全纪录 A Year in Space", IMAGE, PLAY_COUNT, 1, "电影",
-                "http://player.bilibili.com/player.html?aid=28405764&page=1"));
+                "最远的地方 The Farthest (2017)", IMAGE, PLAY_COUNT, 1, "电影",
+                "http://player.bilibili.com/player.html?aid=28495352&page=1"));
 
         movie.id = String.valueOf(ID);
         movie.title = TITLE;
