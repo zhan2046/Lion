@@ -53,6 +53,7 @@ import com.ruzhan.jsonfile.data.ThreeCountries;
 import com.ruzhan.jsonfile.data.Thrive;
 import com.ruzhan.jsonfile.data.ThroughTheWormhole;
 import com.ruzhan.jsonfile.data.ValeriyBabich;
+import com.ruzhan.jsonfile.data.VietnamWar;
 import com.ruzhan.jsonfile.data.WeGotNext;
 import com.ruzhan.jsonfile.data.Weapon;
 import com.ruzhan.jsonfile.data.WildChina;
@@ -161,6 +162,7 @@ public final class MovieHelper {
         list.add(ValeriyBabich.movie);
         list.add(Weapon.movie);
         list.add(RealWar.movie);
+        list.add(VietnamWar.movie);
         list.add(CunkOnBritain.movie);
         list.add(CredoMutwa.movie);
         list.add(TheOrionConspiracy.movie);
@@ -222,6 +224,7 @@ public final class MovieHelper {
         list.add(ValeriyBabich.movieDetail);
         list.add(Weapon.movieDetail);
         list.add(RealWar.movieDetail);
+        list.add(VietnamWar.movieDetail);
         list.add(CunkOnBritain.movieDetail);
         list.add(CredoMutwa.movieDetail);
         list.add(TheOrionConspiracy.movieDetail);
