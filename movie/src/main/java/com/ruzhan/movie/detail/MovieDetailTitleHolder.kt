@@ -1,9 +1,8 @@
 package com.ruzhan.movie.detail
 
-import android.graphics.Typeface
 import android.support.v7.widget.RecyclerView
 import android.view.View
-import com.ruzhan.lion.util.FontUtils
+import com.ruzhan.lion.helper.FontHelper
 import kotlinx.android.synthetic.main.item_movie_detail_title.view.*
 
 /**
@@ -12,9 +11,8 @@ import kotlinx.android.synthetic.main.item_movie_detail_title.view.*
 class MovieDetailTitleHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
     init {
-        val assetManager = itemView.context.assets
-        itemView.tag_tv.typeface = Typeface.createFromAsset(assetManager, FontUtils.TEXT_LIGHT)
-        itemView.title_tv.typeface = Typeface.createFromAsset(assetManager, FontUtils.TEXT_BOLD)
+        itemView.tag_tv.typeface = FontHelper.get().getLightTypeface()
+        itemView.title_tv.typeface = FontHelper.get().getBoldTypeface()
     }
 
     fun bind(title: String, tag: String) {

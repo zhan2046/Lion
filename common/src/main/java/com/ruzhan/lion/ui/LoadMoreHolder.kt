@@ -1,10 +1,9 @@
 package com.ruzhan.lion.ui
 
-import android.graphics.Typeface
 import android.support.v7.widget.RecyclerView
 import android.view.View
 import com.ruzhan.common.R
-import com.ruzhan.lion.util.FontUtils
+import com.ruzhan.lion.helper.FontHelper
 import kotlinx.android.synthetic.main.item_load_more.view.*
 
 /**
@@ -13,8 +12,7 @@ import kotlinx.android.synthetic.main.item_load_more.view.*
 class LoadMoreHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
     init {
-        val assetManager = itemView.context.assets
-        itemView.load_tv.typeface = Typeface.createFromAsset(assetManager, FontUtils.TEXT_LIGHT)
+        itemView.load_tv.typeface = FontHelper.get().getLightTypeface()
     }
 
     fun bind(isShowLoadMore: Boolean) {

@@ -1,10 +1,9 @@
 package com.ruzhan.movie.detail
 
-import android.graphics.Typeface
 import android.support.v7.widget.RecyclerView
 import android.view.View
+import com.ruzhan.lion.helper.FontHelper
 import com.ruzhan.lion.model.Introduce
-import com.ruzhan.lion.util.FontUtils
 import kotlinx.android.synthetic.main.item_movie_detail_text.view.*
 
 /**
@@ -13,8 +12,7 @@ import kotlinx.android.synthetic.main.item_movie_detail_text.view.*
 class MovieDetailTextHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
     init {
-        val assetManager = itemView.context.assets
-        itemView.text_tv.typeface = Typeface.createFromAsset(assetManager, FontUtils.TEXT_LIGHT)
+        itemView.text_tv.typeface = FontHelper.get().getLightTypeface()
     }
 
     fun bind(bean: Introduce) {
