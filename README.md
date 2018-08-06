@@ -30,7 +30,7 @@ Download :tada:
 [fir - (Lion app download)](https://fir.im/lion333)
 
 
-Gradle :fire:
+Gradle (Movie Module) :fire:
 ------
 
 
@@ -55,7 +55,7 @@ Gradle :fire:
 ```java
 
 	dependencies {
-	        implementation 'com.github.ruzhan123.Lion:movie:0.1.9'
+	        implementation 'com.github.ruzhan123.Lion:movie:0.1.10'
 	}
 ```
 
