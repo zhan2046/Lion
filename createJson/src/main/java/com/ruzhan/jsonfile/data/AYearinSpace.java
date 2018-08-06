@@ -19,7 +19,7 @@ public class AYearinSpace {
     private static final String TITLE = "NASA宇航员太空生活340天全纪录";
     private static final String TAG = "社会·科技·纪录片";
 
-    private static final String IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/the-bleeding-edge.jpg";
+    private static final String IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/a-year-in-space.jpg";
 
     private static final String DESC = "在国际太空站逗留近1年的美国太空人凯利和俄罗斯太空人科尔尼延科。";
 
@@ -34,13 +34,13 @@ public class AYearinSpace {
                 DESC, ""));
 
         introduceList.add(new Introduce(Introduce.IMAGE, "",
-                "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/the-bleeding-edge01.jpg"));
+                "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/a-year-in-space01.jpg"));
 
         introduceList.add(new Introduce(Introduce.TEXT,
                 "3月2号联同另一俄太空人沃尔科夫，乘坐「联盟TMA-18M」号太空船安全返抵地球，凯利更以340天，创下美国太空人单次逗留太空时间最长纪录，为未来火星载人任务铺路。", ""));
 
         introduceList.add(new Introduce(Introduce.IMAGE, "",
-                "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/the-bleeding-edge02.jpg"));
+                "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/a-year-in-space02.jpg"));
 
         introduceList.add(new Introduce(Introduce.TEXT,
                 "PBS于美国当地时间3月2号播出纪录片《A Year in Space》,全程记录Scott Kelly在太空的生活，", ""));
