@@ -24,6 +24,7 @@ class FontHelper private constructor() {
 
         private var INSTANCE: FontHelper? = null
 
+        @JvmStatic
         fun get(): FontHelper {
             if (INSTANCE == null) {
                 synchronized(FontHelper::class.java) {
