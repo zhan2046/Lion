@@ -38,6 +38,7 @@ import com.ruzhan.jsonfile.data.StoryOfCapital;
 import com.ruzhan.jsonfile.data.TED2016;
 import com.ruzhan.jsonfile.data.TED2017;
 import com.ruzhan.jsonfile.data.TED2018;
+import com.ruzhan.jsonfile.data.TheBleedingEdge;
 import com.ruzhan.jsonfile.data.TheCove;
 import com.ruzhan.jsonfile.data.TheHunt;
 import com.ruzhan.jsonfile.data.TheLieWeLive;
@@ -152,6 +153,7 @@ public final class MovieHelper {
         list.add(ScamCity2.movie);
         list.add(WorldOfBlood.movie);
         list.add(HiddenLife.movie);
+        list.add(TheBleedingEdge.movie);
         list.add(Monsanto.movie);
         list.add(StoryOfCapital.movie);
         list.add(ValeriyBabich.movie);
@@ -210,6 +212,7 @@ public final class MovieHelper {
         list.add(ScamCity2.movieDetail);
         list.add(WorldOfBlood.movieDetail);
         list.add(HiddenLife.movieDetail);
+        list.add(TheBleedingEdge.movieDetail);
         list.add(Monsanto.movieDetail);
         list.add(StoryOfCapital.movieDetail);
         list.add(ValeriyBabich.movieDetail);
