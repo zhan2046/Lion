@@ -30,8 +30,9 @@ class Subscriber<T> internal constructor() : Observer<T>, SingleObserver<T>, May
 
     companion object {
 
-        private val TAG = "Subscriber"
+        private const val TAG = "Subscriber"
 
+        @JvmStatic
         fun <T> create(): Subscriber<in T> {
             return Subscriber()
         }
