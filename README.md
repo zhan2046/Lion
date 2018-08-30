@@ -55,7 +55,7 @@ Gradle (Movie Module) :fire:
 ```java
 
 	dependencies {
-	        implementation 'com.github.ruzhan123.Lion:movie:0.1.10'
+	        implementation 'com.github.ruzhan123.Lion:movie:0.2.0'
 	}
 ```
 
@@ -67,6 +67,8 @@ if use lion movie module and need proguard, please to [proguard-rules.pro](https
 
 Version :grimacing:
 ------
+#### 2018-8-30    v0.2.0
+*  add tencent x5 to web video activity
 #### 2018-8-6    v0.1.9
 *  update lion text font
 #### 2018-8-3    v0.1.8
