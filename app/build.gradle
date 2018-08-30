@@ -22,6 +22,10 @@ android {
 
         versionCode rootProject.gitCommitCount
         versionName rootProject.gitTag
+
+        ndk {
+            abiFilters "armeabi", "armeabi-v7a", "x86", "mips"
+        }
     }
 
     buildTypes {

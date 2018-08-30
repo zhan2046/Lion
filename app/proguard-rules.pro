@@ -34,6 +34,10 @@
 
 #---------------------------------2.第三方包-------------------------------
 
+# tencent x5
+-dontwarn com.tencent.smtt.**
+-keep class com.tencent.smtt.** { *; }
+
 # AndroidUtilCode
 -keep class com.blankj.utilcode.** { *; }
 -keepclassmembers class com.blankj.utilcode.** { *; }

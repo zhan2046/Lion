@@ -3,15 +3,16 @@ package com.ruzhan.movie.video
 import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
+import android.graphics.PixelFormat
 import android.os.Bundle
 import android.support.v7.app.AppCompatActivity
 import android.view.View
 import android.view.Window
 import android.view.WindowManager
-import android.webkit.WebChromeClient
-import android.webkit.WebView
-import android.webkit.WebViewClient
 import com.ruzhan.movie.R
+import com.tencent.smtt.sdk.WebChromeClient
+import com.tencent.smtt.sdk.WebView
+import com.tencent.smtt.sdk.WebViewClient
 import kotlinx.android.synthetic.main.activity_web_video.*
 
 
@@ -40,6 +41,7 @@ class WebVideoActivity : AppCompatActivity() {
         requestWindowFeature(Window.FEATURE_NO_TITLE)
         window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN)
+        window.setFormat(PixelFormat.TRANSLUCENT)
 
         setContentView(R.layout.activity_web_video)
 
