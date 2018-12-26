@@ -14,7 +14,7 @@ import java.util.List;
 public class TheLionSleepsNoMore {
 
     private static final int ID = 303;
-    private static final String PLAY_COUNT = "4";
+    private static final String PLAY_COUNT = "6";
 
     private static final String TITLE = "大卫·艾克《雄狮醒来》";
     private static final String TAG = "演讲·公开课";
@@ -99,20 +99,28 @@ public class TheLionSleepsNoMore {
                 "目前国内出现了几部大卫艾克的带有中文字幕的演讲，包括《地球史上最震撼的访谈》、《超越世界》、《雄狮醒来》等。", ""));
 
         videoList.add(new Video(String.valueOf(ID + 11),
-                "1，实相的本质", IMAGE, PLAY_COUNT, 1, "第一集",
-                "http://player.bilibili.com/player.html?aid=5039798&page=1"));
+                "1、超越世界1-上", IMAGE, PLAY_COUNT, 1, "第一集",
+                "http://player.bilibili.com/player.html?aid=4966026&cid=8065849&page=1"));
 
         videoList.add(new Video(String.valueOf(ID + 12),
-                "2，月球控制", IMAGE, PLAY_COUNT, 2, "第二集",
-                "http://player.bilibili.com/player.html?aid=5039798&page=2"));
+                "2、超越世界1-下", IMAGE, PLAY_COUNT, 2, "第二集",
+                "http://player.bilibili.com/player.html?aid=4966026&cid=8065850&page=2"));
 
         videoList.add(new Video(String.valueOf(ID + 13),
-                "3，世界议程", IMAGE, PLAY_COUNT, 3, "第三集",
-                "http://player.bilibili.com/player.html?aid=5039798&page=3"));
+                "3、超越世界2-上", IMAGE, PLAY_COUNT, 3, "第三集",
+                "http://player.bilibili.com/player.html?aid=4966026&cid=8065851&page=3"));
 
         videoList.add(new Video(String.valueOf(ID + 14),
-                "4，真相的共鸣", IMAGE, PLAY_COUNT, 4, "第四集",
-                "http://player.bilibili.com/player.html?aid=5039798&page=4"));
+                "4、超越世界2-下", IMAGE, PLAY_COUNT, 4, "第四集",
+                "http://player.bilibili.com/player.html?aid=4966026&cid=8065852&page=4"));
+
+        videoList.add(new Video(String.valueOf(ID + 14),
+                "5、超越世界3-上", IMAGE, PLAY_COUNT, 4, "第五集",
+                "http://player.bilibili.com/player.html?aid=4966026&cid=8065853&page=5"));
+
+        videoList.add(new Video(String.valueOf(ID + 14),
+                "6、超越世界3-下(完)", IMAGE, PLAY_COUNT, 4, "第六集",
+                "http://player.bilibili.com/player.html?aid=4966026&cid=8065854&page=6"));
 
         movie.id = String.valueOf(ID);
         movie.title = TITLE;
