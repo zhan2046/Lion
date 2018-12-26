@@ -44,7 +44,7 @@ public class Thrive {
 
         videoList.add(new Video(String.valueOf(ID + 11),
                 "Thrive《兴盛》", IMAGE, PLAY_COUNT, 1, "电影",
-                "http://player.bilibili.com/player.html?aid=23294894&page=1"));
+                "http://player.bilibili.com/player.html?aid=3818950&cid=6133682&page=1"));
 
         movie.id = String.valueOf(ID);
         movie.title = TITLE;
