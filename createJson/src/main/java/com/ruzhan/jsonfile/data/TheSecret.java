@@ -14,7 +14,7 @@ import java.util.List;
 public class TheSecret {
 
     private static final int ID = 703;
-    private static final String PLAY_COUNT = "4";
+    private static final String PLAY_COUNT = "1";
 
     private static final String TITLE = "秘密《吸引力法则》";
     private static final String TAG = "人文·历史·纪录片";
@@ -49,21 +49,8 @@ public class TheSecret {
                 "这样一种能量引导着宇宙中的每一样事物，也引导着我们的生活，这种能量就是——吸引力。", ""));
 
         videoList.add(new Video(String.valueOf(ID + 11),
-                "1、秘密", IMAGE, PLAY_COUNT, 1, "第一集",
-                "http://player.bilibili.com/player.html?aid=6491441&cid=10558125&page=1"));
-
-        videoList.add(new Video(String.valueOf(ID + 12),
-                "2、秘密之作品", IMAGE, PLAY_COUNT, 2, "第二集",
-                "http://player.bilibili.com/player.html?aid=6491441&cid=10558125&page=2"));
-
-        videoList.add(new Video(String.valueOf(ID + 13),
-                "3、秘密之超越秘密", IMAGE, PLAY_COUNT, 3, "第三集",
-                "http://player.bilibili.com/player.html?aid=6491441&cid=10558125&page=3"));
-
-        videoList.add(new Video(String.valueOf(ID + 14),
-                "4、秘密之指南针", IMAGE, PLAY_COUNT, 4, "第四集",
-                "http://player.bilibili.com/player.html?aid=6491441&cid=10558125&page=4"));
-
+                "吸引力法则", IMAGE, PLAY_COUNT, 1, "第一集",
+                "http://player.bilibili.com/player.html?aid=2691104&cid=4204067&page=1"));
 
         movie.id = String.valueOf(ID);
         movie.title = TITLE;

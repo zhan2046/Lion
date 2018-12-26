@@ -14,7 +14,7 @@ import java.util.List;
 public class OldGuang {
 
     private static final int ID = 5303;
-    private static final String PLAY_COUNT = "5";
+    private static final String PLAY_COUNT = "6";
 
     private static final String TITLE = "老广的味道 第一季";
     private static final String TAG = "人文·纪录片";
@@ -51,75 +51,27 @@ public class OldGuang {
 
         videoList.add(new Video(String.valueOf(ID + 11),
                 "1、老广的味道", IMAGE, PLAY_COUNT, 1, "第一集",
-                "http://player.bilibili.com/player.html?aid=28362221&page=1"));
+                "http://player.bilibili.com/player.html?aid=26405036&cid=45373169&page=1"));
 
         videoList.add(new Video(String.valueOf(ID + 12),
                 "2、老广的味道", IMAGE, PLAY_COUNT, 2, "第二集",
-                "http://player.bilibili.com/player.html?aid=28362221&page=2"));
+                "http://player.bilibili.com/player.html?aid=26405036&cid=45373169&page=2"));
 
         videoList.add(new Video(String.valueOf(ID + 13),
                 "3、老广的味道", IMAGE, PLAY_COUNT, 3, "第三集",
-                "http://player.bilibili.com/player.html?aid=28362221&page=3"));
+                "http://player.bilibili.com/player.html?aid=26405036&cid=45373169&page=3"));
 
         videoList.add(new Video(String.valueOf(ID + 14),
                 "4、老广的味道", IMAGE, PLAY_COUNT, 4, "第四集",
-                "http://player.bilibili.com/player.html?aid=28362221&page=4"));
+                "http://player.bilibili.com/player.html?aid=26405036&cid=45373169&page=4"));
 
         videoList.add(new Video(String.valueOf(ID + 15),
                 "5、老广的味道", IMAGE, PLAY_COUNT, 5, "第五集",
-                "http://player.bilibili.com/player.html?aid=28362221&page=5"));
+                "http://player.bilibili.com/player.html?aid=26405036&cid=45373169&page=5"));
 
         videoList.add(new Video(String.valueOf(ID + 16),
                 "6、老广的味道", IMAGE, PLAY_COUNT, 6, "第六集",
-                "http://player.bilibili.com/player.html?aid=28362221&page=6"));
-
-        videoList.add(new Video(String.valueOf(ID + 17),
-                "7、老广的味道", IMAGE, PLAY_COUNT, 7, "第七集",
-                "http://player.bilibili.com/player.html?aid=28362221&page=7"));
-
-        videoList.add(new Video(String.valueOf(ID + 18),
-                "8、老广的味道", IMAGE, PLAY_COUNT, 8, "第八集",
-                "http://player.bilibili.com/player.html?aid=28362221&page=8"));
-
-        videoList.add(new Video(String.valueOf(ID + 19),
-                "9、老广的味道", IMAGE, PLAY_COUNT, 9, "第九集",
-                "http://player.bilibili.com/player.html?aid=28362221&page=9"));
-
-        videoList.add(new Video(String.valueOf(ID + 20),
-                "10、老广的味道", IMAGE, PLAY_COUNT, 10, "第十集",
-                "http://player.bilibili.com/player.html?aid=28362221&page=10"));
-
-        videoList.add(new Video(String.valueOf(ID + 21),
-                "11、老广的味道", IMAGE, PLAY_COUNT, 11, "第十一集",
-                "http://player.bilibili.com/player.html?aid=28362221&page=11"));
-
-        videoList.add(new Video(String.valueOf(ID + 22),
-                "12、老广的味道", IMAGE, PLAY_COUNT, 12, "第十二集",
-                "http://player.bilibili.com/player.html?aid=28362221&page=12"));
-
-        videoList.add(new Video(String.valueOf(ID + 23),
-                "13、老广的味道", IMAGE, PLAY_COUNT, 13, "第十三集",
-                "http://player.bilibili.com/player.html?aid=28362221&page=13"));
-
-        videoList.add(new Video(String.valueOf(ID + 24),
-                "14、老广的味道", IMAGE, PLAY_COUNT, 14, "第十四集",
-                "http://player.bilibili.com/player.html?aid=28362221&page=14"));
-
-        videoList.add(new Video(String.valueOf(ID + 25),
-                "15、老广的味道", IMAGE, PLAY_COUNT, 15, "第十五集",
-                "http://player.bilibili.com/player.html?aid=28362221&page=15"));
-
-        videoList.add(new Video(String.valueOf(ID + 26),
-                "16、老广的味道", IMAGE, PLAY_COUNT, 16, "第十六集",
-                "http://player.bilibili.com/player.html?aid=28362221&page=16"));
-
-        videoList.add(new Video(String.valueOf(ID + 27),
-                "17、老广的味道", IMAGE, PLAY_COUNT, 17, "第十七集",
-                "http://player.bilibili.com/player.html?aid=28362221&page=17"));
-
-        videoList.add(new Video(String.valueOf(ID + 28),
-                "18、老广的味道", IMAGE, PLAY_COUNT, 18, "第十八集",
-                "http://player.bilibili.com/player.html?aid=28362221&page=18"));
+                "http://player.bilibili.com/player.html?aid=26405036&cid=45373169&page=6"));
 
 
         movie.id = String.valueOf(ID);

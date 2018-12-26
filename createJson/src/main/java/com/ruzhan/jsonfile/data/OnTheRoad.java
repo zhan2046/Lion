@@ -40,6 +40,18 @@ public class OnTheRoad {
                 "2016年5月24日，与汽车之家合作《张梁记》", ""));
 
         videoList.add(new Video(String.valueOf(ID + 11),
+                "1", IMAGE, PLAY_COUNT, 1, "第一集",
+                "http://player.bilibili.com/player.html?aid=18138639&cid=29612554&page=1"));
+
+        videoList.add(new Video(String.valueOf(ID + 12),
+                "2", IMAGE, PLAY_COUNT, 2, "第二集",
+                "http://player.bilibili.com/player.html?aid=35898881&cid=63002452&page=1"));
+
+        videoList.add(new Video(String.valueOf(ID + 13),
+                "3", IMAGE, PLAY_COUNT, 3, "第三集",
+                "http://player.bilibili.com/player.html?aid=29387139&cid=51077136&page=1"));
+
+        videoList.add(new Video(String.valueOf(ID + 11),
                 "1，再出发 时隔八年重回5·12地震遗址", IMAGE, PLAY_COUNT, 1, "第一集",
                 "http://player.bilibili.com/player.html?aid=5010866&cid=33442775&page=1"));
 

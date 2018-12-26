@@ -53,63 +53,63 @@ public class ManVsWild2 {
 
         videoList.add(new Video(String.valueOf(ID + 11),
                 "1、荒野求生 一", IMAGE, PLAY_COUNT, 1, "第一集",
-                "http://player.bilibili.com/player.html?aid=20655840&page=1"));
+                "http://player.bilibili.com/player.html?aid=30021392&cid=52306692&page=48"));
 
         videoList.add(new Video(String.valueOf(ID + 12),
                 "2、荒野求生 二", IMAGE, PLAY_COUNT, 2, "第二集",
-                "http://player.bilibili.com/player.html?aid=20655840&page=2"));
+                "http://player.bilibili.com/player.html?aid=30021392&cid=52306692&page=49"));
 
         videoList.add(new Video(String.valueOf(ID + 13),
                 "3、荒野求生 三", IMAGE, PLAY_COUNT, 3, "第三集",
-                "http://player.bilibili.com/player.html?aid=20655840&page=3"));
+                "http://player.bilibili.com/player.html?aid=30021392&cid=52306692&page=50"));
 
         videoList.add(new Video(String.valueOf(ID + 14),
                 "4、荒野求生 四", IMAGE, PLAY_COUNT, 4, "第四集",
-                "http://player.bilibili.com/player.html?aid=20655840&page=4"));
+                "http://player.bilibili.com/player.html?aid=30021392&cid=52306692&page=51"));
 
         videoList.add(new Video(String.valueOf(ID + 15),
                 "5、荒野求生 五", IMAGE, PLAY_COUNT, 5, "第五集",
-                "http://player.bilibili.com/player.html?aid=20655840&page=5"));
+                "http://player.bilibili.com/player.html?aid=30021392&cid=52306692&page=52"));
 
         videoList.add(new Video(String.valueOf(ID + 16),
                 "6、荒野求生 六", IMAGE, PLAY_COUNT, 6, "第六集",
-                "http://player.bilibili.com/player.html?aid=20655840&page=6"));
+                "http://player.bilibili.com/player.html?aid=30021392&cid=52306692&page=53"));
 
         videoList.add(new Video(String.valueOf(ID + 17),
                 "7、荒野求生 七", IMAGE, PLAY_COUNT, 7, "第七集",
-                "http://player.bilibili.com/player.html?aid=20655840&page=7"));
+                "http://player.bilibili.com/player.html?aid=30021392&cid=52306692&page=54"));
 
         videoList.add(new Video(String.valueOf(ID + 18),
                 "8、荒野求生 八", IMAGE, PLAY_COUNT, 8, "第八集",
-                "http://player.bilibili.com/player.html?aid=20655840&page=8"));
+                "http://player.bilibili.com/player.html?aid=30021392&cid=52306692&page=55"));
 
         videoList.add(new Video(String.valueOf(ID + 19),
                 "9、荒野求生 九", IMAGE, PLAY_COUNT, 9, "第九集",
-                "http://player.bilibili.com/player.html?aid=20655840&page=9"));
+                "http://player.bilibili.com/player.html?aid=30021392&cid=52306692&page=56"));
 
         videoList.add(new Video(String.valueOf(ID + 20),
                 "10、荒野求生 十", IMAGE, PLAY_COUNT, 10, "第十集",
-                "http://player.bilibili.com/player.html?aid=20655840&page=10"));
+                "http://player.bilibili.com/player.html?aid=30021392&cid=52306692&page=57"));
 
         videoList.add(new Video(String.valueOf(ID + 21),
                 "11、荒野求生 十一", IMAGE, PLAY_COUNT, 11, "第十一集",
-                "http://player.bilibili.com/player.html?aid=20655840&page=11"));
+                "http://player.bilibili.com/player.html?aid=30021392&cid=52306692&page=58"));
 
         videoList.add(new Video(String.valueOf(ID + 22),
                 "12、荒野求生 十二", IMAGE, PLAY_COUNT, 12, "第十二集",
-                "http://player.bilibili.com/player.html?aid=20655840&page=12"));
+                "http://player.bilibili.com/player.html?aid=30021392&cid=52306692&page=59"));
 
         videoList.add(new Video(String.valueOf(ID + 23),
                 "13、荒野求生 十三", IMAGE, PLAY_COUNT, 13, "第十三集",
-                "http://player.bilibili.com/player.html?aid=20655840&page=13"));
+                "http://player.bilibili.com/player.html?aid=30021392&cid=52306692&page=60"));
 
         videoList.add(new Video(String.valueOf(ID + 24),
                 "14、荒野求生 十四", IMAGE, PLAY_COUNT, 14, "第十四集",
-                "http://player.bilibili.com/player.html?aid=20655840&page=14"));
+                "http://player.bilibili.com/player.html?aid=30021392&cid=52306692&page=61"));
 
         videoList.add(new Video(String.valueOf(ID + 25),
                 "15、荒野求生 十五", IMAGE, PLAY_COUNT, 15, "第十五集",
-                "http://player.bilibili.com/player.html?aid=20655840&page=15"));
+                "http://player.bilibili.com/player.html?aid=30021392&cid=52306692&page=62"));
 
         movie.id = String.valueOf(ID);
         movie.title = TITLE;

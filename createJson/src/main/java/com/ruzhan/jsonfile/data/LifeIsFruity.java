@@ -55,8 +55,8 @@ public class LifeIsFruity {
                 "他们的家居处处充满体贴与用心，印证建筑大师科比意的名言「房子该是生活的藏宝盒」。 ", ""));
 
         videoList.add(new Video(String.valueOf(ID + 11),
-                "【日本纪录片】人生果实【中文字幕】【2017年】", IMAGE, PLAY_COUNT, 1, "电影",
-                "http://player.bilibili.com/player.html?aid=18384690&page=1"));
+                "积存时间的生活", IMAGE, PLAY_COUNT, 1, "电影",
+                "http://player.bilibili.com/player.html?aid=24684134&cid=41503774&page=1"));
 
         movie.id = String.valueOf(ID);
         movie.title = TITLE;
