@@ -33,13 +33,11 @@ buildscript {
         google()
         jcenter()
         maven { url "https://jitpack.io" }
-        maven { url 'https://maven.fabric.io/public' }
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.1.3'
+        classpath 'com.android.tools.build:gradle:3.2.1'
         classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${versions.kotlin}"
-        classpath 'io.fabric.tools:gradle:1.+'
     }
 }
 
@@ -47,8 +45,7 @@ ext {
     // query git for the SHA, Tag and commit count. Use these to automate versioning.
     gitSha = 'git rev-parse --short HEAD'.execute([], project.rootDir).text.trim()
     gitTag = 'git describe --tags'.execute([], project.rootDir).text.trim()
-    gitCommitCount = 100 +
-            Integer.parseInt('git rev-list --count HEAD'.execute([], project.rootDir).text.trim())
+    gitCommitCount = 100 +Integer.parseInt('git rev-list --count HEAD'.execute([], project.rootDir).text.trim()+"0")
 }
 
 allprojects {
@@ -56,6 +53,5 @@ allprojects {
         google()
         jcenter()
         maven { url "https://jitpack.io" }
-        maven { url 'https://maven.fabric.io/public' }
     }
 }
