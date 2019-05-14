@@ -73,8 +73,4 @@ dependencies {
     api 'net.soulwolf.widget:ratiolayout:2.1.0'
 
     api 'com.github.chrisbanes:PhotoView:2.0.0'
-
-    api('com.crashlytics.sdk.android:crashlytics:2.9.4@aar') {
-        transitive = true
-    }
 }
