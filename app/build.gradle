@@ -1,6 +1,9 @@
 apply plugin: 'com.android.application'
 apply plugin: 'kotlin-android'
 apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
+
+apply from: '../core_dependencies.gradle'
 
 android {
     signingConfigs {
@@ -53,7 +56,6 @@ android {
             outputFileName = fileName.replace("app", "lion-${variant.versionName}-${variant.versionCode}")
         }
     }
-
 }
 
 dependencies {
