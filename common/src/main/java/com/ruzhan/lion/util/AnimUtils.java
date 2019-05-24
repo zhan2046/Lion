@@ -7,9 +7,6 @@ import android.util.Property;
 import android.view.animation.AnimationUtils;
 import android.view.animation.Interpolator;
 
-/**
- * Created by ruzhan123 on 2018/7/5.
- */
 public class AnimUtils {
 
     private static Interpolator fastOutSlowIn;
