@@ -12,9 +12,6 @@ import android.view.ViewParent;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Utility methods for working with transitions
- */
 public class TransitionUtils {
 
     private TransitionUtils() { }

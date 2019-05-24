@@ -3,10 +3,6 @@ package com.ruzhan.lion.db.helper
 import com.ruzhan.lion.db.entity.MovieDetailEntity
 import com.ruzhan.lion.model.MovieDetail
 
-
-/**
- * Created by ruzhan123 on 2018/7/25.
- */
 object MovieDetailEntityHelper {
 
     fun toMovieDetailEntity(movieDetail: MovieDetail): MovieDetailEntity {

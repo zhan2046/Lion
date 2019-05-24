@@ -7,9 +7,6 @@ import android.arch.persistence.room.Query
 import com.ruzhan.lion.db.entity.MovieEntity
 import io.reactivex.Flowable
 
-/**
- * Created by ruzhan123 on 2018/7/25.
- */
 @Dao
 interface MovieEntityDao {
 

@@ -8,9 +8,6 @@ import android.support.v7.widget.StaggeredGridLayoutManager
 
 import com.ruzhan.common.R
 
-/**
- * Created by ruzhan123 on 2018/7/12.
- */
 object OnRefreshHelper {
 
     fun setOnRefreshStatusListener(swipeRefresh: SwipeRefreshLayout, recyclerView: RecyclerView,

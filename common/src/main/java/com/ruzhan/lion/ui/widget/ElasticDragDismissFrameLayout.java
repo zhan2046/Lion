@@ -18,9 +18,6 @@ import com.ruzhan.lion.util.ViewUtils;
 import java.util.ArrayList;
 import java.util.List;
 
-/**
- * Created by ruzhan123 on 2018/7/5.
- */
 public class ElasticDragDismissFrameLayout extends ConstraintLayout {
 
     // configurable attribs

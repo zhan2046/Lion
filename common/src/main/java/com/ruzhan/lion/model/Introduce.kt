@@ -2,9 +2,6 @@ package com.ruzhan.lion.model
 
 import com.google.gson.annotations.SerializedName
 
-/**
- * Created by ruzhan123 on 2018/7/5.
- */
 data class Introduce (
 
     @SerializedName("type")

@@ -2,9 +2,6 @@ package com.ruzhan.lion.network
 
 import okhttp3.OkHttpClient
 
-/**
- * Created by ruzhan123 on 2018/7/24.
- */
 class CommonHttpClient private constructor() {
 
     private val okHttpClient: OkHttpClient = OkHttpClient.Builder().build()

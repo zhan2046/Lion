@@ -8,10 +8,6 @@ import com.ruzhan.lion.model.Introduce
 import com.ruzhan.lion.model.Video
 import java.util.*
 
-
-/**
- * Created by ruzhan123 on 2018/7/25.
- */
 class RoomDataConverter {
 
     companion object {

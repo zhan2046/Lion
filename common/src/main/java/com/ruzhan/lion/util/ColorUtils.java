@@ -18,9 +18,7 @@ import android.util.TypedValue;
 import java.lang.annotation.Retention;
 import java.lang.annotation.RetentionPolicy;
 
-/**
- * Utility methods for working with colors.
- */
+
 public class ColorUtils {
 
     private ColorUtils() { }

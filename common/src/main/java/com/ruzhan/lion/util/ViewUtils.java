@@ -20,9 +20,6 @@ import android.view.View;
 
 import com.ruzhan.common.R;
 
-/**
- * Created by ruzhan123 on 2018/7/5.
- */
 public class ViewUtils {
 
     public static Drawable getPlaceholder(Context context, int position) {

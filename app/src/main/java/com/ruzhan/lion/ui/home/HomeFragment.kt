@@ -14,12 +14,6 @@ import com.ruzhan.lion.util.AnimUtils
 import com.ruzhan.movie.MovieListFragment
 import kotlinx.android.synthetic.main.frag_home.*
 
-
-
-
-/**
- * Created by ruzhan123 on 2018/7/3.
- */
 class HomeFragment : Fragment() {
 
     companion object {

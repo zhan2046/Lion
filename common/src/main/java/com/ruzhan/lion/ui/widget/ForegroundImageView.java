@@ -12,9 +12,6 @@ import android.view.ViewOutlineProvider;
 
 import com.ruzhan.common.R;
 
-/**
- * Created by ruzhan123 on 2018/7/5.
- */
 public class ForegroundImageView extends AppCompatImageView {
 
     private Drawable foreground;

@@ -4,9 +4,6 @@ import android.os.Parcel
 import android.os.Parcelable
 import com.google.gson.annotations.SerializedName
 
-/**
- * Created by ruzhan123 on 2018/7/4.
- */
 data class Movie(
 
         @SerializedName("id")

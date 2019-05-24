@@ -3,9 +3,6 @@ package com.ruzhan.lion.model
 import com.google.gson.annotations.SerializedName
 import java.io.Serializable
 
-/**
- * Created by ruzhan123 on 2018/7/4.
- */
 data class MovieDetail(
 
         @SerializedName("id")

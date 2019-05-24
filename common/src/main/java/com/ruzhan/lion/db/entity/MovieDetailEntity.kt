@@ -8,9 +8,6 @@ import com.ruzhan.lion.db.converter.RoomDataConverter
 import com.ruzhan.lion.model.Introduce
 import com.ruzhan.lion.model.Video
 
-/**
- * Created by ruzhan123 on 2018/7/25.
- */
 @Entity(tableName = "movie_detail_entity")
 data class MovieDetailEntity (
 

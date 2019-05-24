@@ -4,9 +4,6 @@ import android.graphics.drawable.Drawable
 import android.widget.ImageView
 import com.bumptech.glide.request.RequestListener
 
-/**
- * Created by ruzhan123 on 2018/7/4.
- */
 interface IImageLoader {
 
     fun load(imageView: ImageView, url: String)

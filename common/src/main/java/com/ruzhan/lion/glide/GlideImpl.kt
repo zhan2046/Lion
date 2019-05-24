@@ -5,10 +5,6 @@ import android.widget.ImageView
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.bumptech.glide.request.RequestListener
 
-
-/**
- * Created by ruzhan123 on 2018/7/4.
- */
 class GlideImpl : IImageLoader {
 
     override fun load(imageView: ImageView, url: String) {

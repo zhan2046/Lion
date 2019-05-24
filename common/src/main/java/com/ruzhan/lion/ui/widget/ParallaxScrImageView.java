@@ -15,9 +15,6 @@ import com.ruzhan.common.R;
 import com.ruzhan.lion.util.AnimUtils;
 import com.ruzhan.lion.util.ColorUtils;
 
-/**
- * Created by ruzhan123 on 2018/7/5.
- */
 public class ParallaxScrImageView extends ForegroundImageView {
 
     private static final int[] STATE_PINNED = { R.attr.state_pinned };

@@ -1,8 +1,5 @@
 package com.ruzhan.lion.listener
 
-/**
- * Created by ruzhan123 on 2018/7/5.
- */
 interface ElasticDragDismissCallback {
 
     /**

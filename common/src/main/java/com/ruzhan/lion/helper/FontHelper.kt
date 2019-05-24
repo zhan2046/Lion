@@ -3,9 +3,6 @@ package com.ruzhan.lion.helper
 import android.graphics.Typeface
 import com.ruzhan.lion.App
 
-/**
- * Created by ruzhan123 on 2018/8/6.
- */
 class FontHelper private constructor() {
 
     private var lightFontTypeface: Typeface

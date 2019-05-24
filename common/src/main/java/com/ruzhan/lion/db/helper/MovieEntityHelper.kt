@@ -3,9 +3,6 @@ package com.ruzhan.lion.db.helper
 import com.ruzhan.lion.db.entity.MovieEntity
 import com.ruzhan.lion.model.Movie
 
-/**
- * Created by ruzhan123 on 2018/7/25.
- */
 object MovieEntityHelper {
 
     fun toMovieEntity(movie: Movie): MovieEntity {
