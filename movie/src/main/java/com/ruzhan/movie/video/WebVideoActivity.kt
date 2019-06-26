@@ -15,10 +15,6 @@ import com.tencent.smtt.sdk.WebView
 import com.tencent.smtt.sdk.WebViewClient
 import kotlinx.android.synthetic.main.activity_web_video.*
 
-
-/**
- * Created by ruzhan123 on 2018/7/5.
- */
 class WebVideoActivity : AppCompatActivity() {
 
     companion object {

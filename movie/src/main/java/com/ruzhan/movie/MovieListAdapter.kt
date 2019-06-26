@@ -9,9 +9,6 @@ import com.ruzhan.lion.model.RequestStatus
 import com.ruzhan.lion.ui.LoadMoreHolder
 
 
-/**
- * Created by ruzhan123 on 2018/7/4.
- */
 class MovieListAdapter(listener: OnItemClickListener<Movie>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     companion object {

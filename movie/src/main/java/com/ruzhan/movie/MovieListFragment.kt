@@ -20,13 +20,9 @@ import com.ruzhan.lion.model.RequestStatus
 import com.ruzhan.movie.detail.MovieDetailActivity
 import kotlinx.android.synthetic.main.frag_movie_list.*
 
-/**
- * Created by ruzhan123 on 2018/7/4.
- */
 class MovieListFragment : Fragment() {
 
     companion object {
-        const val MOVIE_LIST_REQUEST_CODE: Int = 1000
 
         @JvmStatic
         fun newInstance() = MovieListFragment()

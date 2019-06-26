@@ -12,9 +12,6 @@ import com.ruzhan.movie.ImageListModel
 import com.ruzhan.movie.R
 import java.util.*
 
-/**
- * Created by ruzhan123 on 2018/7/5.
- */
 class MovieDetailAdapter(listener: OnItemClickListener<Video>,
                          imageListener: OnItemClickListener<ImageListModel>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 

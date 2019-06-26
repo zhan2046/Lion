@@ -8,9 +8,6 @@ import android.support.v7.app.AppCompatActivity
 import com.ruzhan.lion.model.Movie
 import com.ruzhan.movie.R
 
-/**
- * Created by ruzhan123 on 2018/7/5.
- */
 class MovieDetailActivity : AppCompatActivity() {
 
     companion object {

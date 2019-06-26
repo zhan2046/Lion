@@ -21,9 +21,6 @@ import com.ruzhan.movie.R
 import com.ruzhan.movie.video.WebVideoActivity
 import kotlinx.android.synthetic.main.frag_movie_detail.*
 
-/**
- * Created by ruzhan123 on 2018/7/5.
- */
 class MovieDetailFragment : Fragment() {
 
     companion object {

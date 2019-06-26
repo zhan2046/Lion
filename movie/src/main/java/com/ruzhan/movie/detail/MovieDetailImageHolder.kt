@@ -10,9 +10,6 @@ import com.ruzhan.lion.util.ViewUtils
 import com.ruzhan.movie.ImageListModel
 import kotlinx.android.synthetic.main.item_movie_detail_image.view.*
 
-/**
- * Created by ruzhan123 on 2018/7/5.
- */
 class MovieDetailImageHolder(itemView: View, movieDetail: MovieDetail,
                              listener: OnItemClickListener<ImageListModel>) : RecyclerView.ViewHolder(itemView) {
 

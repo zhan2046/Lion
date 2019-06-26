@@ -12,9 +12,6 @@ import com.ruzhan.lion.util.ViewUtils
 import com.ruzhan.movie.R
 import kotlinx.android.synthetic.main.item_movie_detail_video.view.*
 
-/**
- * Created by ruzhan123 on 2018/7/5.
- */
 class MovieDetailVideoHolder(itemView: View, listener: OnItemClickListener<Video>) : RecyclerView.ViewHolder(itemView) {
 
     private lateinit var video: Video
