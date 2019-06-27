@@ -14,9 +14,7 @@ import android.view.View
 import android.view.ViewGroup
 import com.ruzhan.lion.helper.OnRefreshHelper
 import com.ruzhan.lion.listener.OnItemClickListener
-import com.ruzhan.lion.model.LoadStatus
 import com.ruzhan.lion.model.Movie
-import com.ruzhan.lion.model.RequestStatus
 import com.ruzhan.movie.detail.MovieDetailActivity
 import kotlinx.android.synthetic.main.frag_movie_list.*
 
@@ -61,49 +59,47 @@ class MovieListFragment : Fragment() {
 
         movieListAdapter = MovieListAdapter(object : OnItemClickListener<Movie> {
             override fun onItemClick(position: Int, bean: Movie, itemView: View) {
-                val act = activity!!
-                val transitionShot = act.getString(R.string.transition_shot)
-                val transitionShotBackground = act.getString(R.string.transition_shot_background)
-
-                val options = ActivityOptionsCompat.makeSceneTransitionAnimation(act,
-                        Pair.create(itemView, transitionShot), Pair.create(itemView, transitionShotBackground))
-
-                MovieDetailActivity.launch(activity!!, bean, options)
+                val activity = activity
+                if (activity != null) {
+                    val transitionShot = activity.getString(R.string.transition_shot)
+                    val transitionShotBackground = activity.getString(R.string.transition_shot_background)
+                    val options = ActivityOptionsCompat.makeSceneTransitionAnimation(activity,
+                            Pair.create(itemView, transitionShot), Pair.create(itemView, transitionShotBackground))
+                    MovieDetailActivity.launch(activity, bean, options)
+                }
             }
         })
         recycler_view.adapter = movieListAdapter
         recycler_view.layoutManager = LinearLayoutManager(activity, LinearLayoutManager.VERTICAL,
                 false)
 
-
         OnRefreshHelper.setOnRefreshStatusListener(swipe_refresh, recycler_view, object :
                 OnRefreshHelper.OnRefreshStatusListener {
 
             override fun onRefresh() {
-                movieListViewModel.getMovieList(RequestStatus.REFRESH)
+                movieListViewModel.getRefreshMovieList()
             }
 
             override fun onLoadMore() {
-                movieListViewModel.getMovieList(RequestStatus.LOAD_MORE)
+                movieListViewModel.getLoadMoreMovieList()
             }
         })
-
-        movieListViewModel.loadStatusLiveData.observe(this@MovieListFragment, Observer { loadStatus ->
-            loadStatus?.let {
-                swipe_refresh.isRefreshing = LoadStatus.LOADING == loadStatus
+        movieListViewModel.loadStatusLiveData.observe(this@MovieListFragment, Observer { isLoading ->
+            if (isLoading != null) {
+                swipe_refresh.isRefreshing = isLoading
             }
         })
-
-        movieListViewModel.requestStatusLiveData.observe(this@MovieListFragment, Observer { requestStatus ->
-            requestStatus?.let {
-                when (requestStatus.refreshStatus) {
-                    RequestStatus.REFRESH -> movieListAdapter.setRefreshData(requestStatus.data)
-                    RequestStatus.LOAD_MORE -> movieListAdapter.setLoadMoreData(requestStatus.data)
-                }
+        movieListViewModel.refreshLiveData.observe(this@MovieListFragment, Observer { movieList ->
+            movieList?.let {
+                movieListAdapter.setRefreshData(movieList)
             }
         })
-
+        movieListViewModel.loadMoreLiveData.observe(this@MovieListFragment, Observer { movieList ->
+            movieList?.let {
+                movieListAdapter.setLoadMoreData(movieList)
+            }
+        })
         movieListViewModel.loadMovieEntityList()
-        movieListViewModel.getMovieList(RequestStatus.REFRESH)
+        movieListViewModel.getRefreshMovieList()
     }
 }

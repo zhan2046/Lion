@@ -3,12 +3,9 @@ package com.ruzhan.movie
 import android.app.Application
 import android.arch.lifecycle.AndroidViewModel
 import android.arch.lifecycle.MutableLiveData
-import com.blankj.utilcode.util.LogUtils
 import com.ruzhan.lion.db.entity.MovieEntity
 import com.ruzhan.lion.db.helper.MovieEntityHelper
-import com.ruzhan.lion.model.LoadStatus
 import com.ruzhan.lion.model.Movie
-import com.ruzhan.lion.model.RequestStatus
 import com.ruzhan.lion.rx.Subscriber
 import com.ruzhan.lion.util.LionUtils
 import com.ruzhan.movie.network.MovieRepository
@@ -21,85 +18,105 @@ import io.reactivex.schedulers.Schedulers
 
 class MovieListViewModel(app: Application) : AndroidViewModel(app) {
 
-    private val TAG: String = "MovieListViewModel"
+    companion object {
 
-    private val requestStatus: RequestStatus<List<Movie>> = RequestStatus()
+        private const val REFRESH = "REFRESH"
+        private const val LOAD_MORE = "LOAD_MORE"
 
-    val loadStatusLiveData: MutableLiveData<LoadStatus> = MutableLiveData()
-    val requestStatusLiveData: MutableLiveData<RequestStatus<List<Movie>>> = MutableLiveData()
+        private const val START_PAGE = 1
+    }
 
+    val loadStatusLiveData = MutableLiveData<Boolean>()
+    val refreshLiveData = MutableLiveData<List<Movie>>()
+    val loadMoreLiveData = MutableLiveData<List<Movie>>()
+
+    private var isLoading = false
+    private var loadPage = START_PAGE
     private var disposable: Disposable? = null
+    private var localFlowable: Flowable<Any>? = null
 
     init {
-        requestStatusLiveData.value = null
+        localFlowable = Flowable.create<Any>({ e ->
+            val movieList = refreshLiveData.value
+            if (movieList != null) {
+                val movieEntityList: List<MovieEntity> = MovieEntityHelper.toMovieEntityList(movieList)
+                MovieRepository.get().insertMovieEntityList(movieEntityList)
+            }
+            e.onComplete()
+        }, BackpressureStrategy.LATEST)
     }
 
     fun loadMovieEntityList() {
-        LogUtils.iTag(TAG, "loadMovieEntityList called...")
-
         disposable = MovieRepository.get().loadMovieEntityList()
                 .observeOn(AndroidSchedulers.mainThread())
-                .doOnError { throwable -> LogUtils.iTag(TAG, "loadMovieEntityList error... " + throwable.toString()) }
+                .doOnError { throwable -> throwable.printStackTrace() }
                 .doOnSubscribe {}
                 .doFinally {}
                 .doOnNext { movieEntityList ->
-                    LogUtils.iTag(TAG, "loadMovieEntityList doOnNext... movieEntityList.size: " + movieEntityList.size)
-
                     val movieList: List<Movie> = MovieEntityHelper.toMovieList(movieEntityList)
-                    if (requestStatusLiveData.value == null) {
-                        requestStatus.refreshStatus = RequestStatus.REFRESH
-                        requestStatus.data = movieList
-                        requestStatusLiveData.value = requestStatus
+                    if (refreshLiveData.value == null) {
+                        refreshLiveData.value = movieList
                     }
                     disposable?.dispose()
                 }
                 .subscribe({ }, { })
     }
 
-    fun getMovieList(refreshStatus: Int) {
-        if (requestStatus.isNetworkRequest) return
+    fun getRefreshMovieList() {
+        getMovieList(REFRESH)
+    }
 
-        requestStatus.isNetworkRequest = true
+    fun getLoadMoreMovieList() {
+        getMovieList(LOAD_MORE)
+    }
 
-        requestStatus.refreshStatus = refreshStatus
-        requestStatus.setPage(refreshStatus)
-
-        val pageFileName = requestStatus.page.toString().plus(LionUtils.JSON_FILE)
-
+    private fun getMovieList(status: String) {
+        if (isLoading) {
+            return
+        }
+        isLoading = true
+        when (status) {
+            REFRESH -> loadPage = START_PAGE
+            LOAD_MORE -> loadPage = ++loadPage
+            else -> {
+                // do nothing
+            }
+        }
+        val pageFileName = loadPage.toString().plus(LionUtils.JSON_FILE)
         MovieRepository.get().getMovieList(pageFileName)
+                .map { result -> result.data }
                 .observeOn(AndroidSchedulers.mainThread())
                 .doOnError {}
-                .doOnSubscribe {
-                    if (RequestStatus.REFRESH == requestStatus.refreshStatus) {
-                        loadStatusLiveData.value = LoadStatus.LOADING
-                    }
-                }
-                .map { result -> result.data }
+                .doOnSubscribe {}
                 .doFinally {
-                    loadStatusLiveData.value = LoadStatus.LOADED
-                    requestStatus.isNetworkRequest = false
+                    loadStatusLiveData.value = false
+                    isLoading = false
                 }
                 .doOnSuccess { movieList ->
-                    requestStatus.data = movieList
-                    requestStatusLiveData.value = requestStatus
-
-                    movieList?.let { insertMovieEntityList(movieList) }
+                    when (status) {
+                        REFRESH -> {
+                            refreshLiveData.value = movieList
+                            movieList?.let { insertMovieEntityList() }
+                        }
+                        LOAD_MORE -> {
+                            loadMoreLiveData.value = movieList
+                        }
+                        else -> {
+                            // do nothing
+                        }
+                    }
                 }
                 .subscribe(Subscriber.create())
     }
 
-    private fun insertMovieEntityList(movieList: List<Movie>) {
-        Flowable.create<Any>({ e ->
-            val movieEntityList: List<MovieEntity> = MovieEntityHelper.toMovieEntityList(movieList)
-            LogUtils.iTag(TAG, "insertMovieEntityList called... movieEntityList.size: " + movieEntityList.size)
-            MovieRepository.get().insertMovieEntityList(movieEntityList)
-            e.onComplete()
-
-        }, BackpressureStrategy.LATEST)
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .doOnError { throwable -> LogUtils.iTag(TAG, "insertMovieEntityList doOnError... " + throwable.toString()) }
-                .doOnComplete { LogUtils.iTag(TAG, "insertMovieEntityList doOnComplete...") }
-                .subscribe(Subscriber.create())
+    private fun insertMovieEntityList() {
+        val localFlowable = localFlowable
+        if (localFlowable != null) {
+            localFlowable.subscribeOn(Schedulers.io())
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .doOnError { throwable -> throwable.printStackTrace() }
+                    .doOnComplete { }
+                    .subscribe(Subscriber.create())
+        }
     }
 }

@@ -5,7 +5,6 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.ruzhan.lion.listener.OnItemClickListener
 import com.ruzhan.lion.model.Movie
-import com.ruzhan.lion.model.RequestStatus
 import com.ruzhan.lion.ui.LoadMoreHolder
 
 
@@ -16,6 +15,8 @@ class MovieListAdapter(listener: OnItemClickListener<Movie>) : RecyclerView.Adap
 
         const val TYPE_NORMAL: Int = 1000
         const val TYPE_LOAD_MORE: Int = 1001
+
+        private const val PAGE_SIZE = 60
     }
 
     private var dataList = ArrayList<Any>()
@@ -27,7 +28,7 @@ class MovieListAdapter(listener: OnItemClickListener<Movie>) : RecyclerView.Adap
             dataList.clear()
             dataList.addAll(movieList)
             dataList.add(LOAD_MORE)
-            isLoadMore = movieList.size >= RequestStatus.PAGE_SIZE
+            isLoadMore = movieList.size >= PAGE_SIZE
             notifyDataSetChanged()
         }
     }
@@ -38,7 +39,7 @@ class MovieListAdapter(listener: OnItemClickListener<Movie>) : RecyclerView.Adap
 
             dataList.addAll(movieList)
             dataList.add(LOAD_MORE)
-            isLoadMore = movieList.size >= RequestStatus.PAGE_SIZE
+            isLoadMore = movieList.size >= PAGE_SIZE
             notifyDataSetChanged()
         }
     }
