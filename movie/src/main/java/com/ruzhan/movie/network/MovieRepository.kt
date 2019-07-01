@@ -1,6 +1,8 @@
 package com.ruzhan.movie.network
 
 import com.ruzhan.lion.App
+import com.ruzhan.lion.database.CommonAppDatabase
+import com.ruzhan.lion.database.CommonModel
 import com.ruzhan.lion.db.AppDatabase
 import com.ruzhan.lion.db.entity.MovieDetailEntity
 import com.ruzhan.lion.db.entity.MovieEntity
@@ -16,20 +18,14 @@ class MovieRepository private constructor() {
 
     private val api: MovieApi = MovieClient.get()
     private val appDatabase: AppDatabase = AppDatabase[App.get()]
+    private val commonAppDatabase = CommonAppDatabase.invoke(App.get())
 
     companion object {
 
         private var INSTANCE: MovieRepository? = null
 
-        fun get(): MovieRepository {
-            if (INSTANCE == null) {
-                synchronized(MovieRepository::class.java) {
-                    if (INSTANCE == null) {
-                        INSTANCE = MovieRepository()
-                    }
-                }
-            }
-            return this.INSTANCE!!
+        fun get() = INSTANCE ?: synchronized(MovieRepository::class) {
+            INSTANCE ?: MovieRepository().also { INSTANCE = it }
         }
     }
 
@@ -55,5 +51,13 @@ class MovieRepository private constructor() {
 
     fun insertMovieDetailEntity(movieDetailEntity: MovieDetailEntity) {
         return appDatabase.movieDetailEntityDao().insertMovieDetailEntity(movieDetailEntity)
+    }
+
+    fun insertCommonModel(commonModel: CommonModel) {
+        commonAppDatabase.commonDao().insertCommonModel(commonModel)
+    }
+
+    fun getCommonModel(id: Int): Flowable<CommonModel> {
+        return commonAppDatabase.commonDao().getCommonModel(id)
     }
 }

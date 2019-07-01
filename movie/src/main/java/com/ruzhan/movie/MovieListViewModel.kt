@@ -3,8 +3,9 @@ package com.ruzhan.movie
 import android.app.Application
 import android.arch.lifecycle.AndroidViewModel
 import android.arch.lifecycle.MutableLiveData
-import com.ruzhan.lion.db.entity.MovieEntity
-import com.ruzhan.lion.db.helper.MovieEntityHelper
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
+import com.ruzhan.lion.database.CommonModel
 import com.ruzhan.lion.model.Movie
 import com.ruzhan.lion.rx.Subscriber
 import com.ruzhan.lion.util.LionUtils
@@ -23,6 +24,7 @@ class MovieListViewModel(app: Application) : AndroidViewModel(app) {
         private const val REFRESH = "REFRESH"
         private const val LOAD_MORE = "LOAD_MORE"
 
+        private const val LION_MOVIE_LIST = 3000
         private const val START_PAGE = 1
     }
 
@@ -33,29 +35,39 @@ class MovieListViewModel(app: Application) : AndroidViewModel(app) {
     private var isLoading = false
     private var loadPage = START_PAGE
     private var disposable: Disposable? = null
+    private var localDisposable: Disposable? = null
     private var localFlowable: Flowable<Any>? = null
+
+    private val gson = Gson()
 
     init {
         localFlowable = Flowable.create<Any>({ e ->
             val movieList = refreshLiveData.value
             if (movieList != null) {
-                val movieEntityList: List<MovieEntity> = MovieEntityHelper.toMovieEntityList(movieList)
-                MovieRepository.get().insertMovieEntityList(movieEntityList)
+                val jsonStr = gson.toJson(movieList)
+                val commonModel = CommonModel(LION_MOVIE_LIST, jsonStr)
+                MovieRepository.get().insertCommonModel(commonModel)
             }
             e.onComplete()
         }, BackpressureStrategy.LATEST)
     }
 
-    fun loadMovieEntityList() {
-        disposable = MovieRepository.get().loadMovieEntityList()
+    fun getLocalMovieList() {
+        disposable = MovieRepository.get().getCommonModel(LION_MOVIE_LIST)
                 .observeOn(AndroidSchedulers.mainThread())
                 .doOnError { throwable -> throwable.printStackTrace() }
                 .doOnSubscribe {}
                 .doFinally {}
-                .doOnNext { movieEntityList ->
-                    val movieList: List<Movie> = MovieEntityHelper.toMovieList(movieEntityList)
-                    if (refreshLiveData.value == null) {
-                        refreshLiveData.value = movieList
+                .doOnNext { commonModel ->
+                    if (commonModel != null) {
+                        val content = commonModel.content
+                        if (content.isNotBlank()) {
+                            val movieList: List<Movie> = gson.fromJson(content,
+                                    object : TypeToken<List<Movie>>() {}.type)
+                            if (refreshLiveData.value == null) {
+                                refreshLiveData.value = movieList
+                            }
+                        }
                     }
                     disposable?.dispose()
                 }
@@ -112,11 +124,11 @@ class MovieListViewModel(app: Application) : AndroidViewModel(app) {
     private fun insertMovieEntityList() {
         val localFlowable = localFlowable
         if (localFlowable != null) {
-            localFlowable.subscribeOn(Schedulers.io())
+            localDisposable = localFlowable.subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
                     .doOnError { throwable -> throwable.printStackTrace() }
-                    .doOnComplete { }
-                    .subscribe(Subscriber.create())
+                    .doOnComplete { localDisposable?.dispose() }
+                    .subscribe({ }, { })
         }
     }
 }

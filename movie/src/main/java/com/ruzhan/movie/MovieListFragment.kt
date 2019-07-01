@@ -99,7 +99,7 @@ class MovieListFragment : Fragment() {
                 movieListAdapter.setLoadMoreData(movieList)
             }
         })
-        movieListViewModel.loadMovieEntityList()
+        movieListViewModel.getLocalMovieList()
         movieListViewModel.getRefreshMovieList()
     }
 }
