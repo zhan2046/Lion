@@ -15,6 +15,7 @@ import io.reactivex.Flowable
 import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
+import java.util.concurrent.TimeUnit
 
 
 class MovieListViewModel(app: Application) : AndroidViewModel(app) {
@@ -24,6 +25,7 @@ class MovieListViewModel(app: Application) : AndroidViewModel(app) {
         private const val REFRESH = "REFRESH"
         private const val LOAD_MORE = "LOAD_MORE"
 
+        private const val DEBOUNCE_TIME = 1000L
         private const val LION_MOVIE_LIST = 3000
         private const val START_PAGE = 1
     }
@@ -124,7 +126,8 @@ class MovieListViewModel(app: Application) : AndroidViewModel(app) {
     private fun insertMovieEntityList() {
         val localFlowable = localFlowable
         if (localFlowable != null) {
-            localDisposable = localFlowable.subscribeOn(Schedulers.io())
+            localDisposable = localFlowable.debounce(DEBOUNCE_TIME, TimeUnit.MILLISECONDS)
+                    .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
                     .doOnError { throwable -> throwable.printStackTrace() }
                     .doOnComplete { localDisposable?.dispose() }
