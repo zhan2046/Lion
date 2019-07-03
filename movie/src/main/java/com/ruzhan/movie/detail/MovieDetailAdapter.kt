@@ -97,8 +97,7 @@ class MovieDetailAdapter(listener: OnItemClickListener<Video>,
     override fun getItemCount(): Int = dataList.size
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
-        val viewType = getItemViewType(position)
-        when (viewType) {
+        when (getItemViewType(position)) {
             TYPE_TITLE -> (holder as MovieDetailTitleHolder).bind(movieDetail.title, movieDetail.tag)
             TYPE_TEXT -> (holder as MovieDetailTextHolder).bind(dataList[position] as Introduce)
             TYPE_IMAGE -> (holder as MovieDetailImageHolder).bind(dataList[position] as Introduce)
