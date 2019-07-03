@@ -11,19 +11,16 @@ object MovieClient {
     @Volatile
     private var api: MovieApi? = null
 
-    fun get(): MovieApi {
-        if (api == null) {
-            synchronized(MovieClient::class.java) {
-                if (api == null) {
-                    val client = Retrofit.Builder().baseUrl(MovieApi.HOST)
-                            .client(CommonHttpClient.getCommonHttpClient())
-                            .addConverterFactory(GsonConverterFactory.create())
-                            .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
-                            .build()
-                    api = client.create(MovieApi::class.java)
-                }
-            }
-        }
-        return api!!
+    fun get(): MovieApi = api ?: synchronized(MovieClient::class) {
+        api ?: getMovieApi().also { api = it }
+    }
+
+    private fun getMovieApi(): MovieApi {
+        val client = Retrofit.Builder().baseUrl(MovieApi.HOST)
+                .client(CommonHttpClient.getCommonHttpClient())
+                .addConverterFactory(GsonConverterFactory.create())
+                .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
+                .build()
+        return client.create(MovieApi::class.java)
     }
 }

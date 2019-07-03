@@ -37,14 +37,6 @@ class MovieRepository private constructor() {
         return api.getMovieDetail(detailFile).subscribeOn(Schedulers.io())
     }
 
-    fun loadMovieEntityList(): Flowable<List<MovieEntity>> {
-        return appDatabase.movieEntityDao().loadMovieEntityList()
-    }
-
-    fun insertMovieEntityList(movieEntityList: List<MovieEntity>) {
-        return appDatabase.movieEntityDao().insertMovieEntityList(movieEntityList)
-    }
-
     fun loadMovieDetailEntity(movieId: String): Flowable<MovieDetailEntity> {
         return appDatabase.movieDetailEntityDao().loadMovieDetailEntity(movieId)
     }
