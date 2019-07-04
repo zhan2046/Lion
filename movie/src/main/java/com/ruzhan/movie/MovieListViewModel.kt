@@ -60,24 +60,27 @@ class MovieListViewModel(app: Application) : AndroidViewModel(app) {
 
     fun getLocalMovieList() {
         disposable = MovieRepository.get().getCommonModel(LION_MOVIE_LIST)
+                .map { commonModel -> commonModelToMovieList(commonModel) }
                 .observeOn(AndroidSchedulers.mainThread())
                 .doOnError { throwable -> throwable.printStackTrace() }
-                .doOnSubscribe {}
-                .doFinally {}
-                .doOnNext { commonModel -> handleLocalMovieList(commonModel) }
+                .doOnSubscribe { }
+                .doFinally { }
+                .doOnNext { movieList -> handleLocalMovieList(movieList) }
                 .subscribe({ }, { })
     }
 
-    private fun handleLocalMovieList(commonModel: CommonModel?) {
-        if (commonModel != null) {
-            val content = commonModel.content
-            if (content.isNotBlank()) {
-                val movieList: List<Movie> = gson.fromJson(content,
-                        object : TypeToken<List<Movie>>() {}.type)
-                if (refreshLiveData.value == null) {
-                    refreshLiveData.value = movieList
-                }
-            }
+    private fun commonModelToMovieList(commonModel: CommonModel): ArrayList<Movie> {
+        var movieList = ArrayList<Movie>()
+        val content = commonModel.content
+        if (content.isNotBlank()) {
+            movieList = gson.fromJson(content, object : TypeToken<List<Movie>>() {}.type)
+        }
+        return movieList
+    }
+
+    private fun handleLocalMovieList(movieList: List<Movie>?) {
+        if (refreshLiveData.value == null) {
+            refreshLiveData.value = movieList
         }
         disposable?.dispose()
     }
@@ -120,7 +123,7 @@ class MovieListViewModel(app: Application) : AndroidViewModel(app) {
         when (status) {
             REFRESH -> {
                 refreshLiveData.value = movieList
-                movieList?.let { insertMovieEntityList() }
+                insertLocalMovieList()
             }
             LOAD_MORE -> {
                 loadMoreLiveData.value = movieList
@@ -131,7 +134,7 @@ class MovieListViewModel(app: Application) : AndroidViewModel(app) {
         }
     }
 
-    private fun insertMovieEntityList() {
+    private fun insertLocalMovieList() {
         val localFlowable = localFlowable
         if (localFlowable != null) {
             localDisposable = localFlowable.debounce(DEBOUNCE_TIME, TimeUnit.MILLISECONDS)

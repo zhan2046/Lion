@@ -3,9 +3,9 @@ package com.ruzhan.movie.detail
 import android.app.Application
 import android.arch.lifecycle.AndroidViewModel
 import android.arch.lifecycle.MutableLiveData
-import com.blankj.utilcode.util.LogUtils
-import com.ruzhan.lion.db.entity.MovieDetailEntity
-import com.ruzhan.lion.db.helper.MovieDetailEntityHelper
+import com.google.gson.Gson
+import com.google.gson.reflect.TypeToken
+import com.ruzhan.lion.database.CommonModel
 import com.ruzhan.lion.model.MovieDetail
 import com.ruzhan.lion.rx.Subscriber
 import com.ruzhan.lion.util.LionUtils
@@ -18,63 +18,84 @@ import io.reactivex.schedulers.Schedulers
 
 class MovieDetailViewModel(app: Application) : AndroidViewModel(app) {
 
-    private val TAG: String = "MovieDetailViewModel"
-
     var movieDetailLiveData: MutableLiveData<MovieDetail> = MutableLiveData()
 
+    private var localFlowable: Flowable<Any>? = null
     private var disposable: Disposable? = null
+    private var localDisposable: Disposable? = null
+
+    var movieId = ""
+    private val gson = Gson()
 
     init {
-        movieDetailLiveData.value = null
+        localFlowable = Flowable.create<Any>({ e ->
+            handleInsertCommonModel()
+            e.onComplete()
+        }, BackpressureStrategy.LATEST)
     }
 
-    fun loadMovieDetailEntity(movieId: String) {
-        disposable = MovieRepository.get().loadMovieDetailEntity(movieId)
-                .observeOn(AndroidSchedulers.mainThread())
-                .doOnError { throwable -> LogUtils.iTag(TAG, "loadMovieDetailEntity error... " + throwable.toString()) }
-                .doOnSubscribe {}
-                .doFinally {}
-                .doOnNext { movieDetailEntity ->
-                    LogUtils.iTag(TAG, "loadMovieDetailEntity doOnNext...")
+    private fun handleInsertCommonModel() {
+        val movieDetail = movieDetailLiveData.value
+        if (movieDetail != null) {
+            val jsonStr = gson.toJson(movieDetail)
+            val commonModel = CommonModel(movieId.toInt(), jsonStr)
+            MovieRepository.get().insertCommonModel(commonModel)
+        }
+    }
 
-                    val movieList: MovieDetail = MovieDetailEntityHelper.toMovieDetail(movieDetailEntity)
-                    if (movieDetailLiveData.value == null) {
-                        movieDetailLiveData.value = movieList
-                    }
-                    disposable?.dispose()
-                }
+    fun getLocalMovieDetail(movieId: String) {
+        disposable = MovieRepository.get().getCommonModel(movieId.toInt())
+                .map { commonModel -> commonModelToMovieDetail(commonModel) }
+                .observeOn(AndroidSchedulers.mainThread())
+                .doOnError { throwable -> throwable.printStackTrace() }
+                .doOnSubscribe { }
+                .doFinally { }
+                .doOnNext { movieDetail -> handleLocalMovieDetail(movieDetail) }
                 .subscribe({ }, { })
+    }
+
+    private fun handleLocalMovieDetail(movieDetail: MovieDetail) {
+        if (movieDetailLiveData.value == null) {
+            movieDetailLiveData.value = movieDetail
+        }
+        disposable?.dispose()
+    }
+
+    private fun commonModelToMovieDetail(commonModel: CommonModel): MovieDetail {
+        var movieDetail = MovieDetail.empty()
+        val content = commonModel.content
+        if (content.isNotBlank()) {
+            movieDetail = gson.fromJson(content, object : TypeToken<MovieDetail>() {}.type)
+        }
+        return movieDetail
     }
 
     fun getMovieDetail(movieId: String) {
         val detailFile = movieId.plus(LionUtils.JSON_FILE)
         MovieRepository.get().getMovieDetail(detailFile)
+                .map { result -> result.data }
                 .observeOn(AndroidSchedulers.mainThread())
                 .doOnError {}
                 .doOnSubscribe {}
-                .map { result -> result.data }
                 .doFinally {}
-                .doOnSuccess { movieDetail ->
-                    movieDetailLiveData.value = movieDetail
-
-                    movieDetail?.let { insertMovieDetailEntity(movieDetail) }
-                }
+                .doOnSuccess { movieDetail -> handleMovieDetail(movieDetail) }
                 .subscribe(Subscriber.create())
     }
 
-    private fun insertMovieDetailEntity(movieDetail: MovieDetail) {
-        Flowable.create<Any>({ e ->
-            val movieDetailEntity: MovieDetailEntity = MovieDetailEntityHelper.toMovieDetailEntity(movieDetail)
-            LogUtils.iTag(TAG, "insertMovieDetailEntity called...")
-            MovieRepository.get().insertMovieDetailEntity(movieDetailEntity)
-            e.onComplete()
-
-        }, BackpressureStrategy.LATEST)
-                .subscribeOn(Schedulers.io())
-                .observeOn(AndroidSchedulers.mainThread())
-                .doOnError { throwable -> LogUtils.iTag(TAG, "insertMovieDetailEntity doOnError... " + throwable.toString()) }
-                .doOnComplete { LogUtils.iTag(TAG, "insertMovieDetailEntity doOnComplete...") }
-                .subscribe(Subscriber.create())
+    private fun handleMovieDetail(movieDetail: MovieDetail?) {
+        movieDetailLiveData.value = movieDetail
+        insertLocalMovieDetail()
     }
 
+    private fun insertLocalMovieDetail() {
+        val localFlowable = localFlowable
+        if (localFlowable != null) {
+            localDisposable = localFlowable
+                    .subscribeOn(Schedulers.io())
+                    .observeOn(AndroidSchedulers.mainThread())
+                    .doOnError { throwable -> throwable.printStackTrace() }
+                    .doOnComplete { localDisposable?.dispose() }
+                    .subscribe({ }, { })
+        }
+    }
 }

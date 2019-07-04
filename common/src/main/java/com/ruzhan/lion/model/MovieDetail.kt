@@ -22,5 +22,15 @@ data class MovieDetail(
         var introduces: List<Introduce>,
         @SerializedName("videos")
         var videos: List<Video>
-) : Serializable
+) : Serializable {
+
+        companion object {
+
+                @JvmStatic
+                fun empty(): MovieDetail = MovieDetail(
+                        "", "", "",
+                        "", "", "",
+                        ArrayList(), ArrayList())
+        }
+}
 

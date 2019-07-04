@@ -43,6 +43,11 @@ class MovieDetailFragment : Fragment() {
     private lateinit var movieDetailAdapter: MovieDetailAdapter
     private lateinit var chromeFader: ElasticDragDismissFrameLayout.SystemChromeFader
 
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        movie = arguments!!.getParcelable(MOVIE)
+    }
+
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
         return inflater.inflate(R.layout.frag_movie_detail, container, false)
@@ -50,9 +55,8 @@ class MovieDetailFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-
         movieDetailViewModel = ViewModelProviders.of(this).get(MovieDetailViewModel::class.java)
-        movie = arguments!!.getParcelable(MOVIE)
+        movieDetailViewModel.movieId = movie.id
         ImageLoader.get().loadNoCrossFade(shot, movie.image,
                 ViewUtils.getPlaceholder(activity, 0))
 
@@ -129,7 +133,7 @@ class MovieDetailFragment : Fragment() {
                 })
 
         shot.postDelayed({
-            movieDetailViewModel.loadMovieDetailEntity(movie.id)
+            movieDetailViewModel.getLocalMovieDetail(movie.id)
         }, TRANSITION_TIME)
 
         movieDetailViewModel.getMovieDetail(movie.id)
