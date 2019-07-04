@@ -44,14 +44,18 @@ class MovieListViewModel(app: Application) : AndroidViewModel(app) {
 
     init {
         localFlowable = Flowable.create<Any>({ e ->
-            val movieList = refreshLiveData.value
-            if (movieList != null) {
-                val jsonStr = gson.toJson(movieList)
-                val commonModel = CommonModel(LION_MOVIE_LIST, jsonStr)
-                MovieRepository.get().insertCommonModel(commonModel)
-            }
+            handleInsertCommonModel()
             e.onComplete()
         }, BackpressureStrategy.LATEST)
+    }
+
+    private fun handleInsertCommonModel() {
+        val movieList = refreshLiveData.value
+        if (movieList != null) {
+            val jsonStr = gson.toJson(movieList)
+            val commonModel = CommonModel(LION_MOVIE_LIST, jsonStr)
+            MovieRepository.get().insertCommonModel(commonModel)
+        }
     }
 
     fun getLocalMovieList() {
@@ -60,20 +64,22 @@ class MovieListViewModel(app: Application) : AndroidViewModel(app) {
                 .doOnError { throwable -> throwable.printStackTrace() }
                 .doOnSubscribe {}
                 .doFinally {}
-                .doOnNext { commonModel ->
-                    if (commonModel != null) {
-                        val content = commonModel.content
-                        if (content.isNotBlank()) {
-                            val movieList: List<Movie> = gson.fromJson(content,
-                                    object : TypeToken<List<Movie>>() {}.type)
-                            if (refreshLiveData.value == null) {
-                                refreshLiveData.value = movieList
-                            }
-                        }
-                    }
-                    disposable?.dispose()
-                }
+                .doOnNext { commonModel -> handleLocalMovieList(commonModel) }
                 .subscribe({ }, { })
+    }
+
+    private fun handleLocalMovieList(commonModel: CommonModel?) {
+        if (commonModel != null) {
+            val content = commonModel.content
+            if (content.isNotBlank()) {
+                val movieList: List<Movie> = gson.fromJson(content,
+                        object : TypeToken<List<Movie>>() {}.type)
+                if (refreshLiveData.value == null) {
+                    refreshLiveData.value = movieList
+                }
+            }
+        }
+        disposable?.dispose()
     }
 
     fun getRefreshMovieList() {
@@ -106,21 +112,23 @@ class MovieListViewModel(app: Application) : AndroidViewModel(app) {
                     loadStatusLiveData.value = false
                     isLoading = false
                 }
-                .doOnSuccess { movieList ->
-                    when (status) {
-                        REFRESH -> {
-                            refreshLiveData.value = movieList
-                            movieList?.let { insertMovieEntityList() }
-                        }
-                        LOAD_MORE -> {
-                            loadMoreLiveData.value = movieList
-                        }
-                        else -> {
-                            // do nothing
-                        }
-                    }
-                }
+                .doOnSuccess { movieList -> handleMovieList(status, movieList) }
                 .subscribe(Subscriber.create())
+    }
+
+    private fun handleMovieList(status: String, movieList: List<Movie>?) {
+        when (status) {
+            REFRESH -> {
+                refreshLiveData.value = movieList
+                movieList?.let { insertMovieEntityList() }
+            }
+            LOAD_MORE -> {
+                loadMoreLiveData.value = movieList
+            }
+            else -> {
+                // do nothing
+            }
+        }
     }
 
     private fun insertMovieEntityList() {
