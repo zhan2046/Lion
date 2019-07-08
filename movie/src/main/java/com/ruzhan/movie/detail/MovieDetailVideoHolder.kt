@@ -12,7 +12,7 @@ import com.ruzhan.lion.util.ViewUtils
 import com.ruzhan.movie.R
 import kotlinx.android.synthetic.main.item_movie_detail_video.view.*
 
-class MovieDetailVideoHolder(itemView: View, listener: OnItemClickListener<Video>) : RecyclerView.ViewHolder(itemView) {
+class MovieDetailVideoHolder(itemView: View, listener: OnItemClickListener<Video>?) : RecyclerView.ViewHolder(itemView) {
 
     private lateinit var video: Video
 
@@ -20,7 +20,9 @@ class MovieDetailVideoHolder(itemView: View, listener: OnItemClickListener<Video
         itemView.play_count_tv.typeface = FontHelper.get().getLightTypeface()
         itemView.title_tv.typeface = FontHelper.get().getLightTypeface()
 
-        itemView.root_cl.setOnClickListener { listener.onItemClick(adapterPosition, video, it) }
+        if (listener != null) {
+            itemView.root_cl.setOnClickListener { listener.onItemClick(adapterPosition, video, it) }
+        }
     }
 
     fun bind(bean: Video) {

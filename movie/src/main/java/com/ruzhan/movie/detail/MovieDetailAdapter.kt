@@ -12,8 +12,7 @@ import com.ruzhan.movie.ImageListModel
 import com.ruzhan.movie.R
 import java.util.*
 
-class MovieDetailAdapter(listener: OnItemClickListener<Video>,
-                         imageListener: OnItemClickListener<ImageListModel>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class MovieDetailAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     companion object {
         const val TYPE_HEADER: Int = 1000
@@ -31,9 +30,10 @@ class MovieDetailAdapter(listener: OnItemClickListener<Video>,
 
     private var dataList: ArrayList<Any> = ArrayList()
     private lateinit var movieDetail: MovieDetail
-    private var itemClickListener: OnItemClickListener<Video> = listener
-    private var imageListener: OnItemClickListener<ImageListModel> = imageListener
     private var movieDetailHeaderHolder: MovieDetailHeaderHolder? = null
+
+    var onItemVideoClickListener: OnItemClickListener<Video>? = null
+    var onItemImageClickListener: OnItemClickListener<ImageListModel>? = null
 
     fun setData(movieDetail: MovieDetail) {
         this.movieDetail = movieDetail
@@ -56,7 +56,6 @@ class MovieDetailAdapter(listener: OnItemClickListener<Video>,
                 LOAD_MORE == obj -> TYPE_LOAD_MORE
                 else -> TYPE_TITLE
             }
-
         } else if (obj is Introduce) {
             if (Introduce.TEXT == obj.type) {
                 viewType = TYPE_TEXT
@@ -80,14 +79,21 @@ class MovieDetailAdapter(listener: OnItemClickListener<Video>,
             }
             TYPE_TITLE -> viewHolder = MovieDetailTitleHolder(LayoutInflater.from(parent.context)
                     .inflate(R.layout.item_movie_detail_title, parent, false))
+
             TYPE_TEXT -> viewHolder = MovieDetailTextHolder(LayoutInflater.from(parent.context)
                     .inflate(R.layout.item_movie_detail_text, parent, false))
+
             TYPE_IMAGE -> viewHolder = MovieDetailImageHolder(LayoutInflater.from(parent.context)
-                    .inflate(R.layout.item_movie_detail_image, parent, false), movieDetail, imageListener)
+                    .inflate(R.layout.item_movie_detail_image, parent, false),
+                    movieDetail, onItemImageClickListener)
+
             TYPE_VIDEO -> viewHolder = MovieDetailVideoHolder(LayoutInflater.from(parent.context)
-                    .inflate(R.layout.item_movie_detail_video, parent, false), itemClickListener)
+                    .inflate(R.layout.item_movie_detail_video, parent, false),
+                    onItemVideoClickListener)
+
             TYPE_VIDEO_TITLE -> viewHolder = MovieDetailVideoTitleHolder(LayoutInflater.from(parent.context)
                     .inflate(R.layout.item_movie_detail_video_title, parent, false))
+
             TYPE_LOAD_MORE -> viewHolder = LoadMoreHolder(LayoutInflater.from(parent.context)
                     .inflate(R.layout.item_load_more, parent, false))
         }

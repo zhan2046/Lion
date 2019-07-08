@@ -10,18 +10,19 @@ import com.ruzhan.lion.util.ViewUtils
 import com.ruzhan.movie.ImageListModel
 import kotlinx.android.synthetic.main.item_movie_detail_image.view.*
 
-class MovieDetailImageHolder(itemView: View, movieDetail: MovieDetail,
-                             listener: OnItemClickListener<ImageListModel>) : RecyclerView.ViewHolder(itemView) {
+class MovieDetailImageHolder(itemView: View, private var movieDetail: MovieDetail,
+                             listener: OnItemClickListener<ImageListModel>?) : RecyclerView.ViewHolder(itemView) {
 
     private var imageListModel: ImageListModel = ImageListModel("", 0, "", ArrayList())
     private val imageUrlList = ArrayList<String>()
-    private var movieDetail: MovieDetail = movieDetail
     private lateinit var url: String
 
     init {
-        itemView.root_cv.setOnClickListener {
-            resetImageListModel(url)
-            listener.onItemClick(adapterPosition, imageListModel, it)
+        if (listener != null) {
+            itemView.root_cv.setOnClickListener {
+                resetImageListModel(url)
+                listener.onItemClick(adapterPosition, imageListModel, it)
+            }
         }
     }
 

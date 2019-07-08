@@ -40,7 +40,7 @@ class MovieDetailFragment : Fragment() {
 
     private lateinit var movie: Movie
     private lateinit var movieDetailViewModel: MovieDetailViewModel
-    private lateinit var movieDetailAdapter: MovieDetailAdapter
+    private val movieDetailAdapter = MovieDetailAdapter()
     private lateinit var chromeFader: ElasticDragDismissFrameLayout.SystemChromeFader
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -55,24 +55,31 @@ class MovieDetailFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        initData()
+        initListener()
+        movieDetailViewModel.getMovieDetail(movie.id)
+    }
+
+    private fun initData() {
         movieDetailViewModel = ViewModelProviders.of(this).get(MovieDetailViewModel::class.java)
         movieDetailViewModel.movieId = movie.id
         ImageLoader.get().loadNoCrossFade(shot, movie.image,
                 ViewUtils.getPlaceholder(activity, 0))
+        recycler_view.adapter = movieDetailAdapter
+    }
 
-        movieDetailAdapter = MovieDetailAdapter(object : OnItemClickListener<Video> {
+    private fun initListener() {
+        movieDetailAdapter.onItemVideoClickListener = object : OnItemClickListener<Video> {
 
             override fun onItemClick(position: Int, bean: Video, itemView: View) {
                 WebVideoActivity.launch(activity!!, bean.playWebUrl)
             }
-        },
-                object : OnItemClickListener<ImageListModel> {
-                    override fun onItemClick(position: Int, bean: ImageListModel, itemView: View) {
-                        ImageDetailActivity.launch(activity!!, bean)
-                    }
-                })
-        recycler_view.adapter = movieDetailAdapter
-
+        }
+        movieDetailAdapter.onItemImageClickListener = object : OnItemClickListener<ImageListModel> {
+            override fun onItemClick(position: Int, bean: ImageListModel, itemView: View) {
+                ImageDetailActivity.launch(activity!!, bean)
+            }
+        }
         recycler_view.addOnScrollListener(object : RecyclerView.OnScrollListener() {
 
             override fun onScrolled(recyclerView: RecyclerView?, dx: Int, dy: Int) {
@@ -93,14 +100,12 @@ class MovieDetailFragment : Fragment() {
                 shot.isImmediatePin = newState == RecyclerView.SCROLL_STATE_SETTLING
             }
         })
-
         recycler_view.onFlingListener = object : RecyclerView.OnFlingListener() {
             override fun onFling(velocityX: Int, velocityY: Int): Boolean {
                 shot.isImmediatePin = true
                 return false
             }
         }
-
         back.setOnClickListener {
             activity?.let { act ->
                 closeFragmentUpdateUi()
@@ -116,7 +121,6 @@ class MovieDetailFragment : Fragment() {
                 }
             }
         }
-
         postponeEnterTransition()
 
         shot.viewTreeObserver.addOnPreDrawListener(object : ViewTreeObserver.OnPreDrawListener {
@@ -126,17 +130,13 @@ class MovieDetailFragment : Fragment() {
                 return true
             }
         })
-
         movieDetailViewModel.movieDetailLiveData.observe(this@MovieDetailFragment,
                 Observer { movieDetail ->
                     movieDetail?.let { movieDetailAdapter.setData(it) }
                 })
-
         shot.postDelayed({
             movieDetailViewModel.getLocalMovieDetail(movie.id)
         }, TRANSITION_TIME)
-
-        movieDetailViewModel.getMovieDetail(movie.id)
     }
 
     override fun onResume() {
