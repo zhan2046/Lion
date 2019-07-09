@@ -7,14 +7,11 @@ import com.ruzhan.lion.ui.home.HomeFragment
 
 class MainActivity : AppCompatActivity() {
 
-    private var homeFragment: HomeFragment? = null
-
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.container)
-
-        if (homeFragment == null) {
-            homeFragment = HomeFragment.newInstance()
+        if (savedInstanceState == null) {
+            val homeFragment = HomeFragment.newInstance()
             supportFragmentManager
                     .beginTransaction()
                     .add(R.id.container, homeFragment, "homeFragment")

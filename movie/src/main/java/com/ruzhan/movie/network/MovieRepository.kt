@@ -1,20 +1,19 @@
 package com.ruzhan.movie.network
 
-import com.ruzhan.lion.App
 import com.ruzhan.lion.database.CommonAppDatabase
 import com.ruzhan.lion.database.CommonModel
 import com.ruzhan.lion.model.HttpResult
 import com.ruzhan.lion.model.Movie
 import com.ruzhan.lion.model.MovieDetail
+import com.ruzhan.lion.util.ResUtils
 import io.reactivex.Flowable
-
 import io.reactivex.Single
 import io.reactivex.schedulers.Schedulers
 
 class MovieRepository private constructor() {
 
     private val api: MovieApi = MovieClient.get()
-    private val commonAppDatabase = CommonAppDatabase.invoke(App.get())
+    private val commonAppDatabase = CommonAppDatabase.invoke(ResUtils.getApp())
 
     companion object {
 

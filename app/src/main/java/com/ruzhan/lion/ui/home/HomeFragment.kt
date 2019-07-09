@@ -18,6 +18,10 @@ class HomeFragment : Fragment() {
 
     companion object {
 
+        private const val DEFAULT_START_DELAY = 300L
+        private const val DEFAULT_DURATION = 900L
+        private const val DEFAULT_SCALE_X = 0.8f
+
         @JvmStatic
         fun newInstance() = HomeFragment()
     }
@@ -44,11 +48,10 @@ class HomeFragment : Fragment() {
             }
             true
         }
-
         // normal show MovieListFragment
         replaceFragment(R.id.movie)
 
-        tool_bar.viewTreeObserver.addOnGlobalLayoutListener(object: ViewTreeObserver.OnGlobalLayoutListener {
+        tool_bar.viewTreeObserver.addOnGlobalLayoutListener(object : ViewTreeObserver.OnGlobalLayoutListener {
             override fun onGlobalLayout() {
                 tool_bar.viewTreeObserver.removeOnGlobalLayoutListener(this)
                 animateToolbar()
@@ -67,7 +70,7 @@ class HomeFragment : Fragment() {
         var fragTag: String? = null
         var frag: Fragment? = null
 
-        when(tabId) {
+        when (tabId) {
             R.id.movie -> {
                 fragTag = "movieListFragment"
                 frag = fragmentMap[fragTag]
@@ -106,20 +109,16 @@ class HomeFragment : Fragment() {
     }
 
     private fun animateToolbar() {
-        // this is gross but toolbar doesn't expose it's children to animate them :(
         val t = tool_bar.getChildAt(0)
         if (t != null && t is TextView) {
             t.letterSpacing = 0.1f
-            // fade in and space out the title.  Animating the letterSpacing performs horribly so
-            // fake it by setting the desired letterSpacing then animating the scaleX ¯\_(ツ)_/¯
             t.alpha = 0f
-            t.scaleX = 0.8f
-
+            t.scaleX = DEFAULT_SCALE_X
             t.animate()
                     .alpha(1f)
                     .scaleX(1f)
-                    .setStartDelay(300)
-                    .setDuration(900).interpolator = AnimUtils.getFastOutSlowInInterpolator(activity)
+                    .setStartDelay(DEFAULT_START_DELAY)
+                    .setDuration(DEFAULT_DURATION).interpolator = AnimUtils.getFastOutSlowInInterpolator(activity)
         }
     }
 }

@@ -8,17 +8,10 @@ class CommonHttpClient private constructor() {
 
     companion object {
 
-        private var httpClient: CommonHttpClient? = null
+        private var INSTANCE: CommonHttpClient? = null
 
-        fun get(): CommonHttpClient {
-            if (httpClient == null) {
-                synchronized(CommonHttpClient::class.java) {
-                    if (httpClient == null) {
-                        httpClient = CommonHttpClient()
-                    }
-                }
-            }
-            return this.httpClient!!
+        fun get(): CommonHttpClient = INSTANCE ?: synchronized(CommonHttpClient::class) {
+            INSTANCE ?: CommonHttpClient().also { INSTANCE = it }
         }
 
         @JvmStatic

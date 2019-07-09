@@ -1,7 +1,7 @@
 package com.ruzhan.lion.helper
 
 import android.graphics.Typeface
-import com.ruzhan.lion.App
+import com.ruzhan.lion.util.ResUtils
 
 class FontHelper private constructor() {
 
@@ -9,7 +9,7 @@ class FontHelper private constructor() {
     private var boldFontTypeface: Typeface
 
     init {
-        val assetManager = App.get().assets
+        val assetManager = ResUtils.getApp().assets
         lightFontTypeface = Typeface.createFromAsset(assetManager, TEXT_LIGHT)
         boldFontTypeface = Typeface.createFromAsset(assetManager, TEXT_BOLD)
     }
