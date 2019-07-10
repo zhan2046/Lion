@@ -1,4 +1,4 @@
-package com.ruzhan.movie
+package com.ruzhan.movie.home
 
 
 import android.arch.lifecycle.Observer
@@ -15,7 +15,10 @@ import android.view.ViewGroup
 import com.ruzhan.lion.helper.OnRefreshHelper
 import com.ruzhan.lion.listener.OnItemClickListener
 import com.ruzhan.lion.model.Movie
+import com.ruzhan.movie.R
 import com.ruzhan.movie.detail.MovieDetailActivity
+import com.ruzhan.movie.home.adapter.MovieListAdapter
+import com.ruzhan.movie.home.viewmodel.MovieListViewModel
 import kotlinx.android.synthetic.main.frag_movie_list.*
 
 class MovieListFragment : Fragment() {

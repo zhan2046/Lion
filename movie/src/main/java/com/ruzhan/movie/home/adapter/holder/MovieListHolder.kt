@@ -1,4 +1,4 @@
-package com.ruzhan.movie
+package com.ruzhan.movie.home.adapter.holder
 
 import android.support.v7.widget.RecyclerView
 import android.view.View

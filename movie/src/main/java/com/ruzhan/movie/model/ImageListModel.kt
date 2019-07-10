@@ -1,4 +1,4 @@
-package com.ruzhan.movie
+package com.ruzhan.movie.model
 
 import java.io.Serializable
 

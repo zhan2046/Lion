@@ -1,4 +1,4 @@
-package com.ruzhan.movie.detail
+package com.ruzhan.movie.detail.fragment
 
 import android.graphics.drawable.Drawable
 import android.os.Bundle

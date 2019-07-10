@@ -1,4 +1,4 @@
-package com.ruzhan.movie
+package com.ruzhan.movie.home.viewmodel
 
 import android.app.Application
 import android.arch.lifecycle.AndroidViewModel
@@ -9,7 +9,7 @@ import com.ruzhan.lion.database.CommonModel
 import com.ruzhan.lion.model.Movie
 import com.ruzhan.lion.rx.Subscriber
 import com.ruzhan.lion.util.LionUtils
-import com.ruzhan.movie.network.MovieRepository
+import com.ruzhan.movie.source.MovieRepository
 import io.reactivex.BackpressureStrategy
 import io.reactivex.Flowable
 import io.reactivex.android.schedulers.AndroidSchedulers

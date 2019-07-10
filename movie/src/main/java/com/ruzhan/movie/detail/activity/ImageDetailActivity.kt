@@ -1,4 +1,4 @@
-package com.ruzhan.movie.detail
+package com.ruzhan.movie.detail.activity
 
 import android.app.Activity
 import android.content.Intent
@@ -11,8 +11,9 @@ import android.support.v7.app.AppCompatActivity
 import android.view.Window
 import android.view.WindowManager
 import com.ruzhan.lion.helper.FontHelper
-import com.ruzhan.movie.ImageListModel
 import com.ruzhan.movie.R
+import com.ruzhan.movie.detail.fragment.ItemImageDetailFragment
+import com.ruzhan.movie.model.ImageListModel
 import kotlinx.android.synthetic.main.lion_activity_image_detail.*
 
 class ImageDetailActivity : AppCompatActivity() {

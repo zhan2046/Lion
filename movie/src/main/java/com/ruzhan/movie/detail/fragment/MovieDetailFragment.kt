@@ -1,4 +1,4 @@
-package com.ruzhan.movie.detail
+package com.ruzhan.movie.detail.fragment
 
 import android.arch.lifecycle.Observer
 import android.arch.lifecycle.ViewModelProviders
@@ -16,8 +16,11 @@ import com.ruzhan.lion.model.Movie
 import com.ruzhan.lion.model.Video
 import com.ruzhan.lion.ui.widget.ElasticDragDismissFrameLayout
 import com.ruzhan.lion.util.ViewUtils
-import com.ruzhan.movie.ImageListModel
 import com.ruzhan.movie.R
+import com.ruzhan.movie.detail.activity.ImageDetailActivity
+import com.ruzhan.movie.detail.adapter.MovieDetailAdapter
+import com.ruzhan.movie.detail.viewmodel.MovieDetailViewModel
+import com.ruzhan.movie.model.ImageListModel
 import com.ruzhan.movie.video.WebVideoActivity
 import kotlinx.android.synthetic.main.frag_movie_detail.*
 

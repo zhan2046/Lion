@@ -7,6 +7,7 @@ import android.support.v4.app.ActivityOptionsCompat
 import android.support.v7.app.AppCompatActivity
 import com.ruzhan.lion.model.Movie
 import com.ruzhan.movie.R
+import com.ruzhan.movie.detail.fragment.MovieDetailFragment
 
 class MovieDetailActivity : AppCompatActivity() {
 
@@ -27,11 +28,10 @@ class MovieDetailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.container)
-
         val movie = intent.getParcelableExtra<Movie>(MOVIE)
-
-        if (movieDetailFragment == null) {
-            movieDetailFragment = MovieDetailFragment.newInstance(movie)
+        if (savedInstanceState == null) {
+            val movieDetailFragment = MovieDetailFragment.newInstance(movie)
+            this.movieDetailFragment = movieDetailFragment
             supportFragmentManager
                     .beginTransaction()
                     .add(R.id.container, movieDetailFragment, "MovieDetailFragment")

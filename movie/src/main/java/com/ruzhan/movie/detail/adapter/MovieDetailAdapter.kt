@@ -1,4 +1,4 @@
-package com.ruzhan.movie.detail
+package com.ruzhan.movie.detail.adapter
 
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
@@ -8,8 +8,9 @@ import com.ruzhan.lion.model.Introduce
 import com.ruzhan.lion.model.MovieDetail
 import com.ruzhan.lion.model.Video
 import com.ruzhan.lion.ui.LoadMoreHolder
-import com.ruzhan.movie.ImageListModel
 import com.ruzhan.movie.R
+import com.ruzhan.movie.detail.adapter.holder.*
+import com.ruzhan.movie.model.ImageListModel
 import java.util.*
 
 class MovieDetailAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {

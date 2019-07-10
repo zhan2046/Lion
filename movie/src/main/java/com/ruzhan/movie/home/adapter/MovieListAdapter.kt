@@ -1,4 +1,4 @@
-package com.ruzhan.movie
+package com.ruzhan.movie.home.adapter
 
 import android.support.v7.widget.RecyclerView
 import android.view.LayoutInflater
@@ -6,6 +6,8 @@ import android.view.ViewGroup
 import com.ruzhan.lion.listener.OnItemClickListener
 import com.ruzhan.lion.model.Movie
 import com.ruzhan.lion.ui.LoadMoreHolder
+import com.ruzhan.movie.R
+import com.ruzhan.movie.home.adapter.holder.MovieListHolder
 
 
 class MovieListAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {

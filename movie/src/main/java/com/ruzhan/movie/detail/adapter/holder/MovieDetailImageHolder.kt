@@ -1,4 +1,4 @@
-package com.ruzhan.movie.detail
+package com.ruzhan.movie.detail.adapter.holder
 
 import android.support.v7.widget.RecyclerView
 import android.view.View
@@ -7,7 +7,7 @@ import com.ruzhan.lion.listener.OnItemClickListener
 import com.ruzhan.lion.model.Introduce
 import com.ruzhan.lion.model.MovieDetail
 import com.ruzhan.lion.util.ViewUtils
-import com.ruzhan.movie.ImageListModel
+import com.ruzhan.movie.model.ImageListModel
 import kotlinx.android.synthetic.main.item_movie_detail_image.view.*
 
 class MovieDetailImageHolder(itemView: View, private var movieDetail: MovieDetail,

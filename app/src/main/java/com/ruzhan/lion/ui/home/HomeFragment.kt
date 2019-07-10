@@ -11,7 +11,7 @@ import android.widget.TextView
 import com.ruzhan.favourites.FavouritesFragment
 import com.ruzhan.lion.R
 import com.ruzhan.lion.util.AnimUtils
-import com.ruzhan.movie.MovieListFragment
+import com.ruzhan.movie.home.MovieListFragment
 import kotlinx.android.synthetic.main.frag_home.*
 
 class HomeFragment : Fragment() {
