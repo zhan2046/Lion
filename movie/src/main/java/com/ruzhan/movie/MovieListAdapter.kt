@@ -8,7 +8,7 @@ import com.ruzhan.lion.model.Movie
 import com.ruzhan.lion.ui.LoadMoreHolder
 
 
-class MovieListAdapter(listener: OnItemClickListener<Movie>) : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class MovieListAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     companion object {
         const val LOAD_MORE: String = "LOAD_MORE"
@@ -20,8 +20,9 @@ class MovieListAdapter(listener: OnItemClickListener<Movie>) : RecyclerView.Adap
     }
 
     private var dataList = ArrayList<Any>()
-    private var itemClickListener: OnItemClickListener<Movie> = listener
     private var isLoadMore: Boolean = false
+
+    var onItemClickListener: OnItemClickListener<Movie>? = null
 
     fun setRefreshData(movieList: List<Movie>) {
         if (movieList.isNotEmpty()) {
@@ -60,7 +61,7 @@ class MovieListAdapter(listener: OnItemClickListener<Movie>) : RecyclerView.Adap
         lateinit var viewHolder: RecyclerView.ViewHolder
         when (viewType) {
             TYPE_NORMAL -> viewHolder = MovieListHolder(LayoutInflater.from(parent.context)
-                    .inflate(R.layout.item_movie_list, parent, false), itemClickListener)
+                    .inflate(R.layout.item_movie_list, parent, false), onItemClickListener)
 
             TYPE_LOAD_MORE -> viewHolder = LoadMoreHolder(LayoutInflater.from(parent.context)
                     .inflate(R.layout.item_load_more, parent, false))
