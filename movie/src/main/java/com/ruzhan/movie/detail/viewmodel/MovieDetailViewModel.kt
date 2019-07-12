@@ -9,7 +9,7 @@ import com.ruzhan.lion.database.CommonModel
 import com.ruzhan.lion.model.MovieDetail
 import com.ruzhan.lion.rx.Subscriber
 import com.ruzhan.lion.util.LionUtils
-import com.ruzhan.movie.source.MovieRepository
+import com.ruzhan.movie.network.MovieRepository
 import io.reactivex.BackpressureStrategy
 import io.reactivex.Flowable
 import io.reactivex.android.schedulers.AndroidSchedulers

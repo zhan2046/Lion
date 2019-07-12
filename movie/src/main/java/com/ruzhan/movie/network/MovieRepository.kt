@@ -1,4 +1,4 @@
-package com.ruzhan.movie.source
+package com.ruzhan.movie.network
 
 import com.ruzhan.lion.database.CommonAppDatabase
 import com.ruzhan.lion.database.CommonModel
