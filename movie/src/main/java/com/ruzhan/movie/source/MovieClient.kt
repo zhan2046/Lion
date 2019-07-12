@@ -1,7 +1,5 @@
 package com.ruzhan.movie.source
 
-import com.ruzhan.lion.network.CommonHttpClient
-
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
 import retrofit2.converter.gson.GsonConverterFactory
@@ -17,7 +15,7 @@ object MovieClient {
 
     private fun getMovieApi(): MovieApi {
         val client = Retrofit.Builder().baseUrl(MovieApi.HOST)
-                .client(CommonHttpClient.getCommonHttpClient())
+                .client(MoiveHttpClient.getCommonHttpClient())
                 .addConverterFactory(GsonConverterFactory.create())
                 .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
                 .build()
