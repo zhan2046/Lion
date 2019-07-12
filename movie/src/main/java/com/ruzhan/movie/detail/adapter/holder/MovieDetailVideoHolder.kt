@@ -10,7 +10,7 @@ import com.ruzhan.lion.listener.OnItemClickListener
 import com.ruzhan.lion.model.Video
 import com.ruzhan.lion.util.ViewUtils
 import com.ruzhan.movie.R
-import kotlinx.android.synthetic.main.item_movie_detail_video.view.*
+import kotlinx.android.synthetic.main.lion_item_movie_detail_video.view.*
 
 class MovieDetailVideoHolder(itemView: View, listener: OnItemClickListener<Video>?) : RecyclerView.ViewHolder(itemView) {
 

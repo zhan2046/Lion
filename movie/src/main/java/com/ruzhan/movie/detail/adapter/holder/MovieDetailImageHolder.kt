@@ -8,7 +8,7 @@ import com.ruzhan.lion.model.Introduce
 import com.ruzhan.lion.model.MovieDetail
 import com.ruzhan.lion.util.ViewUtils
 import com.ruzhan.movie.model.ImageListModel
-import kotlinx.android.synthetic.main.item_movie_detail_image.view.*
+import kotlinx.android.synthetic.main.lion_item_movie_detail_image.view.*
 
 class MovieDetailImageHolder(itemView: View, private var movieDetail: MovieDetail,
                              listener: OnItemClickListener<ImageListModel>?) : RecyclerView.ViewHolder(itemView) {

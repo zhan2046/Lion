@@ -4,7 +4,7 @@ import android.support.v7.widget.RecyclerView
 import android.view.View
 import com.ruzhan.lion.helper.FontHelper
 import com.ruzhan.lion.model.Introduce
-import kotlinx.android.synthetic.main.item_movie_detail_text.view.*
+import kotlinx.android.synthetic.main.lion_item_movie_detail_text.view.*
 
 class MovieDetailTextHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 

@@ -63,7 +63,7 @@ class MovieListAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         lateinit var viewHolder: RecyclerView.ViewHolder
         when (viewType) {
             TYPE_NORMAL -> viewHolder = MovieListHolder(LayoutInflater.from(parent.context)
-                    .inflate(R.layout.item_movie_list, parent, false), onItemClickListener)
+                    .inflate(R.layout.lion_item_movie_list, parent, false), onItemClickListener)
 
             TYPE_LOAD_MORE -> viewHolder = LoadMoreHolder(LayoutInflater.from(parent.context)
                     .inflate(R.layout.item_load_more, parent, false))

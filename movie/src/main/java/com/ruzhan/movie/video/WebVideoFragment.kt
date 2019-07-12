@@ -10,7 +10,7 @@ import com.ruzhan.movie.R
 import com.tencent.smtt.sdk.WebChromeClient
 import com.tencent.smtt.sdk.WebView
 import com.tencent.smtt.sdk.WebViewClient
-import kotlinx.android.synthetic.main.frag_web_video.*
+import kotlinx.android.synthetic.main.lion_frag_web_video.*
 
 class WebVideoFragment : Fragment() {
 
@@ -38,7 +38,7 @@ class WebVideoFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.frag_web_video, container, false)
+        return inflater.inflate(R.layout.lion_frag_web_video, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

@@ -75,25 +75,25 @@ class MovieDetailAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         when (viewType) {
             TYPE_HEADER -> {
                 viewHolder = MovieDetailHeaderHolder(LayoutInflater.from(parent.context)
-                        .inflate(R.layout.item_movie_detail_header, parent, false))
+                        .inflate(R.layout.lion_item_movie_detail_header, parent, false))
                 movieDetailHeaderHolder = viewHolder
             }
             TYPE_TITLE -> viewHolder = MovieDetailTitleHolder(LayoutInflater.from(parent.context)
-                    .inflate(R.layout.item_movie_detail_title, parent, false))
+                    .inflate(R.layout.lion_item_movie_detail_title, parent, false))
 
             TYPE_TEXT -> viewHolder = MovieDetailTextHolder(LayoutInflater.from(parent.context)
-                    .inflate(R.layout.item_movie_detail_text, parent, false))
+                    .inflate(R.layout.lion_item_movie_detail_text, parent, false))
 
             TYPE_IMAGE -> viewHolder = MovieDetailImageHolder(LayoutInflater.from(parent.context)
-                    .inflate(R.layout.item_movie_detail_image, parent, false),
+                    .inflate(R.layout.lion_item_movie_detail_image, parent, false),
                     movieDetail, onItemImageClickListener)
 
             TYPE_VIDEO -> viewHolder = MovieDetailVideoHolder(LayoutInflater.from(parent.context)
-                    .inflate(R.layout.item_movie_detail_video, parent, false),
+                    .inflate(R.layout.lion_item_movie_detail_video, parent, false),
                     onItemVideoClickListener)
 
             TYPE_VIDEO_TITLE -> viewHolder = MovieDetailVideoTitleHolder(LayoutInflater.from(parent.context)
-                    .inflate(R.layout.item_movie_detail_video_title, parent, false))
+                    .inflate(R.layout.lion_item_movie_detail_video_title, parent, false))
 
             TYPE_LOAD_MORE -> viewHolder = LoadMoreHolder(LayoutInflater.from(parent.context)
                     .inflate(R.layout.item_load_more, parent, false))

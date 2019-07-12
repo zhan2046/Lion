@@ -14,7 +14,7 @@ import com.ruzhan.lion.glide.ImageLoader
 import com.ruzhan.lion.util.LionUtils
 import com.ruzhan.lion.util.ViewUtils
 import com.ruzhan.movie.R
-import kotlinx.android.synthetic.main.frag_image_detail.*
+import kotlinx.android.synthetic.main.lion_frag_image_item_detail.*
 
 class ItemImageDetailFragment : Fragment() {
 
@@ -34,7 +34,7 @@ class ItemImageDetailFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.frag_image_detail, container, false)
+        return inflater.inflate(R.layout.lion_frag_image_item_detail, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

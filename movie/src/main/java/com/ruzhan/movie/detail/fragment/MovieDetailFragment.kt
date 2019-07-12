@@ -22,7 +22,7 @@ import com.ruzhan.movie.detail.adapter.MovieDetailAdapter
 import com.ruzhan.movie.detail.viewmodel.MovieDetailViewModel
 import com.ruzhan.movie.model.ImageListModel
 import com.ruzhan.movie.video.WebVideoActivity
-import kotlinx.android.synthetic.main.frag_movie_detail.*
+import kotlinx.android.synthetic.main.lion_frag_movie_detail.*
 
 class MovieDetailFragment : Fragment() {
 
@@ -53,7 +53,7 @@ class MovieDetailFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.frag_movie_detail, container, false)
+        return inflater.inflate(R.layout.lion_frag_movie_detail, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {

@@ -7,7 +7,7 @@ import com.ruzhan.lion.helper.FontHelper
 import com.ruzhan.lion.listener.OnItemClickListener
 import com.ruzhan.lion.model.Movie
 import com.ruzhan.lion.util.ViewUtils
-import kotlinx.android.synthetic.main.item_movie_list.view.*
+import kotlinx.android.synthetic.main.lion_item_movie_list.view.*
 
 class MovieListHolder(itemView: View, listener: OnItemClickListener<Movie>?) : RecyclerView.ViewHolder(itemView) {
 

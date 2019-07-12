@@ -19,7 +19,7 @@ import com.ruzhan.movie.R
 import com.ruzhan.movie.detail.MovieDetailActivity
 import com.ruzhan.movie.home.adapter.MovieListAdapter
 import com.ruzhan.movie.home.viewmodel.MovieListViewModel
-import kotlinx.android.synthetic.main.frag_movie_list.*
+import kotlinx.android.synthetic.main.lion_frag_movie_list.*
 
 class MovieListFragment : Fragment() {
 
@@ -34,7 +34,7 @@ class MovieListFragment : Fragment() {
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.frag_movie_list, container, false)
+        return inflater.inflate(R.layout.lion_frag_movie_list, container, false)
     }
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
