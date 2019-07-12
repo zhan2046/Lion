@@ -38,19 +38,21 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
+        val activity = activity
+        if (activity is AppCompatActivity) {
+            activity.setSupportActionBar(tool_bar)
+        }
+        replaceFragment(R.id.movie)
+        initListener()
+    }
 
-        val activity = activity as AppCompatActivity?
-        activity!!.setSupportActionBar(tool_bar)
-
+    private fun initListener() {
         bottom_navigation.setOnNavigationItemSelectedListener {
             if (bottom_navigation.selectedItemId != it.itemId) {
                 replaceFragment(it.itemId)
             }
             true
         }
-        // normal show MovieListFragment
-        replaceFragment(R.id.movie)
-
         tool_bar.viewTreeObserver.addOnGlobalLayoutListener(object : ViewTreeObserver.OnGlobalLayoutListener {
             override fun onGlobalLayout() {
                 tool_bar.viewTreeObserver.removeOnGlobalLayoutListener(this)
@@ -62,14 +64,11 @@ class HomeFragment : Fragment() {
     private fun replaceFragment(tabId: Int) {
         val fm = childFragmentManager
         val transaction = fm.beginTransaction()
-
         for (frag in fragmentMap.values) {
             transaction.hide(frag)
         }
-
         var fragTag: String? = null
         var frag: Fragment? = null
-
         when (tabId) {
             R.id.movie -> {
                 fragTag = "movieListFragment"
@@ -102,7 +101,6 @@ class HomeFragment : Fragment() {
         if (fragTag != null && frag != null) {
             fragmentMap[fragTag] = frag
         }
-
         if (!fm.isDestroyed) {
             transaction.commitAllowingStateLoss()
         }
