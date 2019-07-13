@@ -1,4 +1,4 @@
-package com.ruzhan.lion.glide
+package com.lion.imageloader.glide
 
 import com.bumptech.glide.annotation.GlideModule
 import com.bumptech.glide.module.AppGlideModule

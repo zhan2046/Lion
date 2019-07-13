@@ -2,7 +2,7 @@ package com.ruzhan.movie.detail.adapter.holder
 
 import android.support.v7.widget.RecyclerView
 import android.view.View
-import com.ruzhan.lion.glide.ImageLoader
+import com.lion.imageloader.glide.ImageLoader
 import com.ruzhan.lion.listener.OnItemClickListener
 import com.ruzhan.lion.model.Introduce
 import com.ruzhan.lion.model.MovieDetail

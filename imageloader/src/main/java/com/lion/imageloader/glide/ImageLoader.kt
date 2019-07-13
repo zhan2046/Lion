@@ -1,4 +1,4 @@
-package com.ruzhan.lion.glide
+package com.lion.imageloader.glide
 
 class ImageLoader {
 

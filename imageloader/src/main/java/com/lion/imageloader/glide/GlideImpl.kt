@@ -1,4 +1,4 @@
-package com.ruzhan.lion.glide
+package com.lion.imageloader.glide
 
 import android.graphics.drawable.Drawable
 import android.widget.ImageView
