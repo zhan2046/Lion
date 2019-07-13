@@ -29,7 +29,7 @@ class WebVideoActivity : AppCompatActivity() {
         window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN)
         window.setFormat(PixelFormat.TRANSLUCENT)
-        setContentView(R.layout.container)
+        setContentView(R.layout.lion_container)
 
         val url = intent.getStringExtra(VIDEO_URL)
         if (savedInstanceState == null) {

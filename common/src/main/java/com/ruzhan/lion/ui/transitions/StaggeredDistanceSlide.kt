@@ -44,7 +44,7 @@ class StaggeredDistanceSlide @Keep constructor(context: Context, attrs: Attribut
         val transition = ObjectAnimator.ofFloat(view, View.TRANSLATION_Y, endTranslationY)
         transition.addListener(object : AnimatorListenerAdapter() {
             override fun onAnimationEnd(animation: Animator) {
-                TransitionUtils.restoreAncestralClipping(view, ancestralClipping)
+                TransitionUtils.restoreAncestralClipping(view, ArrayList(ancestralClipping))
             }
         })
         return transition

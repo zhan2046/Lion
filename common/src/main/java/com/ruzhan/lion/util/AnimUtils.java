@@ -30,9 +30,6 @@ public class AnimUtils {
         return linearOutSlowIn;
     }
 
-    /**
-     * A delegate for creating a {@link Property} of <code>int</code> type.
-     */
     public static abstract class IntProp<T> {
 
         public final String name;
@@ -45,11 +42,6 @@ public class AnimUtils {
         public abstract int get(T object);
     }
 
-    /**
-     * The animation framework has an optimization for <code>Properties</code> of type
-     * <code>int</code> but it was only made public in API24, so wrap the impl in our own type
-     * and conditionally create the appropriate type, delegating the implementation.
-     */
     public static <T> Property<T, Integer> createIntProperty(final IntProp<T> impl) {
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.N) {
             return new IntProperty<T>(impl.name) {

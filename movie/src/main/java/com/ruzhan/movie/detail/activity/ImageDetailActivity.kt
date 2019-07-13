@@ -29,7 +29,7 @@ class ImageDetailActivity : AppCompatActivity() {
         requestWindowFeature(Window.FEATURE_NO_TITLE)
         window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN)
-        setContentView(R.layout.container)
+        setContentView(R.layout.lion_container)
         val imageListModel: ImageListModel = intent.getSerializableExtra(IMAGE_LIST_MODEL) as ImageListModel
         if (savedInstanceState == null) {
             val imageDetailFragment = ImageDetailFragment.newInstance(imageListModel)

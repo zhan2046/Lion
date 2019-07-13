@@ -96,7 +96,7 @@ class MovieDetailAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
                     .inflate(R.layout.lion_item_movie_detail_video_title, parent, false))
 
             TYPE_LOAD_MORE -> viewHolder = LoadMoreHolder(LayoutInflater.from(parent.context)
-                    .inflate(R.layout.item_load_more, parent, false))
+                    .inflate(R.layout.lion_item_load_more, parent, false))
         }
         return viewHolder
     }

@@ -9,7 +9,7 @@ class MainActivity : AppCompatActivity() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.container)
+        setContentView(R.layout.lion_container)
         if (savedInstanceState == null) {
             val homeFragment = HomeFragment.newInstance()
             supportFragmentManager
