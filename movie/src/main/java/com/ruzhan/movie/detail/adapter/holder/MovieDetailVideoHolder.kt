@@ -4,8 +4,8 @@ import android.support.v4.content.ContextCompat
 import android.support.v7.widget.RecyclerView
 import android.text.TextUtils
 import android.view.View
+import com.lion.font.FontHelper
 import com.lion.imageloader.glide.ImageLoader
-import com.ruzhan.lion.helper.FontHelper
 import com.ruzhan.lion.listener.OnItemClickListener
 import com.ruzhan.lion.model.Video
 import com.ruzhan.lion.util.ViewUtils

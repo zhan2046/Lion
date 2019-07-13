@@ -2,8 +2,8 @@ package com.ruzhan.movie.home.adapter.holder
 
 import android.support.v7.widget.RecyclerView
 import android.view.View
+import com.lion.font.FontHelper
 import com.lion.imageloader.glide.ImageLoader
-import com.ruzhan.lion.helper.FontHelper
 import com.ruzhan.lion.listener.OnItemClickListener
 import com.ruzhan.lion.model.Movie
 import com.ruzhan.lion.util.ViewUtils

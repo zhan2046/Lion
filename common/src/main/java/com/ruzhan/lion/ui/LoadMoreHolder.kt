@@ -2,8 +2,8 @@ package com.ruzhan.lion.ui
 
 import android.support.v7.widget.RecyclerView
 import android.view.View
+import com.lion.font.FontHelper
 import com.ruzhan.common.R
-import com.ruzhan.lion.helper.FontHelper
 import kotlinx.android.synthetic.main.item_load_more.view.*
 
 class LoadMoreHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {

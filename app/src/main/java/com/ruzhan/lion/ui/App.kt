@@ -3,6 +3,7 @@ package com.ruzhan.lion.ui
 import android.app.Application
 import android.content.Context
 import android.support.multidex.MultiDex
+import com.lion.font.FontHelper
 import com.ruzhan.lion.util.ResUtils
 
 
@@ -16,5 +17,6 @@ class App : Application() {
     override fun onCreate() {
         super.onCreate()
         ResUtils.init(this)
+        FontHelper.init(this)
     }
 }

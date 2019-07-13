@@ -6,7 +6,7 @@ import android.support.v4.view.ViewPager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import com.ruzhan.lion.helper.FontHelper
+import com.lion.font.FontHelper
 import com.ruzhan.movie.R
 import com.ruzhan.movie.detail.adapter.ImageDetailAdapter
 import com.ruzhan.movie.model.ImageListModel
