@@ -26,7 +26,7 @@ public class ViewUtils {
         int[] placeholderColors = context.getResources().getIntArray(R.array.loading_placeholders_grey);
         return new ColorDrawable(placeholderColors[position % placeholderColors.length]);
     }
-    
+
     public static boolean isNavBarOnBottom(@NonNull Context context) {
         final Resources res = context.getResources();
         final Configuration cfg = context.getResources().getConfiguration();

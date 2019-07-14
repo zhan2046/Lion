@@ -7,7 +7,7 @@ import com.lion.font.FontHelper
 import com.ruzhan.lion.util.ResUtils
 
 
-class App : Application() {
+class MainApplication : Application() {
 
     override fun attachBaseContext(base: Context) {
         super.attachBaseContext(base)

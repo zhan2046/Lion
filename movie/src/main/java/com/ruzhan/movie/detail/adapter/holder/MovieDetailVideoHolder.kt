@@ -19,7 +19,6 @@ class MovieDetailVideoHolder(itemView: View, listener: OnItemClickListener<Video
     init {
         itemView.play_count_tv.typeface = FontHelper.get().getLightTypeface()
         itemView.title_tv.typeface = FontHelper.get().getLightTypeface()
-
         if (listener != null) {
             itemView.root_cl.setOnClickListener { listener.onItemClick(adapterPosition, video, it) }
         }
