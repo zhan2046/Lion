@@ -26,11 +26,7 @@ public class ViewUtils {
         int[] placeholderColors = context.getResources().getIntArray(R.array.loading_placeholders_grey);
         return new ColorDrawable(placeholderColors[position % placeholderColors.length]);
     }
-
-    /**
-     * Determine if the navigation bar will be on the bottom of the screen, based on logic in
-     * PhoneWindowManager.
-     */
+    
     public static boolean isNavBarOnBottom(@NonNull Context context) {
         final Resources res = context.getResources();
         final Configuration cfg = context.getResources().getConfiguration();
