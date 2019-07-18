@@ -2,85 +2,89 @@ package com.lion.imageloader.glide
 
 import android.graphics.drawable.Drawable
 import android.widget.ImageView
+import com.bumptech.glide.Glide
 import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.bumptech.glide.request.RequestListener
+import com.bumptech.glide.request.RequestOptions
 
 class GlideImpl : IImageLoader {
 
+    private val requestOptions = RequestOptions().centerCrop()
+
     override fun load(imageView: ImageView, url: String) {
-        LionGlideApp.with(imageView.context)
+        Glide.with(imageView.context)
                 .load(url)
-                .centerCrop()
+                .apply(requestOptions)
                 .transition(DrawableTransitionOptions.withCrossFade())
                 .into(imageView)
     }
 
     override fun load(imageView: ImageView, resId: Int) {
-        LionGlideApp.with(imageView.context)
+        Glide.with(imageView.context)
                 .load(resId)
-                .centerCrop()
+                .apply(requestOptions)
                 .transition(DrawableTransitionOptions.withCrossFade())
                 .into(imageView)
     }
 
     override fun load(imageView: ImageView, url: String, placeholder: Drawable) {
-        LionGlideApp.with(imageView.context)
+        val requestOptions = RequestOptions().centerCrop().placeholder(placeholder)
+        Glide.with(imageView.context)
                 .load(url)
-                .placeholder(placeholder)
-                .centerCrop()
+                .apply(requestOptions)
                 .transition(DrawableTransitionOptions.withCrossFade())
                 .into(imageView)
     }
 
     override fun load(imageView: ImageView, resId: Int, placeholder: Drawable) {
-        LionGlideApp.with(imageView.context)
+        val requestOptions = RequestOptions().centerCrop().placeholder(placeholder)
+        Glide.with(imageView.context)
                 .load(resId)
-                .placeholder(placeholder)
-                .centerCrop()
+                .apply(requestOptions)
                 .transition(DrawableTransitionOptions.withCrossFade())
                 .into(imageView)
     }
 
     override fun loadNoCrossFade(imageView: ImageView, url: String) {
-        LionGlideApp.with(imageView.context)
+        Glide.with(imageView.context)
                 .load(url)
-                .centerCrop()
+                .apply(requestOptions)
                 .into(imageView)
     }
 
     override fun loadNoCrossFade(imageView: ImageView, resId: Int) {
-        LionGlideApp.with(imageView.context)
+        Glide.with(imageView.context)
                 .load(resId)
-                .centerCrop()
+                .apply(requestOptions)
                 .into(imageView)
     }
 
     override fun loadNoCrossFade(imageView: ImageView, url: String, placeholder: Drawable) {
-        LionGlideApp.with(imageView.context)
+        val requestOptions = RequestOptions().centerCrop().placeholder(placeholder)
+        Glide.with(imageView.context)
                 .load(url)
-                .placeholder(placeholder)
-                .centerCrop()
+                .apply(requestOptions)
                 .into(imageView)
     }
 
     override fun loadNoCrossFade(imageView: ImageView, resId: Int, placeholder: Drawable) {
-        LionGlideApp.with(imageView.context)
+        val requestOptions = RequestOptions().centerCrop().placeholder(placeholder)
+        Glide.with(imageView.context)
                 .load(resId)
-                .placeholder(placeholder)
-                .centerCrop()
+                .apply(requestOptions)
                 .into(imageView)
     }
 
     override fun loadCenterCrop(imageView: ImageView, url: String) {
-        LionGlideApp.with(imageView.context)
+        Glide.with(imageView.context)
                 .load(url)
                 .transition(DrawableTransitionOptions.withCrossFade())
                 .into(imageView)
     }
 
     override fun loadCenterCrop(imageView: ImageView, url: String,
-                                           listener: RequestListener<Drawable>) {
-        LionGlideApp.with(imageView.context)
+                                listener: RequestListener<Drawable>) {
+        Glide.with(imageView.context)
                 .load(url)
                 .transition(DrawableTransitionOptions.withCrossFade())
                 .listener(listener)
@@ -88,7 +92,7 @@ class GlideImpl : IImageLoader {
     }
 
     override fun loadCenterCrop(imageView: ImageView, resId: Int) {
-        LionGlideApp.with(imageView.context)
+        Glide.with(imageView.context)
                 .load(resId)
                 .transition(DrawableTransitionOptions.withCrossFade())
                 .into(imageView)
