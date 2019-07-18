@@ -7,20 +7,17 @@ import com.ruzhan.jsonfile.model.Video
 
 import java.util.ArrayList
 
-/**
- * Created by ruzhan123 on 2018/7/3.
- */
 object CosmicDisclosure3 {
 
-    private val ID = 6001
-    private val PLAY_COUNT = "20"
+    private const val ID = 6001
+    private const val PLAY_COUNT = "20"
 
-    private val TITLE = "揭露宇宙 101-120集"
-    private val TAG = "揭露·宇宙"
+    private const val TITLE = "揭露宇宙 101-120集"
+    private const val TAG = "揭露·宇宙"
 
-    private val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/cosmi-disclosure03-1.jpg"
+    private const val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/cosmi-disclosure03-1.jpg"
 
-    private val DESC = "一部关于秘密太空计划（SSP）、宇宙历史、外星人讯息等有关内容的揭露节目。"
+    private const val DESC = "一部关于秘密太空计划（SSP）、宇宙历史、外星人讯息等有关内容的揭露节目。"
 
     val movie = Movie()
     val movieDetail = MovieDetail()

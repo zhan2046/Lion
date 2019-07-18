@@ -7,9 +7,6 @@ import com.ruzhan.jsonfile.model.Video
 
 import java.util.ArrayList
 
-/**
- * Created by ruzhan123 on 2018/7/3.
- */
 object Africa {
 
     private const val ID = 4803

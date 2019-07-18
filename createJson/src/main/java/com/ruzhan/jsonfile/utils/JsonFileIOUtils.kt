@@ -29,18 +29,18 @@ object JsonFileIOUtils {
         return writeFileFromString(getFileByPath(filePath), content)
     }
 
-    fun writeFileFromString(file: File?,
-                            content: String?): Boolean {
+    private fun writeFileFromString(file: File?,
+                                    content: String?): Boolean {
         if (file == null || content == null) return false
         if (!createOrExistsFile(file)) return false
         var bw: BufferedWriter? = null
-        try {
+        return try {
             bw = BufferedWriter(FileWriter(file, false))
             bw.write(content)
-            return true
+            true
         } catch (e: IOException) {
             e.printStackTrace()
-            return false
+            false
         } finally {
             try {
                 bw?.close()
@@ -55,13 +55,12 @@ object JsonFileIOUtils {
         if (file == null) return false
         if (file.exists()) return file.isFile
         if (!createOrExistsDir(file.parentFile)) return false
-        try {
-            return file.createNewFile()
+        return try {
+            file.createNewFile()
         } catch (e: IOException) {
             e.printStackTrace()
-            return false
+            false
         }
-
     }
 
     private fun createOrExistsDir(file: File?): Boolean {

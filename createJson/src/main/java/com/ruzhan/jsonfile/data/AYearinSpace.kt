@@ -7,20 +7,17 @@ import com.ruzhan.jsonfile.model.Video
 
 import java.util.ArrayList
 
-/**
- * Created by ruzhan123 on 2018/7/3.
- */
 object AYearinSpace {
 
-    private val ID = 5703
-    private val PLAY_COUNT = "1"
+    private const val ID = 5703
+    private const val PLAY_COUNT = "1"
 
-    private val TITLE = "NASA宇航员太空生活340天全纪录"
-    private val TAG = "社会·科技·纪录片"
+    private const val TITLE = "NASA宇航员太空生活340天全纪录"
+    private const val TAG = "社会·科技·纪录片"
 
-    private val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/a-year-in-space.jpg"
+    private const val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/a-year-in-space.jpg"
 
-    private val DESC = "在国际太空站逗留近1年的美国太空人凯利和俄罗斯太空人科尔尼延科。"
+    private const val DESC = "在国际太空站逗留近1年的美国太空人凯利和俄罗斯太空人科尔尼延科。"
 
     val movie = Movie()
     val movieDetail = MovieDetail()

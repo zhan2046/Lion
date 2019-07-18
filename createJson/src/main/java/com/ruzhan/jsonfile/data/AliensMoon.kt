@@ -7,20 +7,17 @@ import com.ruzhan.jsonfile.model.Video
 
 import java.util.ArrayList
 
-/**
- * Created by ruzhan123 on 2018/7/3.
- */
 object AliensMoon {
 
-    private val ID = 3403
-    private val PLAY_COUNT = "1"
+    private const val ID = 3403
+    private const val PLAY_COUNT = "1"
 
-    private val TITLE = "Aliens on the Moon"
-    private val TAG = "揭露·纪录片"
+    private const val TITLE = "Aliens on the Moon"
+    private const val TAG = "揭露·纪录片"
 
-    private val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/aliens-moon.jpg"
+    private const val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/aliens-moon.jpg"
 
-    private val DESC = "本片揭露有关我们的邻居月球，在月球上曾经有外星人居住，并作为一个星际中转区。"
+    private const val DESC = "本片揭露有关我们的邻居月球，在月球上曾经有外星人居住，并作为一个星际中转区。"
 
     val movie = Movie()
     val movieDetail = MovieDetail()

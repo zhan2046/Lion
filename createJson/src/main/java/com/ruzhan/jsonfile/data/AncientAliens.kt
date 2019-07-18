@@ -7,20 +7,17 @@ import com.ruzhan.jsonfile.model.Video
 
 import java.util.ArrayList
 
-/**
- * Created by ruzhan123 on 2018/7/3.
- */
 object AncientAliens {
 
-    private val ID = 403
-    private val PLAY_COUNT = "6"
+    private const val ID = 403
+    private const val PLAY_COUNT = "6"
 
-    private val TITLE = "远古外星人系列 第一季"
-    private val TAG = "科教·自然·神秘纪录片"
+    private const val TITLE = "远古外星人系列 第一季"
+    private const val TAG = "科教·自然·神秘纪录片"
 
-    private val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/ancientalien.jpg"
+    private const val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/ancientalien.jpg"
 
-    private val DESC = "远古外星人是一个美国电视系列，由普罗米修斯娱乐制作，于2010年4月20日在历史频道首播，至2018年已播放第13季。"
+    private const val DESC = "远古外星人是一个美国电视系列，由普罗米修斯娱乐制作，于2010年4月20日在历史频道首播，至2018年已播放第13季。"
 
     val movie = Movie()
     val movieDetail = MovieDetail()
