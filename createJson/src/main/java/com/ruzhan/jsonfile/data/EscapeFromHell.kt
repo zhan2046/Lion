@@ -7,20 +7,17 @@ import com.ruzhan.jsonfile.model.Video
 
 import java.util.ArrayList
 
-/**
- * Created by ruzhan123 on 2018/7/3.
- */
 object EscapeFromHell {
 
-    private val ID = 2403
-    private val PLAY_COUNT = "6"
+    private const val ID = 2403
+    private const val PLAY_COUNT = "6"
 
-    private val TITLE = "极限重生"
-    private val TAG = "野外·冒险·纪录片"
+    private const val TITLE = "极限重生"
+    private const val TAG = "野外·冒险·纪录片"
 
-    private val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/escape-from-hell.jpg"
+    private const val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/escape-from-hell.jpg"
 
-    private val DESC = "揭示了平凡的人们在面对那些危险的险境如何求生，从强盗偷袭到雪崩，迷失在猛烈的沙尘暴中，现实中的熊群的偷袭。"
+    private const val DESC = "揭示了平凡的人们在面对那些危险的险境如何求生，从强盗偷袭到雪崩，迷失在猛烈的沙尘暴中，现实中的熊群的偷袭。"
 
     val movie = Movie()
     val movieDetail = MovieDetail()

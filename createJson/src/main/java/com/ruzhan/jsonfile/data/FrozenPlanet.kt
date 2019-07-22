@@ -7,20 +7,17 @@ import com.ruzhan.jsonfile.model.Video
 
 import java.util.ArrayList
 
-/**
- * Created by ruzhan123 on 2018/7/3.
- */
 object FrozenPlanet {
 
-    private val ID = 4003
-    private val PLAY_COUNT = "8"
+    private const val ID = 4003
+    private const val PLAY_COUNT = "8"
 
-    private val TITLE = "冰冻星球"
-    private val TAG = "自然·纪录片"
+    private const val TITLE = "冰冻星球"
+    private const val TAG = "自然·纪录片"
 
-    private val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/frozen-planet.jpg"
+    private const val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/frozen-planet.jpg"
 
-    private val DESC = "英国BBC电视台耗时5年制作的纪录片《冰冻星球》于近期推出。"
+    private const val DESC = "英国BBC电视台耗时5年制作的纪录片《冰冻星球》于近期推出。"
 
     val movie = Movie()
     val movieDetail = MovieDetail()

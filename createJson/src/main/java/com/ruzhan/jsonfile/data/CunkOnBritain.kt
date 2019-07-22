@@ -7,20 +7,17 @@ import com.ruzhan.jsonfile.model.Video
 
 import java.util.ArrayList
 
-/**
- * Created by ruzhan123 on 2018/7/3.
- */
 object CunkOnBritain {
 
-    private val ID = 5203
-    private val PLAY_COUNT = "7"
+    private const val ID = 5203
+    private const val PLAY_COUNT = "7"
 
-    private val TITLE = "扯蛋英国史 Cunk On Britain"
-    private val TAG = "历史·纪录片"
+    private const val TITLE = "扯蛋英国史 Cunk On Britain"
+    private const val TAG = "历史·纪录片"
 
-    private val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/cunk-on-britain.jpg"
+    private const val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/cunk-on-britain.jpg"
 
-    private val DESC = "BBC伪纪录片喜剧，《黑镜》编剧Charlie Brooker的新作。"
+    private const val DESC = "BBC伪纪录片喜剧，《黑镜》编剧Charlie Brooker的新作。"
 
     val movie = Movie()
     val movieDetail = MovieDetail()

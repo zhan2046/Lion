@@ -7,20 +7,17 @@ import com.ruzhan.jsonfile.model.Video
 
 import java.util.ArrayList
 
-/**
- * Created by ruzhan123 on 2018/7/3.
- */
 object DevinWilliams {
 
-    private val ID = 1403
-    private val PLAY_COUNT = "12"
+    private const val ID = 1403
+    private const val PLAY_COUNT = "12"
 
-    private val TITLE = "篮球训练纪录片10000小时"
-    private val TAG = "体育·篮球·纪录片"
+    private const val TITLE = "篮球训练纪录片10000小时"
+    private const val TAG = "体育·篮球·纪录片"
 
-    private val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/devin-williams.jpg"
+    private const val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/devin-williams.jpg"
 
-    private val DESC = "一部篮球训练纪录片。其中的10000小时精神值得所有热爱篮球的人思考。"
+    private const val DESC = "一部篮球训练纪录片。其中的10000小时精神值得所有热爱篮球的人思考。"
 
     val movie = Movie()
     val movieDetail = MovieDetail()

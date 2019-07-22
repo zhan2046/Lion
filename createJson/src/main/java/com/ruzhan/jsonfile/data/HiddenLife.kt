@@ -7,20 +7,17 @@ import com.ruzhan.jsonfile.model.Video
 
 import java.util.ArrayList
 
-/**
- * Created by ruzhan123 on 2018/7/3.
- */
 object HiddenLife {
 
-    private val ID = 5003
-    private val PLAY_COUNT = "1"
+    private const val ID = 5003
+    private const val PLAY_COUNT = "1"
 
-    private val TITLE = "人体奥妙之细胞的暗战"
-    private val TAG = "人文·纪录片"
+    private const val TITLE = "人体奥妙之细胞的暗战"
+    private const val TAG = "人文·纪录片"
 
-    private val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/hidden-life.jpg"
+    private const val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/hidden-life.jpg"
 
-    private val DESC = "由BBC制作关于人体内部细胞消灭病毒的过程。我们是怎么生病的？生病的时候人体免疫系统是怎么运作的？"
+    private const val DESC = "由BBC制作关于人体内部细胞消灭病毒的过程。我们是怎么生病的？生病的时候人体免疫系统是怎么运作的？"
 
     val movie = Movie()
     val movieDetail = MovieDetail()

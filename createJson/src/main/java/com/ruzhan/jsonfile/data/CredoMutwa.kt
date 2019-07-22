@@ -7,20 +7,17 @@ import com.ruzhan.jsonfile.model.Video
 
 import java.util.ArrayList
 
-/**
- * Created by ruzhan123 on 2018/7/3.
- */
 object CredoMutwa {
 
-    private val ID = 803
-    private val PLAY_COUNT = "7"
+    private const val ID = 803
+    private const val PLAY_COUNT = "7"
 
-    private val TITLE = "1999年 地球史上最震撼的访谈"
-    private val TAG = "社会·神秘纪录片"
+    private const val TITLE = "1999年 地球史上最震撼的访谈"
+    private const val TAG = "社会·神秘纪录片"
 
-    private val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/credo-mutwa01.jpg"
+    private const val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/credo-mutwa01.jpg"
 
-    private val DESC = "来自非洲的 科瑞多·穆特瓦(Credo Mutwa)，分享古老非洲保存下来的知识。"
+    private const val DESC = "来自非洲的 科瑞多·穆特瓦(Credo Mutwa)，分享古老非洲保存下来的知识。"
 
     val movie = Movie()
     val movieDetail = MovieDetail()
