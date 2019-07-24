@@ -7,20 +7,17 @@ import com.ruzhan.jsonfile.model.Video
 
 import java.util.ArrayList
 
-/**
- * Created by ruzhan123 on 2018/7/3.
- */
 object RealWar {
 
-    private val ID = 4903
-    private val PLAY_COUNT = "4"
+    private const val ID = 4903
+    private const val PLAY_COUNT = "4"
 
-    private val TITLE = "真正的权力的游戏:百年战争"
-    private val TAG = "历史·纪录片"
+    private const val TITLE = "真正的权力的游戏:百年战争"
+    private const val TAG = "历史·纪录片"
 
-    private val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/real-war.jpg"
+    private const val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/real-war.jpg"
 
-    private val DESC = "乔治·R·R·马丁老爷子坦言《冰与火之歌》的创作灵感来自欧洲历史，本片讲述英格兰和法兰西王国之间的百年战争。"
+    private const val DESC = "乔治·R·R·马丁老爷子坦言《冰与火之歌》的创作灵感来自欧洲历史，本片讲述英格兰和法兰西王国之间的百年战争。"
 
     val movie = Movie()
     val movieDetail = MovieDetail()

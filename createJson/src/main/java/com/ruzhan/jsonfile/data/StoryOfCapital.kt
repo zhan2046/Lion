@@ -7,20 +7,17 @@ import com.ruzhan.jsonfile.model.Video
 
 import java.util.ArrayList
 
-/**
- * Created by ruzhan123 on 2018/7/3.
- */
 object StoryOfCapital {
 
-    private val ID = 5403
-    private val PLAY_COUNT = "60"
+    private const val ID = 5403
+    private const val PLAY_COUNT = "60"
 
-    private val TITLE = "资本的故事"
-    private val TAG = "社会·纪录片"
+    private const val TITLE = "资本的故事"
+    private const val TAG = "社会·纪录片"
 
-    private val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/story-of-capital.jpg"
+    private const val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/story-of-capital.jpg"
 
-    private val DESC = "以四百多年来世界经济的发展历程为背景，以当下的视角剖析资本在市场经济中的作用和地位，为中国经济下一步的深化改革和发展提供借鉴。"
+    private const val DESC = "以四百多年来世界经济的发展历程为背景，以当下的视角剖析资本在市场经济中的作用和地位，为中国经济下一步的深化改革和发展提供借鉴。"
 
     val movie = Movie()
     val movieDetail = MovieDetail()

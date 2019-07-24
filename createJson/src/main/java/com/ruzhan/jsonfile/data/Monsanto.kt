@@ -7,20 +7,17 @@ import com.ruzhan.jsonfile.model.Video
 
 import java.util.ArrayList
 
-/**
- * Created by ruzhan123 on 2018/7/3.
- */
 object Monsanto {
 
-    private val ID = 3203
-    private val PLAY_COUNT = "2"
+    private const val ID = 3203
+    private const val PLAY_COUNT = "2"
 
-    private val TITLE = "转基因赌局：用生命下注"
-    private val TAG = "揭露·纪录片"
+    private const val TITLE = "转基因赌局：用生命下注"
+    private const val TAG = "揭露·纪录片"
 
-    private val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/monsanto01.jpg"
+    private const val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/monsanto01.jpg"
 
-    private val DESC = "这部新纪录片对美国孟山都公司的名誉发起了另一轮剧烈冲击。"
+    private const val DESC = "这部新纪录片对美国孟山都公司的名誉发起了另一轮剧烈冲击。"
 
     val movie = Movie()
     val movieDetail = MovieDetail()

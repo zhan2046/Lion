@@ -7,20 +7,17 @@ import com.ruzhan.jsonfile.model.Video
 
 import java.util.ArrayList
 
-/**
- * Created by ruzhan123 on 2018/7/3.
- */
 object Interstella {
 
-    private val ID = 3803
-    private val PLAY_COUNT = "2"
+    private const val ID = 3803
+    private const val PLAY_COUNT = "2"
 
-    private val TITLE = "Interstella 5555: The 5tory of the 5ecret 5tar 5ystem"
-    private val TAG = "动作·冒险·动画片"
+    private const val TITLE = "Interstella 5555: The 5tory of the 5ecret 5tar 5ystem"
+    private const val TAG = "动作·冒险·动画片"
 
-    private val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/interstella.jpg"
+    private const val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/interstella.jpg"
 
-    private val DESC = "本片是2003年松本零士与Daft Punk联合制作的动画音乐剧，可以说是东西文化结合的产物，恐怕很难再有同类作品了。"
+    private const val DESC = "本片是2003年松本零士与Daft Punk联合制作的动画音乐剧，可以说是东西文化结合的产物，恐怕很难再有同类作品了。"
 
     val movie = Movie()
     val movieDetail = MovieDetail()

@@ -7,20 +7,17 @@ import com.ruzhan.jsonfile.model.Video
 
 import java.util.ArrayList
 
-/**
- * Created by ruzhan123 on 2018/7/3.
- */
 object ManVsWild2 {
 
-    private val ID = 4303
-    private val PLAY_COUNT = "15"
+    private const val ID = 4303
+    private const val PLAY_COUNT = "15"
 
-    private val TITLE = "荒野求生 贝尔·格里尔斯"
-    private val TAG = "纪录片·历史·冒险"
+    private const val TITLE = "荒野求生 贝尔·格里尔斯"
+    private const val TAG = "纪录片·历史·冒险"
 
-    private val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/man-vs-wild2.jpg"
+    private const val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/man-vs-wild2.jpg"
 
-    private val DESC = "由英国冒险家贝尔·吉罗斯主持，每集他会走到沙漠、沼泽、森林、峡谷等不适合人类生存的境地。"
+    private const val DESC = "由英国冒险家贝尔·吉罗斯主持，每集他会走到沙漠、沼泽、森林、峡谷等不适合人类生存的境地。"
 
     val movie = Movie()
     val movieDetail = MovieDetail()

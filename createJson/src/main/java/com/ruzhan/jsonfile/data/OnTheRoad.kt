@@ -7,20 +7,17 @@ import com.ruzhan.jsonfile.model.Video
 
 import java.util.ArrayList
 
-/**
- * Created by ruzhan123 on 2018/7/3.
- */
 object OnTheRoad {
 
-    private val ID = 503
-    private val PLAY_COUNT = "11"
+    private const val ID = 503
+    private const val PLAY_COUNT = "11"
 
-    private val TITLE = "旅游《张梁记》"
-    private val TAG = "人物·探险·旅游"
+    private const val TITLE = "旅游《张梁记》"
+    private const val TAG = "人物·探险·旅游"
 
-    private val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/ontheroad.jpg"
+    private const val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/ontheroad.jpg"
 
-    private val DESC = "张昕宇、梁红打造的网络自制户外真人秀节目。"
+    private const val DESC = "张昕宇、梁红打造的网络自制户外真人秀节目。"
 
     val movie = Movie()
     val movieDetail = MovieDetail()

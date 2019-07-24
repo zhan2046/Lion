@@ -7,20 +7,17 @@ import com.ruzhan.jsonfile.model.Video
 
 import java.util.ArrayList
 
-/**
- * Created by ruzhan123 on 2018/7/3.
- */
 object TED2017 {
 
-    private val ID = 3603
-    private val PLAY_COUNT = "11"
+    private const val ID = 3603
+    private const val PLAY_COUNT = "11"
 
-    private val TITLE = "2017年度最受欢迎TED演讲"
-    private val TAG = "TED·社会·纪录片"
+    private const val TITLE = "2017年度最受欢迎TED演讲"
+    private const val TAG = "TED·社会·纪录片"
 
-    private val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/ted02.jpg"
+    private const val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/ted02.jpg"
 
-    private val DESC = "美国的一家私有非营利机构，该机构以它组织的TED大会著称。TED诞生于1984年"
+    private const val DESC = "美国的一家私有非营利机构，该机构以它组织的TED大会著称。TED诞生于1984年"
 
     val movie = Movie()
     val movieDetail = MovieDetail()

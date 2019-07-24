@@ -7,20 +7,17 @@ import com.ruzhan.jsonfile.model.Video
 
 import java.util.ArrayList
 
-/**
- * Created by ruzhan123 on 2018/7/3.
- */
 object RichAndUs {
 
-    private val ID = 2303
-    private val PLAY_COUNT = "3"
+    private const val ID = 2303
+    private const val PLAY_COUNT = "3"
 
-    private val TITLE = "巨富与我们"
-    private val TAG = "BBC·历史·纪录片"
+    private const val TITLE = "巨富与我们"
+    private const val TAG = "BBC·历史·纪录片"
 
-    private val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/eich-and-us.jpg"
+    private const val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/eich-and-us.jpg"
 
-    private val DESC = "一个有关超级土豪的纪录片。"
+    private const val DESC = "一个有关超级土豪的纪录片。"
 
     val movie = Movie()
     val movieDetail = MovieDetail()

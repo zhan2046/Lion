@@ -7,20 +7,17 @@ import com.ruzhan.jsonfile.model.Video
 
 import java.util.ArrayList
 
-/**
- * Created by ruzhan123 on 2018/7/3.
- */
 object JamesCameron {
 
-    private val ID = 4703
-    private val PLAY_COUNT = "6"
+    private const val ID = 4703
+    private const val PLAY_COUNT = "6"
 
-    private val TITLE = "詹姆斯·卡梅隆的科幻故事"
-    private val TAG = "科幻·纪录片"
+    private const val TITLE = "詹姆斯·卡梅隆的科幻故事"
+    private const val TAG = "科幻·纪录片"
 
-    private val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/james-cameron.jpg"
+    private const val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/james-cameron.jpg"
 
-    private val DESC = "詹姆斯·卡梅隆将通过分析科幻小说从起初被人们崇拜到如今轰动影视界的成功演变，深度探究人类与科幻小说之间的历史关系及现实意义。"
+    private const val DESC = "詹姆斯·卡梅隆将通过分析科幻小说从起初被人们崇拜到如今轰动影视界的成功演变，深度探究人类与科幻小说之间的历史关系及现实意义。"
 
     val movie = Movie()
     val movieDetail = MovieDetail()

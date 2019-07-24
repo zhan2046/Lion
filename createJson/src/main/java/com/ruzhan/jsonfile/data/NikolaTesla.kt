@@ -7,20 +7,17 @@ import com.ruzhan.jsonfile.model.Video
 
 import java.util.ArrayList
 
-/**
- * Created by ruzhan123 on 2018/7/3.
- */
 object NikolaTesla {
 
-    private val ID = 1603
-    private val PLAY_COUNT = "2"
+    private const val ID = 1603
+    private const val PLAY_COUNT = "2"
 
-    private val TITLE = "尼古拉·特斯拉"
-    private val TAG = "科教·自然·神秘纪录片"
+    private const val TITLE = "尼古拉·特斯拉"
+    private const val TAG = "科教·自然·神秘纪录片"
 
-    private val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/nikola-tesla.jpg"
+    private const val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/nikola-tesla.jpg"
 
-    private val DESC = "尼古拉·特斯拉，塞尔维亚裔美籍发明家，物理学家，机械工程师，电机工程师和未来学家。"
+    private const val DESC = "尼古拉·特斯拉，塞尔维亚裔美籍发明家，物理学家，机械工程师，电机工程师和未来学家。"
 
     val movie = Movie()
     val movieDetail = MovieDetail()

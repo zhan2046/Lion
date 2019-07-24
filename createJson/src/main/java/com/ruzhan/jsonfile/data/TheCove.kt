@@ -7,20 +7,17 @@ import com.ruzhan.jsonfile.model.Video
 
 import java.util.ArrayList
 
-/**
- * Created by ruzhan123 on 2018/7/3.
- */
 object TheCove {
 
-    private val ID = 4603
-    private val PLAY_COUNT = "1"
+    private const val ID = 4603
+    private const val PLAY_COUNT = "1"
 
-    private val TITLE = "海豚湾 The Cove"
-    private val TAG = "自然·历史·纪录片"
+    private const val TITLE = "海豚湾 The Cove"
+    private const val TAG = "自然·历史·纪录片"
 
-    private val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/the-cove.jpg"
+    private const val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/the-cove.jpg"
 
-    private val DESC = "本片荣获2010年第82届奥斯卡金像奖最佳纪录长片奖。"
+    private const val DESC = "本片荣获2010年第82届奥斯卡金像奖最佳纪录长片奖。"
 
     val movie = Movie()
     val movieDetail = MovieDetail()

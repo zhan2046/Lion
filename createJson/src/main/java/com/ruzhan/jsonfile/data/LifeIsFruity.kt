@@ -7,20 +7,17 @@ import com.ruzhan.jsonfile.model.Video
 
 import java.util.ArrayList
 
-/**
- * Created by ruzhan123 on 2018/7/3.
- */
 object LifeIsFruity {
 
-    private val ID = 4403
-    private val PLAY_COUNT = "1"
+    private const val ID = 4403
+    private const val PLAY_COUNT = "1"
 
-    private val TITLE = "积存时间的生活"
-    private val TAG = "纪录片"
+    private const val TITLE = "积存时间的生活"
+    private const val TAG = "纪录片"
 
-    private val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/life-is-fruity.jpg"
+    private const val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/life-is-fruity.jpg"
 
-    private val DESC = "一部极其感人的纪录电影《Life Is Fruity》，日本导演伏原健之拍摄。"
+    private const val DESC = "一部极其感人的纪录电影《Life Is Fruity》，日本导演伏原健之拍摄。"
 
     val movie = Movie()
     val movieDetail = MovieDetail()

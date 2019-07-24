@@ -7,20 +7,17 @@ import com.ruzhan.jsonfile.model.Video
 
 import java.util.ArrayList
 
-/**
- * Created by ruzhan123 on 2018/7/3.
- */
 object TheFarthest {
 
-    private val ID = 5803
-    private val PLAY_COUNT = "1"
+    private const val ID = 5803
+    private const val PLAY_COUNT = "1"
 
-    private val TITLE = "最远的地方 The Farthest"
-    private val TAG = "社会·科技·纪录片"
+    private const val TITLE = "最远的地方 The Farthest"
+    private const val TAG = "社会·科技·纪录片"
 
-    private val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/the-farthest.jpg"
+    private const val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/the-farthest.jpg"
 
-    private val DESC = "口碑不错的宇宙纪录片 The Farthest 2017，重现了“旅行者”计划探宇宙的故事，带你去到宇宙尽头。"
+    private const val DESC = "口碑不错的宇宙纪录片 The Farthest 2017，重现了“旅行者”计划探宇宙的故事，带你去到宇宙尽头。"
 
     val movie = Movie()
     val movieDetail = MovieDetail()

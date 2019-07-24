@@ -7,20 +7,17 @@ import com.ruzhan.jsonfile.model.Video
 
 import java.util.ArrayList
 
-/**
- * Created by ruzhan123 on 2018/7/3.
- */
 object TheBleedingEdge {
 
-    private val ID = 5603
-    private val PLAY_COUNT = "1"
+    private const val ID = 5603
+    private const val PLAY_COUNT = "1"
 
-    private val TITLE = "尖端医疗的真相:你安全吗"
-    private val TAG = "社会·科技·纪录片"
+    private const val TITLE = "尖端医疗的真相:你安全吗"
+    private const val TAG = "社会·科技·纪录片"
 
-    private val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/the-bleeding-edge.jpg"
+    private const val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/the-bleeding-edge.jpg"
 
-    private val DESC = "探讨美国利益导向，且价值高达数十亿美元的医疗器材产业，如何将风险天天加诸在病患身上。"
+    private const val DESC = "探讨美国利益导向，且价值高达数十亿美元的医疗器材产业，如何将风险天天加诸在病患身上。"
 
     val movie = Movie()
     val movieDetail = MovieDetail()

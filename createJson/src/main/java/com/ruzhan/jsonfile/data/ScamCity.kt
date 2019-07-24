@@ -7,20 +7,17 @@ import com.ruzhan.jsonfile.model.Video
 
 import java.util.ArrayList
 
-/**
- * Created by ruzhan123 on 2018/7/3.
- */
 object ScamCity {
 
-    private val ID = 2703
-    private val PLAY_COUNT = "10"
+    private const val ID = 2703
+    private const val PLAY_COUNT = "10"
 
-    private val TITLE = "旅游骗术大揭秘 第一季"
-    private val TAG = "旅游·社会·纪录片"
+    private const val TITLE = "旅游骗术大揭秘 第一季"
+    private const val TAG = "旅游·社会·纪录片"
 
-    private val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/scam-city.jpg"
+    private const val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/scam-city.jpg"
 
-    private val DESC = "走访热门旅游城市，利用偷拍镜头带观众认清骗桉真相，揭露专门向旅客「埋手」的骗局。"
+    private const val DESC = "走访热门旅游城市，利用偷拍镜头带观众认清骗桉真相，揭露专门向旅客「埋手」的骗局。"
 
     val movie = Movie()
     val movieDetail = MovieDetail()

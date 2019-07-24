@@ -7,20 +7,17 @@ import com.ruzhan.jsonfile.model.Video
 
 import java.util.ArrayList
 
-/**
- * Created by ruzhan123 on 2018/7/3.
- */
 object PunPun {
 
-    private val ID = 1203
-    private val PLAY_COUNT = "1"
+    private const val ID = 1203
+    private const val PLAY_COUNT = "1"
 
-    private val TITLE = "生活如此简单，为什么让我们变得很复杂"
-    private val TAG = "TED·演讲·公开课"
+    private const val TITLE = "生活如此简单，为什么让我们变得很复杂"
+    private const val TAG = "TED·演讲·公开课"
 
-    private val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/punpun.jpg"
+    private const val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/punpun.jpg"
 
-    private val DESC = "一个来自泰国东北部的农民，他与我们分享了他对简单、幸福的生活的理解。"
+    private const val DESC = "一个来自泰国东北部的农民，他与我们分享了他对简单、幸福的生活的理解。"
 
     val movie = Movie()
     val movieDetail = MovieDetail()

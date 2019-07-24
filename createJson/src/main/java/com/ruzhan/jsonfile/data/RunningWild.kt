@@ -7,20 +7,17 @@ import com.ruzhan.jsonfile.model.Video
 
 import java.util.ArrayList
 
-/**
- * Created by ruzhan123 on 2018/7/3.
- */
 object RunningWild {
 
-    private val ID = 2503
-    private val PLAY_COUNT = "6"
+    private const val ID = 2503
+    private const val PLAY_COUNT = "6"
 
-    private val TITLE = "越野千里 第一季"
-    private val TAG = "野外·冒险·纪录片"
+    private const val TITLE = "越野千里 第一季"
+    private const val TAG = "野外·冒险·纪录片"
 
-    private val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/running-wild.jpg"
+    private const val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/running-wild.jpg"
 
-    private val DESC = "Bear Grylls全新打造的野外生存的真人秀。"
+    private const val DESC = "Bear Grylls全新打造的野外生存的真人秀。"
 
     val movie = Movie()
     val movieDetail = MovieDetail()

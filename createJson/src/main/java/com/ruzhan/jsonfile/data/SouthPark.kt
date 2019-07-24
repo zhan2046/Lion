@@ -7,20 +7,17 @@ import com.ruzhan.jsonfile.model.Video
 
 import java.util.ArrayList
 
-/**
- * Created by ruzhan123 on 2018/7/3.
- */
 object SouthPark {
 
-    private val ID = 5503
-    private val PLAY_COUNT = "7"
+    private const val ID = 5503
+    private const val PLAY_COUNT = "7"
 
-    private val TITLE = "南方公园 South Park"
-    private val TAG = "动画·纪录片"
+    private const val TITLE = "南方公园 South Park"
+    private const val TAG = "动画·纪录片"
 
-    private val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/south-park.jpg"
+    private const val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/south-park.jpg"
 
-    private val DESC = "美国喜剧中心（ComedyCentral）制作的一部剪纸百拍动画剧集，由MattStone和TreyParker创作。"
+    private const val DESC = "美国喜剧中心（ComedyCentral）制作的一部剪纸百拍动画剧集，由MattStone和TreyParker创作。"
 
     val movie = Movie()
     val movieDetail = MovieDetail()

@@ -7,20 +7,17 @@ import com.ruzhan.jsonfile.model.Video
 
 import java.util.ArrayList
 
-/**
- * Created by ruzhan123 on 2018/7/3.
- */
 object TheHunt {
 
-    private val ID = 4103
-    private val PLAY_COUNT = "7"
+    private const val ID = 4103
+    private const val PLAY_COUNT = "7"
 
-    private val TITLE = "BBC One - The Hunt"
-    private val TAG = "自然·纪录片"
+    private const val TITLE = "BBC One - The Hunt"
+    private const val TAG = "自然·纪录片"
 
-    private val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/the-hunt.jpg"
+    private const val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/the-hunt.jpg"
 
-    private val DESC = "BBC地球部自然纪录片新高度，由冰冻星球制作团队历时3年，跨越30多个国家拍摄完成，拍摄到了很多令人窒息的罕见镜头，“自然纪录片之父”大卫·爱登堡旁白。"
+    private const val DESC = "BBC地球部自然纪录片新高度，由冰冻星球制作团队历时3年，跨越30多个国家拍摄完成，拍摄到了很多令人窒息的罕见镜头，“自然纪录片之父”大卫·爱登堡旁白。"
 
     val movie = Movie()
     val movieDetail = MovieDetail()

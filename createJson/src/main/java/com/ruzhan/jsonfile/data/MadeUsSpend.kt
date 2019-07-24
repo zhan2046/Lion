@@ -7,20 +7,17 @@ import com.ruzhan.jsonfile.model.Video
 
 import java.util.ArrayList
 
-/**
- * Created by ruzhan123 on 2018/7/3.
- */
 object MadeUsSpend {
 
-    private val ID = 2203
-    private val PLAY_COUNT = "3"
+    private const val ID = 2203
+    private const val PLAY_COUNT = "3"
 
-    private val TITLE = "BBC 谁在引导我们消费"
-    private val TAG = "BBC·历史·纪录片"
+    private const val TITLE = "BBC 谁在引导我们消费"
+    private const val TAG = "BBC·历史·纪录片"
 
-    private val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/made-us-spend.png"
+    private const val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/made-us-spend.png"
 
-    private val DESC = "我们为什么要买东西？谁让这个世界变得无节制消费？他们如何做到这一点？调查记者雅克·佩雷蒂审视了无节制消费潮流背后的机制，得出了答案。"
+    private const val DESC = "我们为什么要买东西？谁让这个世界变得无节制消费？他们如何做到这一点？调查记者雅克·佩雷蒂审视了无节制消费潮流背后的机制，得出了答案。"
 
     val movie = Movie()
     val movieDetail = MovieDetail()

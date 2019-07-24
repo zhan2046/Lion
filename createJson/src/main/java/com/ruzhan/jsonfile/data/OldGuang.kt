@@ -7,20 +7,17 @@ import com.ruzhan.jsonfile.model.Video
 
 import java.util.ArrayList
 
-/**
- * Created by ruzhan123 on 2018/7/3.
- */
 object OldGuang {
 
-    private val ID = 5303
-    private val PLAY_COUNT = "6"
+    private const val ID = 5303
+    private const val PLAY_COUNT = "6"
 
-    private val TITLE = "老广的味道 第一季"
-    private val TAG = "人文·纪录片"
+    private const val TITLE = "老广的味道 第一季"
+    private const val TAG = "人文·纪录片"
 
-    private val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/old-guang.jpg"
+    private const val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/old-guang.jpg"
 
-    private val DESC = "《老广的味道》以独特视角深入广东美食腹地追根溯源，挖掘原汁原味的美食美景，体现特色全粤菜谱"
+    private const val DESC = "《老广的味道》以独特视角深入广东美食腹地追根溯源，挖掘原汁原味的美食美景，体现特色全粤菜谱"
 
     val movie = Movie()
     val movieDetail = MovieDetail()

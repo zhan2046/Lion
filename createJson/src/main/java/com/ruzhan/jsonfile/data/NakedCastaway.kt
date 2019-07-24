@@ -7,20 +7,17 @@ import com.ruzhan.jsonfile.model.Video
 
 import java.util.ArrayList
 
-/**
- * Created by ruzhan123 on 2018/7/3.
- */
 object NakedCastaway {
 
-    private val ID = 1803
-    private val PLAY_COUNT = "4"
+    private const val ID = 1803
+    private const val PLAY_COUNT = "4"
 
-    private val TITLE = "只身在荒岛"
-    private val TAG = "野外·野求·纪录片"
+    private const val TITLE = "只身在荒岛"
+    private const val TAG = "野外·野求·纪录片"
 
-    private val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/naked-castaway.jpg"
+    private const val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/naked-castaway.jpg"
 
-    private val DESC = "Naked Castaway 前英国陆军上尉埃德·斯塔福德即将展开电视史上最夸张的终极求生挑战。"
+    private const val DESC = "Naked Castaway 前英国陆军上尉埃德·斯塔福德即将展开电视史上最夸张的终极求生挑战。"
 
     val movie = Movie()
     val movieDetail = MovieDetail()

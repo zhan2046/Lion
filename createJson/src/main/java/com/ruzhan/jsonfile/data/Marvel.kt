@@ -7,20 +7,17 @@ import com.ruzhan.jsonfile.model.Video
 
 import java.util.ArrayList
 
-/**
- * Created by ruzhan123 on 2018/7/3.
- */
 object Marvel {
 
-    private val ID = 1903
-    private val PLAY_COUNT = "1"
+    private const val ID = 1903
+    private const val PLAY_COUNT = "1"
 
-    private val TITLE = "Marvel 75 Years: From Pulp to Pop"
-    private val TAG = "电影·科幻·纪录片"
+    private const val TITLE = "Marvel 75 Years: From Pulp to Pop"
+    private const val TAG = "电影·科幻·纪录片"
 
-    private val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/marve.jpg"
+    private const val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/marve.jpg"
 
-    private val DESC = "庆祝漫威75周年，回顾漫威这75年的历史，并且展望未来的发展。"
+    private const val DESC = "庆祝漫威75周年，回顾漫威这75年的历史，并且展望未来的发展。"
 
     val movie = Movie()
     val movieDetail = MovieDetail()

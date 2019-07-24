@@ -7,20 +7,17 @@ import com.ruzhan.jsonfile.model.Video
 
 import java.util.ArrayList
 
-/**
- * Created by ruzhan123 on 2018/7/3.
- */
 object KeJi {
 
-    private val ID = 1003
-    private val PLAY_COUNT = "1"
+    private const val ID = 1003
+    private const val PLAY_COUNT = "1"
 
-    private val TITLE = "柯基族人大哥给这个世界的警告"
-    private val TAG = "科教·自然·纪录片"
+    private const val TITLE = "柯基族人大哥给这个世界的警告"
+    private const val TAG = "科教·自然·纪录片"
 
-    private val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/keji.jpg"
+    private const val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/keji.jpg"
 
-    private val DESC = "哥伦比亚柯基族人的纪录片，非常珍贵，它讲述惟一还保留着前哥伦布时代灵性传统的印第安人部落。"
+    private const val DESC = "哥伦比亚柯基族人的纪录片，非常珍贵，它讲述惟一还保留着前哥伦布时代灵性传统的印第安人部落。"
 
     val movie = Movie()
     val movieDetail = MovieDetail()
