@@ -7,20 +7,17 @@ import com.ruzhan.jsonfile.model.Video
 
 import java.util.ArrayList
 
-/**
- * Created by ruzhan123 on 2018/7/3.
- */
 object WeGotNext {
 
-    private val ID = 1303
-    private val PLAY_COUNT = "1"
+    private const val ID = 1303
+    private const val PLAY_COUNT = "1"
 
-    private val TITLE = "We Got Next 户外篮球纪录片"
-    private val TAG = "体育·篮球·纪录片"
+    private const val TITLE = "We Got Next 户外篮球纪录片"
+    private const val TAG = "体育·篮球·纪录片"
 
-    private val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/we-got-next.jpg"
+    private const val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/we-got-next.jpg"
 
-    private val DESC = "《体育画报》五人组奔赴美国20天，只为探索一个美国街头篮球的真相。"
+    private const val DESC = "《体育画报》五人组奔赴美国20天，只为探索一个美国街头篮球的真相。"
 
     val movie = Movie()
     val movieDetail = MovieDetail()

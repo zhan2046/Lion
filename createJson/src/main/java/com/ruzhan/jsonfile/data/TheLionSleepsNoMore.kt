@@ -7,21 +7,17 @@ import com.ruzhan.jsonfile.model.Video
 
 import java.util.ArrayList
 
-/**
- * Created by ruzhan123 on 2018/7/3.
- */
 object TheLionSleepsNoMore {
 
-    private val ID = 303
-    private val PLAY_COUNT = "6"
+    private const val ID = 303
+    private const val PLAY_COUNT = "6"
 
-    private val TITLE = "大卫·艾克《雄狮醒来》"
-    private val TAG = "演讲·公开课"
+    private const val TITLE = "大卫·艾克《雄狮醒来》"
+    private const val TAG = "演讲·公开课"
 
-    // https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/christ-lion.jpg
-    private val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/christ-lion.jpg"
+    private const val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/christ-lion.jpg"
 
-    private val DESC = "David Vaughan Icke，英国作家、公共演说家、前足球员与体育职业解说员。"
+    private const val DESC = "David Vaughan Icke，英国作家、公共演说家、前足球员与体育职业解说员。"
 
     val movie = Movie()
     val movieDetail = MovieDetail()

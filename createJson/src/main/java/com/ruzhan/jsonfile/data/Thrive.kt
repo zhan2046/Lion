@@ -7,20 +7,17 @@ import com.ruzhan.jsonfile.model.Video
 
 import java.util.ArrayList
 
-/**
- * Created by ruzhan123 on 2018/7/3.
- */
 object Thrive {
 
-    private val ID = 3103
-    private val PLAY_COUNT = "1"
+    private const val ID = 3103
+    private const val PLAY_COUNT = "1"
 
-    private val TITLE = "Thrive《兴盛》"
-    private val TAG = "探索·自然·纪录片"
+    private const val TITLE = "Thrive《兴盛》"
+    private const val TAG = "探索·自然·纪录片"
 
-    private val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/thrive.jpg"
+    private const val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/thrive.jpg"
 
-    private val DESC = "通过追踪经济发展而揭开世界运作方式，并涵盖影响我们生命的各种力量面纱的，非常规型纪录电影。"
+    private const val DESC = "通过追踪经济发展而揭开世界运作方式，并涵盖影响我们生命的各种力量面纱的，非常规型纪录电影。"
 
     val movie = Movie()
     val movieDetail = MovieDetail()

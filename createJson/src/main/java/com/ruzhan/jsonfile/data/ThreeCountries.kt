@@ -7,20 +7,17 @@ import com.ruzhan.jsonfile.model.Video
 
 import java.util.ArrayList
 
-/**
- * Created by ruzhan123 on 2018/7/3.
- */
 object ThreeCountries {
 
-    private val ID = 5103
-    private val PLAY_COUNT = "6"
+    private const val ID = 5103
+    private const val PLAY_COUNT = "6"
 
-    private val TITLE = "三国的世界"
-    private val TAG = "历史·纪录片"
+    private const val TITLE = "三国的世界"
+    private const val TAG = "历史·纪录片"
 
-    private val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/three-countries.jpg"
+    private const val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/three-countries.jpg"
 
-    private val DESC = "通过讲述“三国”和其中人物的命运故事，传递他们所承载的传续千年的精神力量和文化底蕴，并探寻那段历史中最有价值的精神本源以及它对后世的深刻影响。"
+    private const val DESC = "通过讲述“三国”和其中人物的命运故事，传递他们所承载的传续千年的精神力量和文化底蕴，并探寻那段历史中最有价值的精神本源以及它对后世的深刻影响。"
 
     val movie = Movie()
     val movieDetail = MovieDetail()

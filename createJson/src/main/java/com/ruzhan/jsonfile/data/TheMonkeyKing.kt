@@ -7,20 +7,17 @@ import com.ruzhan.jsonfile.model.Video
 
 import java.util.ArrayList
 
-/**
- * Created by ruzhan123 on 2018/7/3.
- */
 object TheMonkeyKing {
 
-    private val ID = 4203
-    private val PLAY_COUNT = "1"
+    private const val ID = 4203
+    private const val PLAY_COUNT = "1"
 
-    private val TITLE = "大闹天宫"
-    private val TAG = "动画·奇幻·家庭·纪录片"
+    private const val TITLE = "大闹天宫"
+    private const val TAG = "动画·奇幻·家庭·纪录片"
 
-    private val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/the-monkey-king.jpg"
+    private const val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/the-monkey-king.jpg"
 
-    private val DESC = "《大闹天宫》是上海美术电影制片厂于1961年—1964年制作的一部彩色动画长片。"
+    private const val DESC = "《大闹天宫》是上海美术电影制片厂于1961年—1964年制作的一部彩色动画长片。"
 
     val movie = Movie()
     val movieDetail = MovieDetail()

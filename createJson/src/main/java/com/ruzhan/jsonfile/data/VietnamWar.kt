@@ -7,20 +7,17 @@ import com.ruzhan.jsonfile.model.Video
 
 import java.util.ArrayList
 
-/**
- * Created by ruzhan123 on 2018/7/3.
- */
 object VietnamWar {
 
-    private val ID = 5903
-    private val PLAY_COUNT = "1"
+    private const val ID = 5903
+    private const val PLAY_COUNT = "1"
 
-    private val TITLE = "越南战争"
-    private val TAG = "历史·战争·纪录片"
+    private const val TITLE = "越南战争"
+    private const val TAG = "历史·战争·纪录片"
 
-    private val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/vietnam-war.jpg"
+    private const val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/vietnam-war.jpg"
 
-    private val DESC = "越南战争纪录片"
+    private const val DESC = "越南战争纪录片"
 
     val movie = Movie()
     val movieDetail = MovieDetail()

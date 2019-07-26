@@ -7,20 +7,17 @@ import com.ruzhan.jsonfile.model.Video
 
 import java.util.ArrayList
 
-/**
- * Created by ruzhan123 on 2018/7/3.
- */
 object TheOrionConspiracy {
 
-    private val ID = 903
-    private val PLAY_COUNT = "1"
+    private const val ID = 903
+    private const val PLAY_COUNT = "1"
 
-    private val TITLE = "猎户座阴谋"
-    private val TAG = "艺术·纪录·科幻片"
+    private const val TITLE = "猎户座阴谋"
+    private const val TAG = "艺术·纪录·科幻片"
 
-    private val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/the-orion-conspiracy.jpg"
+    private const val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/the-orion-conspiracy.jpg"
 
-    private val DESC = "该影片表达的是在时间的考验下，我们也许将会受到自己所作的一切的惩罚，在痛苦中失去生命的本来。"
+    private const val DESC = "该影片表达的是在时间的考验下，我们也许将会受到自己所作的一切的惩罚，在痛苦中失去生命的本来。"
 
     val movie = Movie()
     val movieDetail = MovieDetail()

@@ -7,20 +7,17 @@ import com.ruzhan.jsonfile.model.Video
 
 import java.util.ArrayList
 
-/**
- * Created by ruzhan123 on 2018/7/3.
- */
 object Weapon {
 
-    private val ID = 4503
-    private val PLAY_COUNT = "7"
+    private const val ID = 4503
+    private const val PLAY_COUNT = "7"
 
-    private val TITLE = "人类武器竞赛史"
-    private val TAG = "社会·历史·纪录片"
+    private const val TITLE = "人类武器竞赛史"
+    private const val TAG = "社会·历史·纪录片"
 
-    private val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/weapon.jpg"
+    private const val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/weapon.jpg"
 
-    private val DESC = "纪录片《人类武器竞赛史》。"
+    private const val DESC = "纪录片《人类武器竞赛史》。"
 
     val movie = Movie()
     val movieDetail = MovieDetail()

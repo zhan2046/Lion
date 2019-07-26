@@ -7,20 +7,17 @@ import com.ruzhan.jsonfile.model.Video
 
 import java.util.ArrayList
 
-/**
- * Created by ruzhan123 on 2018/7/3.
- */
 object TheStoryOfGod {
 
-    private val ID = 1703
-    private val PLAY_COUNT = "6"
+    private const val ID = 1703
+    private const val PLAY_COUNT = "6"
 
-    private val TITLE = "摩根费里曼之神的万物论"
-    private val TAG = "纪录片·历史·冒险"
+    private const val TITLE = "摩根费里曼之神的万物论"
+    private const val TAG = "纪录片·历史·冒险"
 
-    private val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/the-story-of-dod.jpg"
+    private const val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/the-story-of-dod.jpg"
 
-    private val DESC = "国家地理频道《The Story of God with Morgan Freeman》"
+    private const val DESC = "国家地理频道《The Story of God with Morgan Freeman》"
 
     val movie = Movie()
     val movieDetail = MovieDetail()

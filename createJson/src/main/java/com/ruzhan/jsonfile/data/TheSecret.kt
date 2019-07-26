@@ -7,20 +7,17 @@ import com.ruzhan.jsonfile.model.Video
 
 import java.util.ArrayList
 
-/**
- * Created by ruzhan123 on 2018/7/3.
- */
 object TheSecret {
 
-    private val ID = 703
-    private val PLAY_COUNT = "1"
+    private const val ID = 703
+    private const val PLAY_COUNT = "1"
 
-    private val TITLE = "秘密《吸引力法则》"
-    private val TAG = "人文·历史·纪录片"
+    private const val TITLE = "秘密《吸引力法则》"
+    private const val TAG = "人文·历史·纪录片"
 
-    private val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/the-secret-logo.jpg"
+    private const val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/the-secret-logo.jpg"
 
-    private val DESC = "吸引力法则是新思维运动的一种概念，认为人际关系可通过正面或负面想法，从而得到正面或负面的结果。"
+    private const val DESC = "吸引力法则是新思维运动的一种概念，认为人际关系可通过正面或负面想法，从而得到正面或负面的结果。"
 
     val movie = Movie()
     val movieDetail = MovieDetail()

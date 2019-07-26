@@ -7,20 +7,17 @@ import com.ruzhan.jsonfile.model.Video
 
 import java.util.ArrayList
 
-/**
- * Created by ruzhan123 on 2018/7/3.
- */
 object WorldOfBlood {
 
-    private val ID = 3003
-    private val PLAY_COUNT = "1"
+    private const val ID = 3003
+    private const val PLAY_COUNT = "1"
 
-    private val TITLE = "血的奇妙世界"
-    private val TAG = "BBC·纪录片"
+    private const val TITLE = "血的奇妙世界"
+    private const val TAG = "BBC·纪录片"
 
-    private val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/world-of-blood.jpg"
+    private const val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/world-of-blood.jpg"
 
-    private val DESC = "以高端科研技术，探究血液对人体不可或缺的作用。究竟这些红色的黏稠液体，如何帮助我们维系生命？"
+    private const val DESC = "以高端科研技术，探究血液对人体不可或缺的作用。究竟这些红色的黏稠液体，如何帮助我们维系生命？"
 
     val movie = Movie()
     val movieDetail = MovieDetail()

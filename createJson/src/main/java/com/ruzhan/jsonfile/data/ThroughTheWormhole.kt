@@ -7,20 +7,17 @@ import com.ruzhan.jsonfile.model.Video
 
 import java.util.ArrayList
 
-/**
- * Created by ruzhan123 on 2018/7/3.
- */
 object ThroughTheWormhole {
 
-    private val ID = 1503
-    private val PLAY_COUNT = "8"
+    private const val ID = 1503
+    private const val PLAY_COUNT = "8"
 
-    private val TITLE = "摩根费里曼之穿越虫洞"
-    private val TAG = "科教·记录片"
+    private const val TITLE = "摩根费里曼之穿越虫洞"
+    private const val TAG = "科教·记录片"
 
-    private val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/through-the-wormhole.jpg"
+    private const val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/through-the-wormhole.jpg"
 
-    private val DESC = "探讨科学的电视节目，由摩根·费里曼担任旁白及主持人。于美国时间2010年6月9日在科学频道首播。"
+    private const val DESC = "探讨科学的电视节目，由摩根·费里曼担任旁白及主持人。于美国时间2010年6月9日在科学频道首播。"
 
     val movie = Movie()
     val movieDetail = MovieDetail()

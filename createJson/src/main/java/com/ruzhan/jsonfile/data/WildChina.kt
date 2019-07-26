@@ -7,20 +7,17 @@ import com.ruzhan.jsonfile.model.Video
 
 import java.util.ArrayList
 
-/**
- * Created by ruzhan123 on 2018/7/3.
- */
 object WildChina {
 
-    private val ID = 2603
-    private val PLAY_COUNT = "5"
+    private const val ID = 2603
+    private const val PLAY_COUNT = "5"
 
-    private val TITLE = "美丽中国"
-    private val TAG = "野外·纪录片"
+    private const val TITLE = "美丽中国"
+    private const val TAG = "野外·纪录片"
 
-    private val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/wild-china.jpg"
+    private const val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/wild-china.jpg"
 
-    private val DESC = "一部有关中国自然主题的6集自然纪录片。"
+    private const val DESC = "一部有关中国自然主题的6集自然纪录片。"
 
     val movie = Movie()
     val movieDetail = MovieDetail()

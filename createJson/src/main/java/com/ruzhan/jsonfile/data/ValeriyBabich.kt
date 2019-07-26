@@ -7,20 +7,17 @@ import com.ruzhan.jsonfile.model.Video
 
 import java.util.ArrayList
 
-/**
- * Created by ruzhan123 on 2018/7/3.
- */
 object ValeriyBabich {
 
-    private val ID = 2903
-    private val PLAY_COUNT = "18"
+    private const val ID = 2903
+    private const val PLAY_COUNT = "18"
 
-    private val TITLE = "伟大的卫国战争"
-    private val TAG = "战争·俄罗斯·纪录片"
+    private const val TITLE = "伟大的卫国战争"
+    private const val TAG = "战争·俄罗斯·纪录片"
 
-    private val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/valeriy-babich.jpg"
+    private const val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/valeriy-babich.jpg"
 
-    private val DESC = "俄罗斯第一频道为纪念卫国战争胜利65周年，在2010年拍摄的纪录片。"
+    private const val DESC = "俄罗斯第一频道为纪念卫国战争胜利65周年，在2010年拍摄的纪录片。"
 
     val movie = Movie()
     val movieDetail = MovieDetail()
