@@ -7,12 +7,14 @@ import com.ruzhan.jsonfile.model.HttpResult
 import com.ruzhan.jsonfile.model.Movie
 import com.ruzhan.jsonfile.model.MovieDetail
 import com.ruzhan.jsonfile.utils.JsonFileIOUtils
+import java.io.File
 import java.util.HashMap
 import kotlin.collections.ArrayList
 
 object MovieHelper {
 
     private const val PAGE_COUNT = 60
+    private const val CODE_SUCCESS = 200
 
     val movieList: List<Movie>
         get() {
@@ -143,31 +145,31 @@ object MovieHelper {
         }
 
     fun movieDetailListToJsonFile(list: List<MovieDetail>,
-                                  rootPath: String, gson: Gson) {
+                                  rootPath: String, mainGSon: Gson) {
         for (movieDetail in list) {
             val name = movieDetail.movieId + CreateJsonMain.FILE_TYPE
-            val filePath = rootPath + "\\" + name
-            val httpResult = HttpResult(CreateJsonMain.CODE_SUCCESS,
+            val filePath = File(File(rootPath), name).absolutePath
+            val httpResult = HttpResult(CODE_SUCCESS,
                     "", movieDetail)
-            val fileJson = gson.toJson(httpResult)
+            val fileJson = mainGSon.toJson(httpResult)
             val isKeyPageSuccess = JsonFileIOUtils.writeFileFromString(filePath, fileJson)
-            println("isKeyPageSuccess:$isKeyPageSuccess, movieDetailListToJsonFile write !!!")
+            println("isKeyPageSuccess:$isKeyPageSuccess, filePath:$filePath")
         }
     }
 
-    fun movieListToJsonFile(map: Map<String, List<Movie>>, rootPath: String, gson: Gson) {
+    fun movieListToJsonFile(map: Map<String, List<Movie>>, rootPath: String, mainGSon: Gson) {
         val entrySet = map.entries
         val iterator = entrySet.iterator()
         while (iterator.hasNext()) {
             val entry = iterator.next()
             val keyPage = entry.key
             val valueMovieList = entry.value
-            val filePath = rootPath + "\\" + keyPage + CreateJsonMain.FILE_TYPE
-            val httpResult = HttpResult(CreateJsonMain.CODE_SUCCESS,
+            val filePath = File(File(rootPath), keyPage.plus(CreateJsonMain.FILE_TYPE)).absolutePath
+            val httpResult = HttpResult(CODE_SUCCESS,
                     "", valueMovieList)
-            val fileJson = gson.toJson(httpResult)
+            val fileJson = mainGSon.toJson(httpResult)
             val isKeyPageSuccess = JsonFileIOUtils.writeFileFromString(filePath, fileJson)
-            println("isKeyPageSuccess:$isKeyPageSuccess, keyPage:$keyPage")
+            println("isKeyPageSuccess:$isKeyPageSuccess, filePath:$filePath")
         }
     }
 

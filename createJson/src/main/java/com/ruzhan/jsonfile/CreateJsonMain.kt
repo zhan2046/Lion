@@ -2,38 +2,60 @@ package com.ruzhan.jsonfile
 
 import com.google.gson.Gson
 import com.ruzhan.jsonfile.helper.MovieHelper
-import com.ruzhan.jsonfile.model.Movie
-import com.ruzhan.jsonfile.model.MovieDetail
+import java.io.File
 
 object CreateJsonMain {
 
+    private const val USER_DIR = "user.dir"
+    private const val JSON = "json"
+    private const val API = "api"
+    private const val MOVIE = "movie"
+    private const val DETAIL = "detail"
     const val FILE_TYPE = ".json"
-    private const val MOVIE_LIST = "E:\\project\\Lion\\json\\api\\movie"
-    private const val MOVIE_DETAIL = "E:\\project\\Lion\\json\\api\\movie\\detail"
-
-    const val CODE_SUCCESS = 200
 
     private val mainGSon = Gson()
+    private var movieListFile = File("")
+    private var movieDetailFile = File("")
 
     @JvmStatic
     fun main(args: Array<String>) {
-        println("init json file...")
-        println("=================================")
+        initCreateJsonFile()
+        createMovieListToJsonFile()
+        createMovieDetailListToJsonFile()
+        println("=======")
+        println("==============")
+        println("======= CreateJsonMain finish !!! =======")
+    }
 
-        println("1, create movie list json files")
+    private fun initCreateJsonFile() {
+        println("initCreateJsonFile call...")
+        val userDirFile = File(System.getProperty(USER_DIR))
+        println("userDirFile:${userDirFile.absolutePath}")
+
+        val createJsonFile = File(File(userDirFile, JSON), API)
+        println("createJsonFile:${createJsonFile.absolutePath}")
+
+        movieListFile = File(createJsonFile, MOVIE)
+        println("movieListFile:${movieListFile.absolutePath}")
+
+        movieDetailFile = File(movieListFile, DETAIL)
+        println("movieDetailFile:${movieDetailFile.absolutePath}")
+        println("======= initCreateJsonFile finish !!! =========")
+    }
+
+    private fun createMovieListToJsonFile() {
+        println("createMovieListToJsonFile call...")
         val movieList = MovieHelper.movieList
         val movieMap = MovieHelper.getMovieMap(movieList)
-        println("movieMap size:" + movieMap.size)
-        MovieHelper.movieListToJsonFile(movieMap, MOVIE_LIST, mainGSon)
-        println("1, create movie list json files finish ... !!!")
-        println("=================================")
+        println("createMovieListToJsonFile movieMap size:" + movieMap.size)
+        MovieHelper.movieListToJsonFile(movieMap, movieListFile.absolutePath, mainGSon)
+        println("======== createMovieListToJsonFile finish !!! ==========")
+    }
 
-        println("2, create movie detail json files")
+    private fun createMovieDetailListToJsonFile() {
+        println("createMovieDetailListToJsonFile call...")
         val detailList = MovieHelper.movieDetailList
-        MovieHelper.movieDetailListToJsonFile(detailList, MOVIE_DETAIL, mainGSon)
-        println("2, create movie detail json files finish ... !!!")
-        println("=================================")
-
-        println("json file create finish ... !!!")
+        MovieHelper.movieDetailListToJsonFile(detailList, movieDetailFile.absolutePath, mainGSon)
+        println("======= createMovieDetailListToJsonFile finish !!! ==========")
     }
 }
