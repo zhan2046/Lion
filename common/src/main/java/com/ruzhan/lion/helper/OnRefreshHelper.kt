@@ -6,15 +6,12 @@ import android.support.v7.widget.LinearLayoutManager
 import android.support.v7.widget.RecyclerView
 import android.support.v7.widget.StaggeredGridLayoutManager
 
-import com.ruzhan.common.R
-
 object OnRefreshHelper {
 
     fun setOnRefreshStatusListener(swipeRefresh: SwipeRefreshLayout, recyclerView: RecyclerView,
-                                   listener: OnRefreshStatusListener) {
+                                   listener: OnRefreshStatusListener, colorRes: Int) {
         swipeRefresh.setOnRefreshListener { listener.onRefresh() }
-        swipeRefresh.setColorSchemeColors(ContextCompat.getColor(recyclerView.context,
-                R.color.colorAccent))
+        swipeRefresh.setColorSchemeColors(ContextCompat.getColor(recyclerView.context, colorRes))
 
         recyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
             override fun onScrollStateChanged(recyclerView: RecyclerView?, newState: Int) {

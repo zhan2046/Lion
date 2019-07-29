@@ -77,7 +77,7 @@ class MovieListFragment : Fragment() {
             override fun onLoadMore() {
                 movieListViewModel?.getLoadMoreMovieList()
             }
-        })
+        }, R.color.colorAccent)
         movieListAdapter.onItemClickListener = object : OnItemClickListener<Movie> {
             override fun onItemClick(position: Int, bean: Movie, itemView: View) {
                 val activity = activity
