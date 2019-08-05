@@ -96,17 +96,19 @@ class MovieListFragment : Fragment() {
         val movieListViewModel = movieListViewModel
         if (movieListViewModel != null) {
             movieListViewModel.loadStatusLiveData.observe(this@MovieListFragment, Observer { isLoading ->
-                if (isLoading != null) {
+                if (isLoading != null && !isLoading) {
                     swipe_refresh.isRefreshing = isLoading
                 }
             })
             movieListViewModel.refreshLiveData.observe(this@MovieListFragment, Observer { movieList ->
                 movieList?.let {
+                    progressBar.visibility = View.GONE
                     movieListAdapter.setRefreshData(movieList)
                 }
             })
             movieListViewModel.loadMoreLiveData.observe(this@MovieListFragment, Observer { movieList ->
                 movieList?.let {
+                    progressBar.visibility = View.GONE
                     movieListAdapter.setLoadMoreData(movieList)
                 }
             })
