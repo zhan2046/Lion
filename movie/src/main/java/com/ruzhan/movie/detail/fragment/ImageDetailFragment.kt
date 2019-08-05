@@ -1,8 +1,8 @@
 package com.ruzhan.movie.detail.fragment
 
 import android.os.Bundle
-import android.support.v4.app.Fragment
-import android.support.v4.view.ViewPager
+import androidx.fragment.app.Fragment
+import androidx.viewpager.widget.ViewPager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,7 +12,7 @@ import com.ruzhan.movie.detail.adapter.ImageDetailAdapter
 import com.ruzhan.movie.model.ImageListModel
 import kotlinx.android.synthetic.main.lion_frag_image_detail.*
 
-class ImageDetailFragment : Fragment() {
+class ImageDetailFragment : androidx.fragment.app.Fragment() {
 
     companion object {
 
@@ -47,7 +47,7 @@ class ImageDetailFragment : Fragment() {
     }
 
     private fun initListener() {
-        lion_image_view_page.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
+        lion_image_view_page.addOnPageChangeListener(object : androidx.viewpager.widget.ViewPager.OnPageChangeListener {
 
             override fun onPageScrollStateChanged(state: Int) {
                 // do nothing

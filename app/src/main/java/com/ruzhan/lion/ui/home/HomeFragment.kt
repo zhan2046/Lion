@@ -1,8 +1,8 @@
 package com.ruzhan.lion.ui.home
 
 import android.os.Bundle
-import android.support.v4.app.Fragment
-import android.support.v7.app.AppCompatActivity
+import androidx.fragment.app.Fragment
+import androidx.appcompat.app.AppCompatActivity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -14,7 +14,7 @@ import com.ruzhan.lion.util.AnimUtils
 import com.ruzhan.movie.home.MovieListFragment
 import kotlinx.android.synthetic.main.frag_home.*
 
-class HomeFragment : Fragment() {
+class HomeFragment : androidx.fragment.app.Fragment() {
 
     companion object {
 
@@ -26,7 +26,7 @@ class HomeFragment : Fragment() {
         fun newInstance() = HomeFragment()
     }
 
-    private val fragmentMap = HashMap<String, Fragment>()
+    private val fragmentMap = HashMap<String, androidx.fragment.app.Fragment>()
 
     private var movieListFragment: MovieListFragment? = null
     private var favouritesFragment: FavouritesFragment? = null
@@ -68,7 +68,7 @@ class HomeFragment : Fragment() {
             transaction.hide(frag)
         }
         var fragTag: String? = null
-        var frag: Fragment? = null
+        var frag: androidx.fragment.app.Fragment? = null
         when (tabId) {
             R.id.movie -> {
                 fragTag = "movieListFragment"

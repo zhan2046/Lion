@@ -50,7 +50,7 @@
 
         <!-- animate alpha in DribbleShot#enterAnimation
              margins push out parent for the borderless ripple -->
-        <android.support.v7.widget.AppCompatImageButton
+        <androidx.appcompat.widget.AppCompatImageButton
             android:id="@+id/back"
             android:layout_width="?android:actionBarSize"
             android:layout_height="?android:actionBarSize"
@@ -60,7 +60,7 @@
             android:src="@drawable/ic_arrow_back" />
     </FrameLayout>
 
-    <android.support.v7.widget.RecyclerView
+    <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/recycler_view"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
@@ -69,5 +69,5 @@
         android:overScrollMode="never"
         android:orientation="vertical"
         android:scrollbarStyle="insideOverlay"
-        app:layoutManager="android.support.v7.widget.LinearLayoutManager" />
+        app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager" />
 </com.ruzhan.lion.ui.widget.ElasticDragDismissFrameLayout>

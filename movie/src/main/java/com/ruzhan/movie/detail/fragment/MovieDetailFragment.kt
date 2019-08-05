@@ -1,11 +1,11 @@
 package com.ruzhan.movie.detail.fragment
 
-import android.arch.lifecycle.Observer
-import android.arch.lifecycle.ViewModelProviders
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
-import android.support.v4.app.ActivityCompat.finishAfterTransition
-import android.support.v4.app.Fragment
-import android.support.v7.widget.RecyclerView
+import androidx.core.app.ActivityCompat.finishAfterTransition
+import androidx.fragment.app.Fragment
+import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -24,7 +24,7 @@ import com.ruzhan.movie.model.ImageListModel
 import com.ruzhan.movie.video.WebVideoActivity
 import kotlinx.android.synthetic.main.lion_frag_movie_detail.*
 
-class MovieDetailFragment : Fragment() {
+class MovieDetailFragment : androidx.fragment.app.Fragment() {
 
     companion object {
 
@@ -83,11 +83,10 @@ class MovieDetailFragment : Fragment() {
                 ImageDetailActivity.launch(activity!!, bean)
             }
         }
-        recycler_view.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+        recycler_view.addOnScrollListener(object : androidx.recyclerview.widget.RecyclerView.OnScrollListener() {
 
-            override fun onScrolled(recyclerView: RecyclerView?, dx: Int, dy: Int) {
+            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                 super.onScrolled(recyclerView, dx, dy)
-
                 val topViewHolder = movieDetailAdapter.getMovieDetailHeaderHolder()
                 topViewHolder?.let {
                     val scrollY = topViewHolder.itemView.top
@@ -95,7 +94,7 @@ class MovieDetailFragment : Fragment() {
                 }
             }
 
-            override fun onScrollStateChanged(recyclerView: RecyclerView?, newState: Int) {
+            override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
                 super.onScrollStateChanged(recyclerView, newState)
                 // as we animate the main image's elevation change when it 'pins' at it's min height
                 // a fling can cause the title to go over the image before the animation has a chance to
@@ -103,7 +102,7 @@ class MovieDetailFragment : Fragment() {
                 shot.isImmediatePin = newState == RecyclerView.SCROLL_STATE_SETTLING
             }
         })
-        recycler_view.onFlingListener = object : RecyclerView.OnFlingListener() {
+        recycler_view.onFlingListener = object : androidx.recyclerview.widget.RecyclerView.OnFlingListener() {
             override fun onFling(velocityX: Int, velocityY: Int): Boolean {
                 shot.isImmediatePin = true
                 return false

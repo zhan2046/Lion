@@ -2,7 +2,7 @@ package com.ruzhan.lion.ui
 
 import android.app.Application
 import android.content.Context
-import android.support.multidex.MultiDex
+import androidx.multidex.MultiDex
 import com.lion.font.FontHelper
 import com.ruzhan.lion.util.ResUtils
 

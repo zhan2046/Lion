@@ -1,16 +1,16 @@
 package com.ruzhan.movie.detail.adapter
 
-import android.support.v4.app.Fragment
-import android.support.v4.app.FragmentManager
-import android.support.v4.app.FragmentPagerAdapter
+import androidx.fragment.app.Fragment
+import androidx.fragment.app.FragmentManager
+import androidx.fragment.app.FragmentPagerAdapter
 import com.ruzhan.movie.detail.fragment.ItemImageDetailFragment
 
-class ImageDetailAdapter(fm: FragmentManager, imageList: ArrayList<String>) :
-        FragmentPagerAdapter(fm) {
+class ImageDetailAdapter(fm: androidx.fragment.app.FragmentManager, imageList: ArrayList<String>) :
+        androidx.fragment.app.FragmentPagerAdapter(fm) {
 
     private var imageList: List<String> = imageList
 
-    override fun getItem(position: Int): Fragment {
+    override fun getItem(position: Int): androidx.fragment.app.Fragment {
         val imageUrl = imageList[position]
         return ItemImageDetailFragment.newInstance(imageUrl)
     }

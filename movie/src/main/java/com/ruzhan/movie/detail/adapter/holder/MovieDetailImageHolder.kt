@@ -1,6 +1,6 @@
 package com.ruzhan.movie.detail.adapter.holder
 
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView
 import android.view.View
 import com.lion.imageloader.glide.ImageLoader
 import com.ruzhan.lion.listener.OnItemClickListener
@@ -11,7 +11,7 @@ import com.ruzhan.movie.model.ImageListModel
 import kotlinx.android.synthetic.main.lion_item_movie_detail_image.view.*
 
 class MovieDetailImageHolder(itemView: View, private var movieDetail: MovieDetail,
-                             listener: OnItemClickListener<ImageListModel>?) : RecyclerView.ViewHolder(itemView) {
+                             listener: OnItemClickListener<ImageListModel>?) : androidx.recyclerview.widget.RecyclerView.ViewHolder(itemView) {
 
     private var imageListModel: ImageListModel = ImageListModel("", 0, "", ArrayList())
     private val imageUrlList = ArrayList<String>()

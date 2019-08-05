@@ -3,8 +3,8 @@ package com.ruzhan.movie.detail
 import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
-import android.support.v4.app.ActivityOptionsCompat
-import android.support.v7.app.AppCompatActivity
+import androidx.core.app.ActivityOptionsCompat
+import androidx.appcompat.app.AppCompatActivity
 import com.ruzhan.lion.model.Movie
 import com.ruzhan.movie.R
 import com.ruzhan.movie.detail.fragment.MovieDetailFragment

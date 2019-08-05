@@ -2,7 +2,7 @@ package com.ruzhan.movie.detail.fragment
 
 import android.graphics.drawable.Drawable
 import android.os.Bundle
-import android.support.v4.app.Fragment
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -16,7 +16,7 @@ import com.ruzhan.lion.util.ViewUtils
 import com.ruzhan.movie.R
 import kotlinx.android.synthetic.main.lion_frag_image_item_detail.*
 
-class ItemImageDetailFragment : Fragment() {
+class ItemImageDetailFragment : androidx.fragment.app.Fragment() {
 
     companion object {
 

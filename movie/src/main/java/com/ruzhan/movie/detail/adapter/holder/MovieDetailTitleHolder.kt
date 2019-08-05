@@ -1,11 +1,11 @@
 package com.ruzhan.movie.detail.adapter.holder
 
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView
 import android.view.View
 import com.lion.font.FontHelper
 import kotlinx.android.synthetic.main.lion_item_movie_detail_title.view.*
 
-class MovieDetailTitleHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+class MovieDetailTitleHolder(itemView: View) : androidx.recyclerview.widget.RecyclerView.ViewHolder(itemView) {
 
     init {
         itemView.tag_tv.typeface = FontHelper.get().getLightTypeface()

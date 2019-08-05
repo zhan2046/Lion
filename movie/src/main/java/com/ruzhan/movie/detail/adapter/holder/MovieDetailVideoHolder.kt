@@ -1,7 +1,7 @@
 package com.ruzhan.movie.detail.adapter.holder
 
-import android.support.v4.content.ContextCompat
-import android.support.v7.widget.RecyclerView
+import androidx.core.content.ContextCompat
+import androidx.recyclerview.widget.RecyclerView
 import android.text.TextUtils
 import android.view.View
 import com.lion.font.FontHelper
@@ -12,7 +12,7 @@ import com.ruzhan.lion.util.ViewUtils
 import com.ruzhan.movie.R
 import kotlinx.android.synthetic.main.lion_item_movie_detail_video.view.*
 
-class MovieDetailVideoHolder(itemView: View, listener: OnItemClickListener<Video>?) : RecyclerView.ViewHolder(itemView) {
+class MovieDetailVideoHolder(itemView: View, listener: OnItemClickListener<Video>?) : androidx.recyclerview.widget.RecyclerView.ViewHolder(itemView) {
 
     private lateinit var video: Video
 

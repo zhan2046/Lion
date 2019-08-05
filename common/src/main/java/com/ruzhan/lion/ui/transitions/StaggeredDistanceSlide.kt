@@ -4,7 +4,7 @@ import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
 import android.animation.ObjectAnimator
 import android.content.Context
-import android.support.annotation.Keep
+import androidx.annotation.Keep
 import android.transition.TransitionValues
 import android.transition.Visibility
 import android.util.AttributeSet

@@ -1,6 +1,6 @@
 package com.ruzhan.lion.util
 
-import android.support.annotation.IdRes
+import androidx.annotation.IdRes
 import android.transition.Transition
 import android.transition.TransitionSet
 import android.view.View

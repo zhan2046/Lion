@@ -1,10 +1,10 @@
 package com.ruzhan.lion.helper
 
-import android.support.v4.content.ContextCompat
-import android.support.v4.widget.SwipeRefreshLayout
-import android.support.v7.widget.LinearLayoutManager
-import android.support.v7.widget.RecyclerView
-import android.support.v7.widget.StaggeredGridLayoutManager
+import androidx.core.content.ContextCompat
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import androidx.recyclerview.widget.StaggeredGridLayoutManager
+import androidx.swiperefreshlayout.widget.SwipeRefreshLayout
 
 object OnRefreshHelper {
 
@@ -14,9 +14,9 @@ object OnRefreshHelper {
         swipeRefresh.setColorSchemeColors(ContextCompat.getColor(recyclerView.context, colorRes))
 
         recyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
-            override fun onScrollStateChanged(recyclerView: RecyclerView?, newState: Int) {
+            override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
                 super.onScrollStateChanged(recyclerView, newState)
-                if (isLoadMore(recyclerView!!, newState)) {
+                if (isLoadMore(recyclerView, newState)) {
                     listener.onLoadMore()
                 }
             }
@@ -28,7 +28,7 @@ object OnRefreshHelper {
         val adapter = recyclerView.adapter
         if (adapter != null) {
             val layoutManager = recyclerView.layoutManager
-            val lastPosition = layoutManagerToLastPosition(layoutManager)
+            val lastPosition = layoutManagerToLastPosition(layoutManager!!)
             val adapterCount = adapter.itemCount
             val refreshPosition = adapterCount - 1
             return lastPosition > 0 && lastPosition >= refreshPosition &&

@@ -1,6 +1,6 @@
 package com.ruzhan.movie.home.adapter
 
-import android.support.v7.widget.RecyclerView
+import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import com.ruzhan.lion.listener.OnItemClickListener
@@ -10,7 +10,7 @@ import com.ruzhan.movie.R
 import com.ruzhan.movie.home.adapter.holder.MovieListHolder
 
 
-class MovieListAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
+class MovieListAdapter : androidx.recyclerview.widget.RecyclerView.Adapter<androidx.recyclerview.widget.RecyclerView.ViewHolder>() {
 
     companion object {
         const val LOAD_MORE: String = "LOAD_MORE"
@@ -59,8 +59,8 @@ class MovieListAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         return viewType
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        lateinit var viewHolder: RecyclerView.ViewHolder
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): androidx.recyclerview.widget.RecyclerView.ViewHolder {
+        lateinit var viewHolder: androidx.recyclerview.widget.RecyclerView.ViewHolder
         when (viewType) {
             TYPE_NORMAL -> viewHolder = MovieListHolder(LayoutInflater.from(parent.context)
                     .inflate(R.layout.lion_item_movie_list, parent, false), onItemClickListener)
@@ -75,7 +75,7 @@ class MovieListAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         return dataList.size
     }
 
-    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: androidx.recyclerview.widget.RecyclerView.ViewHolder, position: Int) {
         when (getItemViewType(position)) {
             TYPE_NORMAL -> (holder as MovieListHolder).bind(dataList[position] as Movie)
             TYPE_LOAD_MORE -> (holder as LoadMoreHolder).bind(isLoadMore)

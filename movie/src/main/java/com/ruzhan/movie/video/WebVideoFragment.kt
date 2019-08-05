@@ -2,7 +2,7 @@ package com.ruzhan.movie.video
 
 import android.annotation.SuppressLint
 import android.os.Bundle
-import android.support.v4.app.Fragment
+import androidx.fragment.app.Fragment
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -12,7 +12,7 @@ import com.tencent.smtt.sdk.WebView
 import com.tencent.smtt.sdk.WebViewClient
 import kotlinx.android.synthetic.main.lion_frag_web_video.*
 
-class WebVideoFragment : Fragment() {
+class WebVideoFragment : androidx.fragment.app.Fragment() {
 
     companion object {
 
