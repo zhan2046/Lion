@@ -1,15 +1,14 @@
 <?xml version="1.0" encoding="utf-8"?>
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     xmlns:soulwolf="http://schemas.android.com/apk/res-auto"
     android:id="@+id/root_cl"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
-    android:layout_marginBottom="@dimen/space_small_2"
-    android:layout_marginEnd="@dimen/space_small_4"
     android:layout_marginStart="@dimen/space_small_4"
     android:layout_marginTop="@dimen/space_small_8"
+    android:layout_marginEnd="@dimen/space_small_4"
+    android:layout_marginBottom="@dimen/space_small_2"
     android:foreground="?attr/selectableItemBackground"
     card_view:cardBackgroundColor="@color/light_grey"
     card_view:cardCornerRadius="@dimen/space_small_2"
@@ -35,46 +34,48 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/space_normal_16"
-            android:layout_marginTop="@dimen/space_normal_16"
+            android:layout_marginTop="@dimen/space_small_8"
             android:background="@drawable/shape_line_bg"
             android:gravity="center"
             android:letterSpacing="0.08"
-            android:paddingBottom="@dimen/space_small_4"
-            android:paddingEnd="@dimen/space_small_12"
-            android:paddingStart="@dimen/space_small_12"
+            android:paddingLeft="@dimen/space_small_8"
+            android:paddingStart="@dimen/space_small_8"
             android:paddingTop="@dimen/space_small_4"
+            android:paddingEnd="@dimen/space_small_8"
+            android:paddingRight="@dimen/space_small_8"
+            android:paddingBottom="@dimen/space_small_4"
             android:textColor="#ff808080"
-            android:textSize="@dimen/text_normal_16" />
+            android:textSize="@dimen/text_small_12" />
 
         <TextView
             android:id="@+id/title_tv"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/space_normal_16"
             android:layout_marginStart="@dimen/space_normal_16"
-            android:layout_marginTop="@dimen/space_small_8"
+            android:layout_marginTop="@dimen/space_small_4"
+            android:layout_marginEnd="@dimen/space_normal_16"
             android:ellipsize="end"
             android:letterSpacing="0.08"
             android:maxLines="1"
             android:textColor="@color/text_primary_dark"
-            android:textSize="@dimen/text_large_26" />
+            android:textSize="@dimen/text_large_20" />
 
         <TextView
             android:id="@+id/desc_tv"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginEnd="@dimen/space_normal_16"
             android:layout_marginStart="@dimen/space_normal_16"
             android:layout_marginTop="@dimen/space_small_12"
+            android:layout_marginEnd="@dimen/space_normal_16"
             android:ellipsize="end"
             android:letterSpacing="0.08"
-            android:lineSpacingExtra="@dimen/space_small_4"
-            android:maxLines="9"
+            android:lineSpacingExtra="@dimen/space_small_2"
+            android:maxLines="3"
             android:textColor="@color/text_primary_dark"
-            android:textSize="@dimen/text_normal_16" />
+            android:textSize="@dimen/text_small_14" />
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="@dimen/space_normal_16" />
+            android:layout_height="@dimen/space_small_12" />
     </LinearLayout>
 </androidx.cardview.widget.CardView>
