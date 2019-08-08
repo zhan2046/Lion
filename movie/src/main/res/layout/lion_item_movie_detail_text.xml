@@ -10,11 +10,11 @@
         android:layout_height="wrap_content"
         android:layout_marginTop="@dimen/space_small_8"
         android:letterSpacing="0.08"
-        android:lineSpacingExtra="@dimen/space_small_4"
+        android:lineSpacingExtra="@dimen/space_small_2"
         android:paddingEnd="@dimen/space_normal_16"
         android:paddingStart="@dimen/space_normal_16"
         android:textColor="@color/text_primary_dark"
-        android:textSize="@dimen/text_large_18" />
+        android:textSize="@dimen/text_normal_16" />
 
     <Space
         android:layout_width="match_parent"
