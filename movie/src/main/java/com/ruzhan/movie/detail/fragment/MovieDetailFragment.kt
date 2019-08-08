@@ -1,15 +1,15 @@
 package com.ruzhan.movie.detail.fragment
 
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
-import androidx.core.app.ActivityCompat.finishAfterTransition
-import androidx.fragment.app.Fragment
-import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.ViewTreeObserver
+import androidx.core.app.ActivityCompat.finishAfterTransition
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
+import androidx.recyclerview.widget.RecyclerView
 import com.lion.imageloader.glide.ImageLoader
 import com.ruzhan.lion.listener.OnItemClickListener
 import com.ruzhan.lion.model.Movie
@@ -24,7 +24,7 @@ import com.ruzhan.movie.model.ImageListModel
 import com.ruzhan.movie.video.WebVideoActivity
 import kotlinx.android.synthetic.main.lion_frag_movie_detail.*
 
-class MovieDetailFragment : androidx.fragment.app.Fragment() {
+class MovieDetailFragment : Fragment() {
 
     companion object {
 
@@ -44,11 +44,11 @@ class MovieDetailFragment : androidx.fragment.app.Fragment() {
     private lateinit var movie: Movie
     private lateinit var movieDetailViewModel: MovieDetailViewModel
     private val movieDetailAdapter = MovieDetailAdapter()
-    private lateinit var chromeFader: ElasticDragDismissFrameLayout.SystemChromeFader
+    private lateinit var chromeFaber: ElasticDragDismissFrameLayout.SystemChromeFader
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        movie = arguments!!.getParcelable(MOVIE)
+        movie = arguments?.getParcelable(MOVIE) as Movie
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
@@ -83,7 +83,7 @@ class MovieDetailFragment : androidx.fragment.app.Fragment() {
                 ImageDetailActivity.launch(activity!!, bean)
             }
         }
-        recycler_view.addOnScrollListener(object : androidx.recyclerview.widget.RecyclerView.OnScrollListener() {
+        recycler_view.addOnScrollListener(object : RecyclerView.OnScrollListener() {
 
             override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                 super.onScrolled(recyclerView, dx, dy)
@@ -102,7 +102,7 @@ class MovieDetailFragment : androidx.fragment.app.Fragment() {
                 shot.isImmediatePin = newState == RecyclerView.SCROLL_STATE_SETTLING
             }
         })
-        recycler_view.onFlingListener = object : androidx.recyclerview.widget.RecyclerView.OnFlingListener() {
+        recycler_view.onFlingListener = object : RecyclerView.OnFlingListener() {
             override fun onFling(velocityX: Int, velocityY: Int): Boolean {
                 shot.isImmediatePin = true
                 return false
@@ -114,7 +114,7 @@ class MovieDetailFragment : androidx.fragment.app.Fragment() {
                 finishAfterTransition(act)
             }
         }
-        chromeFader = object : ElasticDragDismissFrameLayout.SystemChromeFader(activity) {
+        chromeFaber = object : ElasticDragDismissFrameLayout.SystemChromeFader(activity) {
 
             override fun onDragDismissed() {
                 activity?.let {
@@ -143,12 +143,12 @@ class MovieDetailFragment : androidx.fragment.app.Fragment() {
 
     override fun onResume() {
         super.onResume()
-        elastic_drag_dismiss.addListener(chromeFader)
+        elastic_drag_dismiss.addListener(chromeFaber)
     }
 
     override fun onPause() {
         super.onPause()
-        elastic_drag_dismiss.removeListener(chromeFader)
+        elastic_drag_dismiss.removeListener(chromeFaber)
     }
 
     fun closeFragmentUpdateUi() {
