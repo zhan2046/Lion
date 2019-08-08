@@ -76,6 +76,6 @@
 
         <Space
             android:layout_width="match_parent"
-            android:layout_height="@dimen/space_small_12" />
+            android:layout_height="@dimen/space_normal_16" />
     </LinearLayout>
 </androidx.cardview.widget.CardView>

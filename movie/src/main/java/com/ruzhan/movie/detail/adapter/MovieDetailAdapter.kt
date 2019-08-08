@@ -13,7 +13,7 @@ import com.ruzhan.movie.detail.adapter.holder.*
 import com.ruzhan.movie.model.ImageListModel
 import java.util.*
 
-class MovieDetailAdapter : androidx.recyclerview.widget.RecyclerView.Adapter<androidx.recyclerview.widget.RecyclerView.ViewHolder>() {
+class MovieDetailAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     companion object {
         const val TYPE_HEADER: Int = 1000
@@ -70,8 +70,8 @@ class MovieDetailAdapter : androidx.recyclerview.widget.RecyclerView.Adapter<and
         return viewType
     }
 
-    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): androidx.recyclerview.widget.RecyclerView.ViewHolder {
-        lateinit var viewHolder: androidx.recyclerview.widget.RecyclerView.ViewHolder
+    override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
+        lateinit var viewHolder: RecyclerView.ViewHolder
         when (viewType) {
             TYPE_HEADER -> {
                 viewHolder = MovieDetailHeaderHolder(LayoutInflater.from(parent.context)
@@ -103,7 +103,7 @@ class MovieDetailAdapter : androidx.recyclerview.widget.RecyclerView.Adapter<and
 
     override fun getItemCount(): Int = dataList.size
 
-    override fun onBindViewHolder(holder: androidx.recyclerview.widget.RecyclerView.ViewHolder, position: Int) {
+    override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         when (getItemViewType(position)) {
             TYPE_TITLE -> (holder as MovieDetailTitleHolder).bind(movieDetail.title, movieDetail.tag)
             TYPE_TEXT -> (holder as MovieDetailTextHolder).bind(dataList[position] as Introduce)

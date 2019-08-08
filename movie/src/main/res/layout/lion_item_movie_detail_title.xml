@@ -9,7 +9,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="@dimen/space_normal_16"
-        android:layout_marginTop="@dimen/space_normal_16"
+        android:layout_marginTop="@dimen/space_small_8"
         android:background="@drawable/shape_line_bg"
         android:gravity="center"
         android:letterSpacing="0.08"
@@ -18,7 +18,7 @@
         android:paddingStart="@dimen/space_small_12"
         android:paddingTop="@dimen/space_small_4"
         android:textColor="#ff808080"
-        android:textSize="@dimen/text_normal_16" />
+        android:textSize="@dimen/text_small_12" />
 
     <TextView
         android:id="@+id/title_tv"
@@ -31,7 +31,7 @@
         android:letterSpacing="0.08"
         android:maxLines="2"
         android:textColor="@color/text_primary_dark"
-        android:textSize="@dimen/text_large_26" />
+        android:textSize="@dimen/text_large_20" />
 
     <Space
         android:layout_width="match_parent"

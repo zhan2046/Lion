@@ -24,6 +24,6 @@
         android:layout_height="0dp"
         android:scaleType="centerCrop"
         soulwolf:datumRatio="datumWidth"
-        soulwolf:heightRatio="9"
-        soulwolf:widthRatio="16" />
+        soulwolf:heightRatio="3"
+        soulwolf:widthRatio="5" />
 </androidx.cardview.widget.CardView>
