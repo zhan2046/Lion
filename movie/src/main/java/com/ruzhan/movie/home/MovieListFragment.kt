@@ -1,17 +1,18 @@
 package com.ruzhan.movie.home
 
 
-import androidx.lifecycle.Observer
-import androidx.lifecycle.ViewModelProviders
 import android.os.Bundle
-import androidx.core.app.ActivityOptionsCompat
-import androidx.fragment.app.Fragment
-import androidx.core.app.SharedElementCallback
-import androidx.core.util.Pair
-import androidx.recyclerview.widget.LinearLayoutManager
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.core.app.ActivityOptionsCompat
+import androidx.core.app.SharedElementCallback
+import androidx.core.util.Pair
+import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
+import androidx.lifecycle.ViewModelProviders
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
 import com.ruzhan.lion.helper.OnRefreshHelper
 import com.ruzhan.lion.listener.OnItemClickListener
 import com.ruzhan.lion.model.Movie
@@ -21,7 +22,7 @@ import com.ruzhan.movie.home.adapter.MovieListAdapter
 import com.ruzhan.movie.home.viewmodel.MovieListViewModel
 import kotlinx.android.synthetic.main.lion_frag_movie_list.*
 
-class MovieListFragment : androidx.fragment.app.Fragment() {
+class MovieListFragment : Fragment() {
 
     companion object {
 
@@ -42,7 +43,7 @@ class MovieListFragment : androidx.fragment.app.Fragment() {
         val movieListViewModel = ViewModelProviders.of(this).get(MovieListViewModel::class.java)
         this.movieListViewModel = movieListViewModel
         recycler_view.adapter = movieListAdapter
-        recycler_view.layoutManager = androidx.recyclerview.widget.LinearLayoutManager(activity, androidx.recyclerview.widget.LinearLayoutManager.VERTICAL,
+        recycler_view.layoutManager = LinearLayoutManager(activity, RecyclerView.VERTICAL,
                 false)
         initListener()
         initLiveData()

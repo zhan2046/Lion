@@ -27,8 +27,8 @@
             android:scaleType="centerCrop"
             android:transitionName="@string/transition_shot"
             soulwolf:datumRatio="datumWidth"
-            soulwolf:heightRatio="10"
-            soulwolf:widthRatio="16" />
+            soulwolf:heightRatio="3"
+            soulwolf:widthRatio="5" />
 
         <TextView
             android:id="@+id/tag_tv"
