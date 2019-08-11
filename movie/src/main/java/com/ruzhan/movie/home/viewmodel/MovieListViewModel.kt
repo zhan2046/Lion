@@ -7,12 +7,12 @@ import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.ruzhan.lion.database.CommonModel
 import com.ruzhan.lion.model.Movie
-import com.ruzhan.lion.rx.Subscriber
 import com.ruzhan.lion.util.LionUtils
 import com.ruzhan.movie.network.MovieRepository
 import io.reactivex.BackpressureStrategy
 import io.reactivex.Flowable
 import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
 import java.util.concurrent.TimeUnit
@@ -37,10 +37,12 @@ class MovieListViewModel(app: Application) : AndroidViewModel(app) {
     private var isLoading = false
     private var loadPage = START_PAGE
     private var disposable: Disposable? = null
+    private var refreshDisposable: Disposable? = null
     private var localDisposable: Disposable? = null
     private var localFlowAble: Flowable<Any>? = null
 
     private val mainGSon = Gson()
+    private val compositeDisposable = CompositeDisposable()
 
     init {
         localFlowAble = Flowable.create<Any>({ e ->
@@ -67,6 +69,7 @@ class MovieListViewModel(app: Application) : AndroidViewModel(app) {
                 .doFinally { }
                 .doOnNext { movieList -> handleLocalMovieList(movieList) }
                 .subscribe({ }, { })
+        compositeDisposable.add(disposable!!)
     }
 
     private fun commonModelToMovieList(commonModel: CommonModel): ArrayList<Movie> {
@@ -106,7 +109,7 @@ class MovieListViewModel(app: Application) : AndroidViewModel(app) {
             }
         }
         val pageFileName = loadPage.toString().plus(LionUtils.JSON_FILE)
-        MovieRepository.get().getMovieList(pageFileName)
+        refreshDisposable = MovieRepository.get().getMovieList(pageFileName)
                 .map { result -> result.data }
                 .observeOn(AndroidSchedulers.mainThread())
                 .doOnError {}
@@ -114,9 +117,11 @@ class MovieListViewModel(app: Application) : AndroidViewModel(app) {
                 .doFinally {
                     loadStatusLiveData.value = false
                     isLoading = false
+                    refreshDisposable?.dispose()
                 }
                 .doOnSuccess { movieList -> handleMovieList(status, movieList) }
-                .subscribe(Subscriber.create())
+                .subscribe({ }, { })
+        compositeDisposable.add(refreshDisposable!!)
     }
 
     private fun handleMovieList(status: String, movieList: List<Movie>?) {
@@ -143,6 +148,12 @@ class MovieListViewModel(app: Application) : AndroidViewModel(app) {
                     .doOnError { throwable -> throwable.printStackTrace() }
                     .doOnComplete { localDisposable?.dispose() }
                     .subscribe({ }, { })
+            compositeDisposable.add(localDisposable!!)
         }
+    }
+
+    override fun onCleared() {
+        super.onCleared()
+        compositeDisposable.clear()
     }
 }
