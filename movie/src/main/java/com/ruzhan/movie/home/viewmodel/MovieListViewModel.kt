@@ -38,12 +38,12 @@ class MovieListViewModel(app: Application) : AndroidViewModel(app) {
     private var loadPage = START_PAGE
     private var disposable: Disposable? = null
     private var localDisposable: Disposable? = null
-    private var localFlowable: Flowable<Any>? = null
+    private var localFlowAble: Flowable<Any>? = null
 
-    private val gson = Gson()
+    private val mainGSon = Gson()
 
     init {
-        localFlowable = Flowable.create<Any>({ e ->
+        localFlowAble = Flowable.create<Any>({ e ->
             handleInsertCommonModel()
             e.onComplete()
         }, BackpressureStrategy.LATEST)
@@ -52,7 +52,7 @@ class MovieListViewModel(app: Application) : AndroidViewModel(app) {
     private fun handleInsertCommonModel() {
         val movieList = refreshLiveData.value
         if (movieList != null) {
-            val jsonStr = gson.toJson(movieList)
+            val jsonStr = mainGSon.toJson(movieList)
             val commonModel = CommonModel(LION_MOVIE_LIST, jsonStr)
             MovieRepository.get().insertCommonModel(commonModel)
         }
@@ -73,7 +73,7 @@ class MovieListViewModel(app: Application) : AndroidViewModel(app) {
         var movieList = ArrayList<Movie>()
         val content = commonModel.content
         if (content.isNotBlank()) {
-            movieList = gson.fromJson(content, object : TypeToken<List<Movie>>() {}.type)
+            movieList = mainGSon.fromJson(content, object : TypeToken<List<Movie>>() {}.type)
         }
         return movieList
     }
@@ -135,9 +135,9 @@ class MovieListViewModel(app: Application) : AndroidViewModel(app) {
     }
 
     private fun insertLocalMovieList() {
-        val localFlowable = localFlowable
-        if (localFlowable != null) {
-            localDisposable = localFlowable.debounce(DEBOUNCE_TIME, TimeUnit.MILLISECONDS)
+        val localFlowAble = localFlowAble
+        if (localFlowAble != null) {
+            localDisposable = localFlowAble.debounce(DEBOUNCE_TIME, TimeUnit.MILLISECONDS)
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
                     .doOnError { throwable -> throwable.printStackTrace() }
