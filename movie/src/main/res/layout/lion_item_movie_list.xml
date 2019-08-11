@@ -38,14 +38,14 @@
             android:background="@drawable/shape_line_bg"
             android:gravity="center"
             android:letterSpacing="0.08"
-            android:paddingLeft="@dimen/space_small_8"
             android:paddingStart="@dimen/space_small_8"
+            android:paddingLeft="@dimen/space_small_8"
             android:paddingTop="@dimen/space_small_4"
             android:paddingEnd="@dimen/space_small_8"
             android:paddingRight="@dimen/space_small_8"
             android:paddingBottom="@dimen/space_small_4"
-            android:textColor="#ff808080"
-            android:textSize="@dimen/text_small_12" />
+            android:textColor="#A0A0A0"
+            android:textSize="11sp" />
 
         <TextView
             android:id="@+id/title_tv"

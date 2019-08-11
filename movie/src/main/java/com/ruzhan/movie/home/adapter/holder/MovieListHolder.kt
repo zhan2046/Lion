@@ -1,7 +1,7 @@
 package com.ruzhan.movie.home.adapter.holder
 
-import androidx.recyclerview.widget.RecyclerView
 import android.view.View
+import androidx.recyclerview.widget.RecyclerView
 import com.lion.font.FontHelper
 import com.lion.imageloader.glide.ImageLoader
 import com.ruzhan.lion.listener.OnItemClickListener
@@ -9,7 +9,7 @@ import com.ruzhan.lion.model.Movie
 import com.ruzhan.lion.util.ViewUtils
 import kotlinx.android.synthetic.main.lion_item_movie_list.view.*
 
-class MovieListHolder(itemView: View, listener: OnItemClickListener<Movie>?) : androidx.recyclerview.widget.RecyclerView.ViewHolder(itemView) {
+class MovieListHolder(itemView: View, listener: OnItemClickListener<Movie>?) : RecyclerView.ViewHolder(itemView) {
 
     private lateinit var movie: Movie
 
