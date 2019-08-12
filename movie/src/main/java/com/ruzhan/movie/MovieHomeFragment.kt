@@ -17,6 +17,8 @@ class MovieHomeFragment : Fragment() {
 
     companion object {
 
+        private const val DEFAULT_DELAY_MILLIS = 200L
+
         @JvmStatic
         fun newInstance() = MovieHomeFragment()
     }
@@ -44,6 +46,9 @@ class MovieHomeFragment : Fragment() {
                 Observer<List<String>> { tagList ->
                     if (tagList != null) {
                         movieHomeAdapter?.setData(tagList)
+                        tabLayout.postDelayed({
+                            tabLayout.setScrollPosition(viewPager.currentItem, 0f, true)
+                        }, DEFAULT_DELAY_MILLIS)
                     }
                 })
     }
@@ -58,5 +63,6 @@ class MovieHomeFragment : Fragment() {
         this.movieHomeAdapter = movieHomeAdapter
         viewPager.adapter = movieHomeAdapter
         tabLayout.setupWithViewPager(viewPager)
+        tabLayout.isSmoothScrollingEnabled = true
     }
 }

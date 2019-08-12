@@ -13,10 +13,6 @@ class HomeFragment : Fragment() {
 
     companion object {
 
-        private const val DEFAULT_START_DELAY = 300L
-        private const val DEFAULT_DURATION = 900L
-        private const val DEFAULT_SCALE_X = 0.8f
-
         @JvmStatic
         fun newInstance() = HomeFragment()
     }

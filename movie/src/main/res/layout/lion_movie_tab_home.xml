@@ -42,6 +42,7 @@
             android:background="#FFFFFFFF"
             android:theme="@style/Lion.ThemeOverlay.ActionBar"
             app:tabIndicatorColor="#FF2196F3"
+            app:tabGravity="center"
             app:tabMode="scrollable"
             app:tabSelectedTextColor="#FF2196F3"
             app:tabTextAppearance="@style/Lion.TabLayout.TextSize"
