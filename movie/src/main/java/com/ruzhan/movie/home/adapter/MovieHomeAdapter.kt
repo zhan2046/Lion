@@ -5,7 +5,7 @@ import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentStatePagerAdapter
 import com.ruzhan.lion.util.ResUtils
 import com.ruzhan.movie.R
-import com.ruzhan.movie.home.MovieListFragment2
+import com.ruzhan.movie.home.MovieListFragment
 
 class MovieHomeAdapter(fm: FragmentManager): FragmentStatePagerAdapter(fm) {
 
@@ -30,7 +30,7 @@ class MovieHomeAdapter(fm: FragmentManager): FragmentStatePagerAdapter(fm) {
         } else if (position == newListTabPosition) {
             dayTag = titleList[0]
         }
-        return MovieListFragment2.newInstance(dayTag)
+        return MovieListFragment.newInstance(dayTag)
     }
 
     override fun getCount(): Int = titleList.size

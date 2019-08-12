@@ -16,6 +16,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.ruzhan.lion.helper.OnRefreshHelper
 import com.ruzhan.lion.listener.OnItemClickListener
 import com.ruzhan.lion.model.Movie
+import com.ruzhan.lion.util.ResUtils
 import com.ruzhan.movie.R
 import com.ruzhan.movie.detail.MovieDetailActivity
 import com.ruzhan.movie.home.adapter.MovieListAdapter
@@ -26,12 +27,35 @@ class MovieListFragment : Fragment() {
 
     companion object {
 
+        private const val TAG_KEY = "TAG_KEY"
+
         @JvmStatic
-        fun newInstance() = MovieListFragment()
+        fun newInstance(): MovieListFragment {
+            val args = Bundle()
+            args.putString(TAG_KEY, ResUtils.getApp().getString(R.string.lion_tab_tag_new))
+            val frag = MovieListFragment()
+            frag.arguments = args
+            return frag
+        }
+
+        @JvmStatic
+        fun newInstance(tagKey: String): MovieListFragment {
+            val args = Bundle()
+            args.putString(TAG_KEY, tagKey)
+            val frag = MovieListFragment()
+            frag.arguments = args
+            return frag
+        }
     }
 
     private val movieListAdapter = MovieListAdapter()
     private var movieListViewModel: MovieListViewModel? = null
+    private var tagKey = ""
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        tagKey = arguments?.getString(TAG_KEY) ?: ""
+    }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -42,13 +66,19 @@ class MovieListFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val movieListViewModel = ViewModelProviders.of(activity!!).get(MovieListViewModel::class.java)
         this.movieListViewModel = movieListViewModel
+        initData()
+        initListener()
+        initLiveData()
+    }
+
+    private fun initData() {
         recycler_view.adapter = movieListAdapter
         recycler_view.layoutManager = LinearLayoutManager(activity, RecyclerView.VERTICAL,
                 false)
-        initListener()
-        initLiveData()
-        movieListViewModel.getLocalMovieList()
-        movieListViewModel.getRefreshMovieList()
+        val tagMovieList = movieListViewModel?.getRefreshTagList(tagKey)
+        movieListAdapter.setRefreshData(tagMovieList)
+        progressBar.visibility = if (tagMovieList != null && tagMovieList.isNotEmpty())
+            View.GONE else View.VISIBLE
     }
 
     private fun initListener() {
@@ -104,13 +134,15 @@ class MovieListFragment : Fragment() {
             movieListViewModel.refreshLiveData.observe(this@MovieListFragment, Observer { movieList ->
                 movieList?.let {
                     progressBar.visibility = View.GONE
-                    movieListAdapter.setRefreshData(movieList)
+                    val tagMovieList = movieListViewModel.getRefreshTagList(tagKey)
+                    movieListAdapter.setRefreshData(tagMovieList)
                 }
             })
             movieListViewModel.loadMoreLiveData.observe(this@MovieListFragment, Observer { movieList ->
                 movieList?.let {
                     progressBar.visibility = View.GONE
-                    movieListAdapter.setLoadMoreData(movieList)
+                    val tagMovieList = movieListViewModel.getLoadMoreTagList(tagKey)
+                    movieListAdapter.setLoadMoreData(tagMovieList)
                 }
             })
         }

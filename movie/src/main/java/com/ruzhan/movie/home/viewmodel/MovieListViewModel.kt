@@ -39,10 +39,10 @@ class MovieListViewModel(app: Application) : AndroidViewModel(app) {
     val loadMoreLiveData = MutableLiveData<List<Movie>>()
 
     val titleListLiveData = MutableLiveData<List<String>>()
-    val refreshTagListMap = TreeMap<String, ArrayList<Movie>>(Comparator<String> { o1, o2 ->
+    private val refreshTagListMap = TreeMap<String, ArrayList<Movie>>(Comparator<String> { o1, o2 ->
         return@Comparator o1.compareTo(o2)
     })
-    val loadMoreTagListMap = TreeMap<String, ArrayList<Movie>>(Comparator<String> { o1, o2 ->
+    private val loadMoreTagListMap = TreeMap<String, ArrayList<Movie>>(Comparator<String> { o1, o2 ->
         return@Comparator o1.compareTo(o2)
     })
 
