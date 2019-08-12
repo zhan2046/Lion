@@ -4,15 +4,10 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.ViewTreeObserver
-import android.widget.TextView
-import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import com.ruzhan.favourites.FavouritesFragment
 import com.ruzhan.lion.R
-import com.ruzhan.lion.util.AnimUtils
 import com.ruzhan.movie.MovieHomeFragment
-import kotlinx.android.synthetic.main.frag_home.*
 
 class HomeFragment : Fragment() {
 
@@ -38,27 +33,7 @@ class HomeFragment : Fragment() {
 
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
-        val activity = activity
-        if (activity is AppCompatActivity) {
-            activity.setSupportActionBar(tool_bar)
-        }
         replaceFragment(R.id.movie)
-        initListener()
-    }
-
-    private fun initListener() {
-        bottom_navigation.setOnNavigationItemSelectedListener {
-            if (bottom_navigation.selectedItemId != it.itemId) {
-                replaceFragment(it.itemId)
-            }
-            true
-        }
-        tool_bar.viewTreeObserver.addOnGlobalLayoutListener(object : ViewTreeObserver.OnGlobalLayoutListener {
-            override fun onGlobalLayout() {
-                tool_bar.viewTreeObserver.removeOnGlobalLayoutListener(this)
-                animateToolbar()
-            }
-        })
     }
 
     private fun replaceFragment(tabId: Int) {
@@ -103,20 +78,6 @@ class HomeFragment : Fragment() {
         }
         if (!fm.isDestroyed) {
             transaction.commitAllowingStateLoss()
-        }
-    }
-
-    private fun animateToolbar() {
-        val t = tool_bar.getChildAt(0)
-        if (t != null && t is TextView) {
-            t.letterSpacing = 0.1f
-            t.alpha = 0f
-            t.scaleX = DEFAULT_SCALE_X
-            t.animate()
-                    .alpha(1f)
-                    .scaleX(1f)
-                    .setStartDelay(DEFAULT_START_DELAY)
-                    .setDuration(DEFAULT_DURATION).interpolator = AnimUtils.getFastOutSlowInInterpolator(activity)
         }
     }
 }
