@@ -13,7 +13,7 @@ object TheStoryOfGod {
     private const val PLAY_COUNT = "6"
 
     private const val TITLE = "摩根费里曼之神的万物论"
-    private const val TAG = "纪录片·历史·冒险"
+    private const val TAG = "冒险·历史·纪录片"
 
     private const val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/the-story-of-dod.jpg"
 
