@@ -8,6 +8,8 @@ import com.google.gson.reflect.TypeToken
 import com.ruzhan.lion.database.CommonModel
 import com.ruzhan.lion.model.Movie
 import com.ruzhan.lion.util.LionUtils
+import com.ruzhan.lion.util.ResUtils
+import com.ruzhan.movie.R
 import com.ruzhan.movie.network.MovieRepository
 import io.reactivex.BackpressureStrategy
 import io.reactivex.Flowable
@@ -15,7 +17,9 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.CompositeDisposable
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
+import java.util.*
 import java.util.concurrent.TimeUnit
+import kotlin.collections.ArrayList
 
 
 class MovieListViewModel(app: Application) : AndroidViewModel(app) {
@@ -33,6 +37,16 @@ class MovieListViewModel(app: Application) : AndroidViewModel(app) {
     val loadStatusLiveData = MutableLiveData<Boolean>()
     val refreshLiveData = MutableLiveData<List<Movie>>()
     val loadMoreLiveData = MutableLiveData<List<Movie>>()
+
+    val titleListLiveData = MutableLiveData<List<String>>()
+    val refreshTagListMap = TreeMap<String, ArrayList<Movie>>(Comparator<String> { o1, o2 ->
+        return@Comparator o1.compareTo(o2)
+    })
+    val loadMoreTagListMap = TreeMap<String, ArrayList<Movie>>(Comparator<String> { o1, o2 ->
+        return@Comparator o1.compareTo(o2)
+    })
+
+    private val newTabTag = ResUtils.getApp().getString(R.string.lion_tab_tag_new)
 
     private var isLoading = false
     private var loadPage = START_PAGE
@@ -83,6 +97,7 @@ class MovieListViewModel(app: Application) : AndroidViewModel(app) {
 
     private fun handleLocalMovieList(movieList: List<Movie>?) {
         if (refreshLiveData.value == null) {
+            refreshMovieListTag(movieList)
             refreshLiveData.value = movieList
         }
         disposable?.dispose()
@@ -127,10 +142,12 @@ class MovieListViewModel(app: Application) : AndroidViewModel(app) {
     private fun handleMovieList(status: String, movieList: List<Movie>?) {
         when (status) {
             REFRESH -> {
+                refreshMovieListTag(movieList)
                 refreshLiveData.value = movieList
                 insertLocalMovieList()
             }
             LOAD_MORE -> {
+                loadMoreMovieListTag(movieList)
                 loadMoreLiveData.value = movieList
             }
             else -> {
@@ -149,6 +166,46 @@ class MovieListViewModel(app: Application) : AndroidViewModel(app) {
                     .doOnComplete { localDisposable?.dispose() }
                     .subscribe({ }, { })
             compositeDisposable.add(localDisposable!!)
+        }
+    }
+
+    fun getRefreshTagList(tagKey: String): List<Movie>? {
+        return refreshTagListMap[tagKey]
+    }
+
+    fun getLoadMoreTagList(tagKey: String): List<Movie>? {
+        return loadMoreTagListMap[tagKey]
+    }
+
+    private fun refreshMovieListTag(movieList: List<Movie>?) {
+        handleMovieListTag(REFRESH, movieList, refreshTagListMap)
+    }
+
+    private fun loadMoreMovieListTag(movieList: List<Movie>?) {
+        handleMovieListTag(LOAD_MORE, movieList, loadMoreTagListMap)
+    }
+
+    private fun handleMovieListTag(status: String, movieList: List<Movie>?,
+                                   tagListMap: TreeMap<String, ArrayList<Movie>>) {
+        if (movieList != null && movieList.isNotEmpty()) {
+            tagListMap.clear()
+            tagListMap[newTabTag] = ArrayList((movieList))
+            for (item in movieList) {
+                val tag = item.tag
+                val tagList = tag.split("·")
+                if (tagList.isNotEmpty()) {
+                    val tagKey = tagList[0]
+                    val tagValue = if (!tagListMap.containsKey(tagKey))
+                        ArrayList() else tagListMap[tagKey]
+                    if (tagValue != null && !tagValue.contains(item)) {
+                        tagValue.add(item)
+                        tagListMap[tagKey] = tagValue
+                    }
+                }
+            }
+            if (status == REFRESH) {
+                titleListLiveData.value = ArrayList(tagListMap.keys)
+            }
         }
     }
 
