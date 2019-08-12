@@ -26,8 +26,8 @@ class MovieListAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     var onItemClickListener: OnItemClickListener<Movie>? = null
 
-    fun setRefreshData(movieList: List<Movie>) {
-        if (movieList.isNotEmpty()) {
+    fun setRefreshData(movieList: List<Movie>?) {
+        if (movieList != null && movieList.isNotEmpty()) {
             dataList.clear()
             dataList.addAll(movieList)
             dataList.add(LOAD_MORE)
@@ -36,8 +36,8 @@ class MovieListAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         }
     }
 
-    fun setLoadMoreData(movieList: List<Movie>) {
-        if (movieList.isNotEmpty()) {
+    fun setLoadMoreData(movieList: List<Movie>?) {
+        if (movieList != null && movieList.isNotEmpty()) {
             dataList.remove(LOAD_MORE)
 
             dataList.addAll(movieList)

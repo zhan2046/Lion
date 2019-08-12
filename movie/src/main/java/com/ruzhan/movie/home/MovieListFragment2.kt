@@ -22,16 +22,30 @@ import com.ruzhan.movie.home.adapter.MovieListAdapter
 import com.ruzhan.movie.home.viewmodel.MovieListViewModel
 import kotlinx.android.synthetic.main.lion_frag_movie_list.*
 
-class MovieListFragment : Fragment() {
+class MovieListFragment2 : Fragment() {
 
     companion object {
 
+        private const val TAG_KEY = "TAG_KEY"
+
         @JvmStatic
-        fun newInstance() = MovieListFragment()
+        fun newInstance(tagKey: String): MovieListFragment2 {
+            val args = Bundle()
+            args.putString(TAG_KEY, tagKey)
+            val frag = MovieListFragment2()
+            frag.arguments = args
+            return frag
+        }
     }
 
     private val movieListAdapter = MovieListAdapter()
     private var movieListViewModel: MovieListViewModel? = null
+    private var tagKey = ""
+
+    override fun onCreate(savedInstanceState: Bundle?) {
+        super.onCreate(savedInstanceState)
+        tagKey = arguments?.getString(TAG_KEY) ?: ""
+    }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -42,13 +56,19 @@ class MovieListFragment : Fragment() {
         super.onViewCreated(view, savedInstanceState)
         val movieListViewModel = ViewModelProviders.of(activity!!).get(MovieListViewModel::class.java)
         this.movieListViewModel = movieListViewModel
+        initData()
+        initListener()
+        initLiveData()
+    }
+
+    private fun initData() {
         recycler_view.adapter = movieListAdapter
         recycler_view.layoutManager = LinearLayoutManager(activity, RecyclerView.VERTICAL,
                 false)
-        initListener()
-        initLiveData()
-        movieListViewModel.getLocalMovieList()
-        movieListViewModel.getRefreshMovieList()
+        val tagMovieList = movieListViewModel?.getRefreshTagList(tagKey)
+        movieListAdapter.setRefreshData(tagMovieList)
+        progressBar.visibility = if (tagMovieList != null && tagMovieList.isNotEmpty())
+            View.GONE else View.VISIBLE
     }
 
     private fun initListener() {
@@ -96,21 +116,23 @@ class MovieListFragment : Fragment() {
     private fun initLiveData() {
         val movieListViewModel = movieListViewModel
         if (movieListViewModel != null) {
-            movieListViewModel.loadStatusLiveData.observe(this@MovieListFragment, Observer { isLoading ->
+            movieListViewModel.loadStatusLiveData.observe(this@MovieListFragment2, Observer { isLoading ->
                 if (isLoading != null && !isLoading) {
                     swipe_refresh.isRefreshing = isLoading
                 }
             })
-            movieListViewModel.refreshLiveData.observe(this@MovieListFragment, Observer { movieList ->
+            movieListViewModel.refreshLiveData.observe(this@MovieListFragment2, Observer { movieList ->
                 movieList?.let {
                     progressBar.visibility = View.GONE
-                    movieListAdapter.setRefreshData(movieList)
+                    val tagMovieList = movieListViewModel.getRefreshTagList(tagKey)
+                    movieListAdapter.setRefreshData(tagMovieList)
                 }
             })
-            movieListViewModel.loadMoreLiveData.observe(this@MovieListFragment, Observer { movieList ->
+            movieListViewModel.loadMoreLiveData.observe(this@MovieListFragment2, Observer { movieList ->
                 movieList?.let {
                     progressBar.visibility = View.GONE
-                    movieListAdapter.setLoadMoreData(movieList)
+                    val tagMovieList = movieListViewModel.getLoadMoreTagList(tagKey)
+                    movieListAdapter.setLoadMoreData(tagMovieList)
                 }
             })
         }
