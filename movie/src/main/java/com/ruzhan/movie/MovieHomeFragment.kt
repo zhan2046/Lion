@@ -57,5 +57,6 @@ class MovieHomeFragment : Fragment() {
         val movieHomeAdapter = MovieHomeAdapter(childFragmentManager)
         this.movieHomeAdapter = movieHomeAdapter
         viewPager.adapter = movieHomeAdapter
+        tabLayout.setupWithViewPager(viewPager)
     }
 }

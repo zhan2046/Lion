@@ -1,17 +1,17 @@
 package com.ruzhan.lion.ui.home
 
 import android.os.Bundle
-import androidx.fragment.app.Fragment
-import androidx.appcompat.app.AppCompatActivity
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import android.view.ViewTreeObserver
 import android.widget.TextView
+import androidx.appcompat.app.AppCompatActivity
+import androidx.fragment.app.Fragment
 import com.ruzhan.favourites.FavouritesFragment
 import com.ruzhan.lion.R
 import com.ruzhan.lion.util.AnimUtils
-import com.ruzhan.movie.home.MovieListFragment
+import com.ruzhan.movie.MovieHomeFragment
 import kotlinx.android.synthetic.main.frag_home.*
 
 class HomeFragment : Fragment() {
@@ -28,7 +28,7 @@ class HomeFragment : Fragment() {
 
     private val fragmentMap = HashMap<String, Fragment>()
 
-    private var movieListFragment: MovieListFragment? = null
+    private var movieHomeFragment: MovieHomeFragment? = null
     private var favouritesFragment: FavouritesFragment? = null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
@@ -71,12 +71,12 @@ class HomeFragment : Fragment() {
         var frag: Fragment? = null
         when (tabId) {
             R.id.movie -> {
-                fragTag = "movieListFragment"
+                fragTag = "MovieHomeFragment"
                 frag = fragmentMap[fragTag]
 
                 if (frag == null) {
-                    frag = MovieListFragment.newInstance()
-                    movieListFragment = frag
+                    frag = MovieHomeFragment.newInstance()
+                    movieHomeFragment = frag
                     transaction.add(R.id.container, frag, fragTag)
 
                 } else {
