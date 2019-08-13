@@ -17,7 +17,7 @@ class MovieHomeFragment : Fragment() {
 
     companion object {
 
-        private const val DEFAULT_DELAY_MILLIS = 200L
+        private const val DEFAULT_DELAY_MILLIS = 50L
 
         @JvmStatic
         fun newInstance() = MovieHomeFragment()
@@ -47,7 +47,7 @@ class MovieHomeFragment : Fragment() {
                     if (tagList != null) {
                         movieHomeAdapter?.setData(tagList)
                         tabLayout.postDelayed({
-                            tabLayout.setScrollPosition(viewPager.currentItem, 0f, true)
+                            tabLayout.setScrollPosition(viewPager.currentItem, 0.01f, true)
                         }, DEFAULT_DELAY_MILLIS)
                     }
                 })
