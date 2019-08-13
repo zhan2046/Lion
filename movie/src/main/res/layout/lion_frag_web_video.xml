@@ -6,8 +6,8 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent">
 
-    <com.tencent.smtt.sdk.WebView
-        android:id="@+id/web_view"
+    <com.ruzhan.movie.utils.X5WebView
+        android:id="@+id/x5WebView"
         android:background="@color/light_grey"
         android:layout_width="match_parent"
         android:layout_height="match_parent"/>
