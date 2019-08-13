@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import android.view.ViewTreeObserver
 import androidx.fragment.app.Fragment
 import com.ruzhan.movie.R
 import com.tencent.smtt.sdk.WebChromeClient
@@ -48,7 +49,12 @@ class WebVideoFragment : Fragment() {
     override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
         super.onViewCreated(view, savedInstanceState)
         initData()
-        x5WebView.loadUrl(url)
+        x5WebView.viewTreeObserver.addOnGlobalLayoutListener(object : ViewTreeObserver.OnGlobalLayoutListener {
+            override fun onGlobalLayout() {
+                x5WebView.viewTreeObserver.removeOnGlobalLayoutListener(this)
+                x5WebView.loadUrl(url)
+            }
+        })
     }
 
     @SuppressLint("SetJavaScriptEnabled")
