@@ -18,3 +18,8 @@ tasks.withType(JavaCompile) {
 
 sourceCompatibility = "1.8"
 targetCompatibility = "1.8"
+
+task createMovieJson(type:JavaExec) {
+    classpath = sourceSets.main.runtimeClasspath
+    main = "com.ruzhan.jsonfile.CreateJsonMain"
+}
