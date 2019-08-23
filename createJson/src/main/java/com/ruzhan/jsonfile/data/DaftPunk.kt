@@ -13,7 +13,7 @@ object DaftPunk {
     private const val PLAY_COUNT = "4"
 
     private const val TITLE = "Daft Punk Unchained"
-    private const val TAG = "社会·纪录片"
+    private const val TAG = "开放音乐·纪录片"
 
     private const val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/daft-punk.jpg"
 

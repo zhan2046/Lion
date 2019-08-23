@@ -13,7 +13,7 @@ object RichAndUs {
     private const val PLAY_COUNT = "3"
 
     private const val TITLE = "巨富与我们"
-    private const val TAG = "BBC·历史·纪录片"
+    private const val TAG = "社会揭露·纪录片"
 
     private const val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/eich-and-us.jpg"
 

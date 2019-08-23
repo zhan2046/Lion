@@ -13,7 +13,7 @@ object TheLieWeLive {
     private const val PLAY_COUNT = "1"
 
     private const val TITLE = "我们身处的谎言世界"
-    private const val TAG = "社会·励志片"
+    private const val TAG = "社会揭露·励志片"
 
     private const val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/lie-we-live.jpg"
 

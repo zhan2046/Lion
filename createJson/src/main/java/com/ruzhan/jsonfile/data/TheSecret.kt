@@ -13,7 +13,7 @@ object TheSecret {
     private const val PLAY_COUNT = "1"
 
     private const val TITLE = "秘密《吸引力法则》"
-    private const val TAG = "人文·历史·纪录片"
+    private const val TAG = "纪录片·人文·历史"
 
     private const val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/the-secret-logo.jpg"
 

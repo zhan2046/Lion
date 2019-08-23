@@ -13,7 +13,7 @@ object CosmicDisclosure3 {
     private const val PLAY_COUNT = "20"
 
     private const val TITLE = "揭露宇宙 101-120集"
-    private const val TAG = "揭露·宇宙"
+    private const val TAG = "揭露宇宙·纪录片"
 
     private const val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/cosmi-disclosure03-1.jpg"
 

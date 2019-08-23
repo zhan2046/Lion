@@ -13,7 +13,7 @@ object DevinWilliams {
     private const val PLAY_COUNT = "12"
 
     private const val TITLE = "篮球训练纪录片10000小时"
-    private const val TAG = "体育·篮球·纪录片"
+    private const val TAG = "篮球训练·纪录片"
 
     private const val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/devin-williams.jpg"
 

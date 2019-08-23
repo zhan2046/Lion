@@ -13,7 +13,7 @@ object EscapeFromHell {
     private const val PLAY_COUNT = "6"
 
     private const val TITLE = "极限重生"
-    private const val TAG = "野外·冒险·纪录片"
+    private const val TAG = "野外冒险·纪录片"
 
     private const val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/escape-from-hell.jpg"
 

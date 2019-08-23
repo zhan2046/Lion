@@ -13,7 +13,7 @@ object TED2016 {
     private const val PLAY_COUNT = "10"
 
     private const val TITLE = "2016年度十佳TED演讲"
-    private const val TAG = "TED·社会·纪录片"
+    private const val TAG = "TED演讲·纪录片"
 
     private const val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/ted03.jpg"
 

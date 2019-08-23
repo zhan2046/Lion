@@ -13,7 +13,7 @@ object StoryOfCapital {
     private const val PLAY_COUNT = "60"
 
     private const val TITLE = "资本的故事"
-    private const val TAG = "社会·纪录片"
+    private const val TAG = "纪录片·社会"
 
     private const val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/story-of-capital.jpg"
 

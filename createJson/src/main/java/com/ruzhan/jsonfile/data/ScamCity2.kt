@@ -13,7 +13,7 @@ object ScamCity2 {
     private const val PLAY_COUNT = "10"
 
     private const val TITLE = "旅游骗术大揭秘 第二季"
-    private const val TAG = "旅游·社会·纪录片"
+    private const val TAG = "社会揭露·纪录片"
 
     private const val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/scam-city2.jpg"
 

@@ -13,7 +13,7 @@ object PunPun {
     private const val PLAY_COUNT = "1"
 
     private const val TITLE = "生活如此简单，为什么让我们变得很复杂"
-    private const val TAG = "TED·演讲·公开课"
+    private const val TAG = "TED演讲·公开课"
 
     private const val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/punpun.jpg"
 

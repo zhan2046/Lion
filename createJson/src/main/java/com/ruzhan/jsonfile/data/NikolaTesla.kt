@@ -13,7 +13,7 @@ object NikolaTesla {
     private const val PLAY_COUNT = "2"
 
     private const val TITLE = "尼古拉·特斯拉"
-    private const val TAG = "科教·自然·神秘纪录片"
+    private const val TAG = "社会揭露·神秘纪录片"
 
     private const val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/nikola-tesla.jpg"
 

@@ -13,7 +13,7 @@ object TheLionSleepsNoMore {
     private const val PLAY_COUNT = "6"
 
     private const val TITLE = "大卫·艾克《雄狮醒来》"
-    private const val TAG = "演讲·公开课"
+    private const val TAG = "公开课·雄狮醒来"
 
     private const val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/christ-lion.jpg"
 

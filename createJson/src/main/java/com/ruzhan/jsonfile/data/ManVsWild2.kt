@@ -13,7 +13,7 @@ object ManVsWild2 {
     private const val PLAY_COUNT = "15"
 
     private const val TITLE = "荒野求生 贝尔·格里尔斯"
-    private const val TAG = "冒险·历史·纪录片"
+    private const val TAG = "野外冒险·纪录片"
 
     private const val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/man-vs-wild2.jpg"
 

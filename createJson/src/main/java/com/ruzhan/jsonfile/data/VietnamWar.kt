@@ -13,7 +13,7 @@ object VietnamWar {
     private const val PLAY_COUNT = "1"
 
     private const val TITLE = "越南战争"
-    private const val TAG = "历史·战争·纪录片"
+    private const val TAG = "人类战争·纪录片"
 
     private const val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/vietnam-war.jpg"
 

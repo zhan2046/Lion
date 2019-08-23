@@ -13,7 +13,7 @@ object Marvel {
     private const val PLAY_COUNT = "1"
 
     private const val TITLE = "Marvel 75 Years: From Pulp to Pop"
-    private const val TAG = "科幻·电影·纪录片"
+    private const val TAG = "科幻电影·纪录片"
 
     private const val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/marve.jpg"
 

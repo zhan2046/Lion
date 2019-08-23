@@ -13,7 +13,7 @@ object ThroughTheWormhole {
     private const val PLAY_COUNT = "8"
 
     private const val TITLE = "摩根费里曼之穿越虫洞"
-    private const val TAG = "科教·记录片"
+    private const val TAG = "记录片·科教"
 
     private const val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/through-the-wormhole.jpg"
 

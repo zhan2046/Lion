@@ -13,7 +13,7 @@ object OldGuang {
     private const val PLAY_COUNT = "6"
 
     private const val TITLE = "老广的味道 第一季"
-    private const val TAG = "人文·纪录片"
+    private const val TAG = "纪录片·人文"
 
     private const val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/old-guang.jpg"
 
