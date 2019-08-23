@@ -59,7 +59,7 @@ class MovieListViewModel(app: Application) : AndroidViewModel(app) {
     private val compositeDisposable = CompositeDisposable()
 
     init {
-        localFlowAble = Flowable.create<Any>({ e ->
+        localFlowAble = Flowable.create({ e ->
             handleInsertCommonModel()
             e.onComplete()
         }, BackpressureStrategy.LATEST)
