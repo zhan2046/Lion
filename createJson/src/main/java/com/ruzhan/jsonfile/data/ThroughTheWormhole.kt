@@ -4,8 +4,7 @@ import com.ruzhan.jsonfile.model.Introduce
 import com.ruzhan.jsonfile.model.Movie
 import com.ruzhan.jsonfile.model.MovieDetail
 import com.ruzhan.jsonfile.model.Video
-
-import java.util.ArrayList
+import java.util.*
 
 object ThroughTheWormhole {
 

@@ -2,14 +2,14 @@ package com.ruzhan.lion.model
 
 import com.google.gson.annotations.SerializedName
 
-data class Introduce (
+data class Introduce(
 
-    @SerializedName("type")
-    var type: Int,
-    @SerializedName("text")
-    var text: String,
-    @SerializedName("image")
-    var image: String
+        @SerializedName("type")
+        var type: Int,
+        @SerializedName("text")
+        var text: String,
+        @SerializedName("image")
+        var image: String
 ) {
     companion object {
 

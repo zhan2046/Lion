@@ -1,9 +1,8 @@
 package com.ruzhan.movie.detail.adapter.holder
 
-import androidx.core.content.ContextCompat
-import androidx.recyclerview.widget.RecyclerView
 import android.text.TextUtils
 import android.view.View
+import androidx.core.content.ContextCompat
 import com.lion.font.FontHelper
 import com.lion.imageloader.glide.ImageLoader
 import com.ruzhan.lion.listener.OnItemClickListener

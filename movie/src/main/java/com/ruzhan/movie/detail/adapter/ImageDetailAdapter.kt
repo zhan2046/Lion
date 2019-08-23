@@ -1,8 +1,5 @@
 package com.ruzhan.movie.detail.adapter
 
-import androidx.fragment.app.Fragment
-import androidx.fragment.app.FragmentManager
-import androidx.fragment.app.FragmentPagerAdapter
 import com.ruzhan.movie.detail.fragment.ItemImageDetailFragment
 
 class ImageDetailAdapter(fm: androidx.fragment.app.FragmentManager, imageList: ArrayList<String>) :

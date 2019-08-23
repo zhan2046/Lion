@@ -8,7 +8,7 @@ import com.ruzhan.jsonfile.model.Movie
 import com.ruzhan.jsonfile.model.MovieDetail
 import com.ruzhan.jsonfile.utils.JsonFileIOUtils
 import java.io.File
-import java.util.HashMap
+import java.util.*
 import kotlin.collections.ArrayList
 
 object MovieHelper {

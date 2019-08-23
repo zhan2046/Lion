@@ -4,10 +4,11 @@ import android.app.Activity;
 import android.content.Context;
 import android.content.res.TypedArray;
 import android.graphics.Color;
-import androidx.constraintlayout.widget.ConstraintLayout;
 import android.util.AttributeSet;
 import android.view.MotionEvent;
 import android.view.View;
+
+import androidx.constraintlayout.widget.ConstraintLayout;
 
 import com.ruzhan.common.R;
 import com.ruzhan.lion.listener.ElasticDragDismissCallback;

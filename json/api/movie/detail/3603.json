@@ -1,1 +1,151 @@
-{"code":200,"message":"","data":{"id":"3606","movieId":"3603","title":"2017年度最受欢迎TED演讲","tag":"TED·社会·纪录片","desc":"美国的一家私有非营利机构，该机构以它组织的TED大会著称。TED诞生于1984年","image":"https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/ted02.jpg","introduces":[{"type":1000,"text":"美国的一家私有非营利机构，该机构以它组织的TED大会著称。TED诞生于1984年","image":""},{"type":1001,"text":"","image":"https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/ted-desc.jpg"},{"type":1000,"text":"TED大会希望传达这样一个的信息，即优秀的思想可以改变人们对这个世界的看法，使人们反思自己的行为。","image":""},{"type":1000,"text":"TED大会只是TED社区的一部分，任何人，只要他认同某个TED演讲所传递的观点，都是TED社区的一员，他们都可以为实现某个伟大的理想而共同努力。","image":""},{"type":1000,"text":"TED演讲（TED Talks）的主题并不仅仅局限于技术、娱乐和设计。事实上，科学、教育、发展、文化、商业、艺术、环保等话题也经常出现。","image":""}],"videos":[{"id":"3614","title":"1、TED演讲特斯拉ceo马斯克TED专访：我们不能等待一个悲惨未来的到来","image":"https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/ted02.jpg","playCount":"11","playNumber":1,"playNumberDesc":"第一集","playWebUrl":"http://player.bilibili.com/player.html?aid\u003d17838687\u0026cid\u003d29123099\u0026page\u003d1","videoUrl":""},{"id":"3615","title":"2、TED演讲：爱美很正常，但也很狭隘","image":"https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/ted02.jpg","playCount":"11","playNumber":2,"playNumberDesc":"第二集","playWebUrl":"http://player.bilibili.com/player.html?aid\u003d17838687\u0026cid\u003d29123100\u0026page\u003d2","videoUrl":""},{"id":"3616","title":"3、TED演讲：长大后，我逃离了那个恐怖的教会","image":"https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/ted02.jpg","playCount":"11","playNumber":3,"playNumberDesc":"第三集","playWebUrl":"http://player.bilibili.com/player.html?aid\u003d17838687\u0026cid\u003d29123101\u0026page\u003d3","videoUrl":""},{"id":"3617","title":"4、TED演讲沙鲁克汗 关于人性、名利和爱","image":"https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/ted02.jpg","playCount":"11","playNumber":4,"playNumberDesc":"第四集","playWebUrl":"http://player.bilibili.com/player.html?aid\u003d17838687\u0026cid\u003d29123102\u0026page\u003d4","videoUrl":""},{"id":"3618","title":"5、TED演讲：人工智能想要具有意识，除非活起来","image":"https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/ted02.jpg","playCount":"11","playNumber":5,"playNumberDesc":"第五集","playWebUrl":"http://player.bilibili.com/player.html?aid\u003d17838687\u0026cid\u003d29123103\u0026page\u003d5","videoUrl":""},{"id":"3619","title":"6、TED演讲：怎样的人生更有意义？这里有4点建议","image":"https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/ted02.jpg","playCount":"11","playNumber":6,"playNumberDesc":"第六集","playWebUrl":"http://player.bilibili.com/player.html?aid\u003d17838687\u0026cid\u003d29123104\u0026page\u003d6","videoUrl":""},{"id":"3620","title":"7、TED演讲：电脑是怎么准确识别东西的？","image":"https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/ted02.jpg","playCount":"11","playNumber":7,"playNumberDesc":"第七集","playWebUrl":"http://player.bilibili.com/player.html?aid\u003d17838687\u0026cid\u003d29123105\u0026page\u003d7","videoUrl":""},{"id":"3621","title":"8、TED演讲：你是给予者还是索取者？","image":"https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/ted02.jpg","playCount":"11","playNumber":8,"playNumberDesc":"第八集","playWebUrl":"http://player.bilibili.com/player.html?aid\u003d17838687\u0026cid\u003d29123106\u0026page\u003d8","videoUrl":""},{"id":"3622","title":"9、TED演讲：看手机太久，可能是你不开心的原因","image":"https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/ted02.jpg","playCount":"11","playNumber":9,"playNumberDesc":"第九集","playWebUrl":"http://player.bilibili.com/player.html?aid\u003d17838687\u0026cid\u003d29123107\u0026page\u003d9","videoUrl":""},{"id":"3623","title":"10、TED演讲：认清自己的恐惧，可能比明确目标更重要","image":"https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/ted02.jpg","playCount":"11","playNumber":10,"playNumberDesc":"第十集","playWebUrl":"http://player.bilibili.com/player.html?aid\u003d17838687\u0026cid\u003d29123108\u0026page\u003d10","videoUrl":""},{"id":"3624","title":"11、TED演讲：未来如何避免机器人抢走饭碗？","image":"https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/ted02.jpg","playCount":"11","playNumber":11,"playNumberDesc":"第十一集","playWebUrl":"http://player.bilibili.com/player.html?aid\u003d17838687\u0026cid\u003d29123109\u0026page\u003d11","videoUrl":""}]}}
+{
+  "code": 200,
+  "message": "",
+  "data": {
+    "id": "3606",
+    "movieId": "3603",
+    "title": "2017年度最受欢迎TED演讲",
+    "tag": "TED·社会·纪录片",
+    "desc": "美国的一家私有非营利机构，该机构以它组织的TED大会著称。TED诞生于1984年",
+    "image": "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/ted02.jpg",
+    "introduces": [
+      {
+        "type": 1000,
+        "text": "美国的一家私有非营利机构，该机构以它组织的TED大会著称。TED诞生于1984年",
+        "image": ""
+      },
+      {
+        "type": 1001,
+        "text": "",
+        "image": "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/ted-desc.jpg"
+      },
+      {
+        "type": 1000,
+        "text": "TED大会希望传达这样一个的信息，即优秀的思想可以改变人们对这个世界的看法，使人们反思自己的行为。",
+        "image": ""
+      },
+      {
+        "type": 1000,
+        "text": "TED大会只是TED社区的一部分，任何人，只要他认同某个TED演讲所传递的观点，都是TED社区的一员，他们都可以为实现某个伟大的理想而共同努力。",
+        "image": ""
+      },
+      {
+        "type": 1000,
+        "text": "TED演讲（TED Talks）的主题并不仅仅局限于技术、娱乐和设计。事实上，科学、教育、发展、文化、商业、艺术、环保等话题也经常出现。",
+        "image": ""
+      }
+    ],
+    "videos": [
+      {
+        "id": "3614",
+        "title": "1、TED演讲特斯拉ceo马斯克TED专访：我们不能等待一个悲惨未来的到来",
+        "image": "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/ted02.jpg",
+        "playCount": "11",
+        "playNumber": 1,
+        "playNumberDesc": "第一集",
+        "playWebUrl": "http://player.bilibili.com/player.html?aid\u003d17838687\u0026cid\u003d29123099\u0026page\u003d1",
+        "videoUrl": ""
+      },
+      {
+        "id": "3615",
+        "title": "2、TED演讲：爱美很正常，但也很狭隘",
+        "image": "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/ted02.jpg",
+        "playCount": "11",
+        "playNumber": 2,
+        "playNumberDesc": "第二集",
+        "playWebUrl": "http://player.bilibili.com/player.html?aid\u003d17838687\u0026cid\u003d29123100\u0026page\u003d2",
+        "videoUrl": ""
+      },
+      {
+        "id": "3616",
+        "title": "3、TED演讲：长大后，我逃离了那个恐怖的教会",
+        "image": "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/ted02.jpg",
+        "playCount": "11",
+        "playNumber": 3,
+        "playNumberDesc": "第三集",
+        "playWebUrl": "http://player.bilibili.com/player.html?aid\u003d17838687\u0026cid\u003d29123101\u0026page\u003d3",
+        "videoUrl": ""
+      },
+      {
+        "id": "3617",
+        "title": "4、TED演讲沙鲁克汗 关于人性、名利和爱",
+        "image": "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/ted02.jpg",
+        "playCount": "11",
+        "playNumber": 4,
+        "playNumberDesc": "第四集",
+        "playWebUrl": "http://player.bilibili.com/player.html?aid\u003d17838687\u0026cid\u003d29123102\u0026page\u003d4",
+        "videoUrl": ""
+      },
+      {
+        "id": "3618",
+        "title": "5、TED演讲：人工智能想要具有意识，除非活起来",
+        "image": "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/ted02.jpg",
+        "playCount": "11",
+        "playNumber": 5,
+        "playNumberDesc": "第五集",
+        "playWebUrl": "http://player.bilibili.com/player.html?aid\u003d17838687\u0026cid\u003d29123103\u0026page\u003d5",
+        "videoUrl": ""
+      },
+      {
+        "id": "3619",
+        "title": "6、TED演讲：怎样的人生更有意义？这里有4点建议",
+        "image": "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/ted02.jpg",
+        "playCount": "11",
+        "playNumber": 6,
+        "playNumberDesc": "第六集",
+        "playWebUrl": "http://player.bilibili.com/player.html?aid\u003d17838687\u0026cid\u003d29123104\u0026page\u003d6",
+        "videoUrl": ""
+      },
+      {
+        "id": "3620",
+        "title": "7、TED演讲：电脑是怎么准确识别东西的？",
+        "image": "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/ted02.jpg",
+        "playCount": "11",
+        "playNumber": 7,
+        "playNumberDesc": "第七集",
+        "playWebUrl": "http://player.bilibili.com/player.html?aid\u003d17838687\u0026cid\u003d29123105\u0026page\u003d7",
+        "videoUrl": ""
+      },
+      {
+        "id": "3621",
+        "title": "8、TED演讲：你是给予者还是索取者？",
+        "image": "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/ted02.jpg",
+        "playCount": "11",
+        "playNumber": 8,
+        "playNumberDesc": "第八集",
+        "playWebUrl": "http://player.bilibili.com/player.html?aid\u003d17838687\u0026cid\u003d29123106\u0026page\u003d8",
+        "videoUrl": ""
+      },
+      {
+        "id": "3622",
+        "title": "9、TED演讲：看手机太久，可能是你不开心的原因",
+        "image": "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/ted02.jpg",
+        "playCount": "11",
+        "playNumber": 9,
+        "playNumberDesc": "第九集",
+        "playWebUrl": "http://player.bilibili.com/player.html?aid\u003d17838687\u0026cid\u003d29123107\u0026page\u003d9",
+        "videoUrl": ""
+      },
+      {
+        "id": "3623",
+        "title": "10、TED演讲：认清自己的恐惧，可能比明确目标更重要",
+        "image": "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/ted02.jpg",
+        "playCount": "11",
+        "playNumber": 10,
+        "playNumberDesc": "第十集",
+        "playWebUrl": "http://player.bilibili.com/player.html?aid\u003d17838687\u0026cid\u003d29123108\u0026page\u003d10",
+        "videoUrl": ""
+      },
+      {
+        "id": "3624",
+        "title": "11、TED演讲：未来如何避免机器人抢走饭碗？",
+        "image": "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/ted02.jpg",
+        "playCount": "11",
+        "playNumber": 11,
+        "playNumberDesc": "第十一集",
+        "playWebUrl": "http://player.bilibili.com/player.html?aid\u003d17838687\u0026cid\u003d29123109\u0026page\u003d11",
+        "videoUrl": ""
+      }
+    ]
+  }
+}

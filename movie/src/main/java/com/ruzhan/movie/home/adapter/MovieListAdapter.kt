@@ -1,8 +1,8 @@
 package com.ruzhan.movie.home.adapter
 
-import androidx.recyclerview.widget.RecyclerView
 import android.view.LayoutInflater
 import android.view.ViewGroup
+import androidx.recyclerview.widget.RecyclerView
 import com.ruzhan.lion.listener.OnItemClickListener
 import com.ruzhan.lion.model.Movie
 import com.ruzhan.lion.ui.LoadMoreHolder

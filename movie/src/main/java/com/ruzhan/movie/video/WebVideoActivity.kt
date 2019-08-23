@@ -4,9 +4,9 @@ import android.app.Activity
 import android.content.Intent
 import android.graphics.PixelFormat
 import android.os.Bundle
-import androidx.appcompat.app.AppCompatActivity
 import android.view.Window
 import android.view.WindowManager
+import androidx.appcompat.app.AppCompatActivity
 import com.ruzhan.movie.R
 
 class WebVideoActivity : AppCompatActivity() {

@@ -1,10 +1,10 @@
 package com.ruzhan.lion.util
 
-import androidx.annotation.IdRes
 import android.transition.Transition
 import android.transition.TransitionSet
 import android.view.View
 import android.view.ViewGroup
+import androidx.annotation.IdRes
 import java.util.*
 
 object TransitionUtils {

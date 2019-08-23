@@ -1,5 +1,4 @@
-<?xml version="1.0" encoding="utf-8"?>
-<!--
+<?xml version="1.0" encoding="utf-8"?><!--
   ~   Copyright 2018 Google LLC
   ~
   ~   Licensed under the Apache License, Version 2.0 (the "License");
@@ -19,8 +18,8 @@
 <resources>
     <declare-styleable name="ParallaxScrimageView">
         <attr name="scrimColor" format="color" />
-        <attr name="parallaxFactor" format="float"/>
-        <attr name="scrimAlpha" format="float"/>
-        <attr name="maxScrimAlpha" format="float"/>
+        <attr name="parallaxFactor" format="float" />
+        <attr name="scrimAlpha" format="float" />
+        <attr name="maxScrimAlpha" format="float" />
     </declare-styleable>
 </resources>

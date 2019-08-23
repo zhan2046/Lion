@@ -1,6 +1,5 @@
 package com.ruzhan.movie.detail.adapter.holder
 
-import androidx.recyclerview.widget.RecyclerView
 import android.view.View
 import com.lion.font.FontHelper
 import com.ruzhan.lion.model.Introduce

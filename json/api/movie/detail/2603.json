@@ -1,1 +1,96 @@
-{"code":200,"message":"","data":{"id":"2606","movieId":"2603","title":"美丽中国","tag":"野外·纪录片","desc":"一部有关中国自然主题的6集自然纪录片。","image":"https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/wild-china.jpg","introduces":[{"type":1000,"text":"一部有关中国自然主题的6集自然纪录片。","image":""},{"type":1001,"text":"","image":"https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/wild-china01.jpg"},{"type":1000,"text":"该片以新颖的视角、独特的叙事结构和出色的拍摄，展示了中国山河风光日益秀美，人与自然和谐共处。","image":""},{"type":1000,"text":"2008年北京奥运会给BBC自然历史部提供了一次机会去制作首部关于中国自然历史的系列片。同时随着奥运会的举办，中国官方也希望能够吸引更多的游客。","image":""},{"type":1000,"text":"2005年BBC制作组得到官方许可，与中视传媒联合拍摄。这也是CCTV首度与BBC自然历史频道进行合作。","image":""},{"type":1000,"text":"制片人希望通过该系列片能改变东西方观念：我们希望中国人为他们的田园山水和野生动物感到骄傲，并致力于对其的保护。同时我们也希望能够改变西方媒体上有关中国环境负面观点的渲染。","image":""}],"videos":[{"id":"2614","title":"1、美丽中国之一","image":"https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/wild-china.jpg","playCount":"5","playNumber":1,"playNumberDesc":"第一集","playWebUrl":"http://player.bilibili.com/player.html?aid\u003d10475049\u0026cid\u003d17298484\u0026page\u003d1","videoUrl":""},{"id":"2615","title":"2、美丽中国之二","image":"https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/wild-china.jpg","playCount":"5","playNumber":2,"playNumberDesc":"第二集","playWebUrl":"http://player.bilibili.com/player.html?aid\u003d10475049\u0026cid\u003d17298485\u0026page\u003d2","videoUrl":""},{"id":"2616","title":"3、美丽中国之三","image":"https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/wild-china.jpg","playCount":"5","playNumber":3,"playNumberDesc":"第三集","playWebUrl":"http://player.bilibili.com/player.html?aid\u003d10475049\u0026cid\u003d17298486\u0026page\u003d3","videoUrl":""},{"id":"2617","title":"4、美丽中国之四","image":"https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/wild-china.jpg","playCount":"5","playNumber":4,"playNumberDesc":"第四集","playWebUrl":"http://player.bilibili.com/player.html?aid\u003d10475049\u0026cid\u003d17298482\u0026page\u003d4","videoUrl":""},{"id":"2618","title":"5、美丽中国之五","image":"https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/wild-china.jpg","playCount":"5","playNumber":5,"playNumberDesc":"第五集","playWebUrl":"http://player.bilibili.com/player.html?aid\u003d10475049\u0026cid\u003d17298483\u0026page\u003d5","videoUrl":""}]}}
+{
+  "code": 200,
+  "message": "",
+  "data": {
+    "id": "2606",
+    "movieId": "2603",
+    "title": "美丽中国",
+    "tag": "野外·纪录片",
+    "desc": "一部有关中国自然主题的6集自然纪录片。",
+    "image": "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/wild-china.jpg",
+    "introduces": [
+      {
+        "type": 1000,
+        "text": "一部有关中国自然主题的6集自然纪录片。",
+        "image": ""
+      },
+      {
+        "type": 1001,
+        "text": "",
+        "image": "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/wild-china01.jpg"
+      },
+      {
+        "type": 1000,
+        "text": "该片以新颖的视角、独特的叙事结构和出色的拍摄，展示了中国山河风光日益秀美，人与自然和谐共处。",
+        "image": ""
+      },
+      {
+        "type": 1000,
+        "text": "2008年北京奥运会给BBC自然历史部提供了一次机会去制作首部关于中国自然历史的系列片。同时随着奥运会的举办，中国官方也希望能够吸引更多的游客。",
+        "image": ""
+      },
+      {
+        "type": 1000,
+        "text": "2005年BBC制作组得到官方许可，与中视传媒联合拍摄。这也是CCTV首度与BBC自然历史频道进行合作。",
+        "image": ""
+      },
+      {
+        "type": 1000,
+        "text": "制片人希望通过该系列片能改变东西方观念：我们希望中国人为他们的田园山水和野生动物感到骄傲，并致力于对其的保护。同时我们也希望能够改变西方媒体上有关中国环境负面观点的渲染。",
+        "image": ""
+      }
+    ],
+    "videos": [
+      {
+        "id": "2614",
+        "title": "1、美丽中国之一",
+        "image": "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/wild-china.jpg",
+        "playCount": "5",
+        "playNumber": 1,
+        "playNumberDesc": "第一集",
+        "playWebUrl": "http://player.bilibili.com/player.html?aid\u003d10475049\u0026cid\u003d17298484\u0026page\u003d1",
+        "videoUrl": ""
+      },
+      {
+        "id": "2615",
+        "title": "2、美丽中国之二",
+        "image": "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/wild-china.jpg",
+        "playCount": "5",
+        "playNumber": 2,
+        "playNumberDesc": "第二集",
+        "playWebUrl": "http://player.bilibili.com/player.html?aid\u003d10475049\u0026cid\u003d17298485\u0026page\u003d2",
+        "videoUrl": ""
+      },
+      {
+        "id": "2616",
+        "title": "3、美丽中国之三",
+        "image": "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/wild-china.jpg",
+        "playCount": "5",
+        "playNumber": 3,
+        "playNumberDesc": "第三集",
+        "playWebUrl": "http://player.bilibili.com/player.html?aid\u003d10475049\u0026cid\u003d17298486\u0026page\u003d3",
+        "videoUrl": ""
+      },
+      {
+        "id": "2617",
+        "title": "4、美丽中国之四",
+        "image": "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/wild-china.jpg",
+        "playCount": "5",
+        "playNumber": 4,
+        "playNumberDesc": "第四集",
+        "playWebUrl": "http://player.bilibili.com/player.html?aid\u003d10475049\u0026cid\u003d17298482\u0026page\u003d4",
+        "videoUrl": ""
+      },
+      {
+        "id": "2618",
+        "title": "5、美丽中国之五",
+        "image": "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/wild-china.jpg",
+        "playCount": "5",
+        "playNumber": 5,
+        "playNumberDesc": "第五集",
+        "playWebUrl": "http://player.bilibili.com/player.html?aid\u003d10475049\u0026cid\u003d17298483\u0026page\u003d5",
+        "videoUrl": ""
+      }
+    ]
+  }
+}

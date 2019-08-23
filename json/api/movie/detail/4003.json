@@ -1,1 +1,131 @@
-{"code":200,"message":"","data":{"id":"4006","movieId":"4003","title":"冰冻星球","tag":"自然·纪录片","desc":"英国BBC电视台耗时5年制作的纪录片《冰冻星球》于近期推出。","image":"https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/frozen-planet.jpg","introduces":[{"type":1000,"text":"英国BBC电视台耗时5年制作的纪录片《冰冻星球》于近期推出。","image":""},{"type":1001,"text":"","image":"https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/frozen-planet01.jpg"},{"type":1000,"text":"这部耗资巨大的纪录片用镜头真实的展现了正在逐渐溶解的地球两极，以及生活在这里的各种生物，片中种种景象让人叹为观止。","image":""},{"type":1001,"text":"","image":"https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/frozen-planet02.jpg"},{"type":1000,"text":"《冰冻星球》为英国广播公司与探索频道及英国公开大学联合制作的自然纪录片，由大卫·爱登堡旁白。","image":""},{"type":1000,"text":"2011年10月26日起于英国广播公司第一台及高清频道首播，共7集。","image":""},{"type":1000,"text":"本片主要展示栖息于北极和南极的动植物及其生境，而第7集则探讨全球暖化对极地以至全球的影响，由大卫·爱登堡联同科学家亲身于极地考察及解说。","image":""}],"videos":[{"id":"4014","title":"1、BBC.Frozen.Planet.EP01.2011.BluRay.Repack.1080p","image":"https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/frozen-planet.jpg","playCount":"8","playNumber":1,"playNumberDesc":"第一集","playWebUrl":"http://player.bilibili.com/player.html?aid\u003d26338600\u0026page\u003d1","videoUrl":""},{"id":"4015","title":"2、BBC.Frozen.Planet.EP02.2011.BluRay.Repack.1080p","image":"https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/frozen-planet.jpg","playCount":"8","playNumber":2,"playNumberDesc":"第二集","playWebUrl":"http://player.bilibili.com/player.html?aid\u003d26338600\u0026page\u003d2","videoUrl":""},{"id":"4016","title":"3、BBC.Frozen.Planet.EP03.2011.BluRay.Repack.1080p","image":"https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/frozen-planet.jpg","playCount":"8","playNumber":3,"playNumberDesc":"第三集","playWebUrl":"http://player.bilibili.com/player.html?aid\u003d26338600\u0026page\u003d3","videoUrl":""},{"id":"4017","title":"4、BBC.Frozen.Planet.EP04.2011.BluRay.Repack.1080p","image":"https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/frozen-planet.jpg","playCount":"8","playNumber":4,"playNumberDesc":"第四集","playWebUrl":"http://player.bilibili.com/player.html?aid\u003d26338600\u0026page\u003d4","videoUrl":""},{"id":"4018","title":"5、BBC.Frozen.Planet.EP05.2011.BluRay.Repack.1080p","image":"https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/frozen-planet.jpg","playCount":"8","playNumber":5,"playNumberDesc":"第五集","playWebUrl":"http://player.bilibili.com/player.html?aid\u003d26338600\u0026page\u003d5","videoUrl":""},{"id":"4019","title":"6、BBC.Frozen.Planet.EP06.2011.BluRay.Repack.1080p","image":"https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/frozen-planet.jpg","playCount":"8","playNumber":6,"playNumberDesc":"第六集","playWebUrl":"http://player.bilibili.com/player.html?aid\u003d26338600\u0026page\u003d6","videoUrl":""},{"id":"4020","title":"7、BBC.Frozen.Planet.EP07.2011.BluRay.Repack.1080p","image":"https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/frozen-planet.jpg","playCount":"8","playNumber":7,"playNumberDesc":"第七集","playWebUrl":"http://player.bilibili.com/player.html?aid\u003d26338600\u0026page\u003d7","videoUrl":""},{"id":"4021","title":"8、BBC.Frozen.Planet.EP08.2011.BluRay.Repack.1080p","image":"https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/frozen-planet.jpg","playCount":"8","playNumber":8,"playNumberDesc":"第八集","playWebUrl":"http://player.bilibili.com/player.html?aid\u003d26338600\u0026page\u003d8","videoUrl":""}]}}
+{
+  "code": 200,
+  "message": "",
+  "data": {
+    "id": "4006",
+    "movieId": "4003",
+    "title": "冰冻星球",
+    "tag": "自然·纪录片",
+    "desc": "英国BBC电视台耗时5年制作的纪录片《冰冻星球》于近期推出。",
+    "image": "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/frozen-planet.jpg",
+    "introduces": [
+      {
+        "type": 1000,
+        "text": "英国BBC电视台耗时5年制作的纪录片《冰冻星球》于近期推出。",
+        "image": ""
+      },
+      {
+        "type": 1001,
+        "text": "",
+        "image": "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/frozen-planet01.jpg"
+      },
+      {
+        "type": 1000,
+        "text": "这部耗资巨大的纪录片用镜头真实的展现了正在逐渐溶解的地球两极，以及生活在这里的各种生物，片中种种景象让人叹为观止。",
+        "image": ""
+      },
+      {
+        "type": 1001,
+        "text": "",
+        "image": "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/frozen-planet02.jpg"
+      },
+      {
+        "type": 1000,
+        "text": "《冰冻星球》为英国广播公司与探索频道及英国公开大学联合制作的自然纪录片，由大卫·爱登堡旁白。",
+        "image": ""
+      },
+      {
+        "type": 1000,
+        "text": "2011年10月26日起于英国广播公司第一台及高清频道首播，共7集。",
+        "image": ""
+      },
+      {
+        "type": 1000,
+        "text": "本片主要展示栖息于北极和南极的动植物及其生境，而第7集则探讨全球暖化对极地以至全球的影响，由大卫·爱登堡联同科学家亲身于极地考察及解说。",
+        "image": ""
+      }
+    ],
+    "videos": [
+      {
+        "id": "4014",
+        "title": "1、BBC.Frozen.Planet.EP01.2011.BluRay.Repack.1080p",
+        "image": "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/frozen-planet.jpg",
+        "playCount": "8",
+        "playNumber": 1,
+        "playNumberDesc": "第一集",
+        "playWebUrl": "http://player.bilibili.com/player.html?aid\u003d26338600\u0026page\u003d1",
+        "videoUrl": ""
+      },
+      {
+        "id": "4015",
+        "title": "2、BBC.Frozen.Planet.EP02.2011.BluRay.Repack.1080p",
+        "image": "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/frozen-planet.jpg",
+        "playCount": "8",
+        "playNumber": 2,
+        "playNumberDesc": "第二集",
+        "playWebUrl": "http://player.bilibili.com/player.html?aid\u003d26338600\u0026page\u003d2",
+        "videoUrl": ""
+      },
+      {
+        "id": "4016",
+        "title": "3、BBC.Frozen.Planet.EP03.2011.BluRay.Repack.1080p",
+        "image": "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/frozen-planet.jpg",
+        "playCount": "8",
+        "playNumber": 3,
+        "playNumberDesc": "第三集",
+        "playWebUrl": "http://player.bilibili.com/player.html?aid\u003d26338600\u0026page\u003d3",
+        "videoUrl": ""
+      },
+      {
+        "id": "4017",
+        "title": "4、BBC.Frozen.Planet.EP04.2011.BluRay.Repack.1080p",
+        "image": "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/frozen-planet.jpg",
+        "playCount": "8",
+        "playNumber": 4,
+        "playNumberDesc": "第四集",
+        "playWebUrl": "http://player.bilibili.com/player.html?aid\u003d26338600\u0026page\u003d4",
+        "videoUrl": ""
+      },
+      {
+        "id": "4018",
+        "title": "5、BBC.Frozen.Planet.EP05.2011.BluRay.Repack.1080p",
+        "image": "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/frozen-planet.jpg",
+        "playCount": "8",
+        "playNumber": 5,
+        "playNumberDesc": "第五集",
+        "playWebUrl": "http://player.bilibili.com/player.html?aid\u003d26338600\u0026page\u003d5",
+        "videoUrl": ""
+      },
+      {
+        "id": "4019",
+        "title": "6、BBC.Frozen.Planet.EP06.2011.BluRay.Repack.1080p",
+        "image": "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/frozen-planet.jpg",
+        "playCount": "8",
+        "playNumber": 6,
+        "playNumberDesc": "第六集",
+        "playWebUrl": "http://player.bilibili.com/player.html?aid\u003d26338600\u0026page\u003d6",
+        "videoUrl": ""
+      },
+      {
+        "id": "4020",
+        "title": "7、BBC.Frozen.Planet.EP07.2011.BluRay.Repack.1080p",
+        "image": "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/frozen-planet.jpg",
+        "playCount": "8",
+        "playNumber": 7,
+        "playNumberDesc": "第七集",
+        "playWebUrl": "http://player.bilibili.com/player.html?aid\u003d26338600\u0026page\u003d7",
+        "videoUrl": ""
+      },
+      {
+        "id": "4021",
+        "title": "8、BBC.Frozen.Planet.EP08.2011.BluRay.Repack.1080p",
+        "image": "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/frozen-planet.jpg",
+        "playCount": "8",
+        "playNumber": 8,
+        "playNumberDesc": "第八集",
+        "playWebUrl": "http://player.bilibili.com/player.html?aid\u003d26338600\u0026page\u003d8",
+        "videoUrl": ""
+      }
+    ]
+  }
+}

@@ -13,8 +13,8 @@ class LoadMoreHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
     }
 
     fun bind(isShowLoadMore: Boolean) {
-       itemView.load_progress_bar.visibility = if (isShowLoadMore) View.VISIBLE else View.GONE
-       itemView.load_tv.text = if (isShowLoadMore) itemView.resources.getString(R.string.load_start)
-       else itemView.resources.getString(R.string.load_end)
+        itemView.load_progress_bar.visibility = if (isShowLoadMore) View.VISIBLE else View.GONE
+        itemView.load_tv.text = if (isShowLoadMore) itemView.resources.getString(R.string.load_start)
+        else itemView.resources.getString(R.string.load_end)
     }
 }

@@ -5,10 +5,11 @@ import android.content.res.TypedArray;
 import android.graphics.Canvas;
 import android.graphics.drawable.Drawable;
 import android.os.Build;
-import androidx.annotation.NonNull;
-import androidx.appcompat.widget.AppCompatImageView;
 import android.util.AttributeSet;
 import android.view.ViewOutlineProvider;
+
+import androidx.annotation.NonNull;
+import androidx.appcompat.widget.AppCompatImageView;
 
 import com.ruzhan.common.R;
 

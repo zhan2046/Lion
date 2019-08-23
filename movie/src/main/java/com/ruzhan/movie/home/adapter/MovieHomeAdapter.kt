@@ -7,7 +7,7 @@ import com.ruzhan.lion.util.ResUtils
 import com.ruzhan.movie.R
 import com.ruzhan.movie.home.MovieListFragment
 
-class MovieHomeAdapter(fm: FragmentManager): FragmentStatePagerAdapter(fm) {
+class MovieHomeAdapter(fm: FragmentManager) : FragmentStatePagerAdapter(fm) {
 
     private var titleList = ArrayList<String>()
     private val newListTab = ResUtils.getApp().getString(R.string.lion_tab_tag_new)

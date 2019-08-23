@@ -12,7 +12,8 @@ public class AnimUtils {
     private static Interpolator fastOutSlowIn;
     private static Interpolator linearOutSlowIn;
 
-    private AnimUtils() {}
+    private AnimUtils() {
+    }
 
     public static Interpolator getFastOutSlowInInterpolator(Context context) {
         if (fastOutSlowIn == null) {
@@ -39,6 +40,7 @@ public class AnimUtils {
         }
 
         public abstract void set(T object, int value);
+
         public abstract int get(T object);
     }
 

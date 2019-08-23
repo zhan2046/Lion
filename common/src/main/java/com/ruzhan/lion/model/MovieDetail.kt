@@ -24,13 +24,13 @@ data class MovieDetail(
         var videos: List<Video>
 ) : Serializable {
 
-        companion object {
+    companion object {
 
-                @JvmStatic
-                fun empty(): MovieDetail = MovieDetail(
-                        "", "", "",
-                        "", "", "",
-                        ArrayList(), ArrayList())
-        }
+        @JvmStatic
+        fun empty(): MovieDetail = MovieDetail(
+                "", "", "",
+                "", "", "",
+                ArrayList(), ArrayList())
+    }
 }
 

@@ -34,10 +34,10 @@ dependencies {
     implementation "com.squareup.retrofit2:adapter-rxjava2:${versions.retrofit}"
 
     implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:${versions.kotlin}"
-    implementation ('net.soulwolf.widget:ratiolayout:2.1.0') {
+    implementation('net.soulwolf.widget:ratiolayout:2.1.0') {
         exclude group: 'com.android.support'
     }
-    implementation ('com.github.chrisbanes:PhotoView:2.0.0') {
+    implementation('com.github.chrisbanes:PhotoView:2.0.0') {
         exclude group: 'com.android.support'
     }
 }

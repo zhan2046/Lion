@@ -9,14 +9,15 @@ import android.graphics.drawable.ColorDrawable;
 import android.graphics.drawable.Drawable;
 import android.graphics.drawable.RippleDrawable;
 import android.os.Build;
+import android.util.DisplayMetrics;
+import android.util.Property;
+import android.view.View;
+
 import androidx.annotation.ColorInt;
 import androidx.annotation.FloatRange;
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
 import androidx.palette.graphics.Palette;
-import android.util.DisplayMetrics;
-import android.util.Property;
-import android.view.View;
 
 import com.ruzhan.common.R;
 

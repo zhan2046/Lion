@@ -4,13 +4,12 @@ import android.animation.Animator
 import android.animation.AnimatorListenerAdapter
 import android.animation.ObjectAnimator
 import android.content.Context
-import androidx.annotation.Keep
 import android.transition.TransitionValues
 import android.transition.Visibility
 import android.util.AttributeSet
 import android.view.View
 import android.view.ViewGroup
-
+import androidx.annotation.Keep
 import com.ruzhan.common.R
 import com.ruzhan.lion.util.TransitionUtils
 

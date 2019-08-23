@@ -1,4 +1,3 @@
-
 @file:JvmName("MathUtils")
 
 package com.ruzhan.lion.util
