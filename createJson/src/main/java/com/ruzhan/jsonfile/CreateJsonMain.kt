@@ -29,7 +29,9 @@ object CreateJsonMain {
 
     private fun initCreateJsonFile() {
         println("initCreateJsonFile call...")
-        val userDirFile = File(System.getProperty(USER_DIR))
+        val dirFile = File(System.getProperty(USER_DIR))
+        val userDirFile = if (dirFile.absolutePath.contains("createJson"))
+            dirFile.parentFile else dirFile
         println("userDirFile:${userDirFile.absolutePath}")
 
         val createJsonFile = File(File(userDirFile, JSON), API)
