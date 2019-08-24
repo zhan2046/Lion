@@ -12,7 +12,7 @@ object RunningWild {
     private const val PLAY_COUNT = "6"
 
     private const val TITLE = "越野千里 第一季"
-    private const val TAG = "野外冒险·纪录片"
+    private const val TAG = "荒野求生·纪录片"
 
     private const val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/running-wild.jpg"
 

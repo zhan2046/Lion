@@ -12,7 +12,7 @@ object CredoMutwa {
     private const val PLAY_COUNT = "7"
 
     private const val TITLE = "1999年 地球史上最震撼的访谈"
-    private const val TAG = "神秘纪录片·社会"
+    private const val TAG = "纪录片·社会"
 
     private const val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/credo-mutwa01.jpg"
 

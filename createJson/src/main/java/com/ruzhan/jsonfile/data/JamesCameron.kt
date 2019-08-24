@@ -12,7 +12,7 @@ object JamesCameron {
     private const val PLAY_COUNT = "6"
 
     private const val TITLE = "詹姆斯·卡梅隆的科幻故事"
-    private const val TAG = "科幻电影·纪录片"
+    private const val TAG = "纪录片·科幻"
 
     private const val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/james-cameron.jpg"
 

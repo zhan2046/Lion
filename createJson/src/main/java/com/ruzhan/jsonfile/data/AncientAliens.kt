@@ -12,7 +12,7 @@ object AncientAliens {
     private const val PLAY_COUNT = "6"
 
     private const val TITLE = "远古外星人系列 第一季"
-    private const val TAG = "外星人·神秘纪录片"
+    private const val TAG = "远古外星人·神秘纪录片"
 
     private const val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/ancientalien.jpg"
 

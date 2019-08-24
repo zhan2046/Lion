@@ -12,7 +12,7 @@ object TheMonkeyKing {
     private const val PLAY_COUNT = "1"
 
     private const val TITLE = "大闹天宫"
-    private const val TAG = "中国动画·纪录片"
+    private const val TAG = "经典动画·纪录片"
 
     private const val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/the-monkey-king.jpg"
 

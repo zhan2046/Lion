@@ -12,7 +12,7 @@ object AliensMoon {
     private const val PLAY_COUNT = "1"
 
     private const val TITLE = "Aliens on the Moon"
-    private const val TAG = "宇宙太空·纪录片"
+    private const val TAG = "纪录片·宇宙太空"
 
     private const val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/aliens-moon.jpg"
 

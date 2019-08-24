@@ -12,7 +12,7 @@ object TheBleedingEdge {
     private const val PLAY_COUNT = "1"
 
     private const val TITLE = "尖端医疗的真相:你安全吗"
-    private const val TAG = "社会揭露·纪录片"
+    private const val TAG = "纪录片·社会"
 
     private const val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/the-bleeding-edge.jpg"
 

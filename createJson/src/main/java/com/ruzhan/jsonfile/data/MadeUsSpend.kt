@@ -12,7 +12,7 @@ object MadeUsSpend {
     private const val PLAY_COUNT = "3"
 
     private const val TITLE = "BBC 谁在引导我们消费"
-    private const val TAG = "社会揭露·纪录片"
+    private const val TAG = "BBC·纪录片"
 
     private const val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/made-us-spend.png"
 

@@ -12,7 +12,7 @@ object OnTheRoad {
     private const val PLAY_COUNT = "11"
 
     private const val TITLE = "旅游《张梁记》"
-    private const val TAG = "旅游探险·旅游"
+    private const val TAG = "纪录片·旅游"
 
     private const val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/ontheroad.jpg"
 

@@ -12,7 +12,7 @@ object Monsanto {
     private const val PLAY_COUNT = "2"
 
     private const val TITLE = "转基因赌局：用生命下注"
-    private const val TAG = "社会揭露·纪录片"
+    private const val TAG = "纪录片·社会"
 
     private const val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/monsanto01.jpg"
 

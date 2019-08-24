@@ -12,7 +12,7 @@ object KeJi {
     private const val PLAY_COUNT = "1"
 
     private const val TITLE = "柯基族人大哥给这个世界的警告"
-    private const val TAG = "科教自然·纪录片"
+    private const val TAG = "纪录片·科教自然"
 
     private const val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/keji.jpg"
 

@@ -12,7 +12,7 @@ object SouthPark {
     private const val PLAY_COUNT = "7"
 
     private const val TITLE = "南方公园 South Park"
-    private const val TAG = "动画片·纪录片"
+    private const val TAG = "经典动画·纪录片"
 
     private const val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/south-park.jpg"
 

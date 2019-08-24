@@ -12,7 +12,7 @@ object Thrive {
     private const val PLAY_COUNT = "1"
 
     private const val TITLE = "Thrive《兴盛》"
-    private const val TAG = "社会揭露·纪录片"
+    private const val TAG = "纪录片·社会揭露"
 
     private const val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/thrive.jpg"
 

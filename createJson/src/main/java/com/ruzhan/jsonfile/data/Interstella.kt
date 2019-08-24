@@ -12,7 +12,7 @@ object Interstella {
     private const val PLAY_COUNT = "2"
 
     private const val TITLE = "Interstella 5555: The 5tory of the 5ecret 5tar 5ystem"
-    private const val TAG = "音乐冒险·动画片"
+    private const val TAG = "经典动画·音乐冒险"
 
     private const val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/interstella.jpg"
 

@@ -12,7 +12,7 @@ object WorldOfBlood {
     private const val PLAY_COUNT = "1"
 
     private const val TITLE = "血的奇妙世界"
-    private const val TAG = "纪录片·BBC"
+    private const val TAG = "BBC·纪录片"
 
     private const val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/world-of-blood.jpg"
 

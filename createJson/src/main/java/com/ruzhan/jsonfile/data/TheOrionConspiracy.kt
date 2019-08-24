@@ -12,7 +12,7 @@ object TheOrionConspiracy {
     private const val PLAY_COUNT = "1"
 
     private const val TITLE = "猎户座阴谋"
-    private const val TAG = "社会揭露·科幻片"
+    private const val TAG = "纪录片·科幻"
 
     private const val IMAGE = "https://raw.githubusercontent.com/ruzhan123/Lion/master/json/api/image/the-orion-conspiracy.jpg"
 
