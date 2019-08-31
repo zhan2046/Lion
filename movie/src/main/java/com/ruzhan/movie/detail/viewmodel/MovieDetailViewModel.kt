@@ -19,6 +19,7 @@ import io.reactivex.schedulers.Schedulers
 class MovieDetailViewModel(app: Application) : AndroidViewModel(app) {
 
     var movieDetailLiveData: MutableLiveData<MovieDetail> = MutableLiveData()
+    var throwableLiveData: MutableLiveData<Throwable> = MutableLiveData()
 
     private var localFlowable: Flowable<Any>? = null
     private var disposable: Disposable? = null
@@ -47,7 +48,7 @@ class MovieDetailViewModel(app: Application) : AndroidViewModel(app) {
         disposable = MovieRepository.get().getCommonModel(movieId.toInt())
                 .map { commonModel -> commonModelToMovieDetail(commonModel) }
                 .observeOn(AndroidSchedulers.mainThread())
-                .doOnError { throwable -> throwable.printStackTrace() }
+                .doOnError { throwable -> throwableLiveData.value = throwable }
                 .doOnSubscribe { }
                 .doFinally { }
                 .doOnNext { movieDetail -> handleLocalMovieDetail(movieDetail) }

@@ -134,7 +134,12 @@ class MovieDetailFragment : Fragment() {
         })
         movieDetailViewModel.movieDetailLiveData.observe(this@MovieDetailFragment,
                 Observer { movieDetail ->
+                    progressBar.visibility = View.GONE
                     movieDetail?.let { movieDetailAdapter.setData(it) }
+                })
+        movieDetailViewModel.throwableLiveData.observe(this@MovieDetailFragment,
+                Observer {
+                    progressBar.visibility = View.GONE
                 })
         shot.postDelayed({
             movieDetailViewModel.getLocalMovieDetail(movie.id)
