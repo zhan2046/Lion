@@ -77,8 +77,6 @@ class MovieListFragment : Fragment() {
                 false)
         val tagMovieList = movieListViewModel?.getRefreshTagList(tagKey)
         movieListAdapter.setRefreshData(tagMovieList)
-        progressBar.visibility = if (tagMovieList != null && tagMovieList.isNotEmpty())
-            View.GONE else View.VISIBLE
     }
 
     private fun initListener() {
@@ -133,14 +131,12 @@ class MovieListFragment : Fragment() {
             })
             movieListViewModel.refreshLiveData.observe(this@MovieListFragment, Observer { movieList ->
                 movieList?.let {
-                    progressBar.visibility = View.GONE
                     val tagMovieList = movieListViewModel.getRefreshTagList(tagKey)
                     movieListAdapter.setRefreshData(tagMovieList)
                 }
             })
             movieListViewModel.loadMoreLiveData.observe(this@MovieListFragment, Observer { movieList ->
                 movieList?.let {
-                    progressBar.visibility = View.GONE
                     val tagMovieList = movieListViewModel.getLoadMoreTagList(tagKey)
                     movieListAdapter.setLoadMoreData(tagMovieList)
                 }
