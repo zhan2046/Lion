@@ -52,6 +52,11 @@ class WebVideoFragment : Fragment() {
         x5WebView.viewTreeObserver.addOnGlobalLayoutListener(object : ViewTreeObserver.OnGlobalLayoutListener {
             override fun onGlobalLayout() {
                 x5WebView.viewTreeObserver.removeOnGlobalLayoutListener(this)
+                if (x5WebView.x5WebViewExtension != null) {
+                    val x5Bundle = Bundle()
+                    x5Bundle.putInt(DEFAULT_VIDEO_SCREEN, X5_VIDEO_SCREEN_FULL)
+                    x5WebView.x5WebViewExtension.invokeMiscMethod(SET_VIDEO_PARAMS, x5Bundle)
+                }
                 x5WebView.loadUrl(url)
             }
         })
@@ -74,9 +79,6 @@ class WebVideoFragment : Fragment() {
             }
         }
         x5WebView.webViewClient = WebViewClient()
-        val x5Bundle = Bundle()
-        x5Bundle.putInt(DEFAULT_VIDEO_SCREEN, X5_VIDEO_SCREEN_FULL)
-        x5WebView.x5WebViewExtension.invokeMiscMethod(SET_VIDEO_PARAMS, x5Bundle)
     }
 
     override fun onResume() {
