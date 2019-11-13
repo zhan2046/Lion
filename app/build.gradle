@@ -1,8 +1,4 @@
 apply plugin: 'com.android.application'
-apply plugin: 'kotlin-android'
-apply plugin: 'kotlin-android-extensions'
-apply plugin: 'kotlin-kapt'
-
 apply from: '../core_dependencies.gradle'
 
 android {
@@ -15,13 +11,8 @@ android {
         }
     }
 
-    compileSdkVersion versions.compileSdk
-
     defaultConfig {
         applicationId names.applicationId
-        minSdkVersion versions.minSdk
-        targetSdkVersion versions.targetSdk
-
         versionCode 301
         versionName "0.3.0"
 
@@ -45,11 +36,6 @@ android {
         }
     }
 
-    compileOptions {
-        sourceCompatibility JavaVersion.VERSION_1_8
-        targetCompatibility JavaVersion.VERSION_1_8
-    }
-
     applicationVariants.all { variant ->
         variant.outputs.all { output ->
             def fileName = output.outputFile.name
@@ -60,7 +46,6 @@ android {
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
-
     implementation project(':common')
     implementation project(':movie')
     implementation project(':favourites')
