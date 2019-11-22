@@ -1,9 +1,4 @@
 
-Lion
-===============
-
-movie app for android
-
 Screenshots
 ===============
 
