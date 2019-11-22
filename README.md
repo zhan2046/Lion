@@ -21,7 +21,7 @@ Download :tada:
 
 [fir - (Lion app download)](https://fir.im/lion333)
 
-Developed by:
+Developed by
 -------
 
  ruzhan - <a href='javascript:'>dev19921116@gmail.com</a>
