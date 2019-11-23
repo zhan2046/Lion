@@ -1,6 +1,6 @@
 apply plugin: 'com.android.application'
 apply from: '../core_dependencies.gradle'
-apply from: '../core_release.gradle'
+//apply from: '../core_release.gradle'
 
 android {
     defaultConfig {
