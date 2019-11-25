@@ -24,7 +24,8 @@ class BackgroundFade @Keep constructor(context: Context, attrs: AttributeSet) : 
 
     override fun onDisappear(sceneRoot: ViewGroup, view: View?,
                              startValues: TransitionValues, endValues: TransitionValues): Animator? {
-        return if (view == null || view.background == null) null else ObjectAnimator.ofInt(view.background, ViewUtils.DRAWABLE_ALPHA, 0)
+        return if (view == null || view.background == null) null else
+            ObjectAnimator.ofInt(view.background, ViewUtils.DRAWABLE_ALPHA, 0)
     }
 }
 

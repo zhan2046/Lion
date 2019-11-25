@@ -20,9 +20,6 @@ class DeparallaxingChangeBounds(context: Context, attrs: AttributeSet) : ChangeB
         if (transitionValues.view !is ParallaxScrImageView) return
         val psv = transitionValues.view as ParallaxScrImageView
         if (psv.offset == 0) return
-
-        // as we're going to remove the offset (which drives the parallax) we need to
-        // compensate for this by adjusting the target bounds.
         val bounds = transitionValues.values[PROPNAME_BOUNDS] as Rect
         bounds.offset(0, psv.offset)
         transitionValues.values[PROPNAME_BOUNDS] = bounds
