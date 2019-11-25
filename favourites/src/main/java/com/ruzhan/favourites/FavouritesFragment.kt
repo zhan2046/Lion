@@ -21,8 +21,4 @@ class FavouritesFragment : androidx.fragment.app.Fragment() {
         return inflater.inflate(R.layout.frag_favourites, container, false)
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-
-    }
 }

@@ -3,7 +3,7 @@ package com.ruzhan.lion.ui
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.ruzhan.lion.R
-import com.ruzhan.lion.ui.home.HomeFragment
+import com.ruzhan.movie.MovieHomeFragment
 
 class MainActivity : AppCompatActivity() {
 
@@ -11,10 +11,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.lion_container)
         if (savedInstanceState == null) {
-            val homeFragment = HomeFragment.newInstance()
+            val homeFragment = MovieHomeFragment.newInstance()
             supportFragmentManager
                     .beginTransaction()
-                    .add(R.id.container, homeFragment, "homeFragment")
+                    .add(R.id.container, homeFragment, "movieHomeFragment")
                     .commit()
         }
     }
