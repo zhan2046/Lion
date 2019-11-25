@@ -5,6 +5,7 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import com.bumptech.glide.load.DataSource
 import com.bumptech.glide.load.engine.GlideException
 import com.bumptech.glide.request.RequestListener
@@ -15,7 +16,7 @@ import com.ruzhan.lion.util.ViewUtils
 import com.ruzhan.movie.R
 import kotlinx.android.synthetic.main.lion_frag_image_item_detail.*
 
-class ItemImageDetailFragment : androidx.fragment.app.Fragment() {
+class ItemImageDetailFragment : Fragment() {
 
     companion object {
 

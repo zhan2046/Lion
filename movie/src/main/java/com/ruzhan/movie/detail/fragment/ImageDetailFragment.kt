@@ -4,13 +4,14 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
+import androidx.fragment.app.Fragment
 import com.lion.font.FontHelper
 import com.ruzhan.movie.R
 import com.ruzhan.movie.detail.adapter.ImageDetailAdapter
 import com.ruzhan.movie.model.ImageListModel
 import kotlinx.android.synthetic.main.lion_frag_image_detail.*
 
-class ImageDetailFragment : androidx.fragment.app.Fragment() {
+class ImageDetailFragment : Fragment() {
 
     companion object {
 
