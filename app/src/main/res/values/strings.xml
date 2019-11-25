@@ -1,6 +1,3 @@
 <resources>
     <string name="app_name">Lion</string>
-
-    <string name="movie">movie</string>
-    <string name="favourites">favourites</string>
 </resources>
