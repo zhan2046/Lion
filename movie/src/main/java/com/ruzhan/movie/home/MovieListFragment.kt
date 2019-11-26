@@ -49,7 +49,6 @@ class MovieListFragment : Fragment() {
     }
 
     private val movieListAdapter = MovieListAdapter()
-    private var movieListViewModel: MovieListViewModel? = null
     private var tagKey = ""
 
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -62,24 +61,26 @@ class MovieListFragment : Fragment() {
         return inflater.inflate(R.layout.lion_frag_movie_list, container, false)
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        val movieListViewModel = ViewModelProviders.of(activity!!).get(MovieListViewModel::class.java)
-        this.movieListViewModel = movieListViewModel
-        initData()
-        initListener()
-        initLiveData()
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        activity?.let { activity ->
+            val movieListViewModel =
+                    ViewModelProviders.of(activity).get(MovieListViewModel::class.java)
+            initData(movieListViewModel)
+            initListener(movieListViewModel)
+            initLiveData(movieListViewModel)
+        }
     }
 
-    private fun initData() {
+    private fun initData(movieListViewModel: MovieListViewModel) {
         recycler_view.adapter = movieListAdapter
         recycler_view.layoutManager = LinearLayoutManager(activity, RecyclerView.VERTICAL,
                 false)
-        val tagMovieList = movieListViewModel?.getRefreshTagList(tagKey)
+        val tagMovieList = movieListViewModel.getRefreshTagList(tagKey)
         movieListAdapter.setRefreshData(tagMovieList)
     }
 
-    private fun initListener() {
+    private fun initListener(movieListViewModel: MovieListViewModel) {
         val shotTransitionName = resources.getString(R.string.transition_shot)
         val shotBackgroundTransitionName = resources.getString(R.string.transition_shot_background)
         setExitSharedElementCallback(object : SharedElementCallback() {
@@ -87,10 +88,8 @@ class MovieListFragment : Fragment() {
             override fun onMapSharedElements(names: MutableList<String>,
                                              sharedElements: MutableMap<String, View>) {
                 if (sharedElements.size != names.size) {
-                    // couldn't map all shared elements
                     val sharedShot = sharedElements[shotTransitionName]
-                    if (sharedShot != null) {
-                        // has shot so add shot background, mapped to same view
+                    sharedShot?.let {
                         sharedElements[shotBackgroundTransitionName] = sharedShot
                     }
                 }
@@ -100,47 +99,46 @@ class MovieListFragment : Fragment() {
                 OnRefreshHelper.OnRefreshStatusListener {
 
             override fun onRefresh() {
-                movieListViewModel?.getRefreshMovieList()
+                movieListViewModel.getRefreshMovieList()
             }
 
             override fun onLoadMore() {
-                movieListViewModel?.getLoadMoreMovieList()
+                movieListViewModel.getLoadMoreMovieList()
             }
         }, R.color.colorAccent)
         movieListAdapter.onItemClickListener = object : OnItemClickListener<Movie> {
             override fun onItemClick(position: Int, bean: Movie, itemView: View) {
-                val activity = activity
-                if (activity != null) {
+                activity?.let { activity ->
                     val transitionShot = activity.getString(R.string.transition_shot)
-                    val transitionShotBackground = activity.getString(R.string.transition_shot_background)
-                    val options = ActivityOptionsCompat.makeSceneTransitionAnimation(activity,
-                            Pair.create(itemView, transitionShot), Pair.create(itemView, transitionShotBackground))
+                    val transitionShotBackground =
+                            activity.getString(R.string.transition_shot_background)
+                    val options =
+                            ActivityOptionsCompat.makeSceneTransitionAnimation(activity,
+                                    Pair.create(itemView, transitionShot),
+                                    Pair.create(itemView, transitionShotBackground))
                     MovieDetailActivity.launch(activity, bean, options)
                 }
             }
         }
     }
 
-    private fun initLiveData() {
-        val movieListViewModel = movieListViewModel
-        if (movieListViewModel != null) {
-            movieListViewModel.loadStatusLiveData.observe(this@MovieListFragment, Observer { isLoading ->
-                if (isLoading != null && !isLoading) {
-                    swipe_refresh.isRefreshing = isLoading
-                }
-            })
-            movieListViewModel.refreshLiveData.observe(this@MovieListFragment, Observer { movieList ->
-                movieList?.let {
-                    val tagMovieList = movieListViewModel.getRefreshTagList(tagKey)
-                    movieListAdapter.setRefreshData(tagMovieList)
-                }
-            })
-            movieListViewModel.loadMoreLiveData.observe(this@MovieListFragment, Observer { movieList ->
-                movieList?.let {
-                    val tagMovieList = movieListViewModel.getLoadMoreTagList(tagKey)
-                    movieListAdapter.setLoadMoreData(tagMovieList)
-                }
-            })
-        }
+    private fun initLiveData(movieListViewModel: MovieListViewModel) {
+        movieListViewModel.loadStatusLiveData.observe(this, Observer { isLoading ->
+                    if (isLoading != null && !isLoading) {
+                        swipe_refresh.isRefreshing = isLoading
+                    }
+                })
+        movieListViewModel.refreshLiveData.observe(this, Observer { movieList ->
+                    movieList?.let {
+                        val tagMovieList = movieListViewModel.getRefreshTagList(tagKey)
+                        movieListAdapter.setRefreshData(tagMovieList)
+                    }
+                })
+        movieListViewModel.loadMoreLiveData.observe(this, Observer { movieList ->
+                    movieList?.let {
+                        val tagMovieList = movieListViewModel.getLoadMoreTagList(tagKey)
+                        movieListAdapter.setLoadMoreData(tagMovieList)
+                    }
+                })
     }
 }

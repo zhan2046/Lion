@@ -9,7 +9,8 @@ import com.ruzhan.lion.model.Movie
 import com.ruzhan.lion.util.ViewUtils
 import kotlinx.android.synthetic.main.lion_item_movie_list.view.*
 
-class MovieListHolder(itemView: View, listener: OnItemClickListener<Movie>?) : RecyclerView.ViewHolder(itemView) {
+class MovieListHolder(itemView: View, listener: OnItemClickListener<Movie>?) :
+        RecyclerView.ViewHolder(itemView) {
 
     private lateinit var movie: Movie
 

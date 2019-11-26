@@ -1,8 +1,7 @@
 package com.ruzhan.movie.home.viewmodel
 
-import android.app.Application
-import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.ruzhan.lion.database.CommonModel
@@ -22,7 +21,7 @@ import java.util.concurrent.TimeUnit
 import kotlin.collections.ArrayList
 
 
-class MovieListViewModel(app: Application) : AndroidViewModel(app) {
+class MovieListViewModel : ViewModel() {
 
     companion object {
 

@@ -13,7 +13,7 @@
 
     <TextView
         android:id="@+id/title_tv"
-        android:text="@string/video_desc"
+        android:text="@string/lion_video_desc"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginBottom="@dimen/space_small_8"

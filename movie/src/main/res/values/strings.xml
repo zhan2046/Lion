@@ -1,7 +1,7 @@
 <resources>
     <string name="app_name">movie</string>
-    <string name="video_desc">视频</string>
-    <string name="image_list_desc">图片</string>
+    <string name="lion_video_desc">视频</string>
+    <string name="lion_image_list_desc">图片</string>
     <string name="lion_tab_tag_new">所有精选</string>
     <string name="lion_tab_movie_title">视频精选</string>
 </resources>

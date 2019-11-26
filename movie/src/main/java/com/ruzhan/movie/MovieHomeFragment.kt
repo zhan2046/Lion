@@ -11,7 +11,7 @@ import com.lion.font.FontHelper
 import com.ruzhan.lion.util.LionTitleHelper
 import com.ruzhan.movie.home.adapter.MovieHomeAdapter
 import com.ruzhan.movie.home.viewmodel.MovieListViewModel
-import kotlinx.android.synthetic.main.lion_movie_tab_home.*
+import kotlinx.android.synthetic.main.lion_movie_main_home.*
 
 class MovieHomeFragment : Fragment() {
 
@@ -22,27 +22,28 @@ class MovieHomeFragment : Fragment() {
     }
 
     private var movieHomeAdapter: MovieHomeAdapter? = null
-    private var movieListViewModel: MovieListViewModel? = null
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
-        return inflater.inflate(R.layout.lion_movie_tab_home, container, false)
+        return inflater.inflate(R.layout.lion_movie_main_home, container, false)
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        val movieListViewModel = ViewModelProviders.of(activity!!).get(MovieListViewModel::class.java)
-        this.movieListViewModel = movieListViewModel
-        initData()
-        initLiveData(movieListViewModel)
-        movieListViewModel.getLocalMovieList()
-        movieListViewModel.getRefreshMovieList()
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        activity?.let { activity ->
+            val movieListViewModel =
+                    ViewModelProviders.of(activity).get(MovieListViewModel::class.java)
+            initData()
+            initLiveData(movieListViewModel)
+            movieListViewModel.getLocalMovieList()
+            movieListViewModel.getRefreshMovieList()
+        }
     }
 
     private fun initLiveData(movieListViewModel: MovieListViewModel) {
         movieListViewModel.titleListLiveData.observe(this,
                 Observer<List<String>> { tagList ->
-                    if (tagList != null) {
+                    tagList?.let {
                         movieHomeAdapter?.setData(tagList)
                     }
                 })
