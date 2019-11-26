@@ -65,10 +65,12 @@ class MovieDetailFragment : Fragment() {
     }
 
     private fun initData(movieDetailViewModel: MovieDetailViewModel) {
-        movieDetailViewModel.movieId = movie.id
-        ImageLoader.get().loadNoCrossFade(shot, movie.image,
-                ViewUtils.getPlaceholder(activity, 0))
-        recycler_view.adapter = movieDetailAdapter
+        activity?.let { activity ->
+            movieDetailViewModel.movieId = movie.id
+            ImageLoader.get().loadNoCrossFade(shot, movie.image,
+                    ViewUtils.getPlaceholder(activity, 0))
+            recycler_view.adapter = movieDetailAdapter
+        }
     }
 
     private fun initListener(movieDetailViewModel: MovieDetailViewModel) {
@@ -134,12 +136,16 @@ class MovieDetailFragment : Fragment() {
 
     override fun onResume() {
         super.onResume()
-        elastic_drag_dismiss.addListener(chromeFaber)
+        chromeFaber?.let { chromeFaber ->
+            elastic_drag_dismiss.addListener(chromeFaber)
+        }
     }
 
     override fun onPause() {
         super.onPause()
-        elastic_drag_dismiss.removeListener(chromeFaber)
+        chromeFaber?.let { chromeFaber ->
+            elastic_drag_dismiss.removeListener(chromeFaber)
+        }
     }
 
     fun closeFragmentUpdateUi() {

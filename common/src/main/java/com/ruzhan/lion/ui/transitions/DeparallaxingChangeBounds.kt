@@ -13,7 +13,8 @@ import android.view.ViewGroup
 import com.ruzhan.lion.ui.widget.ParallaxScrImageView
 
 
-class DeparallaxingChangeBounds(context: Context, attrs: AttributeSet) : ChangeBounds(context, attrs) {
+class DeparallaxingChangeBounds(context: Context, attrs: AttributeSet) :
+        ChangeBounds(context, attrs) {
 
     override fun captureEndValues(transitionValues: TransitionValues) {
         super.captureEndValues(transitionValues)
@@ -35,7 +36,8 @@ class DeparallaxingChangeBounds(context: Context, attrs: AttributeSet) : ChangeB
         val psv = endValues.view as ParallaxScrImageView
         if (psv.offset == 0) return changeBounds
 
-        val deparallax = ObjectAnimator.ofInt(psv, ParallaxScrImageView.OFFSET, 0)
+        val deparallax =
+                ObjectAnimator.ofInt(psv, ParallaxScrImageView.OFFSET, 0)
         val transition = AnimatorSet()
         transition.playTogether(changeBounds, deparallax)
         return transition

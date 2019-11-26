@@ -12,7 +12,8 @@ import androidx.annotation.Keep
 import com.ruzhan.lion.util.ViewUtils
 
 
-class BackgroundFade @Keep constructor(context: Context, attrs: AttributeSet) : Visibility(context, attrs) {
+class BackgroundFade @Keep constructor(context: Context, attrs: AttributeSet) :
+        Visibility(context, attrs) {
 
     override fun onAppear(sceneRoot: ViewGroup, view: View?,
                           startValues: TransitionValues, endValues: TransitionValues): Animator? {
