@@ -82,20 +82,15 @@ class MovieDetailFragment : Fragment() {
             movieDetailAdapter.onItemImageClickListener =
                     object : OnItemClickListener<ImageListModel> {
 
-                override fun onItemClick(position: Int, bean: ImageListModel, itemView: View) {
-                    ImageDetailActivity.launch(activity, bean)
-                }
-            }
+                        override fun onItemClick(position: Int, bean: ImageListModel, itemView: View) {
+                            ImageDetailActivity.launch(activity, bean)
+                        }
+                    }
             recycler_view.addOnScrollListener(object : RecyclerView.OnScrollListener() {
 
                 override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                     super.onScrolled(recyclerView, dx, dy)
-                    val topViewHolder =
-                            movieDetailAdapter.getMovieDetailHeaderHolder()
-                    topViewHolder?.let {
-                        val scrollY = topViewHolder.itemView.top
-                        shot.offset = scrollY
-                    }
+                    shot.offset = movieDetailAdapter.getHeaderHolderTop()
                 }
 
                 override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {

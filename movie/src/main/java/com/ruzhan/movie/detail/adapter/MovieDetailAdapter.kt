@@ -10,6 +10,7 @@ import com.ruzhan.lion.model.Video
 import com.ruzhan.lion.ui.LoadMoreHolder
 import com.ruzhan.movie.R
 import com.ruzhan.movie.detail.adapter.holder.*
+import com.ruzhan.movie.home.adapter.holder.MoiveEmptyHolder
 import com.ruzhan.movie.model.ImageListModel
 import java.util.*
 
@@ -31,7 +32,7 @@ class MovieDetailAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     private var dataList: ArrayList<Any> = ArrayList()
     private lateinit var movieDetail: MovieDetail
-    private var movieDetailHeaderHolder: MovieDetailHeaderHolder? = null
+    private var headerHolder: MoiveEmptyHolder? = null
 
     var onItemVideoClickListener: OnItemClickListener<Video>? = null
     var onItemImageClickListener: OnItemClickListener<ImageListModel>? = null
@@ -74,9 +75,9 @@ class MovieDetailAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         lateinit var viewHolder: RecyclerView.ViewHolder
         when (viewType) {
             TYPE_HEADER -> {
-                viewHolder = MovieDetailHeaderHolder(LayoutInflater.from(parent.context)
+                viewHolder = MoiveEmptyHolder(LayoutInflater.from(parent.context)
                         .inflate(R.layout.lion_item_movie_detail_header, parent, false))
-                movieDetailHeaderHolder = viewHolder
+                headerHolder = viewHolder
             }
             TYPE_TITLE -> viewHolder = MovieDetailTitleHolder(LayoutInflater.from(parent.context)
                     .inflate(R.layout.lion_item_movie_detail_title, parent, false))
@@ -92,8 +93,9 @@ class MovieDetailAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
                     .inflate(R.layout.lion_item_movie_detail_video, parent, false),
                     onItemVideoClickListener)
 
-            TYPE_VIDEO_TITLE -> viewHolder = MovieDetailVideoTitleHolder(LayoutInflater.from(parent.context)
-                    .inflate(R.layout.lion_item_movie_detail_video_title, parent, false))
+            TYPE_VIDEO_TITLE -> viewHolder =
+                    MovieDetailVideoTitleHolder(LayoutInflater.from(parent.context)
+                            .inflate(R.layout.lion_item_movie_detail_video_title, parent, false))
 
             TYPE_LOAD_MORE -> viewHolder = LoadMoreHolder(LayoutInflater.from(parent.context)
                     .inflate(R.layout.lion_item_load_more, parent, false))
@@ -113,7 +115,7 @@ class MovieDetailAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         }
     }
 
-    fun getMovieDetailHeaderHolder(): MovieDetailHeaderHolder? {
-        return movieDetailHeaderHolder
+    fun getHeaderHolderTop(): Int {
+        return headerHolder?.itemView?.top ?: 0
     }
 }
