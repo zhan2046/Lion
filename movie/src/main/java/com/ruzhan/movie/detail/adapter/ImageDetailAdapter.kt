@@ -1,10 +1,11 @@
 package com.ruzhan.movie.detail.adapter
 
+import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentPagerAdapter
 import com.ruzhan.movie.detail.fragment.ItemImageDetailFragment
 
-class ImageDetailAdapter(fm: androidx.fragment.app.FragmentManager, imageList: ArrayList<String>) :
-        FragmentPagerAdapter(fm) {
+class ImageDetailAdapter(fm: FragmentManager, imageList: ArrayList<String>) :
+        FragmentPagerAdapter(fm, BEHAVIOR_RESUME_ONLY_CURRENT_FRAGMENT) {
 
     private var imageList: List<String> = imageList
 
