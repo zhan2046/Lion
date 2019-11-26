@@ -13,6 +13,7 @@ import com.tencent.smtt.sdk.WebView
 import com.tencent.smtt.sdk.WebViewClient
 import kotlinx.android.synthetic.main.lion_frag_web_video.*
 
+@Suppress("DEPRECATION")
 class WebVideoFragment : Fragment() {
 
     companion object {
@@ -46,20 +47,21 @@ class WebVideoFragment : Fragment() {
         return inflater.inflate(R.layout.lion_frag_web_video, container, false)
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
         initData()
-        x5WebView.viewTreeObserver.addOnGlobalLayoutListener(object : ViewTreeObserver.OnGlobalLayoutListener {
-            override fun onGlobalLayout() {
-                x5WebView.viewTreeObserver.removeOnGlobalLayoutListener(this)
-                if (x5WebView.x5WebViewExtension != null) {
-                    val x5Bundle = Bundle()
-                    x5Bundle.putInt(DEFAULT_VIDEO_SCREEN, X5_VIDEO_SCREEN_FULL)
-                    x5WebView.x5WebViewExtension.invokeMiscMethod(SET_VIDEO_PARAMS, x5Bundle)
-                }
-                x5WebView.loadUrl(url)
-            }
-        })
+        x5WebView.viewTreeObserver.addOnGlobalLayoutListener(
+                object : ViewTreeObserver.OnGlobalLayoutListener {
+                    override fun onGlobalLayout() {
+                        x5WebView.viewTreeObserver.removeOnGlobalLayoutListener(this)
+                        if (x5WebView.x5WebViewExtension != null) {
+                            val x5Bundle = Bundle()
+                            x5Bundle.putInt(DEFAULT_VIDEO_SCREEN, X5_VIDEO_SCREEN_FULL)
+                            x5WebView.x5WebViewExtension.invokeMiscMethod(SET_VIDEO_PARAMS, x5Bundle)
+                        }
+                        x5WebView.loadUrl(url)
+                    }
+                })
     }
 
     @SuppressLint("SetJavaScriptEnabled")
@@ -67,7 +69,6 @@ class WebVideoFragment : Fragment() {
         val webSettings = x5WebView.settings
         webSettings.javaScriptEnabled = true
         webSettings.domStorageEnabled = true
-
         x5WebView.webChromeClient = object : WebChromeClient() {
             override fun onProgressChanged(view: WebView, newProgress: Int) {
                 if (load_progress.visibility != View.VISIBLE && newProgress < MAX_PROGRESS) {
