@@ -30,9 +30,11 @@ class ImageDetailActivity : AppCompatActivity() {
         window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN)
         setContentView(R.layout.lion_container)
-        val imageListModel: ImageListModel = intent.getSerializableExtra(IMAGE_LIST_MODEL) as ImageListModel
+        val imageListModel: ImageListModel =
+                intent.getSerializableExtra(IMAGE_LIST_MODEL) as ImageListModel
         if (savedInstanceState == null) {
-            val imageDetailFragment = ImageDetailFragment.newInstance(imageListModel)
+            val imageDetailFragment =
+                    ImageDetailFragment.newInstance(imageListModel)
             supportFragmentManager
                     .beginTransaction()
                     .add(R.id.container, imageDetailFragment, "ImageDetailFragment")

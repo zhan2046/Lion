@@ -5,6 +5,7 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.viewpager.widget.ViewPager
 import com.lion.font.FontHelper
 import com.ruzhan.movie.R
 import com.ruzhan.movie.detail.adapter.ImageDetailAdapter
@@ -27,7 +28,7 @@ class ImageDetailFragment : Fragment() {
         }
     }
 
-    private var imageListModel: ImageListModel? = null
+    private lateinit var imageListModel: ImageListModel
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -39,20 +40,21 @@ class ImageDetailFragment : Fragment() {
         return inflater.inflate(R.layout.lion_frag_image_detail, container, false)
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
         initData()
         initListener()
     }
 
     private fun initListener() {
-        lion_image_view_page.addOnPageChangeListener(object : androidx.viewpager.widget.ViewPager.OnPageChangeListener {
+        lion_image_view_page.addOnPageChangeListener(object : ViewPager.OnPageChangeListener {
 
             override fun onPageScrollStateChanged(state: Int) {
                 // do nothing
             }
 
-            override fun onPageScrolled(position: Int, positionOffset: Float, positionOffsetPixels: Int) {
+            override fun onPageScrolled(position: Int, positionOffset: Float,
+                                        positionOffsetPixels: Int) {
                 // do nothing
             }
 
@@ -63,16 +65,13 @@ class ImageDetailFragment : Fragment() {
     }
 
     private fun initData() {
-        val imageListModel = imageListModel
-        if (imageListModel != null) {
-            lion_image_current_tv.text = (imageListModel.position + 1).toString()
-            lion_image_total_tv.text = imageListModel.imageList.size.toString()
-            lion_image_title_tv.text = imageListModel.title
-            lion_image_title_tv.typeface = FontHelper.get().getBoldTypeface()
-
-            val imageDetailAdapter = ImageDetailAdapter(childFragmentManager, imageListModel.imageList)
-            lion_image_view_page.adapter = imageDetailAdapter
-            lion_image_view_page.currentItem = imageListModel.position
-        }
+        lion_image_current_tv.text = (imageListModel.position + 1).toString()
+        lion_image_total_tv.text = imageListModel.imageList.size.toString()
+        lion_image_title_tv.text = imageListModel.title
+        lion_image_title_tv.typeface = FontHelper.get().getBoldTypeface()
+        val imageDetailAdapter = ImageDetailAdapter(childFragmentManager,
+                imageListModel.imageList)
+        lion_image_view_page.adapter = imageDetailAdapter
+        lion_image_view_page.currentItem = imageListModel.position
     }
 }
