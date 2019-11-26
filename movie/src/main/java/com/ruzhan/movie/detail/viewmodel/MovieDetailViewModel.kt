@@ -1,8 +1,7 @@
 package com.ruzhan.movie.detail.viewmodel
 
-import android.app.Application
-import androidx.lifecycle.AndroidViewModel
 import androidx.lifecycle.MutableLiveData
+import androidx.lifecycle.ViewModel
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.ruzhan.lion.database.CommonModel
@@ -16,20 +15,19 @@ import io.reactivex.android.schedulers.AndroidSchedulers
 import io.reactivex.disposables.Disposable
 import io.reactivex.schedulers.Schedulers
 
-class MovieDetailViewModel(app: Application) : AndroidViewModel(app) {
+class MovieDetailViewModel : ViewModel() {
 
-    var movieDetailLiveData: MutableLiveData<MovieDetail> = MutableLiveData()
-    var throwableLiveData: MutableLiveData<Throwable> = MutableLiveData()
+    val movieDetailLiveData: MutableLiveData<MovieDetail> = MutableLiveData()
 
-    private var localFlowable: Flowable<Any>? = null
+    private val defaultGSon = Gson()
+    private var localFlow: Flowable<Any>? = null
     private var disposable: Disposable? = null
     private var localDisposable: Disposable? = null
 
     var movieId = ""
-    private val gson = Gson()
 
     init {
-        localFlowable = Flowable.create<Any>({ e ->
+        localFlow = Flowable.create<Any>({ e ->
             handleInsertCommonModel()
             e.onComplete()
         }, BackpressureStrategy.LATEST)
@@ -38,7 +36,7 @@ class MovieDetailViewModel(app: Application) : AndroidViewModel(app) {
     private fun handleInsertCommonModel() {
         val movieDetail = movieDetailLiveData.value
         if (movieDetail != null) {
-            val jsonStr = gson.toJson(movieDetail)
+            val jsonStr = defaultGSon.toJson(movieDetail)
             val commonModel = CommonModel(movieId.toInt(), jsonStr)
             MovieRepository.get().insertCommonModel(commonModel)
         }
@@ -48,7 +46,7 @@ class MovieDetailViewModel(app: Application) : AndroidViewModel(app) {
         disposable = MovieRepository.get().getCommonModel(movieId.toInt())
                 .map { commonModel -> commonModelToMovieDetail(commonModel) }
                 .observeOn(AndroidSchedulers.mainThread())
-                .doOnError { throwable -> throwableLiveData.value = throwable }
+                .doOnError { throwable -> throwable.printStackTrace() }
                 .doOnSubscribe { }
                 .doFinally { }
                 .doOnNext { movieDetail -> handleLocalMovieDetail(movieDetail) }
@@ -66,7 +64,7 @@ class MovieDetailViewModel(app: Application) : AndroidViewModel(app) {
         var movieDetail = MovieDetail.empty()
         val content = commonModel.content
         if (content.isNotBlank()) {
-            movieDetail = gson.fromJson(content, object : TypeToken<MovieDetail>() {}.type)
+            movieDetail = defaultGSon.fromJson(content, object : TypeToken<MovieDetail>() {}.type)
         }
         return movieDetail
     }
@@ -89,9 +87,9 @@ class MovieDetailViewModel(app: Application) : AndroidViewModel(app) {
     }
 
     private fun insertLocalMovieDetail() {
-        val localFlowable = localFlowable
-        if (localFlowable != null) {
-            localDisposable = localFlowable
+        val localFlow = localFlow
+        if (localFlow != null) {
+            localDisposable = localFlow
                     .subscribeOn(Schedulers.io())
                     .observeOn(AndroidSchedulers.mainThread())
                     .doOnError { throwable -> throwable.printStackTrace() }

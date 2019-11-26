@@ -8,19 +8,16 @@ import com.tencent.smtt.sdk.WebSettings.LayoutAlgorithm
 import com.tencent.smtt.sdk.WebView
 import com.tencent.smtt.sdk.WebViewClient
 
+@Suppress("DEPRECATION")
 class X5WebView : WebView {
 
     constructor(arg0: Context) : super(arg0)
 
     @SuppressLint("SetJavaScriptEnabled")
     constructor(arg0: Context, arg1: AttributeSet) : super(arg0, arg1) {
-        /**
-         * 防止加载网页时调起系统浏览器
-         */
+
         val client = object : WebViewClient() {
-            /**
-             * 防止加载网页时调起系统浏览器
-             */
+
             override fun shouldOverrideUrlLoading(view: WebView, url: String?): Boolean {
                 view.loadUrl(url)
                 return true
