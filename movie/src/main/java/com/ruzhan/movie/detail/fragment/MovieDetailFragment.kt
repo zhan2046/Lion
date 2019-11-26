@@ -47,7 +47,7 @@ class MovieDetailFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        movie = arguments?.getParcelable(MOVIE) as Movie
+        movie = arguments?.getParcelable(MOVIE)!!
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
