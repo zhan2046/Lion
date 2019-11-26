@@ -9,7 +9,7 @@ import kotlinx.android.synthetic.main.lion_item_movie_detail_text.view.*
 class MovieDetailTextHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
     init {
-        itemView.text_tv.typeface = FontHelper.get().getLightTypeface()
+        itemView.text_tv.typeface = FontHelper.get().lightFontTypeface
     }
 
     fun bind(bean: Introduce) {

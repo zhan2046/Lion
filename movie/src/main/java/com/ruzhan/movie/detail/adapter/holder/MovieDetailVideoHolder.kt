@@ -18,8 +18,9 @@ class MovieDetailVideoHolder(itemView: View, listener: OnItemClickListener<Video
     private lateinit var video: Video
 
     init {
-        itemView.play_count_tv.typeface = FontHelper.get().getLightTypeface()
-        itemView.title_tv.typeface = FontHelper.get().getLightTypeface()
+        val lightFontTypeface = FontHelper.get().lightFontTypeface
+        itemView.play_count_tv.typeface = lightFontTypeface
+        itemView.title_tv.typeface = lightFontTypeface
         if (listener != null) {
             itemView.root_cl.setOnClickListener { listener.onItemClick(adapterPosition, video, it) }
         }

@@ -5,18 +5,14 @@ import android.graphics.Typeface
 
 class FontHelper private constructor() {
 
-    private var lightFontTypeface: Typeface
-    private var boldFontTypeface: Typeface
-
-    init {
-        val application = application
-                ?: throw RuntimeException("FontHelper must call init to application onCreate")
-        lightFontTypeface = Typeface.createFromAsset(application.assets, TEXT_LIGHT)
-        boldFontTypeface = Typeface.createFromAsset(application.assets, TEXT_BOLD)
+    val lightFontTypeface: Typeface by lazy {
+        Typeface.createFromAsset(application?.assets, TEXT_LIGHT)
+    }
+    val boldFontTypeface: Typeface by lazy {
+        Typeface.createFromAsset(application?.assets, TEXT_BOLD)
     }
 
     companion object {
-
         const val TEXT_BOLD = "fonts/text_bold.ttf"
         const val TEXT_LIGHT = "fonts/text_light.ttf"
 
@@ -32,13 +28,5 @@ class FontHelper private constructor() {
         fun init(application: Application) {
             this.application = application
         }
-    }
-
-    fun getLightTypeface(): Typeface {
-        return lightFontTypeface
-    }
-
-    fun getBoldTypeface(): Typeface {
-        return boldFontTypeface
     }
 }

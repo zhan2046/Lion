@@ -9,7 +9,7 @@ import kotlinx.android.synthetic.main.lion_item_load_more.view.*
 class LoadMoreHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
     init {
-        itemView.load_tv.typeface = FontHelper.get().getLightTypeface()
+        itemView.load_tv.typeface = FontHelper.get().lightFontTypeface
     }
 
     fun bind(isShowLoadMore: Boolean) {

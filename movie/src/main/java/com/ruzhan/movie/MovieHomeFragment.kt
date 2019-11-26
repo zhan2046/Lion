@@ -50,7 +50,7 @@ class MovieHomeFragment : Fragment() {
     }
 
     private fun initData() {
-        titleTv.typeface = FontHelper.get().getBoldTypeface()
+        titleTv.typeface = FontHelper.get().boldFontTypeface
         titleTv.text = resources.getString(R.string.lion_tab_movie_title)
         LionTitleHelper.setToolbar(toolbar, activity)
         LionTitleHelper.setAlphaScaleAnimate(titleTv)

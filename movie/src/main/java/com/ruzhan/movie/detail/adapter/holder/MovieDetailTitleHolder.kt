@@ -8,8 +8,8 @@ import kotlinx.android.synthetic.main.lion_item_movie_detail_title.view.*
 class MovieDetailTitleHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
 
     init {
-        itemView.tag_tv.typeface = FontHelper.get().getLightTypeface()
-        itemView.title_tv.typeface = FontHelper.get().getBoldTypeface()
+        itemView.tag_tv.typeface = FontHelper.get().lightFontTypeface
+        itemView.title_tv.typeface = FontHelper.get().boldFontTypeface
     }
 
     fun bind(title: String, tag: String) {

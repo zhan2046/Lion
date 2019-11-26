@@ -15,9 +15,10 @@ class MovieListHolder(itemView: View, listener: OnItemClickListener<Movie>?) :
     private lateinit var movie: Movie
 
     init {
-        itemView.tag_tv.typeface = FontHelper.get().getLightTypeface()
-        itemView.title_tv.typeface = FontHelper.get().getBoldTypeface()
-        itemView.desc_tv.typeface = FontHelper.get().getLightTypeface()
+        val lightFontTypeface = FontHelper.get().lightFontTypeface
+        itemView.tag_tv.typeface = lightFontTypeface
+        itemView.title_tv.typeface = FontHelper.get().boldFontTypeface
+        itemView.desc_tv.typeface = lightFontTypeface
         if (listener != null) {
             itemView.root_cl.setOnClickListener {
                 listener.onItemClick(adapterPosition, movie, itemView.image_iv)

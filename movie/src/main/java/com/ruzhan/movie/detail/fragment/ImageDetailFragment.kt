@@ -68,7 +68,7 @@ class ImageDetailFragment : Fragment() {
         lion_image_current_tv.text = (imageListModel.position + 1).toString()
         lion_image_total_tv.text = imageListModel.imageList.size.toString()
         lion_image_title_tv.text = imageListModel.title
-        lion_image_title_tv.typeface = FontHelper.get().getBoldTypeface()
+        lion_image_title_tv.typeface = FontHelper.get().boldFontTypeface
         val imageDetailAdapter = ImageDetailAdapter(childFragmentManager,
                 imageListModel.imageList)
         lion_image_view_page.adapter = imageDetailAdapter
