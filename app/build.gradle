@@ -4,7 +4,7 @@ apply from: '../core_dependencies.gradle'
 
 android {
     defaultConfig {
-        applicationId names.applicationId
+        applicationId "com.ruzhan.lion"
         versionCode 301
         versionName "0.3.0"
     }

@@ -5,29 +5,8 @@ buildscript {
     ext.versions = [
             'compileSdk'      : 28,
             'minSdk'          : 21,
-            'targetSdk'       : 28,
-            'constraintLayout': '1.1.2',
-            'supportLibrary'  : '1.0.0',
-            'multidex'        : '2.0.0',
-            'lifecycle'       : '2.0.0',
-            'room'            : '2.0.0',
-            'glide'           : '4.9.0',
-            'rxjava2'         : '2.1.13',
-            'rxandroid'       : '2.0.1',
-            'retrofit'        : '2.4.0',
-            'utilcode'        : '1.17.2',
-            'kotlin'          : '1.2.51',
+            'targetSdk'       : 28
     ]
-
-    ext.names = [
-            'applicationId': 'com.ruzhan.lion'
-    ]
-
-    ext {
-        keyAlias = 'lion'
-        keyPassword = 'lion333333'
-        storePassword = 'lion333333'
-    }
 
     repositories {
         google()
@@ -36,8 +15,8 @@ buildscript {
     }
 
     dependencies {
-        classpath 'com.android.tools.build:gradle:3.2.1'
-        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${versions.kotlin}"
+        classpath 'com.android.tools.build:gradle:3.5.2'
+        classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:1.3.60"
     }
 }
 
