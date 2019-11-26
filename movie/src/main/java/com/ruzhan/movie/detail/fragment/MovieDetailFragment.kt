@@ -42,9 +42,8 @@ class MovieDetailFragment : Fragment() {
     }
 
     private lateinit var movie: Movie
-    private lateinit var movieDetailViewModel: MovieDetailViewModel
     private val movieDetailAdapter = MovieDetailAdapter()
-    private lateinit var chromeFaber: ElasticDragDismissFrameLayout.SystemChromeFader
+    private var chromeFaber: ElasticDragDismissFrameLayout.SystemChromeFader? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -56,93 +55,86 @@ class MovieDetailFragment : Fragment() {
         return inflater.inflate(R.layout.lion_frag_movie_detail, container, false)
     }
 
-    override fun onViewCreated(view: View, savedInstanceState: Bundle?) {
-        super.onViewCreated(view, savedInstanceState)
-        initData()
-        initListener()
+    override fun onActivityCreated(savedInstanceState: Bundle?) {
+        super.onActivityCreated(savedInstanceState)
+        val movieDetailViewModel =
+                ViewModelProviders.of(this).get(MovieDetailViewModel::class.java)
+        initData(movieDetailViewModel)
+        initListener(movieDetailViewModel)
         movieDetailViewModel.getMovieDetail(movie.id)
     }
 
-    private fun initData() {
-        movieDetailViewModel = ViewModelProviders.of(this).get(MovieDetailViewModel::class.java)
+    private fun initData(movieDetailViewModel: MovieDetailViewModel) {
         movieDetailViewModel.movieId = movie.id
         ImageLoader.get().loadNoCrossFade(shot, movie.image,
                 ViewUtils.getPlaceholder(activity, 0))
         recycler_view.adapter = movieDetailAdapter
     }
 
-    private fun initListener() {
-        movieDetailAdapter.onItemVideoClickListener = object : OnItemClickListener<Video> {
+    private fun initListener(movieDetailViewModel: MovieDetailViewModel) {
+        activity?.let { activity ->
+            movieDetailAdapter.onItemVideoClickListener = object : OnItemClickListener<Video> {
 
-            override fun onItemClick(position: Int, bean: Video, itemView: View) {
-                WebVideoActivity.launch(activity!!, bean.playWebUrl)
-            }
-        }
-        movieDetailAdapter.onItemImageClickListener = object : OnItemClickListener<ImageListModel> {
-            override fun onItemClick(position: Int, bean: ImageListModel, itemView: View) {
-                ImageDetailActivity.launch(activity!!, bean)
-            }
-        }
-        recycler_view.addOnScrollListener(object : RecyclerView.OnScrollListener() {
-
-            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
-                super.onScrolled(recyclerView, dx, dy)
-                val topViewHolder = movieDetailAdapter.getMovieDetailHeaderHolder()
-                topViewHolder?.let {
-                    val scrollY = topViewHolder.itemView.top
-                    shot.offset = scrollY
+                override fun onItemClick(position: Int, bean: Video, itemView: View) {
+                    WebVideoActivity.launch(activity, bean.playWebUrl)
                 }
             }
+            movieDetailAdapter.onItemImageClickListener =
+                    object : OnItemClickListener<ImageListModel> {
 
-            override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
-                super.onScrollStateChanged(recyclerView, newState)
-                // as we animate the main image's elevation change when it 'pins' at it's min height
-                // a fling can cause the title to go over the image before the animation has a chance to
-                // run. In this case we short circuit the animation and just jump to state.
-                shot.isImmediatePin = newState == RecyclerView.SCROLL_STATE_SETTLING
+                override fun onItemClick(position: Int, bean: ImageListModel, itemView: View) {
+                    ImageDetailActivity.launch(activity, bean)
+                }
             }
-        })
-        recycler_view.onFlingListener = object : RecyclerView.OnFlingListener() {
-            override fun onFling(velocityX: Int, velocityY: Int): Boolean {
-                shot.isImmediatePin = true
-                return false
+            recycler_view.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+
+                override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
+                    super.onScrolled(recyclerView, dx, dy)
+                    val topViewHolder =
+                            movieDetailAdapter.getMovieDetailHeaderHolder()
+                    topViewHolder?.let {
+                        val scrollY = topViewHolder.itemView.top
+                        shot.offset = scrollY
+                    }
+                }
+
+                override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
+                    super.onScrollStateChanged(recyclerView, newState)
+                    shot.isImmediatePin = newState == RecyclerView.SCROLL_STATE_SETTLING
+                }
+            })
+            recycler_view.onFlingListener = object : RecyclerView.OnFlingListener() {
+                override fun onFling(velocityX: Int, velocityY: Int): Boolean {
+                    shot.isImmediatePin = true
+                    return false
+                }
             }
-        }
-        back.setOnClickListener {
-            activity?.let { act ->
+            back.setOnClickListener {
                 closeFragmentUpdateUi()
-                finishAfterTransition(act)
+                finishAfterTransition(activity)
             }
-        }
-        chromeFaber = object : ElasticDragDismissFrameLayout.SystemChromeFader(activity) {
+            chromeFaber = object : ElasticDragDismissFrameLayout.SystemChromeFader(activity) {
 
-            override fun onDragDismissed() {
-                activity?.let {
+                override fun onDragDismissed() {
                     closeFragmentUpdateUi()
-                    finishAfterTransition(it)
+                    finishAfterTransition(activity)
                 }
             }
+            postponeEnterTransition()
+            shot.viewTreeObserver.addOnPreDrawListener(object : ViewTreeObserver.OnPreDrawListener {
+                override fun onPreDraw(): Boolean {
+                    shot.viewTreeObserver.removeOnPreDrawListener(this)
+                    startPostponedEnterTransition()
+                    return true
+                }
+            })
+            movieDetailViewModel.movieDetailLiveData.observe(this,
+                    Observer { movieDetail ->
+                        movieDetail?.let { movieDetailAdapter.setData(it) }
+                    })
+            shot.postDelayed({ movieDetailViewModel.getLocalMovieDetail(movie.id) },
+                    TRANSITION_TIME)
         }
-        postponeEnterTransition()
-
-        shot.viewTreeObserver.addOnPreDrawListener(object : ViewTreeObserver.OnPreDrawListener {
-            override fun onPreDraw(): Boolean {
-                shot.viewTreeObserver.removeOnPreDrawListener(this)
-                startPostponedEnterTransition()
-                return true
-            }
-        })
-        movieDetailViewModel.movieDetailLiveData.observe(this@MovieDetailFragment,
-                Observer { movieDetail ->
-                    movieDetail?.let { movieDetailAdapter.setData(it) }
-                })
-        movieDetailViewModel.throwableLiveData.observe(this@MovieDetailFragment,
-                Observer {
-                    // do nothing
-                })
-        shot.postDelayed({
-            movieDetailViewModel.getLocalMovieDetail(movie.id)
-        }, TRANSITION_TIME)
     }
 
     override fun onResume() {

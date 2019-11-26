@@ -38,10 +38,12 @@ class MovieListViewModel : ViewModel() {
     val loadMoreLiveData = MutableLiveData<List<Movie>>()
 
     val titleListLiveData = MutableLiveData<List<String>>()
-    private val refreshTagListMap = TreeMap<String, ArrayList<Movie>>(Comparator<String> { o1, o2 ->
+    private val refreshTagListMap = TreeMap<String, ArrayList<Movie>>(
+            Comparator<String> { o1, o2 ->
         return@Comparator o1.compareTo(o2)
     })
-    private val loadMoreTagListMap = TreeMap<String, ArrayList<Movie>>(Comparator<String> { o1, o2 ->
+    private val loadMoreTagListMap = TreeMap<String, ArrayList<Movie>>(
+            Comparator<String> { o1, o2 ->
         return@Comparator o1.compareTo(o2)
     })
 
