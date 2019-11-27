@@ -68,7 +68,6 @@ class MovieHomeFragment : Fragment() {
     private fun initData() {
         titleTv.typeface = FontHelper.get().boldFontTypeface
         titleTv.text = resources.getString(R.string.lion_tab_movie_title)
-        LionTitleHelper.setToolbar(toolbar, activity)
         LionTitleHelper.setAlphaScaleAnimate(titleTv)
 
         val movieHomeAdapter = MovieHomeAdapter(childFragmentManager)
@@ -87,7 +86,7 @@ class MovieHomeFragment : Fragment() {
                 val simplePagerTitleView = ScaleTransitionPagerTitleView(context)
                 simplePagerTitleView.typeface = FontHelper.get().boldFontTypeface
                 simplePagerTitleView.text = titleList[index]
-                simplePagerTitleView.textSize = 16f
+                simplePagerTitleView.textSize = 15.5f
                 simplePagerTitleView.normalColor =
                         ContextCompat.getColor(context, R.color.text_tertiary_dark)
                 simplePagerTitleView.selectedColor =
