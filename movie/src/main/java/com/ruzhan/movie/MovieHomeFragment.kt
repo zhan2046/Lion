@@ -91,7 +91,7 @@ class MovieHomeFragment : Fragment() {
                 simplePagerTitleView.normalColor =
                         ContextCompat.getColor(context, R.color.text_tertiary_dark)
                 simplePagerTitleView.selectedColor =
-                        ContextCompat.getColor(context, R.color.lion_movie_colorAccent)
+                        ContextCompat.getColor(context, R.color.colorAccent)
                 simplePagerTitleView.setOnClickListener {
                     viewPager.currentItem = index
                 }
@@ -103,7 +103,7 @@ class MovieHomeFragment : Fragment() {
             override fun getIndicator(context: Context): IPagerIndicator {
                 val indicator = LinePagerIndicator(context)
                 indicator.mode = LinePagerIndicator.MODE_WRAP_CONTENT
-                indicator.setColors(ContextCompat.getColor(context, R.color.lion_movie_colorAccent))
+                indicator.setColors(ContextCompat.getColor(context, R.color.colorAccent))
                 indicator.roundRadius = resources.getDimension(R.dimen.space_small_4)
                 indicator.xOffset = resources.getDimension(R.dimen.space_small_4)
                 indicator.yOffset = resources.getDimension(R.dimen.space_small_4)
