@@ -74,7 +74,10 @@ class MovieHomeFragment : Fragment() {
         val movieHomeAdapter = MovieHomeAdapter(childFragmentManager)
         this.movieHomeAdapter = movieHomeAdapter
         viewPager.adapter = movieHomeAdapter
+        initIndicator()
+    }
 
+    private fun initIndicator() {
         val commonNavigator = CommonNavigator(activity)
         this.commonNavigator = commonNavigator
         commonNavigator.adapter = object : CommonNavigatorAdapter() {
