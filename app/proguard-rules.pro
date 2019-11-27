@@ -38,6 +38,9 @@
 -dontwarn com.tencent.smtt.**
 -keep class com.tencent.smtt.** { *; }
 
+-dontwarn com.tencent.**
+-keep class com.tencent.** { *; }
+
 # AndroidUtilCode
 -keep class com.blankj.utilcode.** { *; }
 -keepclassmembers class com.blankj.utilcode.** { *; }
