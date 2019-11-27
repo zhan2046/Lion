@@ -3,6 +3,7 @@ package com.ruzhan.movie
 import android.content.Context
 import android.graphics.Color
 import android.os.Bundle
+import android.util.Log
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
@@ -77,39 +78,44 @@ class MovieHomeFragment : Fragment() {
     }
 
     private fun initIndicator() {
-        val commonNavigator = CommonNavigator(activity)
-        this.commonNavigator = commonNavigator
-        commonNavigator.adapter = object : CommonNavigatorAdapter() {
+        var commonNavigator = commonNavigator
+        if (commonNavigator == null) {
+            commonNavigator = CommonNavigator(activity)
+            this.commonNavigator = commonNavigator
+            commonNavigator.adapter = object : CommonNavigatorAdapter() {
 
-            override fun getTitleView(context: Context, index: Int):
-                    IPagerTitleView {
-                val simplePagerTitleView = ScaleTransitionPagerTitleView(context)
-                simplePagerTitleView.typeface = FontHelper.get().boldFontTypeface
-                simplePagerTitleView.text = titleList[index]
-                simplePagerTitleView.textSize = 15.5f
-                simplePagerTitleView.normalColor =
-                        ContextCompat.getColor(context, R.color.text_tertiary_dark)
-                simplePagerTitleView.selectedColor =
-                        ContextCompat.getColor(context, R.color.lion_movie_colorAccent)
-                simplePagerTitleView.setOnClickListener {
-                    viewPager.currentItem = index
+                override fun getTitleView(context: Context, index: Int):
+                        IPagerTitleView {
+                    val simplePagerTitleView = ScaleTransitionPagerTitleView(context)
+                    simplePagerTitleView.typeface = FontHelper.get().boldFontTypeface
+                    simplePagerTitleView.text = titleList[index]
+                    simplePagerTitleView.textSize = 15.5f
+                    simplePagerTitleView.normalColor =
+                            ContextCompat.getColor(context, R.color.text_tertiary_dark)
+                    simplePagerTitleView.selectedColor =
+                            ContextCompat.getColor(context, R.color.lion_movie_colorAccent)
+                    simplePagerTitleView.setOnClickListener {
+                        viewPager.currentItem = index
+                    }
+                    return simplePagerTitleView
                 }
-                return simplePagerTitleView
-            }
 
-            override fun getCount(): Int = titleList.size
+                override fun getCount(): Int = titleList.size
 
-            override fun getIndicator(context: Context): IPagerIndicator {
-                val indicator = LinePagerIndicator(context)
-                indicator.mode = LinePagerIndicator.MODE_WRAP_CONTENT
-                indicator.setColors(ContextCompat.getColor(context, R.color.lion_movie_colorAccent))
-                indicator.roundRadius = resources.getDimension(R.dimen.space_small_4)
-                indicator.xOffset = resources.getDimension(R.dimen.space_small_4)
-                indicator.yOffset = resources.getDimension(R.dimen.space_small_4)
-                return indicator
+                override fun getIndicator(context: Context): IPagerIndicator {
+                    val indicator = LinePagerIndicator(context)
+                    indicator.mode = LinePagerIndicator.MODE_WRAP_CONTENT
+                    indicator.setColors(ContextCompat.getColor(context, R.color.lion_movie_colorAccent))
+                    indicator.roundRadius = resources.getDimension(R.dimen.space_small_4)
+                    indicator.xOffset = resources.getDimension(R.dimen.space_small_4)
+                    indicator.yOffset = resources.getDimension(R.dimen.space_small_4)
+                    return indicator
+                }
             }
+            magicIndicator.navigator = commonNavigator
+            ViewPagerHelper.bind(magicIndicator, viewPager)
+        } else {
+            commonNavigator.notifyDataSetChanged()
         }
-        magicIndicator.navigator = commonNavigator
-        ViewPagerHelper.bind(magicIndicator, viewPager)
     }
 }

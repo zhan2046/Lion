@@ -33,6 +33,8 @@ class MovieListViewModel : ViewModel() {
         private const val START_PAGE = 1
     }
 
+    private val newTabTag = ResUtils.getApp().getString(R.string.lion_tab_tag_new)
+
     val loadStatusLiveData = MutableLiveData<Boolean>()
     val refreshLiveData = MutableLiveData<List<Movie>>()
     val loadMoreLiveData = MutableLiveData<List<Movie>>()
@@ -40,14 +42,13 @@ class MovieListViewModel : ViewModel() {
     val titleListLiveData = MutableLiveData<List<String>>()
     private val refreshTagListMap = TreeMap<String, ArrayList<Movie>>(
             Comparator<String> { o1, o2 ->
-        return@Comparator o1.compareTo(o2)
-    })
+                return@Comparator o1.compareTo(o2)
+            })
     private val loadMoreTagListMap = TreeMap<String, ArrayList<Movie>>(
             Comparator<String> { o1, o2 ->
-        return@Comparator o1.compareTo(o2)
-    })
+                return@Comparator o1.compareTo(o2)
+            })
 
-    private val newTabTag = ResUtils.getApp().getString(R.string.lion_tab_tag_new)
 
     private var isLoading = false
     private var loadPage = START_PAGE
@@ -190,7 +191,7 @@ class MovieListViewModel : ViewModel() {
                                    tagListMap: TreeMap<String, ArrayList<Movie>>) {
         if (movieList != null && movieList.isNotEmpty()) {
             tagListMap.clear()
-            tagListMap[newTabTag] = ArrayList((movieList))
+            tagListMap[newTabTag] = ArrayList(movieList)
             for (item in movieList) {
                 val tag = item.tag
                 val tagList = tag.split("·")
