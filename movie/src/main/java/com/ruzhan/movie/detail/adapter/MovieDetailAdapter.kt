@@ -17,6 +17,8 @@ import java.util.*
 class MovieDetailAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     companion object {
+        const val SPAN_COUNT = 2
+
         const val TYPE_HEADER: Int = 1000
         const val TYPE_TITLE: Int = 1001
         const val TYPE_TEXT: Int = 1002
@@ -117,5 +119,13 @@ class MovieDetailAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     fun getHeaderHolderTop(): Int {
         return headerHolder?.itemView?.top ?: 0
+    }
+
+    fun getSpanSize(position: Int): Int {
+        val obj = dataList[position]
+        if (obj is Video) {
+            return 1
+        }
+        return SPAN_COUNT
     }
 }

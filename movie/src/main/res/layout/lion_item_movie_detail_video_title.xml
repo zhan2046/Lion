@@ -3,14 +3,6 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content">
 
-    <View
-        android:layout_marginTop="@dimen/space_small_4"
-        android:layout_marginStart="@dimen/space_normal_16"
-        android:layout_marginEnd="@dimen/space_normal_16"
-        android:background="@color/mid_grey"
-        android:layout_width="match_parent"
-        android:layout_height="0.5dp" />
-
     <TextView
         android:id="@+id/title_tv"
         android:text="@string/lion_video_desc"
@@ -19,7 +11,7 @@
         android:layout_marginBottom="@dimen/space_small_8"
         android:layout_marginEnd="@dimen/space_normal_16"
         android:layout_marginStart="@dimen/space_normal_16"
-        android:layout_marginTop="@dimen/space_normal_16"
+        android:layout_marginTop="20dp"
         android:ellipsize="end"
         android:letterSpacing="0.08"
         android:maxLines="1"

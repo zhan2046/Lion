@@ -199,18 +199,18 @@ class ElasticDragDismissFrameLayout : ConstraintLayout {
 
         override fun onDrag(elasticOffset: Float, elasticOffsetPixels: Float,
                             rawOffset: Float, rawOffsetPixels: Float) {
-            if (elasticOffsetPixels > 0) {
-                activity.window.statusBarColor = ColorUtils.modifyAlpha(activity.window
+            when {
+                elasticOffsetPixels > 0 -> activity.window.statusBarColor = ColorUtils.modifyAlpha(activity.window
                         .statusBarColor, ((1f - rawOffset) * statusBarAlpha).toInt())
-            } else if (elasticOffsetPixels == 0f) {
-                activity.window.statusBarColor = ColorUtils.modifyAlpha(
-                        activity.window.statusBarColor, statusBarAlpha)
-                activity.window.navigationBarColor = ColorUtils.modifyAlpha(
-                        activity.window.navigationBarColor, navBarAlpha)
-            } else if (fadeNavBar) {
-                activity.window.navigationBarColor =
+                elasticOffsetPixels == 0f -> {
+                    activity.window.statusBarColor = ColorUtils.modifyAlpha(
+                            activity.window.statusBarColor, statusBarAlpha)
+                    activity.window.navigationBarColor = ColorUtils.modifyAlpha(
+                            activity.window.navigationBarColor, navBarAlpha)
+                }
+                fadeNavBar -> activity.window.navigationBarColor =
                         ColorUtils.modifyAlpha(activity.window.navigationBarColor,
-                        ((1f - rawOffset) * navBarAlpha).toInt())
+                                ((1f - rawOffset) * navBarAlpha).toInt())
             }
         }
 

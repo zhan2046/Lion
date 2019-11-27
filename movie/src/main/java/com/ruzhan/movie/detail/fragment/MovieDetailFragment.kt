@@ -9,6 +9,7 @@ import androidx.core.app.ActivityCompat.finishAfterTransition
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
+import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.lion.imageloader.glide.ImageLoader
 import com.ruzhan.lion.listener.OnItemClickListener
@@ -69,6 +70,14 @@ class MovieDetailFragment : Fragment() {
             movieDetailViewModel.movieId = movie.id
             ImageLoader.get().loadNoCrossFade(shot, movie.image,
                     ViewUtils.getPlaceholder(activity, 0))
+            val layoutManager = GridLayoutManager(activity, MovieDetailAdapter.SPAN_COUNT,
+                    GridLayoutManager.VERTICAL, false)
+            layoutManager.spanSizeLookup = object : GridLayoutManager.SpanSizeLookup() {
+                override fun getSpanSize(position: Int): Int {
+                    return movieDetailAdapter.getSpanSize(position)
+                }
+            }
+            recycler_view.layoutManager = layoutManager
             recycler_view.adapter = movieDetailAdapter
         }
     }
