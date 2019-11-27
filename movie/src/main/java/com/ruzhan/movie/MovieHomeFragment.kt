@@ -104,9 +104,10 @@ class MovieHomeFragment : Fragment() {
                 val indicator = LinePagerIndicator(context)
                 indicator.mode = LinePagerIndicator.MODE_WRAP_CONTENT
                 indicator.setColors(ContextCompat.getColor(context, R.color.colorAccent))
-                indicator.roundRadius = resources.getDimension(R.dimen.space_small_4)
-                indicator.xOffset = resources.getDimension(R.dimen.space_small_4)
-                indicator.yOffset = resources.getDimension(R.dimen.space_small_4)
+                indicator.roundRadius = resources.getDimension(R.dimen.space_small_6)
+                indicator.xOffset = resources.getDimension(R.dimen.space_small_6)
+                indicator.yOffset = resources.getDimension(R.dimen.space_small_6)
+                indicator.lineHeight = resources.getDimension(R.dimen.indicator_height)
                 return indicator
             }
         }
