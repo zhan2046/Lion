@@ -16,7 +16,6 @@
             android:id="@+id/recycler_view"
             android:scrollbars="none"
             android:overScrollMode="never"
-            android:background="@color/grey300"
             android:layout_width="match_parent"
             android:layout_height="match_parent" />
     </androidx.swiperefreshlayout.widget.SwipeRefreshLayout>

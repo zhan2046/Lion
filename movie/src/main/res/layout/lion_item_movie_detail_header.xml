@@ -1,10 +1,17 @@
 <?xml version="1.0" encoding="utf-8"?>
-<net.soulwolf.widget.ratiolayout.widget.RatioImageView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:soulwolf="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/image_iv"
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
-    android:layout_height="0dp"
-    android:scaleType="centerCrop"
-    soulwolf:datumRatio="datumWidth"
-    soulwolf:heightRatio="3"
-    soulwolf:widthRatio="5" />
+    android:layout_height="wrap_content">
+
+    <ImageView
+        android:id="@+id/image_iv"
+        app:layout_constraintDimensionRatio="H,16:9"
+        app:layout_constraintTop_toTopOf="parent"
+        android:layout_width="match_parent"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        android:transitionName="@string/transition_shot"
+        tools:ignore="ContentDescription" />
+</androidx.constraintlayout.widget.ConstraintLayout>

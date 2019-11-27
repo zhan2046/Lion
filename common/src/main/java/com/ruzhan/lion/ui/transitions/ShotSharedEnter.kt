@@ -15,7 +15,7 @@ class ShotSharedEnter(context: Context, attrs: AttributeSet) : ChangeBounds(cont
         val width = (transitionValues.values[PROPNAME_PARENT] as View).width
         val bounds = transitionValues.values[PROPNAME_BOUNDS] as Rect
         bounds.right = width
-        bounds.bottom = width * 3 / 5
+        bounds.bottom = width * 9 / 16
         transitionValues.values[PROPNAME_BOUNDS] = bounds
     }
 
