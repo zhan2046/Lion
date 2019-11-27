@@ -47,6 +47,7 @@ class MovieDetailAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         dataList.addAll(movieDetail.introduces)
         dataList.add(VIDEO_TITLE)
         dataList.addAll(movieDetail.videos)
+        dataList.add(LOAD_MORE)
         notifyDataSetChanged()
     }
 
