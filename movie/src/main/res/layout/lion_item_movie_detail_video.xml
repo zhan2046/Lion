@@ -2,7 +2,7 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/root_cl"
+    android:id="@+id/rootCardView"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginStart="@dimen/space_small_4"
@@ -11,7 +11,7 @@
     android:layout_marginBottom="@dimen/space_small_2"
     android:foreground="?attr/selectableItemBackground"
     card_view:cardBackgroundColor="@color/colorPrimary"
-    card_view:cardCornerRadius="@dimen/space_small_2"
+    card_view:cardCornerRadius="@dimen/space_small_4"
     card_view:cardElevation="@dimen/space_small_1">
 
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
@@ -19,7 +19,7 @@
         android:layout_height="wrap_content">
 
         <ImageView
-            android:id="@+id/image_iv"
+            android:id="@+id/imageIv"
             android:layout_width="match_parent"
             android:layout_height="0dp"
             android:scaleType="centerCrop"
@@ -29,7 +29,8 @@
             tools:ignore="ContentDescription" />
 
         <TextView
-            android:id="@+id/title_tv"
+            android:id="@+id/titleTv"
+            android:layout_marginBottom="8dp"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:padding="8dp"
@@ -41,6 +42,6 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/image_iv" />
+            app:layout_constraintTop_toBottomOf="@+id/imageIv" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

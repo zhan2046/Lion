@@ -19,16 +19,16 @@ class MovieDetailVideoHolder(itemView: View, listener: OnItemClickListener<Video
 
     init {
         val lightFontTypeface = FontHelper.get().lightFontTypeface
-        itemView.title_tv.typeface = lightFontTypeface
+        itemView.titleTv.typeface = lightFontTypeface
         if (listener != null) {
-            itemView.root_cl.setOnClickListener { listener.onItemClick(adapterPosition, video, it) }
+            itemView.rootCardView.setOnClickListener { listener.onItemClick(adapterPosition, video, it) }
         }
     }
 
     fun bind(bean: Video) {
         video = bean
-        itemView.title_tv.text = bean.title
-        ImageLoader.get().load(itemView.image_iv, bean.image,
+        itemView.titleTv.text = bean.title
+        ImageLoader.get().load(itemView.imageIv, bean.image,
                 ViewUtils.getPlaceholder(itemView.context, adapterPosition))
 
     }
