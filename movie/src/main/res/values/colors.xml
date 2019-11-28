@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="lion_movie_colorPrimary">#FFF5F5F5</color>
-    <color name="lion_movie_colorPrimaryDark">#66757575</color>
+    <color name="lion_movie_colorPrimary">#FAFAFA</color>
+    <color name="lion_movie_colorPrimaryDark">#C7C7C7</color>
     <color name="lion_movie_colorAccent">#FF1E88E5</color>
     <color name="lion_movie_scrim">#99323232</color>
 </resources>

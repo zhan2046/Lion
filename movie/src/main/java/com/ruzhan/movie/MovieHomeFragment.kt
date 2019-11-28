@@ -87,9 +87,9 @@ class MovieHomeFragment : Fragment() {
                 val simplePagerTitleView = ScaleTransitionPagerTitleView(context)
                 simplePagerTitleView.typeface = FontHelper.get().boldFontTypeface
                 simplePagerTitleView.text = titleList[index]
-                simplePagerTitleView.textSize = 15.5f
+                simplePagerTitleView.textSize = 15f
                 simplePagerTitleView.normalColor =
-                        ContextCompat.getColor(context, R.color.text_tertiary_dark)
+                        ContextCompat.getColor(context, R.color.text_secondary_dark)
                 simplePagerTitleView.selectedColor =
                         ContextCompat.getColor(context, R.color.colorAccent)
                 simplePagerTitleView.setOnClickListener {
@@ -105,8 +105,8 @@ class MovieHomeFragment : Fragment() {
                 indicator.mode = LinePagerIndicator.MODE_WRAP_CONTENT
                 indicator.setColors(ContextCompat.getColor(context, R.color.colorAccent))
                 indicator.roundRadius = resources.getDimension(R.dimen.space_small_6)
-                indicator.xOffset = resources.getDimension(R.dimen.space_small_6)
-                indicator.yOffset = resources.getDimension(R.dimen.space_small_6)
+                indicator.xOffset = resources.getDimension(R.dimen.space_small_2)
+                indicator.yOffset = resources.getDimension(R.dimen.space_small_8)
                 indicator.lineHeight = resources.getDimension(R.dimen.indicator_height)
                 return indicator
             }

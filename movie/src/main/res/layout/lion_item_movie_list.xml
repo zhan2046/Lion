@@ -2,24 +2,24 @@
 <androidx.cardview.widget.CardView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:card_view="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
-    android:id="@+id/root_cl"
+    android:id="@+id/rootCardView"
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_marginStart="@dimen/space_small_4"
-    android:layout_marginTop="6dp"
+    android:layout_marginTop="@dimen/space_small_4"
     android:layout_marginEnd="@dimen/space_small_4"
-    android:layout_marginBottom="@dimen/space_small_2"
+    android:layout_marginBottom="@dimen/space_small_4"
     android:foreground="?attr/selectableItemBackground"
-    card_view:cardBackgroundColor="@color/light_grey"
-    card_view:cardCornerRadius="@dimen/space_small_2"
-    card_view:cardElevation="@dimen/space_small_2">
+    card_view:cardBackgroundColor="@color/colorPrimary"
+    card_view:cardCornerRadius="@dimen/space_small_4"
+    card_view:cardElevation="@dimen/space_small_1">
 
     <androidx.constraintlayout.widget.ConstraintLayout xmlns:app="http://schemas.android.com/apk/res-auto"
         android:layout_width="match_parent"
         android:layout_height="wrap_content">
 
         <ImageView
-            android:id="@+id/image_iv"
+            android:id="@+id/picIv"
             app:layout_constraintDimensionRatio="H,16:9"
             app:layout_constraintTop_toTopOf="parent"
             android:layout_width="match_parent"
@@ -29,29 +29,7 @@
             tools:ignore="ContentDescription" />
 
         <TextView
-            android:id="@+id/tag_tv"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="@dimen/space_small_8"
-            android:layout_marginBottom="@dimen/space_small_8"
-            android:background="@drawable/shape_tag_bg"
-            android:gravity="center"
-            android:letterSpacing="0.08"
-            android:paddingStart="@dimen/space_small_8"
-            android:paddingLeft="@dimen/space_small_8"
-            android:paddingTop="@dimen/space_small_4"
-            android:paddingEnd="@dimen/space_small_8"
-            android:paddingRight="@dimen/space_small_8"
-            android:paddingBottom="@dimen/space_small_4"
-            android:textColor="@color/light_grey"
-            android:textSize="11sp"
-            tools:text="体育精选"
-            app:layout_constraintBottom_toBottomOf="@+id/image_iv"
-            app:layout_constraintLeft_toLeftOf="parent"
-            tools:ignore="SmallSp" />
-
-        <TextView
-            android:id="@+id/title_tv"
+            android:id="@+id/titleTv"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/space_normal_16"
@@ -64,10 +42,10 @@
             android:textSize="@dimen/text_large_20"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/image_iv" />
+            app:layout_constraintTop_toBottomOf="@+id/picIv" />
 
         <TextView
-            android:id="@+id/desc_tv"
+            android:id="@+id/contentTv"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
             android:layout_marginStart="@dimen/space_normal_16"
@@ -83,6 +61,6 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/title_tv" />
+            app:layout_constraintTop_toBottomOf="@+id/titleTv" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 </androidx.cardview.widget.CardView>

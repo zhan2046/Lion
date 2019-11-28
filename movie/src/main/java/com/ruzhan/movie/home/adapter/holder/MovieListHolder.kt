@@ -16,22 +16,20 @@ class MovieListHolder(itemView: View, listener: OnItemClickListener<Movie>?) :
 
     init {
         val lightFontTypeface = FontHelper.get().lightFontTypeface
-        itemView.tag_tv.typeface = lightFontTypeface
-        itemView.title_tv.typeface = FontHelper.get().boldFontTypeface
-        itemView.desc_tv.typeface = lightFontTypeface
+        itemView.titleTv.typeface = FontHelper.get().boldFontTypeface
+        itemView.contentTv.typeface = lightFontTypeface
         if (listener != null) {
-            itemView.root_cl.setOnClickListener {
-                listener.onItemClick(adapterPosition, movie, itemView.image_iv)
+            itemView.rootCardView.setOnClickListener {
+                listener.onItemClick(adapterPosition, movie, itemView.picIv)
             }
         }
     }
 
     fun bind(bean: Movie) {
         movie = bean
-        itemView.title_tv.text = movie.title
-        itemView.tag_tv.text = movie.tag
-        itemView.desc_tv.text = movie.desc
-        ImageLoader.get().load(itemView.image_iv, movie.image,
+        itemView.titleTv.text = movie.title
+        itemView.contentTv.text = movie.desc
+        ImageLoader.get().load(itemView.picIv, movie.image,
                 ViewUtils.getPlaceholder(itemView.context, adapterPosition))
     }
 }

@@ -6,7 +6,6 @@
         <item name="colorPrimaryDark">@color/lion_movie_colorPrimaryDark</item>
         <item name="colorAccent">@color/lion_movie_colorAccent</item>
 
-        <!-- using a semi-transparent window background for the drag-back gesture -->
         <item name="android:windowBackground">@color/lion_movie_scrim</item>
         <item name="android:colorBackgroundCacheHint">@null</item>
         <item name="android:windowContentOverlay">@null</item>
@@ -23,16 +22,5 @@
         </item>
         <item name="android:windowEnterTransition">@transition/dribbble_shot_enter</item>
         <item name="android:windowReturnTransition">@transition/dribbble_shot_return</item>
-    </style>
-
-    <style name="Lion.ThemeOverlay.ActionBar" parent="ThemeOverlay.AppCompat.Dark.ActionBar">
-        <item name="android:textColorPrimary">#EE383838</item>
-        <item name="colorControlNormal">#EE383838</item>
-        <item name="colorControlHighlight">#8fff</item>
-        <item name="colorControlActivated">#EE383838</item>
-    </style>
-
-    <style name="Lion.TabLayout.TextSize" parent="TextAppearance.Widget.AppCompat.Toolbar.Title">
-        <item name="android:textSize">12sp</item>
     </style>
 </resources>
