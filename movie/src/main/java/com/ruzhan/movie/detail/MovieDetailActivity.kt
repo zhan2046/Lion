@@ -28,7 +28,7 @@ class MovieDetailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.lion_container)
-        val movie = intent.getParcelableExtra<Movie>(MOVIE)
+        val movie = intent.getParcelableExtra(MOVIE) as Movie
         if (savedInstanceState == null) {
             val movieDetailFragment = MovieDetailFragment.newInstance(movie)
             this.movieDetailFragment = movieDetailFragment

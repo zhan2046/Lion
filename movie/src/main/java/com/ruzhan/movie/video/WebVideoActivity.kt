@@ -30,7 +30,7 @@ class WebVideoActivity : AppCompatActivity() {
                 WindowManager.LayoutParams.FLAG_FULLSCREEN)
         window.setFormat(PixelFormat.TRANSLUCENT)
         setContentView(R.layout.lion_container)
-        val url = intent.getStringExtra(VIDEO_URL)
+        val url = intent.getStringExtra(VIDEO_URL) ?: ""
         if (savedInstanceState == null) {
             val webVideoFragment = WebVideoFragment.newInstance(url)
             supportFragmentManager
