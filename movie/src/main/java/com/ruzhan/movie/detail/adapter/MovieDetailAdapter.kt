@@ -10,7 +10,7 @@ import com.ruzhan.lion.model.Video
 import com.ruzhan.lion.ui.LoadMoreHolder
 import com.ruzhan.movie.R
 import com.ruzhan.movie.detail.adapter.holder.*
-import com.ruzhan.movie.home.adapter.holder.MoiveEmptyHolder
+import com.ruzhan.movie.home.adapter.holder.MovieEmptyHolder
 import com.ruzhan.movie.model.ImageListModel
 import java.util.*
 
@@ -34,7 +34,7 @@ class MovieDetailAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     private var dataList: ArrayList<Any> = ArrayList()
     private lateinit var movieDetail: MovieDetail
-    private var headerHolder: MoiveEmptyHolder? = null
+    private var headerHolder: MovieEmptyHolder? = null
 
     var onItemVideoClickListener: OnItemClickListener<Video>? = null
     var onItemImageClickListener: OnItemClickListener<ImageListModel>? = null
@@ -78,7 +78,7 @@ class MovieDetailAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         lateinit var viewHolder: RecyclerView.ViewHolder
         when (viewType) {
             TYPE_HEADER -> {
-                viewHolder = MoiveEmptyHolder(LayoutInflater.from(parent.context)
+                viewHolder = MovieEmptyHolder(LayoutInflater.from(parent.context)
                         .inflate(R.layout.lion_item_movie_detail_header, parent, false))
                 headerHolder = viewHolder
             }
