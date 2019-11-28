@@ -20,7 +20,7 @@ class MovieDetailImageHolder(itemView: View, private var movieDetail: MovieDetai
 
     init {
         if (listener != null) {
-            itemView.root_cv.setOnClickListener {
+            itemView.rootCardView.setOnClickListener {
                 resetImageListModel(url)
                 listener.onItemClick(adapterPosition, imageListModel, it)
             }
@@ -29,7 +29,7 @@ class MovieDetailImageHolder(itemView: View, private var movieDetail: MovieDetai
 
     fun bind(bean: Introduce) {
         url = bean.image
-        ImageLoader.get().load(itemView.image_iv, url,
+        ImageLoader.get().load(itemView.picIv, url,
                 ViewUtils.getPlaceholder(itemView.context, adapterPosition))
     }
 
