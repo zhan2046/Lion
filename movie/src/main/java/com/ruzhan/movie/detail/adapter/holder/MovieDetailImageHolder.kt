@@ -8,11 +8,15 @@ import com.ruzhan.lion.model.Introduce
 import com.ruzhan.lion.model.MovieDetail
 import com.ruzhan.lion.util.ViewUtils
 import com.ruzhan.movie.model.ImageListModel
-import kotlinx.android.synthetic.main.lion_item_movie_detail_image.view.*
+import kotlinx.android.extensions.LayoutContainer
+import kotlinx.android.synthetic.main.lion_item_movie_detail_image.*
 
 class MovieDetailImageHolder(itemView: View, private var movieDetail: MovieDetail,
                              listener: OnItemClickListener<ImageListModel>?) :
-        RecyclerView.ViewHolder(itemView) {
+        RecyclerView.ViewHolder(itemView), LayoutContainer {
+
+    override val containerView: View?
+        get() = itemView
 
     private var imageListModel: ImageListModel = ImageListModel("", 0, "", ArrayList())
     private val imageUrlList = ArrayList<String>()
@@ -20,7 +24,7 @@ class MovieDetailImageHolder(itemView: View, private var movieDetail: MovieDetai
 
     init {
         if (listener != null) {
-            itemView.rootCardView.setOnClickListener {
+            rootCardView.setOnClickListener {
                 resetImageListModel(url)
                 listener.onItemClick(adapterPosition, imageListModel, it)
             }
@@ -29,7 +33,7 @@ class MovieDetailImageHolder(itemView: View, private var movieDetail: MovieDetai
 
     fun bind(bean: Introduce) {
         url = bean.image
-        ImageLoader.get().load(itemView.picIv, url,
+        ImageLoader.get().load(picIv, url,
                 ViewUtils.getPlaceholder(itemView.context, adapterPosition))
     }
 

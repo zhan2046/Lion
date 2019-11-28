@@ -7,29 +7,33 @@ import com.lion.imageloader.glide.ImageLoader
 import com.ruzhan.lion.listener.OnItemClickListener
 import com.ruzhan.lion.model.Movie
 import com.ruzhan.lion.util.ViewUtils
-import kotlinx.android.synthetic.main.lion_item_movie_list.view.*
+import kotlinx.android.extensions.LayoutContainer
+import kotlinx.android.synthetic.main.lion_item_movie_list.*
 
 class MovieListHolder(itemView: View, listener: OnItemClickListener<Movie>?) :
-        RecyclerView.ViewHolder(itemView) {
+        RecyclerView.ViewHolder(itemView), LayoutContainer {
 
     private lateinit var movie: Movie
 
+    override val containerView: View?
+        get() = itemView
+
     init {
         val lightFontTypeface = FontHelper.get().lightFontTypeface
-        itemView.titleTv.typeface = FontHelper.get().boldFontTypeface
-        itemView.contentTv.typeface = lightFontTypeface
+        titleTv.typeface = FontHelper.get().boldFontTypeface
+        contentTv.typeface = lightFontTypeface
         if (listener != null) {
-            itemView.rootCardView.setOnClickListener {
-                listener.onItemClick(adapterPosition, movie, itemView.picIv)
+            rootCardView.setOnClickListener {
+                listener.onItemClick(adapterPosition, movie, picIv)
             }
         }
     }
 
     fun bind(bean: Movie) {
         movie = bean
-        itemView.titleTv.text = movie.title
-        itemView.contentTv.text = movie.desc
-        ImageLoader.get().load(itemView.picIv, movie.image,
+        titleTv.text = movie.title
+        contentTv.text = movie.desc
+        ImageLoader.get().load(picIv, movie.image,
                 ViewUtils.getPlaceholder(itemView.context, adapterPosition))
     }
 }

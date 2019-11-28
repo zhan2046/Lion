@@ -4,15 +4,20 @@ import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.lion.font.FontHelper
 import com.ruzhan.lion.model.Introduce
-import kotlinx.android.synthetic.main.lion_item_movie_detail_text.view.*
+import kotlinx.android.extensions.LayoutContainer
+import kotlinx.android.synthetic.main.lion_item_movie_detail_text.*
 
-class MovieDetailTextHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+class MovieDetailTextHolder(itemView: View) :
+        RecyclerView.ViewHolder(itemView), LayoutContainer {
+
+    override val containerView: View?
+        get() = itemView
 
     init {
-        itemView.text_tv.typeface = FontHelper.get().lightFontTypeface
+        textTv.typeface = FontHelper.get().lightFontTypeface
     }
 
     fun bind(bean: Introduce) {
-        itemView.text_tv.text = bean.text
+        textTv.text = bean.text
     }
 }

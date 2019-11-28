@@ -3,17 +3,22 @@ package com.ruzhan.movie.detail.adapter.holder
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.lion.font.FontHelper
-import kotlinx.android.synthetic.main.lion_item_movie_detail_title.view.*
+import kotlinx.android.extensions.LayoutContainer
+import kotlinx.android.synthetic.main.lion_item_movie_detail_title.*
 
-class MovieDetailTitleHolder(itemView: View) : RecyclerView.ViewHolder(itemView) {
+class MovieDetailTitleHolder(itemView: View) :
+        RecyclerView.ViewHolder(itemView), LayoutContainer {
+
+    override val containerView: View?
+        get() = itemView
 
     init {
-        itemView.tag_tv.typeface = FontHelper.get().lightFontTypeface
-        itemView.title_tv.typeface = FontHelper.get().boldFontTypeface
+        tag_tv.typeface = FontHelper.get().lightFontTypeface
+        title_tv.typeface = FontHelper.get().boldFontTypeface
     }
 
     fun bind(title: String, tag: String) {
-        itemView.title_tv.text = title
-        itemView.tag_tv.text = tag
+        title_tv.text = title
+        tag_tv.text = tag
     }
 }
