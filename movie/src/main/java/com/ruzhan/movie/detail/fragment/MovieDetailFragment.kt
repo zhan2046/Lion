@@ -62,7 +62,10 @@ class MovieDetailFragment : Fragment() {
                 ViewModelProviders.of(this).get(MovieDetailViewModel::class.java)
         initData(movieDetailViewModel)
         initListener(movieDetailViewModel)
-        movieDetailViewModel.getMovieDetail(movie.id)
+        shot.postDelayed({
+            movieDetailViewModel.getLocalMovieDetail(movie.id)
+            movieDetailViewModel.getMovieDetail(movie.id)
+        }, TRANSITION_TIME)
     }
 
     private fun initData(movieDetailViewModel: MovieDetailViewModel) {
@@ -138,8 +141,6 @@ class MovieDetailFragment : Fragment() {
                     Observer { movieDetail ->
                         movieDetail?.let { movieDetailAdapter.setData(it) }
                     })
-            shot.postDelayed({ movieDetailViewModel.getLocalMovieDetail(movie.id) },
-                    TRANSITION_TIME)
         }
     }
 
