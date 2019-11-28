@@ -12,7 +12,7 @@
     app:cardPreventCornerOverlap="false"
     app:cardUseCompatPadding="true"
     card_view:cardBackgroundColor="@color/colorPrimary"
-    card_view:cardCornerRadius="@dimen/space_small_4"
+    card_view:cardCornerRadius="@dimen/space_small_1"
     card_view:cardElevation="@dimen/space_small_1"
     android:focusable="true">
 

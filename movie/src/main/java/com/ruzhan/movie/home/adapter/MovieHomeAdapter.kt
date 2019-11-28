@@ -3,8 +3,6 @@ package com.ruzhan.movie.home.adapter
 import androidx.fragment.app.Fragment
 import androidx.fragment.app.FragmentManager
 import androidx.fragment.app.FragmentStatePagerAdapter
-import com.ruzhan.lion.util.ResUtils
-import com.ruzhan.movie.R
 import com.ruzhan.movie.home.MovieListFragment
 
 class MovieHomeAdapter(fm: FragmentManager) :

@@ -124,21 +124,21 @@ class MovieListFragment : Fragment() {
 
     private fun initLiveData(movieListViewModel: MovieListViewModel) {
         movieListViewModel.loadStatusLiveData.observe(this, Observer { isLoading ->
-                    if (isLoading != null && !isLoading) {
-                        swipe_refresh.isRefreshing = isLoading
-                    }
-                })
+            if (isLoading != null && !isLoading) {
+                swipe_refresh.isRefreshing = isLoading
+            }
+        })
         movieListViewModel.refreshLiveData.observe(this, Observer { movieList ->
-                    movieList?.let {
-                        val tagMovieList = movieListViewModel.getRefreshTagList(tagKey)
-                        movieListAdapter.setRefreshData(tagMovieList)
-                    }
-                })
+            movieList?.let {
+                val tagMovieList = movieListViewModel.getRefreshTagList(tagKey)
+                movieListAdapter.setRefreshData(tagMovieList)
+            }
+        })
         movieListViewModel.loadMoreLiveData.observe(this, Observer { movieList ->
-                    movieList?.let {
-                        val tagMovieList = movieListViewModel.getLoadMoreTagList(tagKey)
-                        movieListAdapter.setLoadMoreData(tagMovieList)
-                    }
-                })
+            movieList?.let {
+                val tagMovieList = movieListViewModel.getLoadMoreTagList(tagKey)
+                movieListAdapter.setLoadMoreData(tagMovieList)
+            }
+        })
     }
 }
