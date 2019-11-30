@@ -54,7 +54,7 @@ class ItemImageDetailFragment : Fragment() {
                     ViewUtils.getPlaceholder(activity!!, 0))
             lion_image_load_progress.visibility = View.INVISIBLE
         } else {
-            ImageLoader.get().loadCenterCrop(lion_image_photo_view, imageUrl,
+            ImageLoader.get().load(lion_image_photo_view, imageUrl,
                     object : RequestListener<Drawable> {
 
                         override fun onResourceReady(resource: Drawable?, model: Any?,
