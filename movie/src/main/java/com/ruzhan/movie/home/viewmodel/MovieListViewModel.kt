@@ -3,6 +3,7 @@ package com.ruzhan.movie.home.viewmodel
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
 import com.google.gson.Gson
+import com.google.gson.internal.LinkedTreeMap
 import com.google.gson.reflect.TypeToken
 import com.ruzhan.lion.database.CommonModel
 import com.ruzhan.lion.model.Movie
@@ -40,11 +41,11 @@ class MovieListViewModel : ViewModel() {
     val loadMoreLiveData = MutableLiveData<List<Movie>>()
 
     val titleListLiveData = MutableLiveData<List<String>>()
-    private val refreshTagListMap = TreeMap<String, ArrayList<Movie>>(
+    private val refreshTagListMap = LinkedTreeMap<String, ArrayList<Movie>>(
             Comparator<String> { o1, o2 ->
                 return@Comparator o1.compareTo(o2)
             })
-    private val loadMoreTagListMap = TreeMap<String, ArrayList<Movie>>(
+    private val loadMoreTagListMap = LinkedTreeMap<String, ArrayList<Movie>>(
             Comparator<String> { o1, o2 ->
                 return@Comparator o1.compareTo(o2)
             })
@@ -188,7 +189,7 @@ class MovieListViewModel : ViewModel() {
     }
 
     private fun handleMovieListTag(status: String, movieList: List<Movie>?,
-                                   tagListMap: TreeMap<String, ArrayList<Movie>>) {
+                                   tagListMap: LinkedTreeMap<String, ArrayList<Movie>>) {
         if (movieList != null && movieList.isNotEmpty()) {
             tagListMap.clear()
             tagListMap[newTabTag] = ArrayList(movieList)
