@@ -7,6 +7,7 @@ android {
         applicationId "com.ruzhan.lion"
         versionCode 301
         versionName "0.3.0"
+        multiDexEnabled true
     }
 
     buildTypes {
