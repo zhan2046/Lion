@@ -6,7 +6,6 @@ import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.ruzhan.lion.database.CommonModel
 import com.ruzhan.lion.model.MovieDetail
-import com.ruzhan.lion.rx.Subscriber
 import com.ruzhan.lion.util.LionUtils
 import com.ruzhan.movie.network.MovieRepository
 import io.reactivex.BackpressureStrategy
@@ -71,14 +70,14 @@ class MovieDetailViewModel : ViewModel() {
 
     fun getMovieDetail(movieId: String) {
         val detailFile = movieId.plus(LionUtils.JSON_FILE)
-        MovieRepository.get().getMovieDetail(detailFile)
+        val disposable = MovieRepository.get().getMovieDetail(detailFile)
                 .map { result -> result.data }
                 .observeOn(AndroidSchedulers.mainThread())
                 .doOnError {}
                 .doOnSubscribe {}
                 .doFinally {}
                 .doOnSuccess { movieDetail -> handleMovieDetail(movieDetail) }
-                .subscribe(Subscriber.create())
+                .subscribe({}, {})
     }
 
     private fun handleMovieDetail(movieDetail: MovieDetail?) {

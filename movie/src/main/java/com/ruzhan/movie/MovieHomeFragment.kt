@@ -30,9 +30,16 @@ class MovieHomeFragment : Fragment() {
         fun newInstance() = MovieHomeFragment()
     }
 
-    private var movieHomeAdapter: MovieHomeAdapter? = null
-    private var commonNavigator: CommonNavigator? = null
     private val titleList = ArrayList<String>()
+    private val movieHomeAdapter: MovieHomeAdapter by lazy {
+        MovieHomeAdapter(childFragmentManager)
+    }
+    private val commonNavigator: CommonNavigator by lazy {
+        CommonNavigator(activity)
+    }
+    private val movieListViewModel: MovieListViewModel by lazy {
+        ViewModelProviders.of(activity!!).get(MovieListViewModel::class.java)
+    }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
                               savedInstanceState: Bundle?): View? {
@@ -41,24 +48,20 @@ class MovieHomeFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        activity?.let { activity ->
-            val movieListViewModel =
-                    ViewModelProviders.of(activity).get(MovieListViewModel::class.java)
-            initData()
-            initLiveData(movieListViewModel)
-            movieListViewModel.getLocalMovieList()
-            movieListViewModel.getRefreshMovieList()
-        }
+        initData()
+        initLiveData()
+        movieListViewModel.getLocalMovieList()
+        movieListViewModel.getRefreshMovieList()
     }
 
-    private fun initLiveData(movieListViewModel: MovieListViewModel) {
+    private fun initLiveData() {
         movieListViewModel.titleListLiveData.observe(this,
                 Observer<List<String>> { tagList ->
                     tagList?.let {
                         titleList.clear()
                         titleList.addAll(tagList)
-                        movieHomeAdapter?.setData(titleList)
-                        commonNavigator?.notifyDataSetChanged()
+                        movieHomeAdapter.setData(titleList)
+                        commonNavigator.notifyDataSetChanged()
                     }
                 })
     }
@@ -67,16 +70,11 @@ class MovieHomeFragment : Fragment() {
         titleTv.typeface = FontHelper.get().boldFontTypeface
         titleTv.text = resources.getString(R.string.lion_tab_movie_title)
         LionTitleHelper.setAlphaScaleAnimate(titleTv)
-
-        val movieHomeAdapter = MovieHomeAdapter(childFragmentManager)
-        this.movieHomeAdapter = movieHomeAdapter
         viewPager.adapter = movieHomeAdapter
         initIndicator()
     }
 
     private fun initIndicator() {
-        val commonNavigator = CommonNavigator(activity)
-        this.commonNavigator = commonNavigator
         commonNavigator.adapter = object : CommonNavigatorAdapter() {
 
             override fun getTitleView(context: Context, index: Int):

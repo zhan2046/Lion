@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="utf-8"?>
 <com.ruzhan.lion.ui.widget.ElasticDragDismissFrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    android:id="@+id/elastic_drag_dismiss"
+    android:id="@+id/elasticDragDismissFrameLayout"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:transitionGroup="false"
@@ -51,7 +51,7 @@
     </FrameLayout>
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recycler_view"
+        android:id="@+id/recyclerView"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
         android:clipToPadding="false"

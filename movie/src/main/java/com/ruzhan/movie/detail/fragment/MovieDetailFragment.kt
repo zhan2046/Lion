@@ -45,6 +45,9 @@ class MovieDetailFragment : Fragment() {
     private lateinit var movie: Movie
     private val movieDetailAdapter = MovieDetailAdapter()
     private var chromeFaber: ElasticDragDismissFrameLayout.SystemChromeFader? = null
+    private val movieDetailViewModel: MovieDetailViewModel by lazy {
+        ViewModelProviders.of(this).get(MovieDetailViewModel::class.java)
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -58,17 +61,15 @@ class MovieDetailFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        val movieDetailViewModel =
-                ViewModelProviders.of(this).get(MovieDetailViewModel::class.java)
-        initData(movieDetailViewModel)
-        initListener(movieDetailViewModel)
+        initData()
+        initListener()
         shot.postDelayed({
             movieDetailViewModel.getLocalMovieDetail(movie.id)
             movieDetailViewModel.getMovieDetail(movie.id)
         }, TRANSITION_TIME)
     }
 
-    private fun initData(movieDetailViewModel: MovieDetailViewModel) {
+    private fun initData() {
         activity?.let { activity ->
             movieDetailViewModel.movieId = movie.id
             ImageLoader.get().loadNoCrossFade(shot, movie.image,
@@ -80,12 +81,12 @@ class MovieDetailFragment : Fragment() {
                     return movieDetailAdapter.getSpanSize(position)
                 }
             }
-            recycler_view.layoutManager = layoutManager
-            recycler_view.adapter = movieDetailAdapter
+            recyclerView.layoutManager = layoutManager
+            recyclerView.adapter = movieDetailAdapter
         }
     }
 
-    private fun initListener(movieDetailViewModel: MovieDetailViewModel) {
+    private fun initListener() {
         activity?.let { activity ->
             movieDetailAdapter.onItemVideoClickListener = object : OnItemClickListener<Video> {
 
@@ -100,7 +101,7 @@ class MovieDetailFragment : Fragment() {
                             ImageDetailActivity.launch(activity, bean)
                         }
                     }
-            recycler_view.addOnScrollListener(object : RecyclerView.OnScrollListener() {
+            recyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
 
                 override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
                     super.onScrolled(recyclerView, dx, dy)
@@ -112,7 +113,7 @@ class MovieDetailFragment : Fragment() {
                     shot.isImmediatePin = newState == RecyclerView.SCROLL_STATE_SETTLING
                 }
             })
-            recycler_view.onFlingListener = object : RecyclerView.OnFlingListener() {
+            recyclerView.onFlingListener = object : RecyclerView.OnFlingListener() {
                 override fun onFling(velocityX: Int, velocityY: Int): Boolean {
                     shot.isImmediatePin = true
                     return false
@@ -147,18 +148,18 @@ class MovieDetailFragment : Fragment() {
     override fun onResume() {
         super.onResume()
         chromeFaber?.let { chromeFaber ->
-            elastic_drag_dismiss.addListener(chromeFaber)
+            elasticDragDismissFrameLayout.addListener(chromeFaber)
         }
     }
 
     override fun onPause() {
         super.onPause()
         chromeFaber?.let { chromeFaber ->
-            elastic_drag_dismiss.removeListener(chromeFaber)
+            elasticDragDismissFrameLayout.removeListener(chromeFaber)
         }
     }
 
     fun closeFragmentUpdateUi() {
-        recycler_view?.let { recycler_view.visibility = View.INVISIBLE }
+        recyclerView?.let { recyclerView.visibility = View.INVISIBLE }
     }
 }
