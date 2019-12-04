@@ -3,7 +3,7 @@ package com.ruzhan.lion.ui
 import android.app.Application
 import android.content.Context
 import androidx.multidex.MultiDex
-import com.lion.font.FontHelper
+import com.ruzhan.font.FontHelper
 import com.ruzhan.movie.utils.ResUtils
 import com.ruzhan.movie.utils.X5Helper
 

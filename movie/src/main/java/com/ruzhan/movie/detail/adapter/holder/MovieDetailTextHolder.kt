@@ -2,7 +2,7 @@ package com.ruzhan.movie.detail.adapter.holder
 
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
-import com.lion.font.FontHelper
+import com.ruzhan.font.FontHelper
 import com.ruzhan.movie.model.Introduce
 import kotlinx.android.extensions.LayoutContainer
 import kotlinx.android.synthetic.main.lion_item_movie_detail_text.*

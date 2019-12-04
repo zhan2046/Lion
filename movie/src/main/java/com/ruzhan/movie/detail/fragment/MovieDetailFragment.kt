@@ -11,7 +11,7 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
-import com.lion.imageloader.glide.ImageLoader
+import com.ruzhan.imageloader.glide.ImageLoader
 import com.ruzhan.movie.listener.OnItemClickListener
 import com.ruzhan.movie.model.Video
 import com.ruzhan.movie.base.widget.ElasticDragDismissFrameLayout
