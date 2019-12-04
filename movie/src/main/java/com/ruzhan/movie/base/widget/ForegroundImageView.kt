@@ -8,7 +8,7 @@ import android.os.Build
 import android.util.AttributeSet
 import android.view.ViewOutlineProvider
 import androidx.appcompat.widget.AppCompatImageView
-import com.ruzhan.common.R
+import com.ruzhan.movie.R
 
 open class ForegroundImageView : AppCompatImageView {
 

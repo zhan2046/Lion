@@ -5,10 +5,10 @@ import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.ruzhan.movie.listener.OnItemClickListener
 import com.ruzhan.movie.model.Introduce
-import com.ruzhan.movie.model.MovieDetail
 import com.ruzhan.movie.model.Video
 import com.ruzhan.movie.base.LoadMoreHolder
 import com.ruzhan.movie.R
+import com.ruzhan.movie.db.entity.MovieDetailEntity
 import com.ruzhan.movie.detail.adapter.holder.*
 import com.ruzhan.movie.home.adapter.holder.MovieEmptyHolder
 import com.ruzhan.movie.model.ImageListModel
@@ -33,13 +33,13 @@ class MovieDetailAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     }
 
     private var dataList: ArrayList<Any> = ArrayList()
-    private lateinit var movieDetail: MovieDetail
+    private lateinit var movieDetail: MovieDetailEntity
     private var headerHolder: MovieEmptyHolder? = null
 
     var onItemVideoClickListener: OnItemClickListener<Video>? = null
     var onItemImageClickListener: OnItemClickListener<ImageListModel>? = null
 
-    fun setData(movieDetail: MovieDetail) {
+    fun setData(movieDetail: MovieDetailEntity) {
         this.movieDetail = movieDetail
         dataList.clear()
         dataList.add(HEADER)

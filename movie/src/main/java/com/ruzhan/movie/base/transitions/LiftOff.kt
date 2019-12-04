@@ -8,7 +8,7 @@ import android.transition.TransitionValues
 import android.util.AttributeSet
 import android.view.View
 import android.view.ViewGroup
-import com.ruzhan.common.R
+import com.ruzhan.movie.R
 
 
 class LiftOff(context: Context, attrs: AttributeSet) : Transition(context, attrs) {

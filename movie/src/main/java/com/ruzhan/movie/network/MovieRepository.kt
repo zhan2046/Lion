@@ -1,13 +1,12 @@
 package com.ruzhan.movie.network
 
-import com.ruzhan.lion.database.CommonAppDatabase
-import com.ruzhan.lion.database.CommonModel
+import com.ruzhan.movie.db.MovieDatabase
+import com.ruzhan.movie.db.entity.MovieDetailEntity
+import com.ruzhan.movie.db.entity.MovieEntity
+import com.ruzhan.movie.helper.MovieHelper
 import com.ruzhan.movie.model.HttpResult
 import com.ruzhan.movie.model.MovieDetail
 import com.ruzhan.movie.utils.ResUtils
-import com.ruzhan.movie.db.MovieDatabase
-import com.ruzhan.movie.db.entity.MovieEntity
-import com.ruzhan.movie.helper.MovieHelper
 import io.reactivex.Flowable
 import io.reactivex.Single
 import io.reactivex.schedulers.Schedulers
@@ -26,13 +25,9 @@ class MovieRepository private constructor() {
     private val api: MovieApi by lazy {
         MovieClient.get()
     }
-    private val commonAppDatabase: CommonAppDatabase by lazy {
-        CommonAppDatabase.invoke(ResUtils.getApp())
-    }
     private val movieDatabase: MovieDatabase by lazy {
         MovieDatabase.get(ResUtils.getApp())
     }
-
 
     fun getMovieList(pageFileName: String): Single<List<MovieEntity>> {
         return api.getMovieList(pageFileName)
@@ -45,8 +40,18 @@ class MovieRepository private constructor() {
                 }
     }
 
-    fun getMovieDetail(detailFile: String): Single<HttpResult<MovieDetail>> {
-        return api.getMovieDetail(detailFile).subscribeOn(Schedulers.io())
+    fun getMovieDetail(detailFile: String): Single<MovieDetailEntity> {
+        return api.getMovieDetail(detailFile)
+                .subscribeOn(Schedulers.io())
+                .map { result ->
+                    var movieDetailEntity = MovieDetailEntity.empty()
+                    val data = result.data
+                    if (data != null) {
+                        movieDetailEntity = MovieHelper.getMovieDetailEntity(data)
+                        insertMovieDetailEntity(movieDetailEntity)
+                    }
+                    movieDetailEntity
+                }
     }
 
     fun loadMovieEntityList(): Flowable<List<MovieEntity>> {
@@ -61,11 +66,11 @@ class MovieRepository private constructor() {
         movieDatabase.movieDao().insertMovieEntityList(dayNewList)
     }
 
-    fun insertCommonModel(commonModel: CommonModel) {
-        commonAppDatabase.commonDao().insertCommonModel(commonModel)
+    fun loadMovieDetailEntity(id: String): Flowable<MovieDetailEntity> {
+        return movieDatabase.movieDetailDao().loadMovieDetailEntity(id)
     }
 
-    fun getCommonModel(id: Int): Flowable<CommonModel> {
-        return commonAppDatabase.commonDao().getCommonModel(id)
+    private fun insertMovieDetailEntity(movieDetailEntity: MovieDetailEntity) {
+        movieDatabase.movieDetailDao().insertMovieDetailEntity(movieDetailEntity)
     }
 }

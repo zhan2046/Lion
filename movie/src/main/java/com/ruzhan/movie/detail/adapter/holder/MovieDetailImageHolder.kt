@@ -3,15 +3,15 @@ package com.ruzhan.movie.detail.adapter.holder
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.lion.imageloader.glide.ImageLoader
+import com.ruzhan.movie.db.entity.MovieDetailEntity
 import com.ruzhan.movie.listener.OnItemClickListener
 import com.ruzhan.movie.model.Introduce
-import com.ruzhan.movie.model.MovieDetail
 import com.ruzhan.movie.utils.ViewUtils
 import com.ruzhan.movie.model.ImageListModel
 import kotlinx.android.extensions.LayoutContainer
 import kotlinx.android.synthetic.main.lion_item_movie_detail_image.*
 
-class MovieDetailImageHolder(itemView: View, private var movieDetail: MovieDetail,
+class MovieDetailImageHolder(itemView: View, private var movieDetail: MovieDetailEntity,
                              listener: OnItemClickListener<ImageListModel>?) :
         RecyclerView.ViewHolder(itemView), LayoutContainer {
 

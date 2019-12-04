@@ -8,8 +8,8 @@ import android.view.MotionEvent
 import android.view.View
 
 import androidx.constraintlayout.widget.ConstraintLayout
+import com.ruzhan.movie.R
 
-import com.ruzhan.common.R
 import com.ruzhan.movie.utils.AnimUtils
 import com.ruzhan.movie.utils.ColorUtils
 import com.ruzhan.movie.utils.ViewUtils

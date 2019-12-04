@@ -18,4 +18,6 @@ android {
 
 dependencies {
     api fileTree(dir: 'libs', include: ['*.jar'])
+    implementation project(':font')
+    implementation project(':imageloader')
 }

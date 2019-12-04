@@ -10,7 +10,7 @@ import android.util.AttributeSet
 import android.view.View
 import android.view.ViewGroup
 import androidx.annotation.Keep
-import com.ruzhan.common.R
+import com.ruzhan.movie.R
 import com.ruzhan.movie.utils.TransitionUtils
 
 

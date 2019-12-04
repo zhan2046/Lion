@@ -10,8 +10,8 @@ import android.util.AttributeSet
 import android.view.View
 
 import androidx.annotation.FloatRange
+import com.ruzhan.movie.R
 
-import com.ruzhan.common.R
 import com.ruzhan.movie.utils.AnimUtils
 import com.ruzhan.movie.utils.ColorUtils
 

@@ -51,7 +51,7 @@ class MovieDetailFragment : Fragment() {
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        movie = arguments?.getParcelable(MOVIE)!!
+        movie = arguments?.getParcelable(MOVIE) as MovieEntity
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
@@ -64,14 +64,12 @@ class MovieDetailFragment : Fragment() {
         initData()
         initListener()
         shot.postDelayed({
-            movieDetailViewModel.getLocalMovieDetail(movie.id)
             movieDetailViewModel.getMovieDetail(movie.id)
         }, TRANSITION_TIME)
     }
 
     private fun initData() {
         activity?.let { activity ->
-            movieDetailViewModel.movieId = movie.id
             ImageLoader.get().loadNoCrossFade(shot, movie.image,
                     ViewUtils.getPlaceholder(activity, 0))
             val layoutManager = GridLayoutManager(activity, MovieDetailAdapter.SPAN_COUNT,

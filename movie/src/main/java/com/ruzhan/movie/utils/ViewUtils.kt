@@ -3,8 +3,7 @@ package com.ruzhan.movie.utils
 import android.content.Context
 import android.graphics.drawable.ColorDrawable
 import android.graphics.drawable.Drawable
-
-import com.ruzhan.common.R
+import com.ruzhan.movie.R
 
 object ViewUtils {
 
