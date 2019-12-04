@@ -5,8 +5,8 @@ import androidx.lifecycle.ViewModel
 import com.google.gson.Gson
 import com.google.gson.reflect.TypeToken
 import com.ruzhan.lion.database.CommonModel
-import com.ruzhan.lion.model.MovieDetail
-import com.ruzhan.lion.util.LionUtils
+import com.ruzhan.movie.model.MovieDetail
+import com.ruzhan.movie.utils.LionUtils
 import com.ruzhan.movie.network.MovieRepository
 import io.reactivex.BackpressureStrategy
 import io.reactivex.Flowable

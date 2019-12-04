@@ -11,8 +11,8 @@ import com.bumptech.glide.load.engine.GlideException
 import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.target.Target
 import com.lion.imageloader.glide.ImageLoader
-import com.ruzhan.lion.util.LionUtils
-import com.ruzhan.lion.util.ViewUtils
+import com.ruzhan.movie.utils.LionUtils
+import com.ruzhan.movie.utils.ViewUtils
 import com.ruzhan.movie.R
 import kotlinx.android.synthetic.main.lion_frag_image_item_detail.*
 

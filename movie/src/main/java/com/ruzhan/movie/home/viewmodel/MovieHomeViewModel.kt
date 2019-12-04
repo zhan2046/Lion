@@ -3,8 +3,8 @@ package com.ruzhan.movie.home.viewmodel
 import android.util.Log
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
-import com.ruzhan.lion.util.LionUtils
-import com.ruzhan.lion.util.ResUtils
+import com.ruzhan.movie.utils.LionUtils
+import com.ruzhan.movie.utils.ResUtils
 import com.ruzhan.movie.R
 import com.ruzhan.movie.db.entity.MovieEntity
 import com.ruzhan.movie.network.MovieRepository

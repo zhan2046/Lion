@@ -4,7 +4,7 @@ import android.app.Application
 import android.content.Context
 import androidx.multidex.MultiDex
 import com.lion.font.FontHelper
-import com.ruzhan.lion.util.ResUtils
+import com.ruzhan.movie.utils.ResUtils
 import com.ruzhan.movie.utils.X5Helper
 
 

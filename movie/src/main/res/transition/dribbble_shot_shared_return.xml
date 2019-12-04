@@ -26,13 +26,13 @@
         <changeBounds android:interpolator="@android:interpolator/fast_out_slow_in" />
         <!-- compensate for the diff in elevation of this element in the two activities -->
         <transition
-            class="com.ruzhan.lion.ui.transitions.LiftOff"
+            class="com.ruzhan.movie.base.transitions.LiftOff"
             app:initialElevation="-4dp"
             app:finalElevation="-2dp" />
     </transitionSet>
 
     <transition
-        class="com.ruzhan.lion.ui.transitions.DeparallaxingChangeBounds"
+        class="com.ruzhan.movie.base.transitions.DeparallaxingChangeBounds"
         android:interpolator="@android:interpolator/fast_out_slow_in">
         <targets>
             <target android:targetId="@id/shot" />

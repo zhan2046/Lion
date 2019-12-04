@@ -4,9 +4,9 @@ import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.lion.font.FontHelper
 import com.lion.imageloader.glide.ImageLoader
-import com.ruzhan.lion.listener.OnItemClickListener
-import com.ruzhan.lion.model.Video
-import com.ruzhan.lion.util.ViewUtils
+import com.ruzhan.movie.listener.OnItemClickListener
+import com.ruzhan.movie.model.Video
+import com.ruzhan.movie.utils.ViewUtils
 import kotlinx.android.extensions.LayoutContainer
 import kotlinx.android.synthetic.main.lion_item_movie_detail_video.*
 

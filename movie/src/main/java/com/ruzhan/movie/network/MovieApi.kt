@@ -1,8 +1,8 @@
 package com.ruzhan.movie.network
 
-import com.ruzhan.lion.model.HttpResult
-import com.ruzhan.lion.model.Movie
-import com.ruzhan.lion.model.MovieDetail
+import com.ruzhan.movie.model.HttpResult
+import com.ruzhan.movie.model.Movie
+import com.ruzhan.movie.model.MovieDetail
 
 import io.reactivex.Single
 import retrofit2.http.GET

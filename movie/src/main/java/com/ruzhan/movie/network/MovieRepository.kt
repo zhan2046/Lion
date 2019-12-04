@@ -2,9 +2,9 @@ package com.ruzhan.movie.network
 
 import com.ruzhan.lion.database.CommonAppDatabase
 import com.ruzhan.lion.database.CommonModel
-import com.ruzhan.lion.model.HttpResult
-import com.ruzhan.lion.model.MovieDetail
-import com.ruzhan.lion.util.ResUtils
+import com.ruzhan.movie.model.HttpResult
+import com.ruzhan.movie.model.MovieDetail
+import com.ruzhan.movie.utils.ResUtils
 import com.ruzhan.movie.db.MovieDatabase
 import com.ruzhan.movie.db.entity.MovieEntity
 import com.ruzhan.movie.helper.MovieHelper

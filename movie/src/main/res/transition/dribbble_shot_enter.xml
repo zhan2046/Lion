@@ -25,7 +25,7 @@
             <target android:excludeId="@id/back_wrapper" />
         </targets>
         <transition
-            class="com.ruzhan.lion.ui.transitions.StaggeredDistanceSlide"
+            class="com.ruzhan.movie.base.transitions.StaggeredDistanceSlide"
             app:spread="5"
             android:duration="350"
             android:interpolator="@android:interpolator/linear_out_slow_in" />
@@ -40,7 +40,7 @@
     <!-- As this overlaps the shared element transition, content can be outside of the
          growing background, fade in the title background to make this less noticeable. -->
     <transition
-        class="com.ruzhan.lion.ui.transitions.BackgroundFade"
+        class="com.ruzhan.movie.base.transitions.BackgroundFade"
         android:startDelay="300"
         android:duration="150"
         android:interpolator="@android:interpolator/linear">

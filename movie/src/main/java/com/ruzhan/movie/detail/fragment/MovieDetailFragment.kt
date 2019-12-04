@@ -12,10 +12,10 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.lion.imageloader.glide.ImageLoader
-import com.ruzhan.lion.listener.OnItemClickListener
-import com.ruzhan.lion.model.Video
-import com.ruzhan.lion.ui.widget.ElasticDragDismissFrameLayout
-import com.ruzhan.lion.util.ViewUtils
+import com.ruzhan.movie.listener.OnItemClickListener
+import com.ruzhan.movie.model.Video
+import com.ruzhan.movie.base.widget.ElasticDragDismissFrameLayout
+import com.ruzhan.movie.utils.ViewUtils
 import com.ruzhan.movie.R
 import com.ruzhan.movie.db.entity.MovieEntity
 import com.ruzhan.movie.detail.activity.ImageDetailActivity

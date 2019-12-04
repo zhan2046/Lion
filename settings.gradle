@@ -1,1 +1,1 @@
-include ':app', ':common', ':movie', ':database', ':imageloader', ':font'
+include ':app', ':movie', ':database', ':imageloader', ':font'

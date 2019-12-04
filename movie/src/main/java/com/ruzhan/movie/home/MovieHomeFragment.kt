@@ -10,7 +10,7 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.lion.font.FontHelper
-import com.ruzhan.lion.util.LionTitleHelper
+import com.ruzhan.movie.utils.LionTitleHelper
 import com.ruzhan.movie.R
 import com.ruzhan.movie.home.adapter.MovieHomeAdapter
 import com.ruzhan.movie.home.viewmodel.MovieHomeViewModel

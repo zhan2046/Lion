@@ -1,6 +1,6 @@
 package com.ruzhan.movie.helper
 
-import com.ruzhan.lion.model.Movie
+import com.ruzhan.movie.model.Movie
 import com.ruzhan.movie.db.entity.MovieEntity
 
 object MovieHelper {

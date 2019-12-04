@@ -1,6 +1,0 @@
-<resources>
-    <string name="app_name">common</string>
-
-    <string name="load_start">正在加载</string>
-    <string name="load_end">没有更多了</string>
-</resources>

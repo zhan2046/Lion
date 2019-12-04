@@ -11,8 +11,8 @@ import androidx.core.util.Pair
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
-import com.ruzhan.lion.helper.OnRefreshHelper
-import com.ruzhan.lion.listener.OnItemClickListener
+import com.ruzhan.movie.helper.OnRefreshHelper
+import com.ruzhan.movie.listener.OnItemClickListener
 import com.ruzhan.movie.R
 import com.ruzhan.movie.db.entity.MovieEntity
 import com.ruzhan.movie.detail.MovieDetailActivity
