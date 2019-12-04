@@ -3,11 +3,11 @@ package com.ruzhan.movie.network
 import com.ruzhan.lion.database.CommonAppDatabase
 import com.ruzhan.lion.database.CommonModel
 import com.ruzhan.lion.model.HttpResult
-import com.ruzhan.lion.model.Movie
 import com.ruzhan.lion.model.MovieDetail
 import com.ruzhan.lion.util.ResUtils
 import com.ruzhan.movie.db.MovieDatabase
 import com.ruzhan.movie.db.entity.MovieEntity
+import com.ruzhan.movie.helper.MovieHelper
 import io.reactivex.Flowable
 import io.reactivex.Single
 import io.reactivex.schedulers.Schedulers
@@ -34,23 +34,30 @@ class MovieRepository private constructor() {
     }
 
 
-    fun getMovieList(pageFileName: String): Single<HttpResult<List<Movie>>> {
-        return api.getMovieList(pageFileName).subscribeOn(Schedulers.io())
+    fun getMovieList(pageFileName: String): Single<List<MovieEntity>> {
+        return api.getMovieList(pageFileName)
+                .subscribeOn(Schedulers.io())
+                .map { result ->
+                    val movieEntityList =
+                            MovieHelper.getMovieEntityList(result.data)
+                    insertMovieEntityList(movieEntityList)
+                    movieEntityList
+                }
     }
 
     fun getMovieDetail(detailFile: String): Single<HttpResult<MovieDetail>> {
         return api.getMovieDetail(detailFile).subscribeOn(Schedulers.io())
     }
 
-    fun loadMovieEntityList(startIndex: Int, endIndex: Int): Flowable<List<MovieEntity>> {
-        return movieDatabase.movieDao().loadMovieEntityList(startIndex, endIndex)
+    fun loadMovieEntityList(): Flowable<List<MovieEntity>> {
+        return movieDatabase.movieDao().loadMovieEntityList()
     }
 
-    fun loadMovieEntityList(startIndex: Int, endIndex: Int, tag: String): Flowable<List<MovieEntity>> {
-        return movieDatabase.movieDao().loadMovieEntityList(startIndex, endIndex, tag)
+    fun loadMovieEntityList(tag: String): Flowable<List<MovieEntity>> {
+        return movieDatabase.movieDao().loadMovieEntityList(tag)
     }
 
-    fun insertMovieEntityList(dayNewList: List<MovieEntity>) {
+    private fun insertMovieEntityList(dayNewList: List<MovieEntity>) {
         movieDatabase.movieDao().insertMovieEntityList(dayNewList)
     }
 

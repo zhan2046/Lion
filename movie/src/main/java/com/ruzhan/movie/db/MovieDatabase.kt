@@ -12,7 +12,7 @@ abstract class MovieDatabase : RoomDatabase() {
 
     companion object {
 
-        private const val DB_NAME = "movie.db"
+        private const val DB_NAME = "base_movie.db"
         @Volatile
         private var INSTANCE: MovieDatabase? = null
 

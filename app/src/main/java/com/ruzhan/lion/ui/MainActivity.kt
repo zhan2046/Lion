@@ -3,7 +3,7 @@ package com.ruzhan.lion.ui
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import com.ruzhan.lion.R
-import com.ruzhan.movie.MovieHomeFragment
+import com.ruzhan.movie.home.MovieHomeFragment
 
 class MainActivity : AppCompatActivity() {
 

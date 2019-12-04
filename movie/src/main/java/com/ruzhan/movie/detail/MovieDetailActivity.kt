@@ -5,8 +5,8 @@ import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.core.app.ActivityOptionsCompat
-import com.ruzhan.lion.model.Movie
 import com.ruzhan.movie.R
+import com.ruzhan.movie.db.entity.MovieEntity
 import com.ruzhan.movie.detail.fragment.MovieDetailFragment
 
 class MovieDetailActivity : AppCompatActivity() {
@@ -16,7 +16,7 @@ class MovieDetailActivity : AppCompatActivity() {
         private const val MOVIE: String = "MOVIE"
 
         @JvmStatic
-        fun launch(activity: Activity, movie: Movie, option: ActivityOptionsCompat) {
+        fun launch(activity: Activity, movie: MovieEntity, option: ActivityOptionsCompat) {
             val intent = Intent(activity, MovieDetailActivity::class.java)
             intent.putExtra(MOVIE, movie)
             activity.startActivity(intent, option.toBundle())
@@ -28,7 +28,7 @@ class MovieDetailActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.lion_container)
-        val movie = intent.getParcelableExtra(MOVIE) as Movie
+        val movie = intent.getParcelableExtra(MOVIE) as MovieEntity
         if (savedInstanceState == null) {
             val movieDetailFragment = MovieDetailFragment.newInstance(movie)
             this.movieDetailFragment = movieDetailFragment

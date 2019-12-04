@@ -1,4 +1,4 @@
-package com.ruzhan.movie
+package com.ruzhan.movie.home
 
 import android.content.Context
 import android.os.Bundle
@@ -11,8 +11,9 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.lion.font.FontHelper
 import com.ruzhan.lion.util.LionTitleHelper
+import com.ruzhan.movie.R
 import com.ruzhan.movie.home.adapter.MovieHomeAdapter
-import com.ruzhan.movie.home.viewmodel.MovieListViewModel
+import com.ruzhan.movie.home.viewmodel.MovieHomeViewModel
 import com.ruzhan.movie.widget.ScaleTransitionPagerTitleView
 import kotlinx.android.synthetic.main.lion_movie_main_home.*
 import net.lucode.hackware.magicindicator.ViewPagerHelper
@@ -37,8 +38,8 @@ class MovieHomeFragment : Fragment() {
     private val commonNavigator: CommonNavigator by lazy {
         CommonNavigator(activity)
     }
-    private val movieListViewModel: MovieListViewModel by lazy {
-        ViewModelProviders.of(activity!!).get(MovieListViewModel::class.java)
+    private val movieHomeViewModel: MovieHomeViewModel by lazy {
+        ViewModelProviders.of(activity!!).get(MovieHomeViewModel::class.java)
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
@@ -50,12 +51,11 @@ class MovieHomeFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         initData()
         initLiveData()
-        movieListViewModel.getLocalMovieList()
-        movieListViewModel.getRefreshMovieList()
+        movieHomeViewModel.getMovieList()
     }
 
     private fun initLiveData() {
-        movieListViewModel.titleListLiveData.observe(this,
+        movieHomeViewModel.titleListLiveData.observe(this,
                 Observer<List<String>> { tagList ->
                     tagList?.let {
                         titleList.clear()

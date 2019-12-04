@@ -4,9 +4,10 @@ import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
 import com.ruzhan.lion.listener.OnItemClickListener
-import com.ruzhan.lion.model.Movie
 import com.ruzhan.lion.ui.LoadMoreHolder
 import com.ruzhan.movie.R
+import com.ruzhan.movie.db.entity.MovieEntity
+import com.ruzhan.movie.home.adapter.holder.MovieEmptyHolder
 import com.ruzhan.movie.home.adapter.holder.MovieListHolder
 
 
@@ -17,32 +18,18 @@ class MovieListAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
         const val TYPE_NORMAL: Int = 1000
         const val TYPE_LOAD_MORE: Int = 1001
-
-        private const val PAGE_SIZE = 60
     }
 
     private var dataList = ArrayList<Any>()
     private var isLoadMore: Boolean = false
 
-    var onItemClickListener: OnItemClickListener<Movie>? = null
+    var onItemClickListener: OnItemClickListener<MovieEntity>? = null
 
-    fun setRefreshData(movieList: List<Movie>?) {
+    fun setData(movieList: List<MovieEntity>?) {
         if (movieList != null && movieList.isNotEmpty()) {
             dataList.clear()
             dataList.addAll(movieList)
             dataList.add(LOAD_MORE)
-            isLoadMore = movieList.size >= PAGE_SIZE
-            notifyDataSetChanged()
-        }
-    }
-
-    fun setLoadMoreData(movieList: List<Movie>?) {
-        if (movieList != null && movieList.isNotEmpty()) {
-            dataList.remove(LOAD_MORE)
-
-            dataList.addAll(movieList)
-            dataList.add(LOAD_MORE)
-            isLoadMore = movieList.size >= PAGE_SIZE
             notifyDataSetChanged()
         }
     }
@@ -53,23 +40,24 @@ class MovieListAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
         if (obj is String) {
             viewType = TYPE_LOAD_MORE
-        } else if (obj is Movie) {
+        } else if (obj is MovieEntity) {
             viewType = TYPE_NORMAL
         }
         return viewType
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        lateinit var viewHolder: RecyclerView.ViewHolder
-        when (viewType) {
-            TYPE_NORMAL -> viewHolder = MovieListHolder(LayoutInflater.from(parent.context)
+        return when (viewType) {
+            TYPE_NORMAL -> MovieListHolder(LayoutInflater.from(parent.context)
                     .inflate(R.layout.lion_item_movie_list, parent, false),
                     onItemClickListener)
 
-            TYPE_LOAD_MORE -> viewHolder = LoadMoreHolder(LayoutInflater.from(parent.context)
+            TYPE_LOAD_MORE -> LoadMoreHolder(LayoutInflater.from(parent.context)
                     .inflate(R.layout.lion_item_load_more, parent, false))
+
+            else -> MovieEmptyHolder(LayoutInflater.from(parent.context)
+                    .inflate(R.layout.lion_item_empty, parent, false))
         }
-        return viewHolder
     }
 
     override fun getItemCount(): Int {
@@ -78,7 +66,7 @@ class MovieListAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         when (getItemViewType(position)) {
-            TYPE_NORMAL -> (holder as MovieListHolder).bind(dataList[position] as Movie)
+            TYPE_NORMAL -> (holder as MovieListHolder).bind(dataList[position] as MovieEntity)
             TYPE_LOAD_MORE -> (holder as LoadMoreHolder).bind(isLoadMore)
         }
     }

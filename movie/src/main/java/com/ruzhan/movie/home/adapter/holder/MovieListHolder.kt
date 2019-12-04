@@ -5,15 +5,15 @@ import androidx.recyclerview.widget.RecyclerView
 import com.lion.font.FontHelper
 import com.lion.imageloader.glide.ImageLoader
 import com.ruzhan.lion.listener.OnItemClickListener
-import com.ruzhan.lion.model.Movie
 import com.ruzhan.lion.util.ViewUtils
+import com.ruzhan.movie.db.entity.MovieEntity
 import kotlinx.android.extensions.LayoutContainer
 import kotlinx.android.synthetic.main.lion_item_movie_list.*
 
-class MovieListHolder(itemView: View, listener: OnItemClickListener<Movie>?) :
+class MovieListHolder(itemView: View, listener: OnItemClickListener<MovieEntity>?) :
         RecyclerView.ViewHolder(itemView), LayoutContainer {
 
-    private lateinit var movie: Movie
+    private lateinit var movie: MovieEntity
 
     override val containerView: View?
         get() = itemView
@@ -29,7 +29,7 @@ class MovieListHolder(itemView: View, listener: OnItemClickListener<Movie>?) :
         }
     }
 
-    fun bind(bean: Movie) {
+    fun bind(bean: MovieEntity) {
         movie = bean
         titleTv.text = movie.title
         contentTv.text = movie.desc

@@ -13,11 +13,11 @@ import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.lion.imageloader.glide.ImageLoader
 import com.ruzhan.lion.listener.OnItemClickListener
-import com.ruzhan.lion.model.Movie
 import com.ruzhan.lion.model.Video
 import com.ruzhan.lion.ui.widget.ElasticDragDismissFrameLayout
 import com.ruzhan.lion.util.ViewUtils
 import com.ruzhan.movie.R
+import com.ruzhan.movie.db.entity.MovieEntity
 import com.ruzhan.movie.detail.activity.ImageDetailActivity
 import com.ruzhan.movie.detail.adapter.MovieDetailAdapter
 import com.ruzhan.movie.detail.viewmodel.MovieDetailViewModel
@@ -33,7 +33,7 @@ class MovieDetailFragment : Fragment() {
         private const val TRANSITION_TIME: Long = 450
 
         @JvmStatic
-        fun newInstance(movie: Movie): MovieDetailFragment {
+        fun newInstance(movie: MovieEntity): MovieDetailFragment {
             val args = Bundle()
             args.putParcelable(MOVIE, movie)
             val frag = MovieDetailFragment()
@@ -42,7 +42,7 @@ class MovieDetailFragment : Fragment() {
         }
     }
 
-    private lateinit var movie: Movie
+    private lateinit var movie: MovieEntity
     private val movieDetailAdapter = MovieDetailAdapter()
     private var chromeFaber: ElasticDragDismissFrameLayout.SystemChromeFader? = null
     private val movieDetailViewModel: MovieDetailViewModel by lazy {

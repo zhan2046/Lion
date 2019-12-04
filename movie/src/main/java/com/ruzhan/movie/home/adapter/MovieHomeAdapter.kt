@@ -18,7 +18,7 @@ class MovieHomeAdapter(fm: FragmentManager) :
     }
 
     override fun getItem(position: Int): Fragment {
-        val dayTag = titleList[position]
+        val dayTag = if (position == 0) "" else titleList[position]
         return MovieListFragment.newInstance(dayTag)
     }
 
