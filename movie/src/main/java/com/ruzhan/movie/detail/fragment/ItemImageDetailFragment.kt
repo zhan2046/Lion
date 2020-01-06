@@ -6,14 +6,15 @@ import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import com.bumptech.glide.Glide
 import com.bumptech.glide.load.DataSource
 import com.bumptech.glide.load.engine.GlideException
+import com.bumptech.glide.load.resource.drawable.DrawableTransitionOptions
 import com.bumptech.glide.request.RequestListener
 import com.bumptech.glide.request.target.Target
-import com.ruzhan.imageloader.glide.ImageLoader
+import com.ruzhan.movie.R
 import com.ruzhan.movie.utils.LionUtils
 import com.ruzhan.movie.utils.ViewUtils
-import com.ruzhan.movie.R
 import kotlinx.android.synthetic.main.lion_frag_image_item_detail.*
 
 class ItemImageDetailFragment : Fragment() {
@@ -47,34 +48,40 @@ class ItemImageDetailFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         val isGif = imageUrl.contains(LionUtils.GIF_FILE)
-        lion_image_photo_view.visibility = if (isGif) View.GONE else View.VISIBLE
-        lion_image_image_iv.visibility = if (isGif) View.VISIBLE else View.GONE
+        photoView.visibility = if (isGif) View.GONE else View.VISIBLE
+        imageView.visibility = if (isGif) View.VISIBLE else View.GONE
         if (isGif) {
-            ImageLoader.get().load(lion_image_image_iv, imageUrl,
-                    ViewUtils.getPlaceholder(activity!!, 0))
-            lion_image_load_progress.visibility = View.INVISIBLE
+            Glide.with(imageView.context)
+                    .load(imageUrl)
+                    .placeholder(ViewUtils.getPlaceholder(activity!!, 0))
+                    .transition(DrawableTransitionOptions.withCrossFade())
+                    .into(imageView)
+            progressBar.visibility = View.INVISIBLE
         } else {
-            ImageLoader.get().load(lion_image_photo_view, imageUrl,
-                    object : RequestListener<Drawable> {
+            Glide.with(photoView.context)
+                    .load(imageUrl)
+                    .transition(DrawableTransitionOptions.withCrossFade())
+                    .listener(object : RequestListener<Drawable> {
 
                         override fun onResourceReady(resource: Drawable?, model: Any?,
                                                      target: Target<Drawable>?, dataSource: DataSource?,
                                                      isFirstResource: Boolean): Boolean {
-                            if (lion_image_photo_view != null) {
-                                lion_image_photo_view.setImageDrawable(resource)
-                                lion_image_load_progress.visibility = View.INVISIBLE
+                            if (photoView != null) {
+                                photoView.setImageDrawable(resource)
+                                progressBar.visibility = View.INVISIBLE
                             }
                             return true
                         }
 
                         override fun onLoadFailed(e: GlideException?, model: Any?, target: Target<Drawable>?,
                                                   isFirstResource: Boolean): Boolean {
-                            if (lion_image_load_progress != null) {
-                                lion_image_load_progress.visibility = View.INVISIBLE
+                            if (progressBar != null) {
+                                progressBar.visibility = View.INVISIBLE
                             }
                             return true
                         }
                     })
+                    .into(photoView)
         }
     }
 }
