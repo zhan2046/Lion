@@ -47,13 +47,14 @@ class ItemImageDetailFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+        val activity = requireActivity()
         val isGif = imageUrl.contains(LionUtils.GIF_FILE)
         photoView.visibility = if (isGif) View.GONE else View.VISIBLE
         imageView.visibility = if (isGif) View.VISIBLE else View.GONE
         if (isGif) {
             Glide.with(imageView.context)
                     .load(imageUrl)
-                    .placeholder(ViewUtils.getPlaceholder(activity!!, 0))
+                    .placeholder(ViewUtils.getPlaceholder(activity, 0))
                     .transition(DrawableTransitionOptions.withCrossFade())
                     .into(imageView)
             progressBar.visibility = View.INVISIBLE
