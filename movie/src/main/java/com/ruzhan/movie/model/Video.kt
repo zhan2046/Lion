@@ -8,5 +8,6 @@ data class Video(
         var playCount: String,
         var playNumber: Int,
         var playNumberDesc: String,
-        var playWebUrl: String
+        var playWebUrl: String,
+        var m3u8Url: String? = null
 )

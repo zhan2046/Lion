@@ -12,16 +12,16 @@ import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.GridLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 import com.ruzhan.imageloader.glide.ImageLoader
-import com.ruzhan.movie.listener.OnItemClickListener
-import com.ruzhan.movie.model.Video
-import com.ruzhan.movie.base.widget.ElasticDragDismissFrameLayout
-import com.ruzhan.movie.utils.ViewUtils
 import com.ruzhan.movie.R
+import com.ruzhan.movie.base.widget.ElasticDragDismissFrameLayout
 import com.ruzhan.movie.db.entity.MovieEntity
 import com.ruzhan.movie.detail.activity.ImageDetailActivity
 import com.ruzhan.movie.detail.adapter.MovieDetailAdapter
 import com.ruzhan.movie.detail.viewmodel.MovieDetailViewModel
+import com.ruzhan.movie.listener.OnItemClickListener
 import com.ruzhan.movie.model.ImageListModel
+import com.ruzhan.movie.model.Video
+import com.ruzhan.movie.utils.ViewUtils
 import com.ruzhan.movie.video.VideoActivity
 import com.ruzhan.movie.video.WebVideoActivity
 import kotlinx.android.synthetic.main.lion_frag_movie_detail.*
@@ -91,10 +91,11 @@ class MovieDetailFragment : Fragment() {
 
                 override fun onItemClick(position: Int, bean: Video, itemView: View) {
                     val playWebUrl = bean.playWebUrl
-                    if (playWebUrl.isNotBlank()) {
+                    val m3u8Url = bean.m3u8Url
+                    if (m3u8Url != null && m3u8Url.isNotBlank()) {
+                        VideoActivity.launch(activity, m3u8Url)
+                    } else if (playWebUrl.isNotBlank()) {
                         WebVideoActivity.launch(activity, bean.playWebUrl)
-                    } else {
-                        VideoActivity.launch(activity, "")
                     }
                 }
             }
