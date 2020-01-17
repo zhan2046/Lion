@@ -29,6 +29,7 @@ class VideoFragment : Fragment() {
     }
 
     private var m3u8Url = ""
+    private var simpleExoPlayer: SimpleExoPlayer? = null
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -44,6 +45,7 @@ class VideoFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         val activity = requireActivity()
         val player = SimpleExoPlayer.Builder(activity).build()
+        this.simpleExoPlayer = player
         playerView.player = player
         val videoUri = Uri.parse(m3u8Url)
         val createdMediaSource =
@@ -51,5 +53,15 @@ class VideoFragment : Fragment() {
                         .createMediaSource(videoUri)
         player.prepare(createdMediaSource)
         player.playWhenReady = true
+    }
+
+    override fun onPause() {
+        super.onPause()
+        simpleExoPlayer?.stop()
+    }
+
+    override fun onDestroyView() {
+        simpleExoPlayer?.release()
+        super.onDestroyView()
     }
 }
