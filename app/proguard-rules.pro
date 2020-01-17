@@ -33,13 +33,8 @@
 #-------------------------------------------------------------------------
 
 #---------------------------------2.第三方包-------------------------------
-
-# tencent x5
--dontwarn com.tencent.smtt.**
--keep class com.tencent.smtt.** { *; }
-
--dontwarn com.tencent.**
--keep class com.tencent.** { *; }
+#exoplayer
+-keep class com.google.android.exoplayer2.** { *; }
 
 # AndroidUtilCode
 -keep class com.blankj.utilcode.** { *; }

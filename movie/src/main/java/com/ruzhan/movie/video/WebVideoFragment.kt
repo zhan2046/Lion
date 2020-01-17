@@ -5,12 +5,11 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.ViewTreeObserver
+import android.webkit.WebChromeClient
+import android.webkit.WebView
+import android.webkit.WebViewClient
 import androidx.fragment.app.Fragment
 import com.ruzhan.movie.R
-import com.tencent.smtt.sdk.WebChromeClient
-import com.tencent.smtt.sdk.WebView
-import com.tencent.smtt.sdk.WebViewClient
 import kotlinx.android.synthetic.main.lion_frag_web_video.*
 
 @Suppress("DEPRECATION")
@@ -20,10 +19,6 @@ class WebVideoFragment : Fragment() {
 
         private const val VIDEO_URL: String = "URL"
         private const val MAX_PROGRESS = 80
-
-        private const val DEFAULT_VIDEO_SCREEN = "DefaultVideoScreen"
-        private const val SET_VIDEO_PARAMS = "setVideoParams"
-        private const val X5_VIDEO_SCREEN_FULL = 2
 
         @JvmStatic
         fun newInstance(url: String): WebVideoFragment {
@@ -50,50 +45,39 @@ class WebVideoFragment : Fragment() {
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
         initData()
-        x5WebView.viewTreeObserver.addOnGlobalLayoutListener(
-                object : ViewTreeObserver.OnGlobalLayoutListener {
-                    override fun onGlobalLayout() {
-                        x5WebView.viewTreeObserver.removeOnGlobalLayoutListener(this)
-                        if (x5WebView.x5WebViewExtension != null) {
-                            val x5Bundle = Bundle()
-                            x5Bundle.putInt(DEFAULT_VIDEO_SCREEN, X5_VIDEO_SCREEN_FULL)
-                            x5WebView.x5WebViewExtension.invokeMiscMethod(SET_VIDEO_PARAMS, x5Bundle)
-                        }
-                        x5WebView.loadUrl(url)
-                    }
-                })
     }
 
     @SuppressLint("SetJavaScriptEnabled")
     private fun initData() {
-        val webSettings = x5WebView.settings
+        val webSettings = webView.settings
         webSettings.javaScriptEnabled = true
         webSettings.domStorageEnabled = true
-        x5WebView.webChromeClient = object : WebChromeClient() {
+        webView.webChromeClient = object : WebChromeClient() {
             override fun onProgressChanged(view: WebView, newProgress: Int) {
-                if (load_progress.visibility != View.VISIBLE && newProgress < MAX_PROGRESS) {
-                    load_progress.visibility = View.VISIBLE
+                if (progressBar.visibility != View.VISIBLE && newProgress < MAX_PROGRESS) {
+                    progressBar.visibility = View.VISIBLE
 
                 } else if (newProgress > MAX_PROGRESS) {
-                    load_progress.visibility = View.INVISIBLE
+                    progressBar.visibility = View.INVISIBLE
                 }
             }
         }
-        x5WebView.webViewClient = WebViewClient()
+        webView.webViewClient = WebViewClient()
+        webView.loadUrl(url)
     }
 
     override fun onResume() {
-        x5WebView.onResume()
+        webView.onResume()
         super.onResume()
     }
 
     override fun onPause() {
-        x5WebView.onPause()
+        webView.onPause()
         super.onPause()
     }
 
     override fun onDestroyView() {
-        x5WebView.destroy()
+        webView.destroy()
         super.onDestroyView()
     }
 }

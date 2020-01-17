@@ -22,6 +22,7 @@ import com.ruzhan.movie.detail.activity.ImageDetailActivity
 import com.ruzhan.movie.detail.adapter.MovieDetailAdapter
 import com.ruzhan.movie.detail.viewmodel.MovieDetailViewModel
 import com.ruzhan.movie.model.ImageListModel
+import com.ruzhan.movie.video.VideoActivity
 import com.ruzhan.movie.video.WebVideoActivity
 import kotlinx.android.synthetic.main.lion_frag_movie_detail.*
 
@@ -89,7 +90,12 @@ class MovieDetailFragment : Fragment() {
             movieDetailAdapter.onItemVideoClickListener = object : OnItemClickListener<Video> {
 
                 override fun onItemClick(position: Int, bean: Video, itemView: View) {
-                    WebVideoActivity.launch(activity, bean.playWebUrl)
+                    val playWebUrl = bean.playWebUrl
+                    if (playWebUrl.isNotBlank()) {
+                        WebVideoActivity.launch(activity, bean.playWebUrl)
+                    } else {
+                        VideoActivity.launch(activity, "")
+                    }
                 }
             }
             movieDetailAdapter.onItemImageClickListener =

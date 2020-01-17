@@ -6,10 +6,10 @@
     android:background="@color/light_grey"
     android:keepScreenOn="true">
 
-    <WebView
-        android:id="@+id/webView"
+    <com.google.android.exoplayer2.ui.PlayerView
+        android:id="@+id/playerView"
         android:layout_width="match_parent"
-        android:layout_height="match_parent" />
+        android:layout_height="match_parent"/>
 
     <ProgressBar
         android:id="@+id/progressBar"
@@ -22,5 +22,5 @@
         android:indeterminate="true"
         android:indeterminateTint="?android:colorAccent"
         android:indeterminateTintMode="src_in"
-        android:visibility="visible" />
+        android:visibility="gone" />
 </androidx.constraintlayout.widget.ConstraintLayout>

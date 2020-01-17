@@ -22,15 +22,15 @@
             android:launchMode="singleTask"
             android:alwaysRetainTaskState="true"
             android:screenOrientation="landscape">
-            <intent-filter>
-                <action android:name="com.tencent.smtt.tbs.video.PLAY" />
-                <category android:name="android.intent.category.DEFAULT" />
-            </intent-filter>
         </activity>
 
         <activity
             android:name=".detail.activity.ImageDetailActivity"
             android:screenOrientation="portrait" />
 
+        <activity
+            android:name=".video.VideoActivity"
+            android:configChanges="orientation|keyboardHidden|screenSize"
+            android:screenOrientation="landscape" />
     </application>
 </manifest>

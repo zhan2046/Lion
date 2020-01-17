@@ -5,7 +5,6 @@ import android.content.Context
 import androidx.multidex.MultiDex
 import com.ruzhan.font.FontHelper
 import com.ruzhan.movie.utils.ResUtils
-import com.ruzhan.movie.utils.X5Helper
 
 
 class MainApplication : Application() {
@@ -19,6 +18,5 @@ class MainApplication : Application() {
         super.onCreate()
         ResUtils.init(this)
         FontHelper.init(this)
-        X5Helper.init(this)
     }
 }
