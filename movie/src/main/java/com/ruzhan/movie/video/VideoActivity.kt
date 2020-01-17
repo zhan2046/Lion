@@ -1,5 +1,6 @@
 package com.ruzhan.movie.video
 
+import android.annotation.SuppressLint
 import android.app.Activity
 import android.content.Intent
 import android.graphics.PixelFormat
@@ -8,6 +9,11 @@ import android.view.Window
 import android.view.WindowManager
 import androidx.appcompat.app.AppCompatActivity
 import com.ruzhan.movie.R
+import android.view.View.SYSTEM_UI_FLAG_FULLSCREEN
+import android.view.View.SYSTEM_UI_FLAG_IMMERSIVE_STICKY
+import android.view.View.SYSTEM_UI_FLAG_HIDE_NAVIGATION
+import android.os.Build
+import android.view.View
 
 class VideoActivity : AppCompatActivity() {
 
@@ -29,6 +35,7 @@ class VideoActivity : AppCompatActivity() {
         window.setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN,
                 WindowManager.LayoutParams.FLAG_FULLSCREEN)
         window.setFormat(PixelFormat.TRANSLUCENT)
+        hideSystemNavigationBar()
         setContentView(R.layout.lion_container)
         if (savedInstanceState == null) {
             val m3u8Url = intent.getStringExtra(M3U8_URL) ?: ""
@@ -36,6 +43,19 @@ class VideoActivity : AppCompatActivity() {
             supportFragmentManager.beginTransaction()
                     .add(R.id.container, videoFragment, "VideoFragment")
                     .commit()
+        }
+    }
+
+    @SuppressLint("ObsoleteSdkInt")
+    private fun hideSystemNavigationBar() {
+        if (Build.VERSION.SDK_INT in 12..18) {
+            val view = this.window.decorView
+            view.systemUiVisibility = View.GONE
+        } else if (Build.VERSION.SDK_INT >= 19) {
+            val decorView = window.decorView
+            val uiOptions = (SYSTEM_UI_FLAG_HIDE_NAVIGATION
+                    or SYSTEM_UI_FLAG_IMMERSIVE_STICKY or SYSTEM_UI_FLAG_FULLSCREEN)
+            decorView.systemUiVisibility = uiOptions
         }
     }
 }
