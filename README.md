@@ -3,19 +3,7 @@ Screenshots
 ===============
 
 <a href="logo/lion01.png"><img src="logo/lion01.png" width="30%"/></a> 
-<a href="logo/lion02.png"><img src="logo/lion02.png" width="30%"/></a> 
-<a href="logo/lion03.png"><img src="logo/lion03.png" width="30%"/></a>
-
-
-<a href="logo/lion04.png"><img src="logo/lion04.png" width="30%"/></a> 
-<a href="logo/lion05.png"><img src="logo/lion05.png" width="30%"/></a>
-<a href="logo/lion06.png"><img src="logo/lion06.png" width="30%"/></a>
-
-
-Download :tada:
-------
-
-[fir - (Lion app download)](https://fir.im/lion333)
+<a href="logo/lion02.png"><img src="logo/lion02.png" width="30%"/></a>
 
 Developed by
 -------
