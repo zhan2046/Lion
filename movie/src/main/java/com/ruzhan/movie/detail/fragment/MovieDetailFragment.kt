@@ -15,6 +15,7 @@ import com.ruzhan.imageloader.glide.ImageLoader
 import com.ruzhan.movie.R
 import com.ruzhan.movie.base.widget.ElasticDragDismissFrameLayout
 import com.ruzhan.movie.db.entity.MovieEntity
+import com.ruzhan.movie.decoration.VideoItemDecoration
 import com.ruzhan.movie.detail.activity.ImageDetailActivity
 import com.ruzhan.movie.detail.adapter.MovieDetailAdapter
 import com.ruzhan.movie.detail.viewmodel.MovieDetailViewModel
@@ -49,6 +50,9 @@ class MovieDetailFragment : Fragment() {
     private val movieDetailViewModel: MovieDetailViewModel by lazy {
         ViewModelProviders.of(this).get(MovieDetailViewModel::class.java)
     }
+    private val videoItemDecoration: VideoItemDecoration by lazy {
+        VideoItemDecoration(requireActivity())
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -82,6 +86,8 @@ class MovieDetailFragment : Fragment() {
             }
             recyclerView.layoutManager = layoutManager
             recyclerView.adapter = movieDetailAdapter
+            recyclerView.addItemDecoration(videoItemDecoration)
+            movieDetailAdapter.videoItemDecoration = videoItemDecoration
         }
     }
 
@@ -145,7 +151,9 @@ class MovieDetailFragment : Fragment() {
             })
             movieDetailViewModel.movieDetailLiveData.observe(this,
                     Observer { movieDetail ->
-                        movieDetail?.let { movieDetailAdapter.setData(it) }
+                        movieDetail?.let {
+                            movieDetailAdapter.setData(it)
+                        }
                     })
         }
     }

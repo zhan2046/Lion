@@ -9,6 +9,7 @@ import com.ruzhan.movie.model.Video
 import com.ruzhan.movie.base.LoadMoreHolder
 import com.ruzhan.movie.R
 import com.ruzhan.movie.db.entity.MovieDetailEntity
+import com.ruzhan.movie.decoration.VideoItemDecoration
 import com.ruzhan.movie.detail.adapter.holder.*
 import com.ruzhan.movie.home.adapter.holder.MovieEmptyHolder
 import com.ruzhan.movie.model.ImageListModel
@@ -39,6 +40,8 @@ class MovieDetailAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     var onItemVideoClickListener: OnItemClickListener<Video>? = null
     var onItemImageClickListener: OnItemClickListener<ImageListModel>? = null
 
+    var videoItemDecoration: VideoItemDecoration? = null
+
     fun setData(movieDetail: MovieDetailEntity) {
         this.movieDetail = movieDetail
         dataList.clear()
@@ -48,6 +51,7 @@ class MovieDetailAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         dataList.add(VIDEO_TITLE)
         dataList.addAll(movieDetail.videos)
         dataList.add(LOAD_MORE)
+        videoItemDecoration?.setData(dataList)
         notifyDataSetChanged()
     }
 
