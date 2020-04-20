@@ -3,11 +3,11 @@ package com.ruzhan.movie.detail.adapter.holder
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.ruzhan.imageloader.glide.ImageLoader
+import com.ruzhan.movie.db.entity.IntroduceItem
 import com.ruzhan.movie.db.entity.MovieDetailEntity
 import com.ruzhan.movie.listener.OnItemClickListener
-import com.ruzhan.movie.model.Introduce
-import com.ruzhan.movie.utils.ViewUtils
 import com.ruzhan.movie.model.ImageListModel
+import com.ruzhan.movie.utils.ViewUtils
 import kotlinx.android.extensions.LayoutContainer
 import kotlinx.android.synthetic.main.lion_item_movie_detail_image.*
 
@@ -31,7 +31,7 @@ class MovieDetailImageHolder(itemView: View, private var movieDetail: MovieDetai
         }
     }
 
-    fun bind(bean: Introduce) {
+    fun bind(bean: IntroduceItem) {
         url = bean.image
         ImageLoader.get().load(picIv, url,
                 ViewUtils.getPlaceholder(itemView.context, adapterPosition))
@@ -39,8 +39,8 @@ class MovieDetailImageHolder(itemView: View, private var movieDetail: MovieDetai
 
     private fun resetImageListModel(url: String) {
         imageUrlList.clear()
-        for (item in movieDetail.introduces) {
-            if (Introduce.IMAGE == item.type) {
+        for (item in movieDetail.introduceList) {
+            if (IntroduceItem.IMAGE == item.type) {
                 imageUrlList.add(item.image)
             }
         }

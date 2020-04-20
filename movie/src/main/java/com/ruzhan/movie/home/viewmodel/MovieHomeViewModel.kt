@@ -46,7 +46,7 @@ class MovieHomeViewModel : ViewModel() {
             val titleList = ArrayList<String>()
             titleList.add(firstTag)
             for (item in movieList) {
-                val tag = item.tag
+                val tag = item.type
                 if (!titleList.contains(tag)) {
                     titleList.add(tag)
                 }

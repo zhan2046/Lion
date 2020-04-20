@@ -15,21 +15,12 @@
             android:theme="@style/Lion.MovieDetail" />
 
         <activity
-            android:name=".video.WebVideoActivity"
-            android:configChanges="orientation|keyboardHidden|screenSize"
-            android:hardwareAccelerated="true"
-            android:exported="false"
-            android:launchMode="singleTask"
-            android:alwaysRetainTaskState="true"
-            android:screenOrientation="landscape">
-        </activity>
-
-        <activity
             android:name=".detail.activity.ImageDetailActivity"
             android:screenOrientation="portrait" />
 
         <activity
             android:name=".video.VideoActivity"
+            android:launchMode="singleTask"
             android:configChanges="orientation|keyboardHidden|screenSize"
             android:screenOrientation="landscape" />
     </application>

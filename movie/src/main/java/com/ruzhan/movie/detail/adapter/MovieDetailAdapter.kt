@@ -3,15 +3,15 @@ package com.ruzhan.movie.detail.adapter
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
-import com.ruzhan.movie.listener.OnItemClickListener
-import com.ruzhan.movie.model.Introduce
-import com.ruzhan.movie.model.Video
-import com.ruzhan.movie.base.LoadMoreHolder
 import com.ruzhan.movie.R
+import com.ruzhan.movie.base.LoadMoreHolder
+import com.ruzhan.movie.db.entity.IntroduceItem
 import com.ruzhan.movie.db.entity.MovieDetailEntity
+import com.ruzhan.movie.db.entity.VideoItem
 import com.ruzhan.movie.decoration.VideoItemDecoration
 import com.ruzhan.movie.detail.adapter.holder.*
 import com.ruzhan.movie.home.adapter.holder.MovieEmptyHolder
+import com.ruzhan.movie.listener.OnItemClickListener
 import com.ruzhan.movie.model.ImageListModel
 import java.util.*
 
@@ -37,7 +37,7 @@ class MovieDetailAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     private lateinit var movieDetail: MovieDetailEntity
     private var headerHolder: MovieEmptyHolder? = null
 
-    var onItemVideoClickListener: OnItemClickListener<Video>? = null
+    var onItemVideoClickListener: OnItemClickListener<VideoItem>? = null
     var onItemImageClickListener: OnItemClickListener<ImageListModel>? = null
 
     var videoItemDecoration: VideoItemDecoration? = null
@@ -47,9 +47,9 @@ class MovieDetailAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         dataList.clear()
         dataList.add(HEADER)
         dataList.add(movieDetail.title)
-        dataList.addAll(movieDetail.introduces)
+        dataList.addAll(movieDetail.introduceList)
         dataList.add(VIDEO_TITLE)
-        dataList.addAll(movieDetail.videos)
+        dataList.addAll(movieDetail.videoList)
         dataList.add(LOAD_MORE)
         videoItemDecoration?.setData(dataList)
         notifyDataSetChanged()
@@ -59,66 +59,85 @@ class MovieDetailAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         val obj = dataList[position]
         var viewType = 0
         if (obj is String) {
-            viewType = when {
-                HEADER == obj -> TYPE_HEADER
-                VIDEO_TITLE == obj -> TYPE_VIDEO_TITLE
-                LOAD_MORE == obj -> TYPE_LOAD_MORE
+            viewType = when (obj) {
+                HEADER -> TYPE_HEADER
+                VIDEO_TITLE -> TYPE_VIDEO_TITLE
+                LOAD_MORE -> TYPE_LOAD_MORE
                 else -> TYPE_TITLE
             }
-        } else if (obj is Introduce) {
-            if (Introduce.TEXT == obj.type) {
+        } else if (obj is IntroduceItem) {
+            if (IntroduceItem.TEXT == obj.type) {
                 viewType = TYPE_TEXT
 
-            } else if (Introduce.IMAGE == obj.type) {
+            } else if (IntroduceItem.IMAGE == obj.type) {
                 viewType = TYPE_IMAGE
             }
-        } else if (obj is Video) {
+        } else if (obj is VideoItem) {
             viewType = TYPE_VIDEO
         }
         return viewType
     }
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
-        lateinit var viewHolder: RecyclerView.ViewHolder
-        when (viewType) {
+        return when (viewType) {
             TYPE_HEADER -> {
-                viewHolder = MovieEmptyHolder(LayoutInflater.from(parent.context)
-                        .inflate(R.layout.lion_item_movie_detail_header, parent, false))
+                val viewHolder = MovieEmptyHolder(LayoutInflater.from(parent.context)
+                    .inflate(R.layout.lion_item_movie_detail_header, parent, false))
                 headerHolder = viewHolder
+                viewHolder
             }
-            TYPE_TITLE -> viewHolder = MovieDetailTitleHolder(LayoutInflater.from(parent.context)
-                    .inflate(R.layout.lion_item_movie_detail_title, parent, false))
+            TYPE_TITLE -> MovieDetailTitleHolder(LayoutInflater.from(parent.context)
+                .inflate(R.layout.lion_item_movie_detail_title, parent, false))
 
-            TYPE_TEXT -> viewHolder = MovieDetailTextHolder(LayoutInflater.from(parent.context)
-                    .inflate(R.layout.lion_item_movie_detail_text, parent, false))
+            TYPE_TEXT -> MovieDetailTextHolder(LayoutInflater.from(parent.context)
+                .inflate(R.layout.lion_item_movie_detail_text, parent, false))
 
-            TYPE_IMAGE -> viewHolder = MovieDetailImageHolder(LayoutInflater.from(parent.context)
-                    .inflate(R.layout.lion_item_movie_detail_image, parent, false),
-                    movieDetail, onItemImageClickListener)
+            TYPE_IMAGE -> MovieDetailImageHolder(LayoutInflater.from(parent.context)
+                .inflate(R.layout.lion_item_movie_detail_image, parent, false),
+                movieDetail, onItemImageClickListener)
 
-            TYPE_VIDEO -> viewHolder = MovieDetailVideoHolder(LayoutInflater.from(parent.context)
-                    .inflate(R.layout.lion_item_movie_detail_video, parent, false),
-                    onItemVideoClickListener)
+            TYPE_VIDEO -> MovieDetailVideoHolder(LayoutInflater.from(parent.context)
+                .inflate(R.layout.lion_item_movie_detail_video, parent, false),
+                onItemVideoClickListener)
 
-            TYPE_VIDEO_TITLE -> viewHolder =
-                    MovieDetailVideoTitleHolder(LayoutInflater.from(parent.context)
-                            .inflate(R.layout.lion_item_movie_detail_video_title, parent, false))
+            TYPE_VIDEO_TITLE -> MovieDetailVideoTitleHolder(LayoutInflater.from(parent.context)
+                .inflate(R.layout.lion_item_movie_detail_video_title, parent, false))
 
-            TYPE_LOAD_MORE -> viewHolder = LoadMoreHolder(LayoutInflater.from(parent.context)
-                    .inflate(R.layout.lion_item_load_more, parent, false))
+            TYPE_LOAD_MORE -> LoadMoreHolder(LayoutInflater.from(parent.context)
+                .inflate(R.layout.lion_item_load_more, parent, false))
+
+            else -> MovieEmptyHolder(LayoutInflater.from(parent.context)
+                .inflate(R.layout.lion_item_empty, parent, false))
         }
-        return viewHolder
     }
 
     override fun getItemCount(): Int = dataList.size
 
     override fun onBindViewHolder(holder: RecyclerView.ViewHolder, position: Int) {
         when (getItemViewType(position)) {
-            TYPE_TITLE -> (holder as MovieDetailTitleHolder).bind(movieDetail.title, movieDetail.tag)
-            TYPE_TEXT -> (holder as MovieDetailTextHolder).bind(dataList[position] as Introduce)
-            TYPE_IMAGE -> (holder as MovieDetailImageHolder).bind(dataList[position] as Introduce)
-            TYPE_VIDEO -> (holder as MovieDetailVideoHolder).bind(dataList[position] as Video)
-            TYPE_LOAD_MORE -> (holder as LoadMoreHolder).bind(false)
+            TYPE_TITLE -> {
+                val viewHolder = holder as MovieDetailTitleHolder
+                viewHolder.bind(movieDetail.title, movieDetail.type)
+            }
+            TYPE_TEXT -> {
+                val viewHolder = holder as MovieDetailTextHolder
+                val bean = dataList[position] as IntroduceItem
+                viewHolder.bind(bean)
+            }
+            TYPE_IMAGE -> {
+                val viewHolder = holder as MovieDetailImageHolder
+                val bean = dataList[position] as IntroduceItem
+                viewHolder.bind(bean)
+            }
+            TYPE_VIDEO -> {
+                val viewHolder = holder as MovieDetailVideoHolder
+                val bean = dataList[position] as VideoItem
+                viewHolder.bind(bean)
+            }
+            TYPE_LOAD_MORE -> {
+                val viewHolder = holder as LoadMoreHolder
+                viewHolder.bind(false)
+            }
         }
     }
 
@@ -128,7 +147,7 @@ class MovieDetailAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     fun getSpanSize(position: Int): Int {
         val obj = dataList[position]
-        if (obj is Video) {
+        if (obj is VideoItem) {
             return 1
         }
         return SPAN_COUNT

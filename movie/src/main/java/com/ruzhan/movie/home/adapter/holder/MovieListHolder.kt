@@ -32,7 +32,7 @@ class MovieListHolder(itemView: View, listener: OnItemClickListener<MovieEntity>
     fun bind(bean: MovieEntity) {
         movie = bean
         titleTv.text = movie.title
-        contentTv.text = movie.desc
+        contentTv.text = movie.content
         ImageLoader.get().load(picIv, movie.image,
                 ViewUtils.getPlaceholder(itemView.context, adapterPosition))
     }

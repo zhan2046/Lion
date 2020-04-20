@@ -11,14 +11,14 @@ import androidx.core.util.Pair
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
-import com.ruzhan.movie.helper.OnRefreshHelper
-import com.ruzhan.movie.listener.OnItemClickListener
 import com.ruzhan.movie.R
 import com.ruzhan.movie.db.entity.MovieEntity
 import com.ruzhan.movie.detail.MovieDetailActivity
+import com.ruzhan.movie.helper.OnRefreshHelper
 import com.ruzhan.movie.home.adapter.MovieListAdapter
 import com.ruzhan.movie.home.viewmodel.MovieHomeViewModel
 import com.ruzhan.movie.home.viewmodel.MovieListViewModel
+import com.ruzhan.movie.listener.OnItemClickListener
 import kotlinx.android.synthetic.main.lion_frag_movie_list.*
 
 class MovieListFragment : Fragment() {
@@ -46,7 +46,7 @@ class MovieListFragment : Fragment() {
     }
 
     private val movieHomeViewModel: MovieHomeViewModel by lazy {
-        ViewModelProviders.of(activity!!).get(MovieHomeViewModel::class.java)
+        ViewModelProviders.of(requireActivity()).get(MovieHomeViewModel::class.java)
     }
     private val movieListViewModel: MovieListViewModel by lazy {
         ViewModelProviders.of(this).get(MovieListViewModel::class.java)
@@ -92,7 +92,7 @@ class MovieListFragment : Fragment() {
             }
         })
         OnRefreshHelper.setOnRefreshStatusListener(swipe_refresh, recycler_view, object :
-                OnRefreshHelper.OnRefreshStatusListener {
+            OnRefreshHelper.OnRefreshStatusListener {
 
             override fun onRefresh() {
                 movieHomeViewModel.getMovieList()
@@ -107,11 +107,11 @@ class MovieListFragment : Fragment() {
                 activity?.let { activity ->
                     val transitionShot = activity.getString(R.string.transition_shot)
                     val transitionShotBackground =
-                            activity.getString(R.string.transition_shot_background)
+                        activity.getString(R.string.transition_shot_background)
                     val options =
-                            ActivityOptionsCompat.makeSceneTransitionAnimation(activity,
-                                    Pair.create(itemView, transitionShot),
-                                    Pair.create(itemView, transitionShotBackground))
+                        ActivityOptionsCompat.makeSceneTransitionAnimation(activity,
+                            Pair.create(itemView, transitionShot),
+                            Pair.create(itemView, transitionShotBackground))
                     MovieDetailActivity.launch(activity, bean, options)
                 }
             }
@@ -119,13 +119,15 @@ class MovieListFragment : Fragment() {
     }
 
     private fun initLiveData() {
-        movieHomeViewModel.loadStatusLiveData.observe(this, Observer { isLoading ->
-            if (isLoading != null && !isLoading) {
-                swipe_refresh.isRefreshing = isLoading
-            }
-        })
-        movieListViewModel.movieListLiveData.observe(this, Observer { movieList ->
-            movieListAdapter.setData(movieList)
-        })
+        movieHomeViewModel.loadStatusLiveData.observe(viewLifecycleOwner,
+            Observer { isLoading ->
+                if (isLoading != null && !isLoading) {
+                    swipe_refresh.isRefreshing = isLoading
+                }
+            })
+        movieListViewModel.movieListLiveData.observe(viewLifecycleOwner,
+            Observer { movieList ->
+                movieListAdapter.setData(movieList)
+            })
     }
 }

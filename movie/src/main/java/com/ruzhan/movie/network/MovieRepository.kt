@@ -3,9 +3,6 @@ package com.ruzhan.movie.network
 import com.ruzhan.movie.db.MovieDatabase
 import com.ruzhan.movie.db.entity.MovieDetailEntity
 import com.ruzhan.movie.db.entity.MovieEntity
-import com.ruzhan.movie.helper.MovieHelper
-import com.ruzhan.movie.model.HttpResult
-import com.ruzhan.movie.model.MovieDetail
 import com.ruzhan.movie.utils.ResUtils
 import io.reactivex.Flowable
 import io.reactivex.Single
@@ -15,11 +12,8 @@ class MovieRepository private constructor() {
 
     companion object {
 
-        private var INSTANCE: MovieRepository? = null
-
-        fun get() = INSTANCE ?: synchronized(MovieRepository::class) {
-            INSTANCE ?: MovieRepository().also { INSTANCE = it }
-        }
+        @JvmStatic
+        fun get() = SingletonHolder.INSTANCE
     }
 
     private val api: MovieApi by lazy {
@@ -31,27 +25,20 @@ class MovieRepository private constructor() {
 
     fun getMovieList(pageFileName: String): Single<List<MovieEntity>> {
         return api.getMovieList(pageFileName)
-                .subscribeOn(Schedulers.io())
-                .map { result ->
-                    val movieEntityList =
-                            MovieHelper.getMovieEntityList(result.data)
-                    insertMovieEntityList(movieEntityList)
-                    movieEntityList
-                }
+            .subscribeOn(Schedulers.io())
+            .map { movieList ->
+                insertMovieEntityList(movieList)
+                movieList
+            }
     }
 
     fun getMovieDetail(detailFile: String): Single<MovieDetailEntity> {
         return api.getMovieDetail(detailFile)
-                .subscribeOn(Schedulers.io())
-                .map { result ->
-                    var movieDetailEntity = MovieDetailEntity.empty()
-                    val data = result.data
-                    if (data != null) {
-                        movieDetailEntity = MovieHelper.getMovieDetailEntity(data)
-                        insertMovieDetailEntity(movieDetailEntity)
-                    }
-                    movieDetailEntity
-                }
+            .subscribeOn(Schedulers.io())
+            .map { movieDetail ->
+                insertMovieDetailEntity(movieDetail)
+                movieDetail
+            }
     }
 
     fun loadMovieEntityList(): Flowable<List<MovieEntity>> {
@@ -72,5 +59,11 @@ class MovieRepository private constructor() {
 
     private fun insertMovieDetailEntity(movieDetailEntity: MovieDetailEntity) {
         movieDatabase.movieDetailDao().insertMovieDetailEntity(movieDetailEntity)
+    }
+
+    private class SingletonHolder {
+        companion object {
+            val INSTANCE = MovieRepository()
+        }
     }
 }

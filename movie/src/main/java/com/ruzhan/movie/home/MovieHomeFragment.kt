@@ -10,10 +10,10 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import com.ruzhan.font.FontHelper
-import com.ruzhan.movie.utils.LionTitleHelper
 import com.ruzhan.movie.R
 import com.ruzhan.movie.home.adapter.MovieHomeAdapter
 import com.ruzhan.movie.home.viewmodel.MovieHomeViewModel
+import com.ruzhan.movie.utils.LionTitleHelper
 import com.ruzhan.movie.widget.ScaleTransitionPagerTitleView
 import kotlinx.android.synthetic.main.lion_movie_main_home.*
 import net.lucode.hackware.magicindicator.ViewPagerHelper
@@ -39,7 +39,7 @@ class MovieHomeFragment : Fragment() {
         CommonNavigator(activity)
     }
     private val movieHomeViewModel: MovieHomeViewModel by lazy {
-        ViewModelProviders.of(activity!!).get(MovieHomeViewModel::class.java)
+        ViewModelProviders.of(requireActivity()).get(MovieHomeViewModel::class.java)
     }
 
     override fun onCreateView(inflater: LayoutInflater, container: ViewGroup?,
@@ -55,15 +55,15 @@ class MovieHomeFragment : Fragment() {
     }
 
     private fun initLiveData() {
-        movieHomeViewModel.titleListLiveData.observe(this,
-                Observer<List<String>> { tagList ->
-                    tagList?.let {
-                        titleList.clear()
-                        titleList.addAll(tagList)
-                        movieHomeAdapter.setData(titleList)
-                        commonNavigator.notifyDataSetChanged()
-                    }
-                })
+        movieHomeViewModel.titleListLiveData.observe(viewLifecycleOwner,
+            Observer<List<String>> { tagList ->
+                tagList?.let {
+                    titleList.clear()
+                    titleList.addAll(tagList)
+                    movieHomeAdapter.setData(titleList)
+                    commonNavigator.notifyDataSetChanged()
+                }
+            })
     }
 
     private fun initData() {
@@ -78,15 +78,15 @@ class MovieHomeFragment : Fragment() {
         commonNavigator.adapter = object : CommonNavigatorAdapter() {
 
             override fun getTitleView(context: Context, index: Int):
-                    IPagerTitleView {
+                IPagerTitleView {
                 val simplePagerTitleView = ScaleTransitionPagerTitleView(context)
                 simplePagerTitleView.typeface = FontHelper.get().boldFontTypeface
                 simplePagerTitleView.text = titleList[index]
                 simplePagerTitleView.textSize = 15f
                 simplePagerTitleView.normalColor =
-                        ContextCompat.getColor(context, R.color.text_secondary_dark)
+                    ContextCompat.getColor(context, R.color.text_secondary_dark)
                 simplePagerTitleView.selectedColor =
-                        ContextCompat.getColor(context, R.color.colorAccent)
+                    ContextCompat.getColor(context, R.color.colorAccent)
                 simplePagerTitleView.setOnClickListener {
                     viewPager.currentItem = index
                 }

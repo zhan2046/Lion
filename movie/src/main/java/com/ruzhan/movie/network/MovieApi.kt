@@ -1,9 +1,7 @@
 package com.ruzhan.movie.network
 
-import com.ruzhan.movie.model.HttpResult
-import com.ruzhan.movie.model.Movie
-import com.ruzhan.movie.model.MovieDetail
-
+import com.ruzhan.movie.db.entity.MovieDetailEntity
+import com.ruzhan.movie.db.entity.MovieEntity
 import io.reactivex.Single
 import retrofit2.http.GET
 import retrofit2.http.Path
@@ -12,10 +10,10 @@ import retrofit2.http.Path
 interface MovieApi {
 
     @GET("movie/{pageFileName}")
-    fun getMovieList(@Path("pageFileName") pageFileName: String): Single<HttpResult<List<Movie>>>
+    fun getMovieList(@Path("pageFileName") pageFileName: String): Single<List<MovieEntity>>
 
     @GET("movie/detail/{detailFile}")
-    fun getMovieDetail(@Path("detailFile") detailFile: String): Single<HttpResult<MovieDetail>>
+    fun getMovieDetail(@Path("detailFile") detailFile: String): Single<MovieDetailEntity>
 
     companion object {
 

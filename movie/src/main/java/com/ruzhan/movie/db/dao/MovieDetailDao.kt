@@ -11,8 +11,8 @@ import io.reactivex.Flowable
 @Dao
 interface MovieDetailDao {
 
-    @Query("SELECT * FROM movie_detail_entity WHERE movieId = :movieId")
-    fun loadMovieDetailEntity(movieId: String): Flowable<MovieDetailEntity>
+    @Query("SELECT * FROM movie_detail_entity WHERE id = :id")
+    fun loadMovieDetailEntity(id: String): Flowable<MovieDetailEntity>
 
     @Insert(onConflict = OnConflictStrategy.REPLACE)
     fun insertMovieDetailEntity(movieDetailEntity: MovieDetailEntity)

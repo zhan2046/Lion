@@ -5,8 +5,8 @@ import android.graphics.Rect
 import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.ruzhan.movie.R
+import com.ruzhan.movie.db.entity.VideoItem
 import com.ruzhan.movie.detail.adapter.MovieDetailAdapter
-import com.ruzhan.movie.model.Video
 
 class VideoItemDecoration(context: Context) : RecyclerView.ItemDecoration() {
 
@@ -35,7 +35,7 @@ class VideoItemDecoration(context: Context) : RecyclerView.ItemDecoration() {
                 if (obj == MovieDetailAdapter.VIDEO_TITLE) {
                     videoTitlePosition = position
                 }
-            } else if (obj is Video) {
+            } else if (obj is VideoItem) {
                 if (position % 2 == 0) {
                     outRect.set((defaultLeft * 0.5).toInt(), defaultSpace,
                         defaultLeft, defaultSpace)

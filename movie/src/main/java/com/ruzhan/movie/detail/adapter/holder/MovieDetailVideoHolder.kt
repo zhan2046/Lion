@@ -4,30 +4,30 @@ import android.view.View
 import androidx.recyclerview.widget.RecyclerView
 import com.ruzhan.font.FontHelper
 import com.ruzhan.imageloader.glide.ImageLoader
+import com.ruzhan.movie.db.entity.VideoItem
 import com.ruzhan.movie.listener.OnItemClickListener
-import com.ruzhan.movie.model.Video
 import com.ruzhan.movie.utils.ViewUtils
 import kotlinx.android.extensions.LayoutContainer
 import kotlinx.android.synthetic.main.lion_item_movie_detail_video.*
 
-class MovieDetailVideoHolder(itemView: View, listener: OnItemClickListener<Video>?) :
+class MovieDetailVideoHolder(itemView: View, listener: OnItemClickListener<VideoItem>?) :
         RecyclerView.ViewHolder(itemView), LayoutContainer {
 
     override val containerView: View?
         get() = itemView
 
-    private lateinit var video: Video
+    private lateinit var videoItem: VideoItem
 
     init {
         val lightFontTypeface = FontHelper.get().lightFontTypeface
         titleTv.typeface = lightFontTypeface
         if (listener != null) {
-            rootCardView.setOnClickListener { listener.onItemClick(adapterPosition, video, it) }
+            rootCardView.setOnClickListener { listener.onItemClick(adapterPosition, videoItem, it) }
         }
     }
 
-    fun bind(bean: Video) {
-        video = bean
+    fun bind(bean: VideoItem) {
+        videoItem = bean
         titleTv.text = bean.title
         ImageLoader.get().load(imageIv, bean.image,
                 ViewUtils.getPlaceholder(itemView.context, adapterPosition))
