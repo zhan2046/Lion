@@ -5,9 +5,6 @@ import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import androidx.core.app.ActivityOptionsCompat
-import androidx.core.app.SharedElementCallback
-import androidx.core.util.Pair
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
@@ -77,20 +74,6 @@ class MovieListFragment : Fragment() {
     }
 
     private fun initListener() {
-        val shotTransitionName = resources.getString(R.string.transition_shot)
-        val shotBackgroundTransitionName = resources.getString(R.string.transition_shot_background)
-        setExitSharedElementCallback(object : SharedElementCallback() {
-
-            override fun onMapSharedElements(names: MutableList<String>,
-                                             sharedElements: MutableMap<String, View>) {
-                if (sharedElements.size != names.size) {
-                    val sharedShot = sharedElements[shotTransitionName]
-                    sharedShot?.let {
-                        sharedElements[shotBackgroundTransitionName] = sharedShot
-                    }
-                }
-            }
-        })
         OnRefreshHelper.setOnRefreshStatusListener(swipe_refresh, recycler_view, object :
             OnRefreshHelper.OnRefreshStatusListener {
 
@@ -104,16 +87,7 @@ class MovieListFragment : Fragment() {
         }, R.color.colorAccent)
         movieListAdapter.onItemClickListener = object : OnItemClickListener<MovieEntity> {
             override fun onItemClick(position: Int, bean: MovieEntity, itemView: View) {
-                activity?.let { activity ->
-                    val transitionShot = activity.getString(R.string.transition_shot)
-                    val transitionShotBackground =
-                        activity.getString(R.string.transition_shot_background)
-                    val options =
-                        ActivityOptionsCompat.makeSceneTransitionAnimation(activity,
-                            Pair.create(itemView, transitionShot),
-                            Pair.create(itemView, transitionShotBackground))
-                    MovieDetailActivity.launch(activity, bean, options)
-                }
+                MovieDetailActivity.launch(requireActivity(), bean)
             }
         }
     }

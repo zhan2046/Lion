@@ -1,10 +1,5 @@
 <resources>
 
     <style name="Lion.Home">
-        <item name="android:windowDrawsSystemBarBackgrounds">true</item>
-        <item name="android:windowActionBarOverlay">true</item>
-        <item name="android:windowActionModeOverlay">true</item>
-        <item name="android:windowContentOverlay">@null</item>
-        <item name="android:windowEnterTransition">@transition/home_enter</item>
     </style>
 </resources>

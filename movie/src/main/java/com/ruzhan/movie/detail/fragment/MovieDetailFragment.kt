@@ -1,19 +1,17 @@
 package com.ruzhan.movie.detail.fragment
 
 import android.os.Bundle
+import android.util.DisplayMetrics
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
-import android.view.ViewTreeObserver
-import androidx.core.app.ActivityCompat.finishAfterTransition
+import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.GridLayoutManager
-import androidx.recyclerview.widget.RecyclerView
 import com.ruzhan.imageloader.glide.ImageLoader
 import com.ruzhan.movie.R
-import com.ruzhan.movie.base.widget.ElasticDragDismissFrameLayout
 import com.ruzhan.movie.db.entity.MovieEntity
 import com.ruzhan.movie.db.entity.VideoItem
 import com.ruzhan.movie.decoration.VideoItemDecoration
@@ -26,12 +24,12 @@ import com.ruzhan.movie.utils.ViewUtils
 import com.ruzhan.movie.video.VideoActivity
 import kotlinx.android.synthetic.main.lion_frag_movie_detail.*
 
+
 class MovieDetailFragment : Fragment() {
 
     companion object {
 
         private const val MOVIE: String = "MOVIE"
-        private const val TRANSITION_TIME: Long = 450
 
         @JvmStatic
         fun newInstance(movie: MovieEntity): MovieDetailFragment {
@@ -45,7 +43,6 @@ class MovieDetailFragment : Fragment() {
 
     private lateinit var movie: MovieEntity
     private val movieDetailAdapter = MovieDetailAdapter()
-    private var chromeFaber: ElasticDragDismissFrameLayout.SystemChromeFader? = null
     private val movieDetailViewModel: MovieDetailViewModel by lazy {
         ViewModelProviders.of(this).get(MovieDetailViewModel::class.java)
     }
@@ -67,15 +64,20 @@ class MovieDetailFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         initData()
         initListener()
-        shot.postDelayed({
-            movieDetailViewModel.getMovieDetail(movie.id)
-        }, TRANSITION_TIME)
+        movieDetailViewModel.getMovieDetail(movie.id)
     }
 
     private fun initData() {
-        val activity = requireActivity()
-        ImageLoader.get().loadNoCrossFade(shot, movie.image,
+        val activity = requireActivity() as AppCompatActivity
+        collapsingToolbarLayout.isTitleEnabled = false
+        toolbar.title = movie.title
+        activity.setSupportActionBar(toolbar)
+        activity.supportActionBar?.setDisplayHomeAsUpEnabled(true)
+        activity.supportActionBar?.setHomeButtonEnabled(true)
+
+        ImageLoader.get().loadNoCrossFade(headIv, movie.image,
             ViewUtils.getPlaceholder(activity, 0))
+
         val layoutManager = GridLayoutManager(activity, MovieDetailAdapter.SPAN_COUNT,
             GridLayoutManager.VERTICAL, false)
         layoutManager.spanSizeLookup = object : GridLayoutManager.SpanSizeLookup() {
@@ -87,10 +89,19 @@ class MovieDetailFragment : Fragment() {
         recyclerView.adapter = movieDetailAdapter
         recyclerView.addItemDecoration(videoItemDecoration)
         movieDetailAdapter.videoItemDecoration = videoItemDecoration
+
+        val layoutParams = appBarLayout.layoutParams
+        val displayMetrics = DisplayMetrics()
+        activity.windowManager.defaultDisplay.getMetrics(displayMetrics)
+        val width = displayMetrics.widthPixels
+        layoutParams.height = (width * (9.0f / 16.0f)).toInt()
     }
 
     private fun initListener() {
         val activity = requireActivity()
+        toolbar.setNavigationOnClickListener {
+            activity.finish()
+        }
         movieDetailAdapter.onItemVideoClickListener = object : OnItemClickListener<VideoItem> {
 
             override fun onItemClick(position: Int, bean: VideoItem, itemView: View) {
@@ -104,66 +115,11 @@ class MovieDetailFragment : Fragment() {
                     ImageDetailActivity.launch(activity, bean)
                 }
             }
-        recyclerView.addOnScrollListener(object : RecyclerView.OnScrollListener() {
-
-            override fun onScrolled(recyclerView: RecyclerView, dx: Int, dy: Int) {
-                super.onScrolled(recyclerView, dx, dy)
-                shot.offset = movieDetailAdapter.getHeaderHolderTop()
-            }
-
-            override fun onScrollStateChanged(recyclerView: RecyclerView, newState: Int) {
-                super.onScrollStateChanged(recyclerView, newState)
-                shot.isImmediatePin = newState == RecyclerView.SCROLL_STATE_SETTLING
-            }
-        })
-        recyclerView.onFlingListener = object : RecyclerView.OnFlingListener() {
-            override fun onFling(velocityX: Int, velocityY: Int): Boolean {
-                shot.isImmediatePin = true
-                return false
-            }
-        }
-        back.setOnClickListener {
-            closeFragmentUpdateUi()
-            finishAfterTransition(activity)
-        }
-        chromeFaber = object : ElasticDragDismissFrameLayout.SystemChromeFader(activity) {
-
-            override fun onDragDismissed() {
-                closeFragmentUpdateUi()
-                finishAfterTransition(activity)
-            }
-        }
-        postponeEnterTransition()
-        shot.viewTreeObserver.addOnPreDrawListener(object : ViewTreeObserver.OnPreDrawListener {
-            override fun onPreDraw(): Boolean {
-                shot.viewTreeObserver.removeOnPreDrawListener(this)
-                startPostponedEnterTransition()
-                return true
-            }
-        })
         movieDetailViewModel.movieDetailLiveData.observe(viewLifecycleOwner,
             Observer { movieDetail ->
                 movieDetail?.let {
                     movieDetailAdapter.setData(it)
                 }
             })
-    }
-
-    override fun onResume() {
-        super.onResume()
-        chromeFaber?.let { chromeFaber ->
-            elasticDragDismissFrameLayout.addListener(chromeFaber)
-        }
-    }
-
-    override fun onPause() {
-        super.onPause()
-        chromeFaber?.let { chromeFaber ->
-            elasticDragDismissFrameLayout.removeListener(chromeFaber)
-        }
-    }
-
-    fun closeFragmentUpdateUi() {
-        recyclerView?.let { recyclerView.visibility = View.INVISIBLE }
     }
 }

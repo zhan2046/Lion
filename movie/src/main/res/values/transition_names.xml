@@ -1,6 +1,0 @@
-<?xml version="1.0" encoding="utf-8"?>
-<resources>
-    <!-- transition shared elements -->
-    <string name="transition_shot" translatable="false">shot</string>
-    <string name="transition_shot_background" translatable="false">shot_background</string>
-</resources>

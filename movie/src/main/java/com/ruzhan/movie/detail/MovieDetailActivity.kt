@@ -4,7 +4,6 @@ import android.app.Activity
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.core.app.ActivityOptionsCompat
 import com.ruzhan.movie.R
 import com.ruzhan.movie.db.entity.MovieEntity
 import com.ruzhan.movie.detail.fragment.MovieDetailFragment
@@ -16,10 +15,10 @@ class MovieDetailActivity : AppCompatActivity() {
         private const val MOVIE: String = "MOVIE"
 
         @JvmStatic
-        fun launch(activity: Activity, movie: MovieEntity, option: ActivityOptionsCompat) {
+        fun launch(activity: Activity, movie: MovieEntity) {
             val intent = Intent(activity, MovieDetailActivity::class.java)
             intent.putExtra(MOVIE, movie)
-            activity.startActivity(intent, option.toBundle())
+            activity.startActivity(intent)
         }
     }
 
@@ -33,14 +32,9 @@ class MovieDetailActivity : AppCompatActivity() {
             val movieDetailFragment = MovieDetailFragment.newInstance(movie)
             this.movieDetailFragment = movieDetailFragment
             supportFragmentManager
-                    .beginTransaction()
-                    .add(R.id.container, movieDetailFragment, "MovieDetailFragment")
-                    .commit()
+                .beginTransaction()
+                .add(R.id.container, movieDetailFragment, "MovieDetailFragment2")
+                .commit()
         }
-    }
-
-    override fun onBackPressed() {
-        movieDetailFragment?.closeFragmentUpdateUi()
-        finishAfterTransition()
     }
 }

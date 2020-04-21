@@ -20,7 +20,6 @@ class MovieDetailAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     companion object {
         const val SPAN_COUNT = 2
 
-        const val TYPE_HEADER: Int = 1000
         const val TYPE_TITLE: Int = 1001
         const val TYPE_TEXT: Int = 1002
         const val TYPE_IMAGE: Int = 1003
@@ -28,14 +27,12 @@ class MovieDetailAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         const val TYPE_VIDEO: Int = 1006
         const val TYPE_LOAD_MORE: Int = 1007
 
-        const val HEADER: String = "HEADER"
         const val VIDEO_TITLE: String = "VIDEO_TITLE"
         const val LOAD_MORE: String = "LOAD_MORE"
     }
 
     private var dataList: ArrayList<Any> = ArrayList()
     private lateinit var movieDetail: MovieDetailEntity
-    private var headerHolder: MovieEmptyHolder? = null
 
     var onItemVideoClickListener: OnItemClickListener<VideoItem>? = null
     var onItemImageClickListener: OnItemClickListener<ImageListModel>? = null
@@ -45,7 +42,6 @@ class MovieDetailAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
     fun setData(movieDetail: MovieDetailEntity) {
         this.movieDetail = movieDetail
         dataList.clear()
-        dataList.add(HEADER)
         dataList.add(movieDetail.title)
         dataList.addAll(movieDetail.introduceList)
         dataList.add(VIDEO_TITLE)
@@ -60,7 +56,6 @@ class MovieDetailAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
         var viewType = 0
         if (obj is String) {
             viewType = when (obj) {
-                HEADER -> TYPE_HEADER
                 VIDEO_TITLE -> TYPE_VIDEO_TITLE
                 LOAD_MORE -> TYPE_LOAD_MORE
                 else -> TYPE_TITLE
@@ -80,12 +75,6 @@ class MovieDetailAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): RecyclerView.ViewHolder {
         return when (viewType) {
-            TYPE_HEADER -> {
-                val viewHolder = MovieEmptyHolder(LayoutInflater.from(parent.context)
-                    .inflate(R.layout.lion_item_movie_detail_header, parent, false))
-                headerHolder = viewHolder
-                viewHolder
-            }
             TYPE_TITLE -> MovieDetailTitleHolder(LayoutInflater.from(parent.context)
                 .inflate(R.layout.lion_item_movie_detail_title, parent, false))
 
@@ -139,10 +128,6 @@ class MovieDetailAdapter : RecyclerView.Adapter<RecyclerView.ViewHolder>() {
                 viewHolder.bind(false)
             }
         }
-    }
-
-    fun getHeaderHolderTop(): Int {
-        return headerHolder?.itemView?.top ?: 0
     }
 
     fun getSpanSize(position: Int): Int {
