@@ -9,6 +9,6 @@
 
     <style name="Lion.MovieDetail">
         <item name="android:windowTranslucentStatus">true</item>
-        <item name="android:windowTranslucentNavigation">true</item>
+        <item name="android:windowTranslucentNavigation">false</item>
     </style>
 </resources>

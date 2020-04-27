@@ -10,6 +10,8 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.GridLayoutManager
+import com.google.android.material.appbar.AppBarLayout
+import com.google.android.material.appbar.CollapsingToolbarLayout
 import com.ruzhan.imageloader.glide.ImageLoader
 import com.ruzhan.movie.R
 import com.ruzhan.movie.db.entity.MovieEntity
@@ -18,8 +20,10 @@ import com.ruzhan.movie.decoration.VideoItemDecoration
 import com.ruzhan.movie.detail.activity.ImageDetailActivity
 import com.ruzhan.movie.detail.adapter.MovieDetailAdapter
 import com.ruzhan.movie.detail.viewmodel.MovieDetailViewModel
+import com.ruzhan.movie.listener.AppBarStateChangeListener
 import com.ruzhan.movie.listener.OnItemClickListener
 import com.ruzhan.movie.model.ImageListModel
+import com.ruzhan.movie.utils.LionTitleHelper
 import com.ruzhan.movie.utils.ViewUtils
 import com.ruzhan.movie.video.VideoActivity
 import kotlinx.android.synthetic.main.lion_frag_movie_detail.*
@@ -30,6 +34,7 @@ class MovieDetailFragment : Fragment() {
     companion object {
 
         private const val MOVIE: String = "MOVIE"
+        private const val HEADER_OFFSET = 9.0f / 16.0f
 
         @JvmStatic
         fun newInstance(movie: MovieEntity): MovieDetailFragment {
@@ -70,7 +75,6 @@ class MovieDetailFragment : Fragment() {
     private fun initData() {
         val activity = requireActivity() as AppCompatActivity
         collapsingToolbarLayout.isTitleEnabled = false
-        toolbar.title = movie.title
         activity.setSupportActionBar(toolbar)
         activity.supportActionBar?.setDisplayHomeAsUpEnabled(true)
         activity.supportActionBar?.setHomeButtonEnabled(true)
@@ -94,7 +98,11 @@ class MovieDetailFragment : Fragment() {
         val displayMetrics = DisplayMetrics()
         activity.windowManager.defaultDisplay.getMetrics(displayMetrics)
         val width = displayMetrics.widthPixels
-        layoutParams.height = (width * (9.0f / 16.0f)).toInt()
+        layoutParams.height = (width * HEADER_OFFSET).toInt()
+
+        val toolbarLayoutParams = toolbar.layoutParams as CollapsingToolbarLayout.LayoutParams
+        toolbarLayoutParams.setMargins(0, LionTitleHelper.getStatusBarHeight(resources),
+            0, 0)
     }
 
     private fun initListener() {
@@ -121,5 +129,23 @@ class MovieDetailFragment : Fragment() {
                     movieDetailAdapter.setData(it)
                 }
             })
+        appBarLayout.addOnOffsetChangedListener(object : AppBarStateChangeListener() {
+            override fun onStateChanged(appBarLayout: AppBarLayout?, state: State?) {
+                when (state) {
+                    State.EXPANDED -> {
+                        toolbar.title = ""
+                    }
+                    State.COLLAPSED -> {
+                        toolbar.title = movie.title
+                    }
+                    State.IDLE -> {
+                        toolbar.title = ""
+                    }
+                    else -> {
+                        toolbar.title = ""
+                    }
+                }
+            }
+        })
     }
 }
