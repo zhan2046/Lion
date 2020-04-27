@@ -76,9 +76,11 @@ class MovieDetailFragment : Fragment() {
         val activity = requireActivity() as AppCompatActivity
         collapsingToolbarLayout.isTitleEnabled = false
         activity.setSupportActionBar(toolbar)
-        activity.supportActionBar?.setDisplayHomeAsUpEnabled(true)
-        activity.supportActionBar?.setHomeButtonEnabled(true)
-
+        val supportActionBar = activity.supportActionBar
+        if (supportActionBar != null) {
+            supportActionBar.setDisplayHomeAsUpEnabled(true)
+            supportActionBar.setHomeButtonEnabled(true)
+        }
         ImageLoader.get().loadNoCrossFade(headIv, movie.image,
             ViewUtils.getPlaceholder(activity, 0))
 
@@ -99,10 +101,6 @@ class MovieDetailFragment : Fragment() {
         activity.windowManager.defaultDisplay.getMetrics(displayMetrics)
         val width = displayMetrics.widthPixels
         layoutParams.height = (width * HEADER_OFFSET).toInt()
-
-        val toolbarLayoutParams = toolbar.layoutParams as CollapsingToolbarLayout.LayoutParams
-        toolbarLayoutParams.setMargins(0, LionTitleHelper.getStatusBarHeight(resources),
-            0, 0)
     }
 
     private fun initListener() {
