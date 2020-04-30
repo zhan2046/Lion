@@ -48,14 +48,21 @@ class VideoActivity : AppCompatActivity() {
 
     @SuppressLint("ObsoleteSdkInt")
     private fun hideSystemNavigationBar() {
-        if (Build.VERSION.SDK_INT in 12..18) {
-            val view = this.window.decorView
-            view.systemUiVisibility = View.GONE
-        } else if (Build.VERSION.SDK_INT >= 19) {
-            val decorView = window.decorView
-            val uiOptions = (SYSTEM_UI_FLAG_HIDE_NAVIGATION
+        when {
+            Build.VERSION.SDK_INT in
+                Build.VERSION_CODES.HONEYCOMB_MR1..Build.VERSION_CODES.JELLY_BEAN_MR2 -> {
+                val view = this.window.decorView
+                view.systemUiVisibility = View.GONE
+            }
+            Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT -> {
+                val decorView = window.decorView
+                val uiOptions = (SYSTEM_UI_FLAG_HIDE_NAVIGATION
                     or SYSTEM_UI_FLAG_IMMERSIVE_STICKY or SYSTEM_UI_FLAG_FULLSCREEN)
-            decorView.systemUiVisibility = uiOptions
+                decorView.systemUiVisibility = uiOptions
+            }
+            else -> {
+                // do nothing
+            }
         }
     }
 }

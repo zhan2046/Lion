@@ -1,9 +1,16 @@
 apply plugin: 'com.android.application'
-apply from: '../core_dependencies.gradle'
+apply plugin: 'kotlin-android'
+apply plugin: 'kotlin-android-extensions'
+apply plugin: 'kotlin-kapt'
 //apply from: '../core_release.gradle'
 
 android {
+    compileSdkVersion rootProject.compileSdkVersion
+
     defaultConfig {
+        minSdkVersion rootProject.minSdkVersion
+        targetSdkVersion rootProject.targetSdkVersion
+
         applicationId "com.ruzhan.lion"
         versionCode 301
         versionName "0.3.0"
@@ -13,9 +20,23 @@ android {
     buildTypes {
         debug {}
     }
+
+    compileOptions {
+        sourceCompatibility JavaVersion.VERSION_1_8
+        targetCompatibility JavaVersion.VERSION_1_8
+    }
+
+    androidExtensions {
+        experimental = true
+    }
 }
 
 dependencies {
     implementation fileTree(include: ['*.jar'], dir: 'libs')
+    implementation "androidx.constraintlayout:constraintlayout:$constraintlayout_version"
+    implementation "androidx.appcompat:appcompat:$appcompat_version"
+    implementation "androidx.core:core-ktx:$core_ktx_version"
+    implementation "androidx.multidex:multidex:$multidex_version"
+    implementation "com.github.nahzur-h.base-tool:font:$base_imageloader_version"
     implementation project(':movie')
 }
