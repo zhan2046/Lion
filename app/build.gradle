@@ -39,4 +39,5 @@ dependencies {
     implementation "androidx.multidex:multidex:$multidex_version"
     implementation "com.github.nahzur-h.base-tool:font:$base_imageloader_version"
     implementation project(':movie')
+    implementation project(':media')
 }

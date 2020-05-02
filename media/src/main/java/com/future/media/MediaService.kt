@@ -1,11 +1,7 @@
 package com.future.media
 
 import android.app.PendingIntent
-import android.content.BroadcastReceiver
-import android.content.Context
 import android.content.Intent
-import android.content.IntentFilter
-import android.media.AudioManager
 import android.os.Bundle
 import android.support.v4.media.MediaBrowserCompat
 import android.support.v4.media.MediaMetadataCompat
@@ -16,6 +12,7 @@ import androidx.core.app.NotificationManagerCompat
 import androidx.core.content.ContextCompat
 import androidx.media.MediaBrowserServiceCompat
 import androidx.media.session.MediaButtonReceiver
+import com.google.android.exoplayer2.SimpleExoPlayer
 import com.google.android.exoplayer2.ext.mediasession.MediaSessionConnector
 import com.google.android.exoplayer2.upstream.DefaultDataSourceFactory
 import com.google.android.exoplayer2.upstream.DefaultHttpDataSource
@@ -46,13 +43,36 @@ class MediaService : MediaBrowserServiceCompat() {
         private var SIMPLE_CACHE: SimpleCache? = null
     }
 
-    private var mediaSession: MediaSessionCompat? = null
-    private var mediaSessionConnector: MediaSessionConnector? = null
-    private var mediaController: MediaControllerCompat? = null
-    private var notificationManager: NotificationManagerCompat? = null
-    private var notificationBuilder: NotificationBuilder? = null
-    private var becomingNoisyReceiver: BecomingNoisyReceiver? = null
-    private var mediaPlaybackPreparer: MediaPlaybackPreparer? = null
+    private val mediaSession: MediaSessionCompat by lazy {
+        MediaSessionCompat(this, TAG).also {
+            initMediaSession(it)
+        }
+    }
+    private val mediaSessionConnector: MediaSessionConnector by lazy {
+        MediaSessionConnector(mediaSession)
+    }
+    private val mediaController: MediaControllerCompat by lazy {
+        MediaControllerCompat(this, mediaSession).also {
+            it.registerCallback(MediaControllerCallback())
+        }
+    }
+    private val notificationManager: NotificationManagerCompat by lazy {
+        NotificationManagerCompat.from(this)
+    }
+    private val notificationBuilder: NotificationBuilder by lazy {
+        NotificationBuilder(this)
+    }
+    private val becomingNoisyReceiver: BecomingNoisyReceiver by lazy {
+        BecomingNoisyReceiver(this, mediaSession.sessionToken)
+    }
+    private val exoPlayer: SimpleExoPlayer by lazy {
+        MediaExoPlayerHelper.get().simpleExoPlayer
+    }
+    private val mediaPlaybackPreparer: MediaPlaybackPreparer by lazy {
+        MediaPlaybackPreparer(this, exoPlayer, getCacheDataSourceFactory()).also {
+            it.mediaNotificationListener = mediaNotificationListener
+        }
+    }
 
     private var isForegroundService = false
     private var currentMetadata: MediaMetadataCompat? = null
@@ -78,40 +98,20 @@ class MediaService : MediaBrowserServiceCompat() {
         return BrowserRoot(BROWSE_ROOT, null)
     }
 
-    override fun onCreate() {
-        super.onCreate()
+    private fun initMediaSession(mediaSession: MediaSessionCompat) {
         val sessionIntent = packageManager?.getLaunchIntentForPackage(packageName)
         val sessionActivityPendingIntent = PendingIntent.getActivity(this,
             0, sessionIntent, 0)
-        val mediaSession = MediaSessionCompat(this, TAG)
-        this.mediaSession = mediaSession
         mediaSession.setSessionActivity(sessionActivityPendingIntent)
         mediaSession.isActive = true
-
         sessionToken = mediaSession.sessionToken
-        val mediaController = MediaControllerCompat(this, mediaSession)
-        this.mediaController = mediaController
-        mediaController.registerCallback(MediaControllerCallback())
+    }
 
-        val notificationBuilder = NotificationBuilder(this)
-        this.notificationBuilder = notificationBuilder
-        val becomingNoisyReceiver = BecomingNoisyReceiver(this, mediaSession.sessionToken)
-        this.becomingNoisyReceiver = becomingNoisyReceiver
-        val mediaSessionConnector = MediaSessionConnector(mediaSession)
-        this.mediaSessionConnector = mediaSessionConnector
-
-        val mediaExoPlayerHelper = MediaExoPlayerHelper.get()
-        mediaExoPlayerHelper.initSimpleExoPlayer(this)
-        val exoPlayer = mediaExoPlayerHelper.getSimpleExoPlayer()
-        if (exoPlayer != null) {
-            val cacheDataSourceFactory = getCacheDataSourceFactory()
-            val mediaPlaybackPreparer = MediaPlaybackPreparer(this, exoPlayer, cacheDataSourceFactory)
-            this.mediaPlaybackPreparer = mediaPlaybackPreparer
-            mediaPlaybackPreparer.mediaNotificationListener = mediaNotificationListener
-            mediaSessionConnector.setPlayer(exoPlayer)
-            mediaSessionConnector.setPlaybackPreparer(mediaPlaybackPreparer)
-            mediaSessionConnector.setQueueNavigator(MediaQueueNavigator(mediaSession))
-        }
+    override fun onCreate() {
+        super.onCreate()
+        mediaSessionConnector.setPlayer(exoPlayer)
+        mediaSessionConnector.setPlaybackPreparer(mediaPlaybackPreparer)
+        mediaSessionConnector.setQueueNavigator(MediaQueueNavigator(mediaSession))
         notificationSubject.debounce(NOTIFICATION_TIME_OUT, TimeUnit.MILLISECONDS)
             .observeOn(AndroidSchedulers.mainThread())
             .subscribe(object : DisposableObserver<String>() {
@@ -149,8 +149,8 @@ class MediaService : MediaBrowserServiceCompat() {
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {
         MediaButtonReceiver.handleIntent(mediaSession, intent)
-        mediaSession?.sessionToken?.let {
-            val notification = notificationBuilder?.buildNotification(it)
+        mediaSession.sessionToken?.let {
+            val notification = notificationBuilder.buildNotification(it)
             startForeground(NotificationBuilder.NOW_PLAYING_NOTIFICATION, notification)
         }
         return super.onStartCommand(intent, flags, startId)
@@ -158,17 +158,13 @@ class MediaService : MediaBrowserServiceCompat() {
 
     override fun onTaskRemoved(rootIntent: Intent) {
         super.onTaskRemoved(rootIntent)
-        MediaExoPlayerHelper.get().getSimpleExoPlayer()?.stop(true)
+        exoPlayer.stop(true)
     }
 
     override fun onDestroy() {
-        val mediaSession = mediaSession
-        if (mediaSession != null) {
-            mediaSession.isActive = false
-            mediaSession.release()
-        }
-        mediaPlaybackPreparer?.clear()
-        MediaExoPlayerHelper.get().releaseSimpleExoPlayer()
+        mediaSession.isActive = false
+        mediaSession.release()
+        mediaPlaybackPreparer.clear()
     }
 
     private fun removeNowPlayingNotification() {
@@ -177,47 +173,43 @@ class MediaService : MediaBrowserServiceCompat() {
 
     private fun showMediaNotification() {
         val mediaPlaybackPreparer = mediaPlaybackPreparer
-        if (mediaPlaybackPreparer != null && mediaPlaybackPreparer.isShowNotification()) {
+        if (mediaPlaybackPreparer.isShowNotification()) {
             notificationSubject.onNext(SHOW_MEDIA_NOTIFICATION)
         }
     }
 
     private fun handleShowMediaNotification() {
-        val playbackState = mediaController?.playbackState
+        val playbackState = mediaController.playbackState
         if (playbackState != null) {
             val mediaPlaybackPreparer = mediaPlaybackPreparer
-            if (playbackState.isPrepared && mediaPlaybackPreparer != null &&
-                mediaPlaybackPreparer.isShowNotification()) {
+            if (playbackState.isPrepared && mediaPlaybackPreparer.isShowNotification()) {
                 val notificationBuilder = notificationBuilder
                 val mediaSession = mediaSession
-                val notificationManager = notificationManager
-                if (notificationManager != null && notificationBuilder != null && mediaSession != null) {
-                    val notification = notificationBuilder.buildNotification(mediaSession.sessionToken)
-                    becomingNoisyReceiver?.register()
-                    if (!isForegroundService) {
-                        ContextCompat.startForegroundService(
-                            applicationContext,
-                            Intent(applicationContext, this@MediaService.javaClass)
-                        )
-                        startForeground(NotificationBuilder.NOW_PLAYING_NOTIFICATION, notification)
-                        isForegroundService = true
-                    }
-                    notificationManager.notify(NotificationBuilder.NOW_PLAYING_NOTIFICATION, notification)
+                val notification = notificationBuilder.buildNotification(mediaSession.sessionToken)
+                becomingNoisyReceiver.register()
+                if (!isForegroundService) {
+                    ContextCompat.startForegroundService(
+                        applicationContext,
+                        Intent(applicationContext, this@MediaService.javaClass)
+                    )
+                    startForeground(NotificationBuilder.NOW_PLAYING_NOTIFICATION, notification)
+                    isForegroundService = true
                 }
+                notificationManager.notify(NotificationBuilder.NOW_PLAYING_NOTIFICATION, notification)
             }
         }
     }
 
     private fun hideMediaNotification() {
-        val playbackState = mediaController?.playbackState
+        val playbackState = mediaController.playbackState
         if (playbackState != null) {
             val updatedState = playbackState.state
-            becomingNoisyReceiver?.unregister()
+            becomingNoisyReceiver.unregister()
             if (isForegroundService) {
                 removeNowPlayingNotification()
                 isForegroundService = false
             }
-            notificationManager?.cancel(NotificationBuilder.NOW_PLAYING_NOTIFICATION)
+            notificationManager.cancel(NotificationBuilder.NOW_PLAYING_NOTIFICATION)
             if (updatedState == PlaybackStateCompat.STATE_NONE) {
                 stopSelf()
             }
@@ -228,7 +220,7 @@ class MediaService : MediaBrowserServiceCompat() {
         override fun onMetadataChanged(metadata: MediaMetadataCompat?) {
             metadata?.let {
                 currentMetadata = metadata
-                mediaController?.playbackState?.let { playbackState ->
+                mediaController.playbackState?.let { playbackState ->
                     updateNotification(playbackState)
                 }
             }
@@ -241,13 +233,8 @@ class MediaService : MediaBrowserServiceCompat() {
         }
 
         private fun updateNotification(state: PlaybackStateCompat) {
-            var notificationManager = notificationManager
-            if (notificationManager == null) {
-                notificationManager = NotificationManagerCompat.from(this@MediaService)
-                this@MediaService.notificationManager = notificationManager
-            }
             val updatedState = state.state
-            val metadata = mediaController?.metadata
+            val metadata = mediaController.metadata
             when (updatedState) {
                 PlaybackStateCompat.STATE_BUFFERING,
                 PlaybackStateCompat.STATE_PLAYING -> {
@@ -258,51 +245,22 @@ class MediaService : MediaBrowserServiceCompat() {
                     hideMediaNotification()
                 }
                 else -> {
-                    becomingNoisyReceiver?.unregister()
+                    becomingNoisyReceiver.unregister()
                     if (isForegroundService) {
                         stopForeground(false)
                         isForegroundService = false
                     }
                     val mediaPlaybackPreparer = mediaPlaybackPreparer
-                    if (mediaPlaybackPreparer != null &&
-                        mediaPlaybackPreparer.isShowNotification()) {
+                    if (mediaPlaybackPreparer.isShowNotification()) {
                         val notificationBuilder = notificationBuilder
                         val mediaSession = mediaSession
-                        if (metadata != null && notificationBuilder != null && mediaSession != null) {
+                        if (metadata != null) {
                             val notification = notificationBuilder.buildNotification(mediaSession.sessionToken)
                             notificationManager.notify(NotificationBuilder.NOW_PLAYING_NOTIFICATION,
                                 notification)
                         }
                     }
                 }
-            }
-        }
-    }
-
-    private class BecomingNoisyReceiver(private val context: Context,
-                                        sessionToken: MediaSessionCompat.Token) : BroadcastReceiver() {
-
-        private val noisyIntentFilter = IntentFilter(AudioManager.ACTION_AUDIO_BECOMING_NOISY)
-        private val controller = MediaControllerCompat(context, sessionToken)
-        private var registered = false
-
-        fun register() {
-            if (!registered) {
-                context.registerReceiver(this, noisyIntentFilter)
-                registered = true
-            }
-        }
-
-        fun unregister() {
-            if (registered) {
-                context.unregisterReceiver(this)
-                registered = false
-            }
-        }
-
-        override fun onReceive(context: Context, intent: Intent) {
-            if (intent.action == AudioManager.ACTION_AUDIO_BECOMING_NOISY) {
-                controller.transportControls.pause()
             }
         }
     }

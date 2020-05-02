@@ -3,6 +3,7 @@ package com.ruzhan.lion.ui
 import android.app.Application
 import android.content.Context
 import androidx.multidex.MultiDex
+import com.future.media.MediaExoPlayerHelper
 import com.ruzhan.font.FontHelper
 import com.ruzhan.movie.utils.ResUtils
 
@@ -18,5 +19,6 @@ class MainApplication : Application() {
         super.onCreate()
         ResUtils.init(this)
         FontHelper.init(this)
+        MediaExoPlayerHelper.init(this)
     }
 }
