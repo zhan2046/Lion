@@ -7,14 +7,15 @@ import com.future.media.model.MediaDataModel
 class InnerMediaController {
 
     fun playVideo(mediaController: MediaControllerCompat?, url: String) {
-        val type = MediaDataModel.VIDEO
-        val mediaList = createMediaDataModelList(url, type)
-        val extras = createMediaExtras(type, mediaList)
-        mediaController?.transportControls?.prepareFromMediaId(url, extras)
+        handleMediaPlay(mediaController, url, MediaDataModel.VIDEO)
     }
 
     fun playAudio(mediaController: MediaControllerCompat?, url: String) {
-        val type = MediaDataModel.AUDIO
+        handleMediaPlay(mediaController, url, MediaDataModel.AUDIO)
+    }
+
+    private fun handleMediaPlay(mediaController: MediaControllerCompat?,
+                                url: String, type: String) {
         val mediaList = createMediaDataModelList(url, type)
         val extras = createMediaExtras(type, mediaList)
         mediaController?.transportControls?.prepareFromMediaId(url, extras)
