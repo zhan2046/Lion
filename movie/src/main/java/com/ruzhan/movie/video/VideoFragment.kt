@@ -1,10 +1,12 @@
 package com.ruzhan.movie.video
 
 import android.os.Bundle
+import android.support.v4.media.session.PlaybackStateCompat
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
+import androidx.lifecycle.Observer
 import com.future.media.MediaControllerManager
 import com.future.media.MediaExoPlayerManager
 import com.ruzhan.movie.R
@@ -43,6 +45,26 @@ class VideoFragment : Fragment() {
         super.onActivityCreated(savedInstanceState)
         playerView.player = MediaExoPlayerManager.get().exoPlayer
         mediaControllerManager.playVideo(m3u8Url)
+        mediaControllerManager.playbackState.observe(viewLifecycleOwner, Observer {
+            handlePlaybackState(it)
+        })
+    }
+
+    private fun handlePlaybackState(playbackState: PlaybackStateCompat?) {
+        if (playbackState != null) {
+            when (playbackState.state) {
+                PlaybackStateCompat.STATE_BUFFERING -> {
+                    if (progressBar.visibility != View.VISIBLE) {
+                        progressBar.visibility = View.VISIBLE
+                    }
+                }
+                else -> {
+                    if (progressBar.visibility != View.GONE) {
+                        progressBar.visibility = View.GONE
+                    }
+                }
+            }
+        }
     }
 
     override fun onPause() {
