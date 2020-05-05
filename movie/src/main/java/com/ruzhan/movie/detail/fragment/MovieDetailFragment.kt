@@ -10,8 +10,8 @@ import androidx.fragment.app.Fragment
 import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProviders
 import androidx.recyclerview.widget.GridLayoutManager
+import com.future.media.MediaControllerManager
 import com.google.android.material.appbar.AppBarLayout
-import com.google.android.material.appbar.CollapsingToolbarLayout
 import com.ruzhan.imageloader.glide.ImageLoader
 import com.ruzhan.movie.R
 import com.ruzhan.movie.db.entity.MovieEntity
@@ -23,7 +23,6 @@ import com.ruzhan.movie.detail.viewmodel.MovieDetailViewModel
 import com.ruzhan.movie.listener.AppBarStateChangeListener
 import com.ruzhan.movie.listener.OnItemClickListener
 import com.ruzhan.movie.model.ImageListModel
-import com.ruzhan.movie.utils.LionTitleHelper
 import com.ruzhan.movie.utils.ViewUtils
 import com.ruzhan.movie.video.VideoActivity
 import kotlinx.android.synthetic.main.lion_frag_movie_detail.*
@@ -67,6 +66,7 @@ class MovieDetailFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
+        MediaControllerManager.get() // init exoplayer
         initData()
         initListener()
         movieDetailViewModel.getMovieDetail(movie.id)
