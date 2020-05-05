@@ -1,14 +1,12 @@
 package com.ruzhan.movie.video
 
-import android.net.Uri
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
 import android.view.ViewGroup
 import androidx.fragment.app.Fragment
-import com.google.android.exoplayer2.SimpleExoPlayer
-import com.google.android.exoplayer2.source.hls.HlsMediaSource
-import com.google.android.exoplayer2.upstream.DefaultHttpDataSourceFactory
+import com.future.media.MediaControllerManager
+import com.future.media.MediaExoPlayerManager
 import com.ruzhan.movie.R
 import kotlinx.android.synthetic.main.lion_frag_video.*
 
@@ -29,7 +27,7 @@ class VideoFragment : Fragment() {
     }
 
     private var m3u8Url = ""
-    private var simpleExoPlayer: SimpleExoPlayer? = null
+    private val mediaControllerManager = MediaControllerManager.get()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -43,25 +41,17 @@ class VideoFragment : Fragment() {
 
     override fun onActivityCreated(savedInstanceState: Bundle?) {
         super.onActivityCreated(savedInstanceState)
-        val activity = requireActivity()
-        val player = SimpleExoPlayer.Builder(activity).build()
-        this.simpleExoPlayer = player
-        playerView.player = player
-        val videoUri = Uri.parse(m3u8Url)
-        val createdMediaSource =
-                HlsMediaSource.Factory(DefaultHttpDataSourceFactory(activity.applicationInfo.packageName))
-                        .createMediaSource(videoUri)
-        player.prepare(createdMediaSource)
-        player.playWhenReady = true
+        playerView.player = MediaExoPlayerManager.get().exoPlayer
+        mediaControllerManager.playVideo(m3u8Url)
     }
 
     override fun onPause() {
         super.onPause()
-        simpleExoPlayer?.stop()
+        mediaControllerManager.pause()
     }
 
     override fun onDestroyView() {
-        simpleExoPlayer?.release()
+        mediaControllerManager.stop()
         super.onDestroyView()
     }
 }

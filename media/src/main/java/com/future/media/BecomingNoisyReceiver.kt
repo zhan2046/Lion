@@ -9,7 +9,7 @@ import android.support.v4.media.session.MediaControllerCompat
 import android.support.v4.media.session.MediaSessionCompat
 
 class BecomingNoisyReceiver(private val context: Context,
-                                    sessionToken: MediaSessionCompat.Token) : BroadcastReceiver() {
+                            sessionToken: MediaSessionCompat.Token) : BroadcastReceiver() {
 
     private val noisyIntentFilter = IntentFilter(AudioManager.ACTION_AUDIO_BECOMING_NOISY)
     private val controller = MediaControllerCompat(context, sessionToken)

@@ -7,10 +7,10 @@ import com.google.android.exoplayer2.Timeline
 import com.google.android.exoplayer2.ext.mediasession.TimelineQueueNavigator
 
 class MediaQueueNavigator(
-        mediaSession: MediaSessionCompat
+    mediaSession: MediaSessionCompat
 ) : TimelineQueueNavigator(mediaSession) {
     private val window = Timeline.Window()
     override fun getMediaDescription(player: Player, windowIndex: Int): MediaDescriptionCompat =
-            player.currentTimeline
-                    .getWindow(windowIndex, window, true).tag as MediaDescriptionCompat
+        player.currentTimeline
+            .getWindow(windowIndex, window, true).tag as MediaDescriptionCompat
 }
