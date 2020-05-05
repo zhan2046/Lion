@@ -11,10 +11,9 @@ class MovieHomeAdapter(fm: FragmentManager) :
     private var titleList = ArrayList<String>()
 
     fun setData(list: List<String>) {
-        if (titleList.isEmpty()) {
-            titleList.addAll(list)
-            notifyDataSetChanged()
-        }
+        titleList.clear()
+        titleList.addAll(list)
+        notifyDataSetChanged()
     }
 
     override fun getItem(position: Int): Fragment {
