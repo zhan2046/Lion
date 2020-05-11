@@ -7,6 +7,14 @@ buildscript {
         minSdkVersion = 21
         targetSdkVersion = 28
 
+        applicationId = 'com.ruzhan.lion'
+        versionCode = 301
+        versionName = '0.3.0'
+
+        keyAlias = 'lion'
+        keyPassword = 'lion333333'
+        storePassword = 'lion333333'
+
         kotlin_version = '1.3.72'
         kotlin_coroutines_version = '1.1.0'
         appcompat_version = '1.1.0'
