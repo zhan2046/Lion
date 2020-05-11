@@ -5,6 +5,11 @@ Screenshots
 <a href="logo/lion01.png"><img src="logo/lion01.png" width="30%"/></a> 
 <a href="logo/lion02.png"><img src="logo/lion02.png" width="30%"/></a>
 
+Download
+------
+
+[download - (app download)](http://d.7short.com/qws8)
+
 Developed by
 -------
 
