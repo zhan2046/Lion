@@ -2,8 +2,13 @@
 Screenshots
 ===============
 
-<a href="logo/lion01.png"><img src="logo/lion01.png" width="30%"/></a> 
-<a href="logo/lion02.png"><img src="logo/lion02.png" width="30%"/></a>
+<a href="logo/image03.png"><img src="logo/image03.png" width="30%"/></a>
+<a href="logo/image04.png"><img src="logo/image04.png" width="30%"/></a>
+<a href="logo/image05.png"><img src="logo/image05.png" width="30%"/></a>
+
+<a href="logo/image06.png"><img src="logo/image06.png" width="30%"/></a>
+<a href="logo/image07.png"><img src="logo/image07.png" width="30%"/></a>
+<a href="logo/image08.png"><img src="logo/image08.png" width="30%"/></a>
 
 Download
 ------
